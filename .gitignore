@@ -1,0 +1,7 @@
+# Generated for the claude.ai Artifact; rebuild with build.py
+site/
+
+# Local tooling
+.claude/
+__pycache__/
+.DS_Store

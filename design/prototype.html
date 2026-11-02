@@ -1,0 +1,1018 @@
+<title>Resonance 養成手帳</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Press+Start+2P&display=swap">
+<style>
+/* Layout: a classic JRPG menu screen. World-map chapter strip on top, then a
+   party roster of blue menu windows. Deliberately single-theme (night-sky
+   menu world), so colours are set explicitly and color-scheme is dark. */
+:root {
+  color-scheme: dark;
+  /* colour */
+  --ink:        #070a1f;   /* page ground, night sky            */
+  --ink-2:      #10153a;   /* recessed wells inside windows     */
+  --win-top:    #2c3fb6;   /* menu window gradient, top         */
+  --win-bot:    #0c1458;   /* menu window gradient, bottom      */
+  --frame:      #e9ecff;   /* window border                     */
+  --frame-dim:  #7d86c4;   /* inner bevel, disabled borders     */
+  --text:       #f5f6ff;
+  --dim:        #aab1e2;
+  --gold:       #ffd65a;   /* cursor, filled pips, selection    */
+  --gold-dim:   #8f7a3a;   /* pips already trained last chapter */
+  --core:       #ff6262;
+  --rec:        #62d3ff;
+  --opt:        #a3a8c8;
+  --hi:         #7dff94;
+  --mid:        #ffd65a;
+  --lo:         #ff9563;
+  --rar-ssr:    #ffcc33;
+  --rar-sr:     #c9b6ff;
+  --rar-r:      #d89a5b;
+  --rar-n:      #8e93ad;
+  --shadow:     rgba(0,0,0,.45);
+  /* type */
+  --font-ui:  "DotGothic16", "PingFang TC", "Hiragino Sans", "Microsoft JhengHei", "Noto Sans TC", monospace;
+  --font-num: "Press Start 2P", "DotGothic16", ui-monospace, monospace;
+  --fs-xs: .75rem; --fs-s: .875rem; --fs-m: 1rem; --fs-l: 1.25rem; --fs-xl: 1.6rem;
+  /* shape */
+  --px: 3px;               /* one "chunky pixel" border unit   */
+  --radius: 5px;
+}
+* { box-sizing: border-box; }
+html { background: var(--ink); }
+body {
+  background:
+    radial-gradient(1px 1px at 12% 18%, #ffffff55 50%, transparent 51%),
+    radial-gradient(1px 1px at 68% 8%,  #ffffff44 50%, transparent 51%),
+    radial-gradient(1px 1px at 84% 42%, #ffffff33 50%, transparent 51%),
+    radial-gradient(1px 1px at 32% 64%, #ffffff33 50%, transparent 51%),
+    var(--ink);
+  background-attachment: fixed;
+  color: var(--text);
+  font-family: var(--font-ui);
+  font-size: var(--fs-m);
+  line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 20px 48px;
+  -webkit-font-smoothing: none;
+}
+.wrap { max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; }
+button, select, input { font: inherit; color: inherit; }
+a { color: var(--rec); }
+:focus-visible { outline: 2px dashed var(--gold); outline-offset: 3px; }
+.num { font-family: var(--font-num); font-variant-numeric: tabular-nums; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ---------- the menu window ---------- */
+.win {
+  position: relative;
+  background: linear-gradient(180deg, var(--win-top), var(--win-bot));
+  border: var(--px) solid var(--frame);
+  border-radius: var(--radius);
+  box-shadow: 0 0 0 var(--px) var(--ink), inset 0 0 0 2px var(--frame-dim), 4px 6px 0 var(--px) var(--shadow);
+  padding: 14px 16px;
+}
+.win-title {
+  font-family: var(--font-num); font-size: .62rem; letter-spacing: .12em;
+  color: var(--gold); text-transform: uppercase; margin: 0 0 8px;
+}
+
+/* hand cursor (pixel image generated at runtime into --hand) */
+.cur { position: relative; }
+.cur::before {
+  content: ""; position: absolute; left: -30px; top: 50%;
+  width: 28px; height: 18px; margin-top: -9px;
+  background: var(--hand) no-repeat center / contain;
+  image-rendering: pixelated;
+  opacity: 0; pointer-events: none;
+}
+.cur:hover::before, .cur:focus-visible::before, .cur.is-on::before {
+  opacity: 1; animation: point .6s steps(2) infinite;
+}
+@keyframes point { 50% { transform: translateX(-4px); } }
+
+/* ---------- header ---------- */
+header.top { display: grid; gap: 10px; grid-template-columns: 1fr auto; align-items: end; }
+.logo { margin: 0; line-height: 1.25; text-wrap: balance; }
+.logo .en { display: block; font-family: var(--font-num); font-size: clamp(.8rem, 2.6vw, 1.15rem); color: var(--gold);
+  text-shadow: 3px 3px 0 #a3361a, 0 0 0 transparent; letter-spacing: .06em; }
+.logo .zh { display: block; font-size: clamp(1.5rem, 5vw, 2.2rem); }
+.meta { font-size: var(--fs-xs); color: var(--dim); text-align: right; display: grid; gap: 2px; }
+.meta b { color: var(--text); font-weight: normal; }
+@media (max-width: 560px) { header.top { grid-template-columns: 1fr; } .meta { text-align: left; } }
+
+/* ---------- world map chapter select ---------- */
+.map { padding: 14px 0 6px; }
+.map .win-title { padding-inline: 16px; }
+.map-scroll { overflow-x: auto; scroll-snap-type: x proximity; padding: 10px 16px 14px 40px; }
+.map-row { display: flex; gap: 34px; position: relative; width: max-content; min-width: 100%; }
+.map-row::before {           /* dotted overworld path */
+  content: ""; position: absolute; left: 30px; right: 30px; top: 31px; height: 6px;
+  background: repeating-linear-gradient(90deg, var(--frame-dim) 0 6px, transparent 6px 14px);
+}
+.node {
+  position: relative; scroll-snap-align: center;
+  display: grid; justify-items: center; gap: 6px; width: 112px;
+  background: none; border: 0; padding: 0; cursor: pointer; text-align: center;
+}
+.node .pin {
+  width: 62px; height: 62px; display: grid; place-items: center;
+  background: var(--ink-2); border: var(--px) solid var(--frame-dim);
+  box-shadow: 0 0 0 var(--px) var(--ink), inset -4px -4px 0 #0006;
+  font-family: var(--font-num); font-size: 1rem; color: var(--dim);
+  transition: transform .1s steps(2);
+}
+.node .ch-name { font-size: var(--fs-xs); line-height: 1.35; color: var(--dim); }
+.node .lv { font-family: var(--font-num); font-size: .5rem; color: var(--frame-dim); }
+.node .badge {
+  position: absolute; top: -8px; right: 14px; font-family: var(--font-num); font-size: .5rem;
+  background: var(--core); color: var(--ink); padding: 3px 4px; border: 2px solid var(--ink);
+}
+.node[aria-checked="true"] .pin {
+  background: var(--gold); color: var(--ink); border-color: var(--frame);
+  animation: pulse 1s steps(2) infinite;
+}
+.node[aria-checked="true"] .ch-name { color: var(--text); }
+.node:hover .pin { transform: translateY(-3px); }
+.node.cur::before { left: -26px; top: 31px; }
+@keyframes pulse { 50% { box-shadow: 0 0 0 var(--px) var(--ink), 0 0 0 7px #ffd65a55; } }
+
+.chapter-info { display: grid; gap: 6px; }
+.chapter-info h2 { margin: 0; font-size: var(--fs-xl); font-weight: normal; line-height: 1.3; text-wrap: balance; }
+.chapter-info .orig { color: var(--dim); font-size: var(--fs-s); }
+.chapter-info p { margin: 0; max-width: 65ch; }
+.chapter-info .stats { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: var(--fs-s); color: var(--dim); }
+.chapter-info .stats b { color: var(--gold); font-weight: normal; }
+
+/* ---------- tabs & toolbar ---------- */
+.tabs { display: flex; gap: 10px; flex-wrap: wrap; padding-left: 30px; }
+.tab {
+  background: var(--ink-2); border: var(--px) solid var(--frame-dim); border-bottom-width: 0;
+  padding: 8px 16px 6px; cursor: pointer; color: var(--dim); border-radius: var(--radius) var(--radius) 0 0;
+}
+.tab[aria-selected="true"] { background: var(--win-top); color: var(--text); border-color: var(--frame); }
+.panel { margin-top: -20px; display: grid; gap: 16px; }
+
+.toolbar { display: grid; gap: 12px; }
+.tool-row { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; }
+.tool-row > .lbl { font-family: var(--font-num); font-size: .55rem; color: var(--gold); min-width: 4.5em; }
+.seg { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  background: var(--ink-2); border: 2px solid var(--frame-dim); padding: 3px 10px 2px; cursor: pointer;
+  font-size: var(--fs-s); color: var(--dim);
+}
+.chip[aria-pressed="true"] { border-color: var(--gold); color: var(--ink); background: var(--gold); }
+.chip.p-core[aria-pressed="true"] { background: var(--core); border-color: var(--core); }
+.chip.p-recommended[aria-pressed="true"] { background: var(--rec); border-color: var(--rec); }
+.chip.p-optional[aria-pressed="true"] { background: var(--opt); border-color: var(--opt); }
+.pick { display: inline-flex; align-items: center; gap: 6px; font-size: var(--fs-s); }
+.pick select {
+  background: var(--ink-2); border: 2px solid var(--frame-dim); padding: 3px 6px; border-radius: 0; max-width: 11em;
+}
+.toggle { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font-size: var(--fs-s); }
+.toggle input { appearance: none; width: 18px; height: 18px; margin: 0; border: 2px solid var(--frame); background: var(--ink-2); display: grid; place-items: center; cursor: pointer; }
+.toggle input:checked { background: var(--gold); box-shadow: inset 0 0 0 3px var(--ink-2); }
+.count { font-size: var(--fs-s); color: var(--dim); }
+.count b { color: var(--text); font-weight: normal; }
+
+/* ---------- character cards ---------- */
+.grid { display: grid; gap: 22px 18px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr)); align-items: start; }
+.card { cursor: pointer; display: grid; gap: 10px; text-align: left; }
+.card.cur::before { left: -26px; top: 46px; margin: 0; }
+.card:hover { box-shadow: 0 0 0 var(--px) var(--ink), inset 0 0 0 2px var(--gold), 4px 6px 0 var(--px) var(--shadow); }
+.card-top { display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: start; }
+.portrait {
+  position: relative; width: 92px; height: 92px; display: grid; place-items: end center;
+  background: var(--ink-2); border: var(--px) solid var(--rar, var(--rar-n));
+  box-shadow: inset 0 0 0 2px #0008; overflow: hidden;
+}
+.portrait.rar-SSR { --rar: var(--rar-ssr); background: radial-gradient(circle at 50% 120%, #ffcc3333, transparent 60%), var(--ink-2); }
+.portrait.rar-SR  { --rar: var(--rar-sr); }
+.portrait.rar-R   { --rar: var(--rar-r); }
+.who { min-width: 0; display: grid; gap: 2px; }
+.name-row { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+.name { font-size: var(--fs-l); font-weight: normal; line-height: 1.2; }
+.rar { font-family: var(--font-num); font-size: .5rem; padding: 2px 4px; color: var(--ink); background: var(--rar, var(--rar-n)); }
+.rar.rar-SSR { --rar: var(--rar-ssr); } .rar.rar-SR { --rar: var(--rar-sr); } .rar.rar-R { --rar: var(--rar-r); }
+.orig { color: var(--dim); font-size: var(--fs-xs); overflow-wrap: anywhere; }
+.tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 2px; }
+.tag { font-size: var(--fs-xs); padding: 0 6px; border: 2px solid var(--frame-dim); color: var(--dim); line-height: 1.5; }
+.tag.el { border-color: var(--el); color: var(--el); }
+.prio { font-size: var(--fs-s); padding: 2px 8px; border: 2px solid currentColor; white-space: nowrap; }
+.prio.core { color: var(--core); background: #ff626222; }
+.prio.recommended { color: var(--rec); }
+.prio.optional { color: var(--opt); border-style: dashed; }
+
+.equip { display: grid; grid-template-columns: auto 1fr; gap: 4px 10px; align-items: center; background: var(--ink-2); padding: 8px 10px; border: 2px solid #0007; }
+.equip .ph-portrait { grid-row: span 2; width: 50px; height: 50px; display: grid; place-items: end center; position: relative; }
+.equip .ph-name { display: flex; flex-wrap: wrap; gap: 0 8px; align-items: baseline; min-width: 0; }
+.equip .ph-name small { color: var(--dim); font-size: var(--fs-xs); }
+.equip .lbl, .meter .lbl { font-size: var(--fs-xs); color: var(--gold); }
+.meter { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; }
+.meter .num { font-size: .6rem; }
+.none { color: var(--dim); font-size: var(--fs-s); }
+
+.pips { display: inline-flex; gap: 3px; }
+.pip { width: 12px; height: 12px; background: var(--ink); border: 2px solid var(--frame-dim); }
+.pip.on { background: var(--gold); border-color: var(--frame); box-shadow: inset -2px -2px 0 #b78a10; }
+.pip.had { background: var(--gold-dim); border-color: var(--frame-dim); }
+.pip.new { background: var(--gold); border-color: var(--frame); animation: blink .7s steps(2) infinite; }
+@keyframes blink { 50% { background: var(--text); } }
+
+/* awakening stars: pixel masks generated at runtime (--star-fill / --star-line) */
+.stars { display: inline-flex; gap: 2px; align-items: center; }
+.star { width: 15px; height: 15px; display: inline-block; background: var(--frame-dim);
+  -webkit-mask: var(--star-line) center / contain no-repeat; mask: var(--star-line) center / contain no-repeat;
+  image-rendering: pixelated; }
+.star.on, .star.had, .star.new { -webkit-mask-image: var(--star-fill); mask-image: var(--star-fill); }
+.star.on  { background: var(--gold); filter: drop-shadow(1px 1px 0 #8a5d00); }
+.star.had { background: var(--gold-dim); }
+.star.new { background: var(--gold); filter: drop-shadow(1px 1px 0 #8a5d00); animation: blink .7s steps(2) infinite; }
+.stars.zero .star { opacity: .4; }
+.star.sm { width: 11px; height: 11px; vertical-align: -1px; }
+.card .equip > :not(.ph-portrait) { grid-column: 2; }
+.awk-note { font-size: var(--fs-xs); color: var(--dim); line-height: 1.45; }
+.awk-note::before { content: "※ "; color: var(--gold); }
+
+.reason { margin: 0; font-size: var(--fs-s); color: var(--text); max-width: 65ch; }
+.foot { display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: center; font-size: var(--fs-xs); color: var(--dim); }
+.conf { display: inline-flex; align-items: flex-end; gap: 2px; height: 12px; }
+.conf i { width: 4px; background: var(--frame-dim); }
+.conf i:nth-child(1) { height: 5px; } .conf i:nth-child(2) { height: 8px; } .conf i:nth-child(3) { height: 12px; }
+.conf.high i { background: var(--hi); }
+.conf.medium i:nth-child(-n+2) { background: var(--mid); }
+.conf.low i:nth-child(1) { background: var(--lo); }
+.chg { font-family: var(--font-num); font-size: .5rem; padding: 3px 5px; color: var(--ink); animation: blink2 .9s steps(2) infinite; }
+.chg.new { background: var(--hi); } .chg.swap { background: var(--rec); } .chg.up { background: var(--gold); }
+@keyframes blink2 { 50% { opacity: .55; } }
+.inh { border: 1px dashed var(--frame-dim); padding: 0 5px; }
+
+.card.locked { cursor: default; background: linear-gradient(180deg, #2a2d48, #12142a); border-color: var(--frame-dim); }
+.card.locked .spr-wrap { filter: brightness(0) drop-shadow(0 0 0 #000); opacity: .55; }
+.card.locked .name, .card.locked .tags, .card.locked .orig { opacity: .5; }
+.lock-msg { font-size: var(--fs-s); color: var(--dim); }
+
+/* ---------- sprites ---------- */
+.spr-wrap { position: relative; z-index: 1; display: block; line-height: 0; animation: bob 1s steps(2) infinite; animation-delay: var(--d, 0s); }
+.spr-wrap canvas { display: block; image-rendering: crisp-edges; image-rendering: pixelated; }
+.portrait .spr-wrap canvas { width: 80px; height: 80px; }
+.ph-portrait .spr-wrap canvas, .mini .spr-wrap canvas { width: 40px; height: 40px; }
+.ph-portrait .spr-wrap { animation: float 1.6s steps(4) infinite; animation-delay: var(--d, 0s); }
+.shadow { position: absolute; bottom: 3px; left: 50%; width: 54%; height: 6px; margin-left: -27%; background: #0009; border-radius: 50%; animation: shad 1s steps(2) infinite; animation-delay: var(--d, 0s); }
+.ph-portrait .shadow { bottom: 0; animation: shad 1.6s steps(4) infinite; }
+.card:hover .portrait .spr-wrap, .card:focus-visible .portrait .spr-wrap { animation: hop .45s steps(3) infinite; }
+@keyframes bob   { 50% { transform: translateY(-2px) scaleY(1.02); } }
+@keyframes float { 25% { transform: translateY(-2px); } 50% { transform: translateY(-4px); } 75% { transform: translateY(-2px); } }
+@keyframes shad  { 50% { transform: scaleX(.85); } }
+@keyframes hop   { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+/* ---------- phantom tab ---------- */
+.ph-card { display: grid; gap: 10px; }
+.ph-card .card-top { grid-template-columns: auto 1fr; }
+.ph-card .portrait .spr-wrap { animation: float 1.6s steps(4) infinite; animation-delay: var(--d, 0s); }
+.users { display: flex; flex-wrap: wrap; gap: 8px; }
+.user {
+  display: inline-flex; align-items: center; gap: 6px; background: var(--ink-2); border: 2px solid var(--frame-dim);
+  padding: 2px 8px 2px 2px; cursor: pointer; font-size: var(--fs-s);
+}
+.user:hover { border-color: var(--gold); }
+.user .mini { width: 40px; height: 40px; display: grid; place-items: end center; }
+.user .num { font-size: .55rem; color: var(--gold); }
+.ph-card.locked { background: linear-gradient(180deg, #2a2d48, #12142a); border-color: var(--frame-dim); }
+.ph-card.locked .spr-wrap { filter: brightness(0); opacity: .55; }
+
+/* ---------- empty state ---------- */
+.empty { text-align: center; display: grid; gap: 10px; justify-items: center; }
+.btn { background: var(--ink-2); border: var(--px) solid var(--frame); padding: 6px 14px; cursor: pointer; }
+.btn:hover { background: var(--gold); color: var(--ink); }
+
+/* ---------- detail dialog ---------- */
+dialog.win { color: var(--text); max-width: min(760px, calc(100vw - 32px)); width: 100%; max-height: calc(100dvh - 40px); overflow: auto; padding: 18px; }
+dialog::backdrop { background: #04061acc; }
+dialog[open] { animation: open .18s steps(3); }
+@keyframes open { from { clip-path: inset(50% 0 50% 0); } to { clip-path: inset(0 0 0 0); } }
+.dlg-head { display: grid; grid-template-columns: auto 1fr auto; gap: 14px; align-items: start; }
+.dlg-head .portrait { width: 120px; height: 120px; }
+.dlg-head .portrait .spr-wrap canvas { width: 108px; height: 108px; }
+.x { background: none; border: 2px solid var(--frame); width: 34px; height: 34px; cursor: pointer; font-family: var(--font-num); font-size: .7rem; }
+.x:hover { background: var(--core); }
+.facts { margin: 4px 0 0; display: grid; grid-template-columns: auto 1fr; gap: 2px 12px; font-size: var(--fs-s); }
+.facts dt { color: var(--gold); }
+.facts dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.timeline-wrap { overflow-x: auto; margin-top: 14px; }
+.timeline { border-collapse: collapse; width: 100%; min-width: 600px; font-size: var(--fs-s); }
+.timeline th { text-align: left; font-weight: normal; color: var(--gold); font-size: var(--fs-xs); padding: 4px 8px; border-bottom: 2px solid var(--frame-dim); }
+.timeline td { padding: 6px 8px; border-bottom: 1px dashed #ffffff22; vertical-align: middle; }
+.timeline tr.now td { background: #ffd65a1c; }
+.timeline tr.now td:first-child { box-shadow: inset 4px 0 0 var(--gold); }
+.timeline .ph-cell { display: flex; align-items: center; gap: 6px; }
+.timeline .mini { width: 40px; height: 40px; display: grid; place-items: end center; flex: none; }
+.timeline .why { color: var(--dim); font-size: var(--fs-xs); }
+.timeline tr.off td { color: var(--frame-dim); }
+.src { font-size: var(--fs-xs); color: var(--dim); overflow-wrap: anywhere; }
+
+/* ---------- chapter wipe ---------- */
+#wipe {
+  position: fixed; inset: 0; z-index: 50; pointer-events: none;
+  background: repeating-linear-gradient(180deg, var(--ink) 0 24px, var(--win-bot) 24px 26px);
+  clip-path: inset(0 100% 0 0);
+}
+#wipe.go { animation: wipe .46s steps(8) forwards; }
+@keyframes wipe { 0% { clip-path: inset(0 100% 0 0); } 45%,55% { clip-path: inset(0 0 0 0); } 100% { clip-path: inset(0 0 0 100%); } }
+
+footer { font-size: var(--fs-xs); color: var(--dim); display: grid; gap: 6px; }
+footer ul { margin: 0; padding-left: 1.2em; }
+
+@media (max-width: 480px) {
+  .card-top { grid-template-columns: auto 1fr; }
+  .card-top .prio { grid-column: 1 / -1; justify-self: start; }
+  .dlg-head { grid-template-columns: auto 1fr; }
+  .dlg-head .x { grid-row: 1; grid-column: 2; justify-self: end; }
+  .dlg-head .portrait { width: 92px; height: 92px; }
+  .dlg-head .portrait .spr-wrap canvas { width: 80px; height: 80px; }
+  .tabs { padding-left: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  #wipe { display: none; }
+}
+</style>
+
+<!-- =====================================================================
+     GUIDE DATA — swap this whole JSON block for research/data.json.
+     Shape follows studio/SCHEMA.md v0.1. Everything below is DEMO data.
+     ===================================================================== -->
+<script id="guide-data" type="application/json">
+{
+  "meta": {
+    "game": "Final Fantasy Resonance",
+    "server": "示範資料 DEMO",
+    "gameVersion": "0.0",
+    "lastUpdated": "2026-11-02",
+    "terms": {
+      "phantom": "幻兵",
+      "stage": "MR",
+      "awakening": "覺醒"
+    },
+    "sources": [
+      {
+        "title": "示範來源 A（假）",
+        "url": "https://example.com/guide-a"
+      },
+      {
+        "title": "示範來源 B（假）",
+        "url": "https://example.com/guide-b"
+      }
+    ]
+  },
+  "chapters": [
+    {"id": "ch1", "order": 1, "name": "第一章 燃燒的米德加", "nameOriginal": "Chapter 1: Midgar Ablaze", "recommendedLevel": "1-15", "notes": "教學章節。專心練主角同伊弗利特，其他人隨便配。"},
+    {"id": "ch2", "order": 2, "name": "第二章 風之谷", "nameOriginal": "Chapter 2: Valley of Winds", "recommendedLevel": "15-28", "notes": "敵人多數係飛行系，雷屬性好用。首次開放治療角色。"},
+    {"id": "ch3", "order": 3, "name": "第三章 沉默的礦坑", "nameOriginal": "Chapter 3: Silent Mines", "recommendedLevel": "28-40", "notes": "Boss 物理攻擊重，要一隻坦克頂住。泰坦喺呢章開放。"},
+    {"id": "ch4", "order": 4, "name": "第四章 天空要塞", "nameOriginal": "Chapter 4: Sky Fortress", "recommendedLevel": "40-55", "notes": "第一個大難關。巴哈姆特開放，主角轉配。"},
+    {"id": "ch5", "order": 5, "name": "第五章 終焉之門", "nameOriginal": "Chapter 5: Gate of the End", "recommendedLevel": "55-70", "notes": "全員要練夠 stage 先過到 Boss 第二形態。"}
+  ],
+  "characters": [
+    {"id": "cloud", "name": "克勞德", "nameOriginal": "Cloud Strife", "role": "攻擊", "element": "火", "rarity": "SSR", "howToGet": "第一章劇情", "unlockChapterId": "ch1", "image": {"local": "research/assets/characters/cloud.png", "url": null, "credit": null}, "notes": ""},
+    {"id": "tifa", "name": "蒂法", "nameOriginal": "Tifa Lockhart", "role": "攻擊", "element": "風", "rarity": "SSR", "howToGet": "第一章劇情", "unlockChapterId": "ch1", "image": {"local": "research/assets/characters/tifa.png", "url": null, "credit": null}, "notes": ""},
+    {"id": "barret", "name": "巴雷特", "nameOriginal": "Barret Wallace", "role": "坦克", "element": "土", "rarity": "SR", "howToGet": "第一章劇情", "unlockChapterId": "ch1", "image": {"local": "research/assets/characters/barret.png", "url": null, "credit": null}, "notes": ""},
+    {"id": "aerith", "name": "愛麗絲", "nameOriginal": "Aerith Gainsborough", "role": "治療", "element": "水", "rarity": "SSR", "howToGet": "第二章劇情", "unlockChapterId": "ch2", "image": {"local": "research/assets/characters/aerith.png", "url": null, "credit": null}, "notes": ""},
+    {"id": "terra", "name": "蒂娜", "nameOriginal": "Terra Branford", "role": "支援", "element": "雷", "rarity": "SR", "howToGet": "第二章支線", "unlockChapterId": "ch2", "image": {"local": "research/assets/characters/terra.png", "url": null, "credit": null}, "notes": ""},
+    {"id": "squall", "name": "史考爾", "nameOriginal": "Squall Leonhart", "role": "攻擊", "element": "冰", "rarity": "R", "howToGet": "第三章商店", "unlockChapterId": "ch3", "image": {"local": "research/assets/characters/squall.png", "url": null, "credit": null}, "notes": ""},
+    {"id": "lightning", "name": "雷光", "nameOriginal": "Lightning", "role": "攻擊", "element": "雷", "rarity": "SSR", "howToGet": "第四章劇情", "unlockChapterId": "ch4", "image": {"local": "research/assets/characters/lightning.png", "url": null, "credit": null}, "notes": ""},
+    {"id": "yshtola", "name": "雅·修特拉", "nameOriginal": "Y'shtola Rhul", "role": "治療", "element": "冰", "rarity": "SR", "howToGet": "第五章活動", "unlockChapterId": "ch5", "image": {"local": "research/assets/characters/yshtola.png", "url": null, "credit": null}, "notes": ""}
+  ],
+  "phantoms": [
+    {"id": "ifrit", "name": "伊弗利特", "nameOriginal": "Ifrit", "type": "攻擊", "element": "火", "rarity": "SR", "maxStage": 5, "maxAwakening": 3, "howToGet": "第一章劇情", "unlockChapterId": "ch1", "image": {"local": "research/assets/phantoms/ifrit.png", "url": null, "credit": null}, "notes": ""},
+    {"id": "shiva", "name": "希瓦", "nameOriginal": "Shiva", "type": "控制", "element": "冰", "rarity": "SR", "maxStage": 5, "maxAwakening": 3, "howToGet": "第一章支線", "unlockChapterId": "ch1", "image": {"local": "research/assets/phantoms/shiva.png", "url": null, "credit": null}, "notes": ""},
+    {"id": "ramuh", "name": "拉姆", "nameOriginal": "Ramuh", "type": "支援", "element": "雷", "rarity": "SR", "maxStage": 5, "maxAwakening": 3, "howToGet": "第二章劇情", "unlockChapterId": "ch2", "image": {"local": "research/assets/phantoms/ramuh.png", "url": null, "credit": null}, "notes": ""},
+    {"id": "garuda", "name": "迦樓羅", "nameOriginal": "Garuda", "type": "攻擊", "element": "風", "rarity": "SR", "maxStage": 5, "maxAwakening": 3, "howToGet": "第二章 Boss", "unlockChapterId": "ch2", "image": {"local": "research/assets/phantoms/garuda.png", "url": null, "credit": null}, "notes": ""},
+    {"id": "titan", "name": "泰坦", "nameOriginal": "Titan", "type": "防禦", "element": "土", "rarity": "SR", "maxStage": 5, "maxAwakening": 3, "howToGet": "第三章劇情", "unlockChapterId": "ch3", "image": {"local": "research/assets/phantoms/titan.png", "url": null, "credit": null}, "notes": ""},
+    {"id": "leviathan", "name": "利維坦", "nameOriginal": "Leviathan", "type": "治療", "element": "水", "rarity": "SSR", "maxStage": 6, "maxAwakening": 3, "howToGet": "第三章支線", "unlockChapterId": "ch3", "image": {"local": "research/assets/phantoms/leviathan.png", "url": null, "credit": null}, "notes": ""},
+    {"id": "bahamut", "name": "巴哈姆特", "nameOriginal": "Bahamut", "type": "攻擊", "element": "光", "rarity": "SSR", "maxStage": 6, "maxAwakening": 3, "howToGet": "第四章 Boss", "unlockChapterId": "ch4", "image": {"local": "research/assets/phantoms/bahamut.png", "url": null, "credit": null}, "notes": ""},
+    {"id": "odin", "name": "奧丁", "nameOriginal": "Odin", "type": "攻擊", "element": "闇", "rarity": "SSR", "maxStage": 6, "maxAwakening": null, "howToGet": "第五章隱藏任務", "unlockChapterId": "ch5", "image": {"local": "research/assets/phantoms/odin.png", "url": null, "credit": null}, "notes": ""}
+  ],
+  "builds": [
+    {"chapterId": "ch1", "characterId": "cloud", "phantomId": "ifrit", "targetStage": 2, "targetAwakening": 0, "awakeningNote": null, "priority": "core", "reason": "第一章唯一穩定輸出，火屬性打序章機械兵有加成。", "confidence": "high", "sources": ["https://example.com/guide-a", "https://example.com/guide-b"]},
+    {"chapterId": "ch1", "characterId": "tifa", "phantomId": "shiva", "targetStage": 1, "targetAwakening": null, "awakeningNote": null, "priority": "recommended", "reason": "希瓦減速幫蒂法近身，開到 1 就夠。", "confidence": "medium", "sources": ["https://example.com/guide-a"]},
+    {"chapterId": "ch1", "characterId": "barret", "phantomId": "ifrit", "targetStage": 1, "targetAwakening": null, "awakeningNote": null, "priority": "optional", "reason": "推斷：暫時冇其他幻兵，掛住伊弗利特就算。", "confidence": "low", "sources": []},
+    {"chapterId": "ch2", "characterId": "cloud", "phantomId": "ifrit", "targetStage": 3, "targetAwakening": 1, "awakeningNote": null, "priority": "core", "reason": "stage 3 解鎖範圍技，清飛行小怪快好多。", "confidence": "high", "sources": ["https://example.com/guide-a", "https://example.com/guide-b"]},
+    {"chapterId": "ch2", "characterId": "tifa", "phantomId": "garuda", "targetStage": 2, "targetAwakening": 0, "awakeningNote": null, "priority": "recommended", "reason": "迦樓羅同屬性加連擊數，Boss 戰傷害明顯提升。", "confidence": "medium", "sources": ["https://example.com/guide-b"]},
+    {"chapterId": "ch2", "characterId": "barret", "phantomId": "shiva", "targetStage": 2, "targetAwakening": null, "awakeningNote": null, "priority": "recommended", "reason": "冰盾減傷，頂住飛行系突進。", "confidence": "medium", "sources": ["https://example.com/guide-a"]},
+    {"chapterId": "ch2", "characterId": "aerith", "phantomId": "ramuh", "targetStage": 2, "targetAwakening": 0, "awakeningNote": null, "priority": "core", "reason": "拉姆 stage 2 被動加治療量，第二章後半必需。", "confidence": "high", "sources": ["https://example.com/guide-a", "https://example.com/guide-b"]},
+    {"chapterId": "ch2", "characterId": "terra", "phantomId": "garuda", "targetStage": 1, "targetAwakening": null, "awakeningNote": null, "priority": "optional", "reason": "推斷：資源唔夠可以唔練，純粹湊隊。", "confidence": "low", "sources": []},
+    {"chapterId": "ch3", "characterId": "cloud", "phantomId": "ifrit", "targetStage": 4, "targetAwakening": 1, "awakeningNote": null, "priority": "core", "reason": "礦坑敵人怕火，stage 4 爆發技係主力。", "confidence": "high", "sources": ["https://example.com/guide-a"]},
+    {"chapterId": "ch3", "characterId": "tifa", "phantomId": "garuda", "targetStage": 3, "targetAwakening": 1, "awakeningNote": "★1 解鎖連擊被動，材料喺第三章商店換。", "priority": "core", "reason": "副輸出，Boss 破盾靠佢。", "confidence": "medium", "sources": ["https://example.com/guide-b"]},
+    {"chapterId": "ch3", "characterId": "barret", "phantomId": "titan", "targetStage": 2, "targetAwakening": 0, "awakeningNote": null, "priority": "core", "reason": "泰坦嘲諷 + 減傷，礦坑 Boss 唔帶好難過。", "confidence": "high", "sources": ["https://example.com/guide-a", "https://example.com/guide-b"]},
+    {"chapterId": "ch3", "characterId": "aerith", "phantomId": "leviathan", "targetStage": 2, "targetAwakening": 1, "awakeningNote": null, "priority": "recommended", "reason": "群體回復，換走拉姆。", "confidence": "medium", "sources": ["https://example.com/guide-a"]},
+    {"chapterId": "ch3", "characterId": "terra", "phantomId": "ramuh", "targetStage": 3, "targetAwakening": null, "awakeningNote": null, "priority": "recommended", "reason": "推斷：接手拉姆做加速支援，未有實測。", "confidence": "low", "sources": []},
+    {"chapterId": "ch3", "characterId": "squall", "phantomId": "shiva", "targetStage": 2, "targetAwakening": 0, "awakeningNote": null, "priority": "recommended", "reason": "冰屬性對礦坑史萊姆有效。", "confidence": "medium", "sources": ["https://example.com/guide-b"]},
+    {"chapterId": "ch4", "characterId": "cloud", "phantomId": "bahamut", "targetStage": 2, "targetAwakening": 0, "awakeningNote": null, "priority": "core", "reason": "巴哈姆特一開放即轉配，stage 2 已經勁過伊弗利特 4。", "confidence": "medium", "sources": ["https://example.com/guide-a"]},
+    {"chapterId": "ch4", "characterId": "tifa", "phantomId": "garuda", "targetStage": 4, "targetAwakening": 2, "awakeningNote": "推斷：★2 加對空傷害，暫時未有來源。", "priority": "core", "reason": "天空要塞多空中敵，風屬性加成大。", "confidence": "high", "sources": ["https://example.com/guide-a", "https://example.com/guide-b"]},
+    {"chapterId": "ch4", "characterId": "barret", "phantomId": "titan", "targetStage": 3, "targetAwakening": 1, "awakeningNote": null, "priority": "core", "reason": "要塞 Boss 有秒殺技，泰坦 stage 3 先頂得住。", "confidence": "high", "sources": ["https://example.com/guide-a"]},
+    {"chapterId": "ch4", "characterId": "aerith", "phantomId": "leviathan", "targetStage": 3, "targetAwakening": 1, "awakeningNote": null, "priority": "core", "reason": "回復量要跟上 Boss 輸出。", "confidence": "high", "sources": ["https://example.com/guide-b"]},
+    {"chapterId": "ch4", "characterId": "lightning", "phantomId": "ramuh", "targetStage": 4, "targetAwakening": 1, "awakeningNote": null, "priority": "core", "reason": "雷光 + 拉姆同屬性連鎖，即戰力。", "confidence": "high", "sources": ["https://example.com/guide-a", "https://example.com/guide-b"]},
+    {"chapterId": "ch4", "characterId": "squall", "phantomId": "shiva", "targetStage": 3, "targetAwakening": 0, "awakeningNote": null, "priority": "optional", "reason": "後備輸出，有資源先練。", "confidence": "medium", "sources": ["https://example.com/guide-b"]},
+    {"chapterId": "ch5", "characterId": "cloud", "phantomId": "bahamut", "targetStage": 4, "targetAwakening": 2, "awakeningNote": "★2 先有貫穿加成，材料靠終章 Boss 掉落。", "priority": "core", "reason": "終章 Boss 第二形態要 stage 4 嘅貫穿效果。", "confidence": "high", "sources": ["https://example.com/guide-a", "https://example.com/guide-b"]},
+    {"chapterId": "ch5", "characterId": "tifa", "phantomId": "garuda", "targetStage": 5, "targetAwakening": 3, "awakeningNote": "練滿 ★3 攞最後一個被動。", "priority": "recommended", "reason": "練滿迦樓羅攞埋最後一個被動。", "confidence": "medium", "sources": ["https://example.com/guide-a"]},
+    {"chapterId": "ch5", "characterId": "barret", "phantomId": "titan", "targetStage": 3, "targetAwakening": 2, "awakeningNote": "MR 唔使再升，覺醒 ★2 加減傷就夠。", "priority": "recommended", "reason": "可以用雅·修特拉代替部分減傷，所以降為推薦。", "confidence": "medium", "sources": ["https://example.com/guide-b"]},
+    {"chapterId": "ch5", "characterId": "aerith", "phantomId": "leviathan", "targetStage": 4, "targetAwakening": 2, "awakeningNote": null, "priority": "core", "reason": "全隊回復主力。", "confidence": "high", "sources": ["https://example.com/guide-a", "https://example.com/guide-b"]},
+    {"chapterId": "ch5", "characterId": "lightning", "phantomId": "odin", "targetStage": 3, "targetAwakening": 1, "awakeningNote": null, "priority": "core", "reason": "奧丁斬鐵劍對終章雜兵即死。", "confidence": "medium", "sources": ["https://example.com/guide-a"]},
+    {"chapterId": "ch5", "characterId": "yshtola", "phantomId": "shiva", "targetStage": 3, "targetAwakening": null, "awakeningNote": null, "priority": "recommended", "reason": "推斷：副治療 + 控場，社群意見分歧。", "confidence": "low", "sources": []}
+  ]
+}
+</script>
+
+<div id="wipe" aria-hidden="true"></div>
+
+<div class="wrap">
+  <header class="top">
+    <h1 class="logo"><span class="en">FINAL FANTASY RESONANCE</span><span class="zh">養成手帳</span></h1>
+    <div class="meta" id="meta"></div>
+  </header>
+
+  <section class="win map" aria-labelledby="map-title">
+    <h2 class="win-title" id="map-title">WORLD MAP · 揀你而家打到邊章</h2>
+    <div class="map-scroll">
+      <div class="map-row" id="map" role="radiogroup" aria-label="章節"></div>
+    </div>
+  </section>
+
+  <section class="win chapter-info" id="chapter-info" aria-live="polite"></section>
+
+  <div class="tabs" role="tablist" aria-label="檢視">
+    <button class="tab" role="tab" id="tab-chars" aria-controls="panel" aria-selected="true">角色</button>
+    <button class="tab" role="tab" id="tab-phantoms" aria-controls="panel" aria-selected="false"></button>
+  </div>
+
+  <section class="panel" id="panel" role="tabpanel">
+    <div class="win toolbar" id="toolbar">
+      <div class="tool-row" id="row-sort">
+        <span class="lbl">SORT</span>
+        <div class="seg" id="sort" role="group" aria-label="排序"></div>
+      </div>
+      <div class="tool-row" id="row-filter">
+        <span class="lbl">FILTER</span>
+        <label class="pick" id="pick-role">職業 <select id="f-role"></select></label>
+        <label class="pick">屬性 <select id="f-element"></select></label>
+        <div class="seg" id="f-prio" role="group" aria-label="優先度"></div>
+      </div>
+      <div class="tool-row" id="row-toggle">
+        <span class="lbl">VIEW</span>
+        <label class="toggle"><input type="checkbox" id="f-changes"> 只睇今章有變（要新練）</label>
+        <label class="toggle"><input type="checkbox" id="f-locked" checked> 顯示未加入角色</label>
+        <span class="count" id="count"></span>
+      </div>
+    </div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <footer id="footer"></footer>
+</div>
+
+<dialog class="win" id="detail" aria-labelledby="dlg-name"></dialog>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ================= data ================= */
+  var DATA = JSON.parse(document.getElementById("guide-data").textContent);
+  var META = DATA.meta || {};
+  var T = Object.assign({ phantom: "幻兵", stage: "stage", awakening: "覺醒" }, META.terms || {});
+
+  /* ---- image path resolution: the ONE place to remap asset paths ----
+     Data paths are relative to studio root (e.g. research/assets/characters/cloud.png).
+     For the final site in studio/site/, either copy assets next to the page and
+     set ASSET_BASE = "" with paths rewritten, or set ASSET_BASE = "../".        */
+  var ASSET_BASE = "";
+  function resolveImage(image) {
+    if (!image || !image.local) return null;
+    var p = String(image.local);
+    if (/^(data:|blob:|https?:)/.test(p)) return p;
+    return ASSET_BASE + p.replace(/^\.?\//, "");
+  }
+
+  var PRIO = { core: { label: "必練", rank: 0 }, recommended: { label: "推薦", rank: 1 }, optional: { label: "可選", rank: 2 } };
+  var CONF = { high: "高", medium: "中", low: "低" };
+  var RARITY_RANK = { UR: 0, SSR: 1, SR: 2, R: 3, N: 4 };
+  var ELEMENT_COLOR = { "火": "#ff6a3d", "冰": "#7fe3ff", "水": "#4f8dff", "雷": "#ffe14d", "風": "#6dff9c", "土": "#c99257", "光": "#fff3b0", "闇": "#b07bff" };
+
+  var chapters = (DATA.chapters || []).slice().sort(function (a, b) { return a.order - b.order; });
+  var chapterById = index(chapters), charById = index(DATA.characters || []), phById = index(DATA.phantoms || []);
+  var buildsAt = {};
+  (DATA.builds || []).forEach(function (b) {
+    var k = b.chapterId + "|" + b.characterId;
+    (buildsAt[k] = buildsAt[k] || []).push(b);
+  });
+  Object.keys(buildsAt).forEach(function (k) {
+    buildsAt[k].sort(function (a, b) { return prioRank(a) - prioRank(b); });
+  });
+
+  function index(arr) { var m = {}; arr.forEach(function (x) { m[x.id] = x; }); return m; }
+  function prioRank(b) { return b && PRIO[b.priority] ? PRIO[b.priority].rank : 9; }
+  function orderOf(chId) { var c = chapterById[chId]; return c ? c.order : Infinity; }
+  function esc(s) { return s == null ? "" : String(s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+  function elColor(el) { if (!el) return "#9aa0c0"; return ELEMENT_COLOR[el] || "hsl(" + (hash(el) % 360) + " 80% 65%)"; }
+  function hash(s) { var h = 2166136261; s = String(s); for (var i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
+
+  /* exact build in a chapter (highest priority if several) */
+  function exactBuild(charId, ch) { var a = buildsAt[ch.id + "|" + charId]; return a ? a[0] : null; }
+  /* effective build = exact, else carried forward from latest earlier chapter */
+  /* characters can leave the party mid-story: absentChapterIds lists chapters they're away */
+  function isAway(charId, ch) {
+    var c = (DATA.characters || []).filter(function (x) { return x.id === charId; })[0];
+    return !!(c && ch && (c.absentChapterIds || []).indexOf(ch.id) >= 0);
+  }
+  function effectiveBuild(charId, ch) {
+    if (isAway(charId, ch)) return null;
+    for (var i = chapters.indexOf(ch); i >= 0; i--) {
+      var b = exactBuild(charId, chapters[i]);
+      if (b) return { build: b, inherited: i !== chapters.indexOf(ch), from: chapters[i] };
+    }
+    return null;
+  }
+  function prevEffective(charId, ch) { var i = chapters.indexOf(ch); return i > 0 ? effectiveBuild(charId, chapters[i - 1]) : null; }
+  /* awakening: null = no data, 0 = not needed */
+  function awk(b) { return b && b.targetAwakening != null ? b.targetAwakening : null; }
+  /* what went up vs the previous effective build (same phantom only) */
+  function upsOf(b, prev) {
+    if (!b || !prev || prev.phantomId !== b.phantomId) return { stage: false, awk: false };
+    return {
+      stage: (b.targetStage || 0) > (prev.targetStage || 0),
+      awk: awk(b) != null && awk(b) > (awk(prev) || 0)
+    };
+  }
+  /* what changed this chapter: new / swap / up / null */
+  function changeOf(charId, ch) {
+    var b = exactBuild(charId, ch); if (!b) return null;
+    var p = prevEffective(charId, ch);
+    if (!p) return "new";
+    if (p.build.phantomId !== b.phantomId) return "swap";
+    var u = upsOf(b, p.build);
+    return u.stage || u.awk ? "up" : null;
+  }
+  var CHANGE_LABEL = { "new": "NEW", swap: "SWAP", up: "UP" };
+  var CHANGE_TEXT = { "new": "今章新增", swap: "轉" + T.phantom, up: T.stage + " 提升" };
+  function changeText(kind, ups) {
+    if (kind !== "up" || !ups) return CHANGE_TEXT[kind];
+    return [ups.stage ? T.stage + " 提升" : "", ups.awk ? T.awakening + " 提升" : ""].filter(Boolean).join("、");
+  }
+
+  /* ================= state ================= */
+  var STORE_KEY = "ffr-guide:v1";
+  var state = {
+    chapterId: chapters[0] && chapters[0].id, tab: "chars", sort: "priority",
+    role: "", element: "", prios: ["core", "recommended", "optional"], changesOnly: false, showLocked: true
+  };
+  try {
+    var saved = JSON.parse(localStorage.getItem(STORE_KEY) || "null");
+    if (saved) {
+      if (saved.chapterId && chapterById[saved.chapterId]) state.chapterId = saved.chapterId;
+      if (saved.tab === "phantoms") state.tab = "phantoms";
+      if (saved.sort) state.sort = saved.sort;
+    }
+  } catch (e) { /* storage unavailable: keep defaults */ }
+  function save() {
+    try { localStorage.setItem(STORE_KEY, JSON.stringify({ chapterId: state.chapterId, tab: state.tab, sort: state.sort })); } catch (e) {}
+  }
+  function curChapter() { return chapterById[state.chapterId] || chapters[0]; }
+
+  /* ================= pixel sprites ================= */
+  var imgCache = {};
+  function loadImage(src) {
+    if (!src) return Promise.resolve(null);
+    if (!imgCache[src]) imgCache[src] = new Promise(function (res) {
+      var img = new Image();
+      img.decoding = "async";
+      img.onload = function () { res(img.naturalWidth ? img : null); };
+      img.onerror = function () { res(null); };
+      img.src = src;
+    });
+    return imgCache[src];
+  }
+  function drawPixelated(canvas, img, res, kind) {
+    canvas.width = res; canvas.height = res;
+    var ctx = canvas.getContext("2d");
+    // Drawn portraits: average down smoothly so the CSS-upscaled pixels read cleanly; pixel-art sprites stay crisp.
+    ctx.imageSmoothingEnabled = kind === "char"; ctx.imageSmoothingQuality = "high";
+    var w = img.naturalWidth, h = img.naturalHeight, s = Math.min(w, h);
+    var sx = (w - s) / 2;
+    var sy = h > w ? (kind === "char" ? 0 : (h - s) / 3) : 0;   // portraits: keep the head
+    ctx.drawImage(img, sx, sy, s, s, 0, 0, res, res);
+  }
+  /* deterministic invader-style placeholder, mirrored, outlined, with eyes */
+  function drawPlaceholder(canvas, id, element, kind) {
+    var N = kind === "phantom" ? 14 : 12, half = Math.ceil(N / 2);
+    canvas.width = N; canvas.height = N;
+    var ctx = canvas.getContext("2d");
+    var seed = hash(kind + ":" + id);
+    function rnd() { seed ^= seed << 13; seed >>>= 0; seed ^= seed >>> 17; seed ^= seed << 5; seed >>>= 0; return seed / 4294967296; }
+    var grid = [], x, y;
+    for (y = 0; y < N; y++) {
+      grid[y] = [];
+      for (x = 0; x < half; x++) {
+        var cx = (half - x) / half, cy = Math.abs(y - N * 0.5) / (N * 0.5);
+        var p = kind === "phantom" ? 0.75 - cy * 0.45 + (y < N * 0.55 ? 0.15 : -0.1) : 0.85 - cy * 0.6 - (1 - cx) * 0.35;
+        grid[y][x] = (y > 0 && y < N - 1 && x > 0 && rnd() < p) ? 1 : 0;
+      }
+      for (x = half; x < N; x++) grid[y][x] = grid[y][N - 1 - x];
+    }
+    // guarantee a body column + head
+    for (y = 2; y < N - 1; y++) { grid[y][half - 1] = 1; grid[y][N - half] = 1; }
+    var base = elColor(element), eyeY = Math.round(N * 0.35);
+    for (y = 0; y < N; y++) for (x = 0; x < N; x++) {
+      if (grid[y][x]) {
+        var light = y < N * 0.45 ? 1 : 0;
+        ctx.fillStyle = base; ctx.globalAlpha = 1;
+        ctx.fillRect(x, y, 1, 1);
+        if (!light) { ctx.fillStyle = "#000"; ctx.globalAlpha = 0.22; ctx.fillRect(x, y, 1, 1); }
+      } else {
+        var edge = (grid[y - 1] && grid[y - 1][x]) || (grid[y + 1] && grid[y + 1][x]) || grid[y][x - 1] || grid[y][x + 1];
+        if (edge) { ctx.globalAlpha = 1; ctx.fillStyle = "#0a0c22"; ctx.fillRect(x, y, 1, 1); }
+      }
+    }
+    ctx.globalAlpha = 1;
+    var ex = half - 2;
+    ctx.fillStyle = "#ffffff"; ctx.fillRect(ex, eyeY, 1, 1); ctx.fillRect(N - 1 - ex, eyeY, 1, 1);
+    ctx.fillStyle = "#0a0c22"; ctx.fillRect(ex, eyeY + 1, 1, 1); ctx.fillRect(N - 1 - ex, eyeY + 1, 1, 1);
+  }
+  /* <span class="spr" data-kind="char|phantom" data-id="..." data-res="48"> → animated canvas */
+  function mountSprites(root) {
+    root.querySelectorAll(".spr").forEach(function (slot) {
+      var kind = slot.getAttribute("data-kind"), id = slot.getAttribute("data-id");
+      var ent = kind === "phantom" ? phById[id] : charById[id];
+      var res = +slot.getAttribute("data-res") || 48;
+      var wrap = document.createElement("span"); wrap.className = "spr-wrap";
+      wrap.style.setProperty("--d", "-" + ((hash(id) % 1000) / 1000).toFixed(2) + "s");
+      var cv = document.createElement("canvas");
+      cv.setAttribute("role", "img"); cv.setAttribute("aria-label", ent ? ent.name : id);
+      wrap.appendChild(cv);
+      var sh = document.createElement("i"); sh.className = "shadow"; sh.style.setProperty("--d", wrap.style.getPropertyValue("--d"));
+      slot.replaceWith(wrap); wrap.after(sh);
+      loadImage(ent && resolveImage(ent.image)).then(function (img) {
+        if (img) { try { drawPixelated(cv, img, res, kind); return; } catch (e) {} }
+        drawPlaceholder(cv, id, ent && ent.element, kind);
+      });
+    });
+  }
+  function spr(kind, id, res) { return '<span class="spr" data-kind="' + kind + '" data-id="' + esc(id) + '" data-res="' + (res || 48) + '"></span>'; }
+
+  /* pixel hand cursor → CSS var */
+  (function makeHand() {
+    var HAND = [
+      "..OOOO........",
+      ".OWWWWOOOOOOO.",
+      "OWWWWWWWWWWWWO",
+      "OWWWWWOOOOOOO.",
+      "OWWWWWWWO.....",
+      "OWWWWWOO......",
+      "OSWWWWWWO.....",
+      ".OSSSSOO......",
+      "..OOOO........"
+    ];
+    var c = document.createElement("canvas"); c.width = 14; c.height = 9;
+    var g = c.getContext("2d"), col = { O: "#1a1030", W: "#ffffff", S: "#b9c0e8" };
+    HAND.forEach(function (row, y) { for (var x = 0; x < row.length; x++) if (col[row[x]]) { g.fillStyle = col[row[x]]; g.fillRect(x, y, 1, 1); } });
+    try { document.documentElement.style.setProperty("--hand", "url(" + c.toDataURL() + ")"); } catch (e) {}
+  })();
+
+  /* pixel stars → CSS mask vars (filled + outline derived from one 9x9 map) */
+  (function makeStars() {
+    var STAR = ["....X....", "....X....", "...XXX...", "XXXXXXXXX", ".XXXXXXX.", "..XXXXX..", "..XXXXX..", ".XXX.XXX.", ".XX...XX."];
+    function on(x, y) { return y >= 0 && y < 9 && x >= 0 && x < 9 && STAR[y][x] === "X"; }
+    function url(outline) {
+      var c = document.createElement("canvas"); c.width = 9; c.height = 9;
+      var g = c.getContext("2d"); g.fillStyle = "#000";
+      for (var y = 0; y < 9; y++) for (var x = 0; x < 9; x++) {
+        if (!on(x, y)) continue;
+        if (outline && on(x - 1, y) && on(x + 1, y) && on(x, y - 1) && on(x, y + 1)) continue;
+        g.fillRect(x, y, 1, 1);
+      }
+      return "url(" + c.toDataURL() + ")";
+    }
+    try {
+      document.documentElement.style.setProperty("--star-fill", url(false));
+      document.documentElement.style.setProperty("--star-line", url(true));
+    } catch (e) {}
+  })();
+
+  /* ================= small renderers ================= */
+  function pips(target, max, had) {
+    target = target || 0; max = Math.max(max || target || 1, target); had = Math.min(had || 0, target);
+    var h = '<span class="pips" role="img" aria-label="目標 ' + T.stage + " " + target + " / " + max + '">';
+    for (var i = 1; i <= max; i++) h += '<i class="pip' + (i <= had ? " had" : i <= target ? (had ? " new" : " on") : "") + '"></i>';
+    return h + "</span>";
+  }
+  /* ★ row: filled up to target, outline up to max; had = already done last chapter */
+  function stars(target, max, had, up, sm) {
+    if (target == null) return "";
+    max = Math.max(max != null ? max : Math.max(target, 1), target); had = up ? Math.min(had || 0, target) : 0;
+    var h = '<span class="stars' + (target === 0 ? " zero" : "") + '" role="img" aria-label="' + esc(T.awakening) + " " + target + " / " + (max) + '">';
+    for (var i = 1; i <= max; i++) h += '<i class="star' + (sm ? " sm" : "") + (i <= had ? " had" : i <= target ? (up ? " new" : " on") : "") + '"></i>';
+    return h + "</span>";
+  }
+  function starMeter(b, p, had, up) {
+    var a = awk(b); if (a == null) return "";
+    var max = p && p.maxAwakening != null ? p.maxAwakening : null;
+    return '<div class="meter"><span class="lbl">目標 ' + esc(T.awakening) + "</span>" + stars(a, max, had, up) +
+      (a === 0 ? '<span class="none">唔使' + esc(T.awakening) + "</span>" : '<span class="num">' + a + "/" + (max != null ? max : "?") + "</span>") + "</div>";
+  }
+  function conf(c) {
+    return '<span class="conf ' + esc(c) + '" aria-hidden="true"><i></i><i></i><i></i></span><span>可信度 ' + (CONF[c] || "？") + "</span>";
+  }
+  function prioTag(p) { return p && PRIO[p] ? '<span class="prio ' + p + '">' + PRIO[p].label + "</span>" : ""; }
+  function elTag(el) { return el ? '<span class="tag el" style="--el:' + elColor(el) + '">' + esc(el) + "</span>" : ""; }
+  function rarTag(r) { return r ? '<span class="rar rar-' + esc(r) + '">' + esc(r) + "</span>" : ""; }
+
+  /* ================= header / map / chapter info ================= */
+  function renderMeta() {
+    document.getElementById("meta").innerHTML =
+      "<span>伺服器 <b>" + esc(META.server || "—") + "</b> · 版本 <b>" + esc(META.gameVersion || "—") + "</b></span>" +
+      "<span>資料更新 <b class='num' style='font-size:.6rem'>" + esc(META.lastUpdated || "—") + "</b></span>";
+    document.getElementById("tab-phantoms").textContent = T.phantom;
+    var src = (META.sources || []).filter(function (s) { return s && s.url; });
+    document.getElementById("footer").innerHTML =
+      "<div>私人用攻略手帳。可信度：高＝多個來源一致，中＝單一可靠來源，低＝推斷或有爭議。</div>" +
+      (src.length ? "<div>資料來源：<ul>" + src.map(function (s) { return '<li><a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(s.title || s.url) + "</a></li>"; }).join("") + "</ul></div>" : "");
+  }
+
+  function renderMap() {
+    var el = document.getElementById("map");
+    el.innerHTML = chapters.map(function (c) {
+      var n = (DATA.characters || []).filter(function (ch) { return changeOf(ch.id, c); }).length;
+      var on = c.id === state.chapterId;
+      return '<button class="node cur' + (on ? " is-on" : "") + '" role="radio" aria-checked="' + on + '" tabindex="' + (on ? 0 : -1) + '" data-ch="' + esc(c.id) + '">' +
+        (n ? '<span class="badge" title="今章要新練 ' + n + ' 個">' + n + "</span>" : "") +
+        '<span class="pin">' + esc(c.order) + "</span>" +
+        '<span class="ch-name">' + esc(c.name) + "</span>" +
+        (c.recommendedLevel ? '<span class="lv">LV ' + esc(c.recommendedLevel) + "</span>" : "") +
+        "</button>";
+    }).join("");
+    var cur = el.querySelector('[aria-checked="true"]');
+    if (cur && cur.scrollIntoView) cur.scrollIntoView({ block: "nearest", inline: "center" });
+  }
+
+  function renderChapterInfo() {
+    var c = curChapter(); if (!c) return;
+    var chars = DATA.characters || [];
+    var avail = chars.filter(function (x) { return orderOf(x.unlockChapterId) <= c.order && !isAway(x.id, c); }).length;
+    var changes = chars.filter(function (x) { return changeOf(x.id, c); }).length;
+    var core = chars.filter(function (x) { var e = effectiveBuild(x.id, c); return e && orderOf(x.unlockChapterId) <= c.order && e.build.priority === "core"; }).length;
+    document.getElementById("chapter-info").innerHTML =
+      '<p class="win-title">CHAPTER ' + esc(c.order) + "</p>" +
+      "<h2>" + esc(c.name) + "</h2>" +
+      (c.nameOriginal ? '<div class="orig">' + esc(c.nameOriginal) + "</div>" : "") +
+      (c.notes ? "<p>" + esc(c.notes) + "</p>" : "") +
+      '<div class="stats"><span>可用角色 <b class="num">' + avail + "</b></span><span>必練 <b class='num'>" + core + "</b></span><span>今章要新練 <b class='num'>" + changes + "</b></span>" +
+      (c.recommendedLevel ? "<span>建議等級 <b class='num'>" + esc(c.recommendedLevel) + "</b></span>" : "") + "</div>";
+  }
+
+  /* ================= toolbar ================= */
+  var SORTS = [["priority", "優先度"], ["name", "名稱"], ["stage", "目標 " + T.stage], ["awakening", "目標 " + T.awakening], ["rarity", "稀有度"]]
+    .filter(function (s) { return s[0] !== "rarity" || (DATA.characters || []).some(function (c) { return c.rarity; }); })
+    .filter(function (s) { return s[0] !== "awakening" || (DATA.builds || []).some(function (b) { return awk(b) != null; }); });
+  function uniq(arr) { return arr.filter(function (v, i) { return v && arr.indexOf(v) === i; }); }
+  function buildToolbar() {
+    document.getElementById("sort").innerHTML = SORTS.map(function (s) {
+      return '<button class="chip" data-sort="' + s[0] + '" aria-pressed="' + (state.sort === s[0]) + '">' + esc(s[1]) + "</button>";
+    }).join("");
+    var roles = uniq((DATA.characters || []).map(function (c) { return c.role; }));
+    var els = uniq((DATA.characters || []).map(function (c) { return c.element; }).concat((DATA.phantoms || []).map(function (p) { return p.element; })));
+    document.getElementById("f-role").innerHTML = '<option value="">全部</option>' + roles.map(function (r) { return '<option value="' + esc(r) + '">' + esc(r) + "</option>"; }).join("");
+    document.getElementById("f-element").innerHTML = '<option value="">全部</option>' + els.map(function (r) { return '<option value="' + esc(r) + '">' + esc(r) + "</option>"; }).join("");
+    document.getElementById("f-prio").innerHTML = Object.keys(PRIO).map(function (p) {
+      return '<button class="chip p-' + p + '" data-prio="' + p + '" aria-pressed="' + (state.prios.indexOf(p) >= 0) + '">' + PRIO[p].label + "</button>";
+    }).join("");
+  }
+  function syncToolbar() {
+    document.querySelectorAll("#sort .chip").forEach(function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-sort") === state.sort); });
+    document.querySelectorAll("#f-prio .chip").forEach(function (b) { b.setAttribute("aria-pressed", state.prios.indexOf(b.getAttribute("data-prio")) >= 0); });
+    var ph = state.tab === "phantoms";
+    document.getElementById("row-sort").hidden = ph;
+    document.getElementById("pick-role").hidden = ph;
+    document.getElementById("f-prio").hidden = ph;
+    document.getElementById("row-toggle").hidden = ph;
+    document.getElementById("tab-chars").setAttribute("aria-selected", !ph);
+    document.getElementById("tab-phantoms").setAttribute("aria-selected", ph);
+  }
+
+  /* ================= character roster ================= */
+  function rosterRows() {
+    var c = curChapter();
+    return (DATA.characters || []).map(function (ch) {
+      var eb = effectiveBuild(ch.id, c);
+      return { c: ch, locked: orderOf(ch.unlockChapterId) > c.order || isAway(ch.id, c), away: isAway(ch.id, c), eb: eb, b: eb && eb.build, change: changeOf(ch.id, c) };
+    });
+  }
+  function filterSort(rows) {
+    var allPrio = state.prios.length === 3;
+    rows = rows.filter(function (r) {
+      if (r.locked && !state.showLocked) return false;
+      if (state.role && r.c.role !== state.role) return false;
+      if (state.element && r.c.element !== state.element) return false;
+      if (state.changesOnly && (!r.change || r.locked)) return false;
+      if (!allPrio && !r.locked && (!r.b || state.prios.indexOf(r.b.priority) < 0)) return false;
+      if (!allPrio && r.locked) return false;
+      return true;
+    });
+    var cmp = {
+      priority: function (a, b) { return prioRank(a.b) - prioRank(b.b) || (b.b ? b.b.targetStage : 0) - (a.b ? a.b.targetStage : 0); },
+      name: function (a, b) { return String(a.c.name).localeCompare(String(b.c.name), "zh-Hant"); },
+      stage: function (a, b) { return (b.b ? b.b.targetStage : -1) - (a.b ? a.b.targetStage : -1) || prioRank(a.b) - prioRank(b.b); },
+      awakening: function (a, b) { var x = awk(a.b), y = awk(b.b); return (y == null ? -1 : y) - (x == null ? -1 : x) || (b.b ? b.b.targetStage : -1) - (a.b ? a.b.targetStage : -1); },
+      rarity: function (a, b) { return (RARITY_RANK[a.c.rarity] != null ? RARITY_RANK[a.c.rarity] : 9) - (RARITY_RANK[b.c.rarity] != null ? RARITY_RANK[b.c.rarity] : 9); }
+    }[state.sort] || function () { return 0; };
+    return rows.sort(function (a, b) { return (a.locked - b.locked) || cmp(a, b) || String(a.c.name).localeCompare(String(b.c.name), "zh-Hant"); });
+  }
+  function charCard(r) {
+    var c = r.c, ch = curChapter();
+    if (r.locked) {
+      var uc = chapterById[c.unlockChapterId];
+      return '<div class="win card locked" aria-label="' + esc(c.name) + '（未加入）">' +
+        '<div class="card-top"><div class="portrait rar-' + esc(c.rarity) + '">' + spr("char", c.id, 30) + "</div>" +
+        '<div class="who"><div class="name-row"><b class="name">' + esc(c.name) + "</b>" + rarTag(c.rarity) + '</div><div class="orig">' + esc(c.nameOriginal) + "</div>" +
+        '<div class="tags">' + elTag(c.element) + (c.role ? '<span class="tag">' + esc(c.role) + "</span>" : "") + "</div></div></div>" +
+        '<div class="lock-msg"><span class="num" style="font-size:.5rem">' + (r.away ? "AWAY" : "LOCK") + "</span> " + (r.away ? "呢章離隊中" + (c.absentNote ? "（" + esc(c.absentNote) + "）" : "") : (uc ? "第 " + esc(uc.order) + " 章先加入" : "加入時間未知") + (c.howToGet ? "（" + esc(c.howToGet) + "）" : "")) + "</div></div>";
+    }
+    var b = r.b, p = b && phById[b.phantomId];
+    var prev = r.change === "up" ? prevEffective(c.id, ch) : null;
+    var ups = prev ? upsOf(b, prev.build) : null;
+    var had = prev ? prev.build.targetStage : 0;
+    var hadAwk = prev ? (awk(prev.build) || 0) : 0;
+    var equip = b ?
+      '<div class="equip"><div class="ph-portrait">' + spr("phantom", b.phantomId, 32) + "</div>" +
+      '<div class="ph-name"><span class="lbl">' + esc(T.phantom) + "</span><b>" + esc(p ? p.name : b.phantomId) + "</b><small>" + esc(p ? p.nameOriginal : "") + "</small></div>" +
+      '<div class="meter"><span class="lbl">目標 ' + esc(T.stage) + "</span>" + pips(b.targetStage, p && p.maxStage, had) +
+      '<span class="num">' + esc(b.targetStage) + "/" + esc(p && p.maxStage != null ? p.maxStage : "?") + "</span></div>" +
+      starMeter(b, p, hadAwk, !!(ups && ups.awk)) +
+      (b.awakeningNote ? '<div class="awk-note">' + esc(b.awakeningNote) + "</div>" : "") + "</div>"
+      : '<div class="equip"><span class="none" style="grid-column:1/-1">呢章暫時冇建議配搭</span></div>';
+    return '<div class="win card cur" tabindex="0" role="button" data-char="' + esc(c.id) + '" aria-label="' + esc(c.name) + '：睇全章節路線">' +
+      '<div class="card-top"><div class="portrait rar-' + esc(c.rarity) + '">' + spr("char", c.id, 30) + "</div>" +
+      '<div class="who"><div class="name-row"><b class="name">' + esc(c.name) + "</b>" + rarTag(c.rarity) + '</div><div class="orig">' + esc(c.nameOriginal) + "</div>" +
+      '<div class="tags">' + elTag(c.element) + (c.role ? '<span class="tag">' + esc(c.role) + "</span>" : "") + "</div></div>" +
+      (b ? prioTag(b.priority) : "") + "</div>" + equip +
+      (b && b.reason ? '<p class="reason">' + esc(b.reason) + "</p>" : "") +
+      '<div class="foot">' + (b ? conf(b.confidence) : "") +
+      (r.change ? '<span class="chg ' + r.change + '" title="' + esc(changeText(r.change, ups)) + '">' + CHANGE_LABEL[r.change] + "</span><span>" + esc(changeText(r.change, ups)) + "</span>" : "") +
+      (r.eb && r.eb.inherited ? '<span class="inh">沿用第 ' + esc(r.eb.from.order) + " 章</span>" : "") + "</div></div>";
+  }
+
+  /* ================= phantom view ================= */
+  function phantomCard(p) {
+    var ch = curChapter(), locked = orderOf(p.unlockChapterId) > ch.order;
+    var users = (DATA.characters || []).filter(function (c) { return orderOf(c.unlockChapterId) <= ch.order; })
+      .map(function (c) { var e = effectiveBuild(c.id, ch); return e && e.build.phantomId === p.id ? { c: c, b: e.build } : null; })
+      .filter(Boolean).sort(function (a, b) { return b.b.targetStage - a.b.targetStage; });
+    var need = users.reduce(function (m, u) { return Math.max(m, u.b.targetStage || 0); }, 0);
+    var needAwk = users.reduce(function (m, u) { var a = awk(u.b); return a == null ? m : Math.max(m == null ? 0 : m, a); }, null);
+    var maxA = p.maxAwakening != null ? p.maxAwakening : null;
+    var uc = chapterById[p.unlockChapterId];
+    return { need: need, needAwk: needAwk, n: users.length, locked: locked, html:
+      '<div class="win ph-card' + (locked ? " locked" : "") + '">' +
+      '<div class="card-top"><div class="portrait rar-' + esc(p.rarity) + '">' + spr("phantom", p.id, 48) + "</div>" +
+      '<div class="who"><div class="name-row"><b class="name">' + esc(p.name) + "</b>" + rarTag(p.rarity) + '</div><div class="orig">' + esc(p.nameOriginal) + "</div>" +
+      '<div class="tags">' + elTag(p.element) + (p.type ? '<span class="tag">' + esc(p.type) + "</span>" : "") + "</div></div></div>" +
+      (locked ? '<div class="lock-msg"><span class="num" style="font-size:.5rem">LOCK</span> ' + (uc ? "第 " + esc(uc.order) + " 章開放" : "開放時間未知") + (p.howToGet ? "（" + esc(p.howToGet) + "）" : "") + "</div>" :
+      '<div class="equip" style="grid-template-columns:1fr"><div class="meter"><span class="lbl">到呢章最高要練</span>' +
+        (need ? pips(need, p.maxStage, 0) + '<span class="num">' + need + "/" + esc(p.maxStage != null ? p.maxStage : "?") + "</span>" : '<span class="none">暫時冇人用，唔使練</span>') + "</div>" +
+        (needAwk != null ? '<div class="meter"><span class="lbl">最高要' + esc(T.awakening) + "</span>" + stars(needAwk, maxA, 0, false) +
+          (needAwk === 0 ? '<span class="none">唔使' + esc(T.awakening) + "</span>" : '<span class="num">' + needAwk + "/" + (maxA != null ? maxA : "?") + "</span>") + "</div>" : "") + "</div>" +
+      (users.length ? '<div class="users">' + users.map(function (u) {
+        return '<button class="user" data-char="' + esc(u.c.id) + '" title="' + esc(u.c.name) + "：" + esc(T.stage) + " " + u.b.targetStage + '"><span class="mini">' + spr("char", u.c.id, 20) + "</span>" + esc(u.c.name) + ' <span class="num">' + u.b.targetStage + "</span>" + (awk(u.b) ? ' <i class="star sm on" aria-hidden="true"></i><span class="num">' + awk(u.b) + "</span>" : "") + "</button>";
+      }).join("") + "</div>" : "")) + "</div>" };
+  }
+
+  /* ================= main render ================= */
+  function renderPanel() {
+    var grid = document.getElementById("grid"), count = document.getElementById("count");
+    if (state.tab === "phantoms") {
+      var cards = (DATA.phantoms || []).filter(function (p) { return !state.element || p.element === state.element; }).map(phantomCard)
+        .sort(function (a, b) { return (a.locked - b.locked) || (b.need - a.need) || ((b.needAwk || 0) - (a.needAwk || 0)) || (b.n - a.n); });
+      count.textContent = "";
+      grid.innerHTML = cards.length ? cards.map(function (x) { return x.html; }).join("") : emptyHtml();
+    } else {
+      var all = rosterRows(), rows = filterSort(all);
+      count.innerHTML = "顯示 <b class='num' style='font-size:.6rem'>" + rows.length + "/" + all.length + "</b>";
+      grid.innerHTML = rows.length ? rows.map(charCard).join("") : emptyHtml();
+    }
+    mountSprites(grid);
+  }
+  function emptyHtml() {
+    return '<div class="win empty" style="grid-column:1/-1"><p class="win-title">NO DATA</p><p style="margin:0">冇符合條件嘅項目。</p><button class="btn" id="reset">清除篩選</button></div>';
+  }
+  function renderAll() { renderMap(); renderChapterInfo(); syncToolbar(); renderPanel(); }
+
+  /* ================= detail dialog ================= */
+  var dlg = document.getElementById("detail"), lastFocus = null;
+  function openDetail(charId) {
+    var c = charById[charId]; if (!c) return;
+    var cur = curChapter(), unlock = orderOf(c.unlockChapterId);
+    var rows = chapters.map(function (ch) {
+      var all = buildsAt[ch.id + "|" + c.id] || [], eb = effectiveBuild(c.id, ch), now = ch.id === cur.id;
+      var tdCh = "<td><span class='num' style='font-size:.6rem'>" + esc(ch.order) + "</span> " + esc(ch.name) + "</td>";
+      if (ch.order < unlock) return '<tr class="off' + (now ? " now" : "") + '">' + tdCh + '<td colspan="4">未加入</td></tr>';
+      if (!eb) return '<tr class="off' + (now ? " now" : "") + '">' + tdCh + '<td colspan="4">冇建議</td></tr>';
+      var list = all.length ? all : [eb.build];
+      return list.map(function (b, i) {
+        var p = phById[b.phantomId];
+        return '<tr class="' + (now ? "now" : "") + (all.length ? "" : " off") + '">' + (i === 0 ? tdCh.replace("<td>", '<td rowspan="' + list.length + '">') : "") +
+          '<td><div class="ph-cell"><span class="mini">' + spr("phantom", b.phantomId, 32) + "</span><div>" + esc(p ? p.name : b.phantomId) +
+          (all.length ? (b.reason ? '<div class="why">' + esc(b.reason) + "</div>" : "") : '<div class="why">沿用第 ' + esc(eb.from.order) + " 章</div>") + "</div></div></td>" +
+          "<td>" + pips(b.targetStage, p && p.maxStage, 0) + " <span class='num' style='font-size:.55rem'>" + esc(b.targetStage) + "</span></td>" +
+          "<td>" + (awk(b) == null ? '<span class="none">—</span>' : stars(awk(b), p && p.maxAwakening, 0, false, true) + (awk(b) === 0 ? ' <span class="why">唔使</span>' : "")) +
+            (b.awakeningNote && all.length ? '<div class="why">' + esc(b.awakeningNote) + "</div>" : "") + "</td>" +
+          "<td>" + prioTag(b.priority) + '<div class="foot" style="margin-top:4px">' + conf(b.confidence) + "</div></td></tr>";
+      }).join("");
+    }).join("");
+    var srcs = uniq((DATA.builds || []).filter(function (b) { return b.characterId === c.id; }).reduce(function (a, b) { return a.concat(b.sources || []); }, []));
+    var credit = c.image && (c.image.credit || c.image.url);
+    dlg.innerHTML =
+      '<div class="dlg-head"><div class="portrait rar-' + esc(c.rarity) + '">' + spr("char", c.id, 36) + "</div>" +
+      '<div class="who"><div class="name-row"><b class="name" id="dlg-name" style="font-size:var(--fs-xl)">' + esc(c.name) + "</b>" + rarTag(c.rarity) + "</div>" +
+      '<div class="orig">' + esc(c.nameOriginal) + '</div><div class="tags">' + elTag(c.element) + (c.role ? '<span class="tag">' + esc(c.role) + "</span>" : "") + "</div>" +
+      '<dl class="facts">' + (c.howToGet ? "<dt>獲得</dt><dd>" + esc(c.howToGet) + "</dd>" : "") + (c.notes ? "<dt>備註</dt><dd>" + esc(c.notes) + "</dd>" : "") +
+      (credit ? "<dt>圖片</dt><dd>" + esc(credit) + "</dd>" : "") + "</dl></div>" +
+      '<button class="x" id="dlg-close" aria-label="關閉">X</button></div>' +
+      '<p class="win-title" style="margin-top:16px">ROUTE · 各章節' + esc(T.phantom) + '配搭</p>' +
+      '<div class="timeline-wrap"><table class="timeline"><thead><tr><th>章節</th><th>' + esc(T.phantom) + "</th><th>目標 " + esc(T.stage) + "</th><th>" + esc(T.awakening) + "</th><th>優先 / 可信度</th></tr></thead><tbody>" + rows + "</tbody></table></div>" +
+      (srcs.length ? '<div class="src" style="margin-top:12px">來源：' + srcs.map(function (u) { return '<a href="' + esc(u) + '" target="_blank" rel="noopener">' + esc(u) + "</a>"; }).join("、") + "</div>" : "");
+    mountSprites(dlg);
+    lastFocus = document.activeElement;
+    if (dlg.showModal) dlg.showModal(); else dlg.setAttribute("open", "");
+    document.getElementById("dlg-close").focus();
+  }
+  function closeDetail() { if (dlg.close) dlg.close(); else dlg.removeAttribute("open"); }
+  dlg.addEventListener("close", function () { if (lastFocus && lastFocus.focus) lastFocus.focus(); });
+  dlg.addEventListener("click", function (e) {
+    if (e.target.id === "dlg-close") { closeDetail(); return; }
+    if (e.target !== dlg) return;
+    var r = dlg.getBoundingClientRect();   // only close on true backdrop clicks
+    if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) closeDetail();
+  });
+
+  /* ================= events ================= */
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var wipe = document.getElementById("wipe"), wiping = false;
+  function setChapter(id) {
+    if (!chapterById[id] || id === state.chapterId) return;
+    state.chapterId = id; save();
+    if (reduce || wiping) { renderAll(); return; }
+    wiping = true;
+    wipe.classList.remove("go"); void wipe.offsetWidth; wipe.classList.add("go");
+    setTimeout(function () { renderAll(); var f = document.querySelector('.node[aria-checked="true"]'); if (f) f.focus({ preventScroll: true }); }, 210);
+    setTimeout(function () { wipe.classList.remove("go"); wiping = false; }, 480);
+  }
+  var map = document.getElementById("map");
+  map.addEventListener("click", function (e) { var n = e.target.closest(".node"); if (n) setChapter(n.getAttribute("data-ch")); });
+  map.addEventListener("keydown", function (e) {
+    var i = chapters.findIndex(function (c) { return c.id === state.chapterId; }), j = i;
+    if (e.key === "ArrowRight" || e.key === "ArrowDown") j = Math.min(chapters.length - 1, i + 1);
+    else if (e.key === "ArrowLeft" || e.key === "ArrowUp") j = Math.max(0, i - 1);
+    else if (e.key === "Home") j = 0; else if (e.key === "End") j = chapters.length - 1; else return;
+    e.preventDefault(); if (j !== i) setChapter(chapters[j].id);
+  });
+
+  function setTab(t) { state.tab = t; save(); syncToolbar(); renderPanel(); }
+  document.getElementById("tab-chars").addEventListener("click", function () { setTab("chars"); });
+  document.getElementById("tab-phantoms").addEventListener("click", function () { setTab("phantoms"); });
+  document.querySelector(".tabs").addEventListener("keydown", function (e) {
+    if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+    var t = state.tab === "chars" ? "phantoms" : "chars"; setTab(t); document.getElementById("tab-" + t).focus();
+  });
+
+  document.getElementById("sort").addEventListener("click", function (e) {
+    var b = e.target.closest("[data-sort]"); if (!b) return; state.sort = b.getAttribute("data-sort"); save(); syncToolbar(); renderPanel();
+  });
+  document.getElementById("f-prio").addEventListener("click", function (e) {
+    var b = e.target.closest("[data-prio]"); if (!b) return;
+    var p = b.getAttribute("data-prio"), i = state.prios.indexOf(p);
+    if (i >= 0) { if (state.prios.length > 1) state.prios.splice(i, 1); } else state.prios.push(p);
+    syncToolbar(); renderPanel();
+  });
+  document.getElementById("f-role").addEventListener("change", function (e) { state.role = e.target.value; renderPanel(); });
+  document.getElementById("f-element").addEventListener("change", function (e) { state.element = e.target.value; renderPanel(); });
+  document.getElementById("f-changes").addEventListener("change", function (e) { state.changesOnly = e.target.checked; renderPanel(); });
+  document.getElementById("f-locked").addEventListener("change", function (e) { state.showLocked = e.target.checked; renderPanel(); });
+
+  var grid = document.getElementById("grid");
+  grid.addEventListener("click", function (e) {
+    if (e.target.id === "reset") {
+      state.role = ""; state.element = ""; state.prios = ["core", "recommended", "optional"]; state.changesOnly = false; state.showLocked = true;
+      document.getElementById("f-role").value = ""; document.getElementById("f-element").value = "";
+      document.getElementById("f-changes").checked = false; document.getElementById("f-locked").checked = true;
+      syncToolbar(); renderPanel(); return;
+    }
+    var t = e.target.closest("[data-char]"); if (t) openDetail(t.getAttribute("data-char"));
+  });
+  grid.addEventListener("keydown", function (e) {
+    if ((e.key === "Enter" || e.key === " ") && e.target.matches(".card[data-char]")) { e.preventDefault(); openDetail(e.target.getAttribute("data-char")); }
+  });
+
+  /* ================= boot ================= */
+  renderMeta(); buildToolbar(); renderAll();
+})();
+</script>

@@ -1,0 +1,1524 @@
+{
+  "meta": {
+    "game": "Final Fantasy Resonance（ファイナルファンタジー レゾナンス）",
+    "server": "單機（非手遊、無伺服器分區）— PS5 / Xbox Series X|S / Switch / Switch 2 / PC(Steam)；資料以日版攻略為主",
+    "gameVersion": "1.0（2026-10-22 發售版；未見大型更新資料）",
+    "lastUpdated": "2026-11-02",
+    "terms": {
+      "phantom": "幻兵（Vision / ビジョン）",
+      "stage": "MR（マスタリーランク Mastery Rank，1–9）",
+      "awakening": "覺醒"
+    },
+    "sources": [
+      {
+        "title": "kamigame FFレゾナンス攻略Wiki（主要資料來源）",
+        "url": "https://kamigame.jp/ffrs/index.html"
+      },
+      {
+        "title": "kamigame ビジョン一覧",
+        "url": "https://kamigame.jp/ffrs/page/444324648704834987.html"
+      },
+      {
+        "title": "kamigame キャラ一覧と声優",
+        "url": "https://kamigame.jp/ffrs/page/444313045850713066.html"
+      },
+      {
+        "title": "kamigame ストーリー攻略チャート",
+        "url": "https://kamigame.jp/ffrs/page/444326005209866799.html"
+      },
+      {
+        "title": "kamigame 最強パーティ編成",
+        "url": "https://kamigame.jp/ffrs/page/446214919747010942.html"
+      },
+      {
+        "title": "kamigame おすすめビジョンと序盤パーティ",
+        "url": "https://kamigame.jp/ffrs/page/444719995411266313.html"
+      },
+      {
+        "title": "kamigame 最強ビジョン Tier",
+        "url": "https://kamigame.jp/ffrs/page/446062640087731161.html"
+      },
+      {
+        "title": "kamigame 最強キャラランキング",
+        "url": "https://kamigame.jp/ffrs/page/446351383105381893.html"
+      },
+      {
+        "title": "kamigame 覚醒の強化優先度",
+        "url": "https://kamigame.jp/ffrs/page/445778720100242080.html"
+      },
+      {
+        "title": "kamigame MR上げ",
+        "url": "https://kamigame.jp/ffrs/page/445517666719915396.html"
+      },
+      {
+        "title": "KeenGamer: Best Visions for Every Character",
+        "url": "https://www.keengamer.com/articles/guides/final-fantasy-resonance-best-visions-for-every-character/"
+      },
+      {
+        "title": "OSLink 繁中新手攻略（幻兵譯名來源）",
+        "url": "https://www.oslink.io/tw/blog/news/final-fantasy-resonance-beginner-guide.html"
+      },
+      {
+        "title": "RPG Site: Final Fantasy Resonance launches October 22",
+        "url": "https://www.rpgsite.net/news/20619-final-fantasy-resonance-a-new-hd-2d-ff-game-launches-october-22"
+      },
+      {
+        "title": "Square Enix 日本官方網站",
+        "url": "https://www.jp.square-enix.com/FFRS/"
+      },
+      {
+        "title": "game8 ビジョンの覚醒おすすめ・強化優先度",
+        "url": "https://game8.jp/ffrs/827035"
+      },
+      {
+        "title": "game8 魔石の入手方法一覧",
+        "url": "https://game8.jp/ffrs/829993"
+      },
+      {
+        "title": "kamigame 魔石の場所一覧",
+        "url": "https://kamigame.jp/ffrs/page/444616752702218849.html"
+      },
+      {
+        "title": "kamigame コロシアム攻略",
+        "url": "https://kamigame.jp/ffrs/page/445784255893612248.html"
+      },
+      {
+        "title": "gamerch ビジョン強化優先度",
+        "url": "https://gamerch.com/ffrs/1025704"
+      }
+    ]
+  },
+  "chapters": [
+    {
+      "id": "ch1",
+      "order": 1,
+      "name": "第一章「探求的開始」",
+      "nameOriginal": "Chapter 1「探求のはじまり」",
+      "recommendedLevel": null,
+      "notes": "格蘭榭爾特城、Kor 村、Nashat 村、Grandport、塞壬之塔。頭目：鐵巨人（教學）、常闇のヴェリアス（必敗戰）、塞壬 Siren（會魅惑，莉亞 Leah 嘅「魅惑無效」可防）。可取得幻兵：莉亞、托隆（主角屋內）、光之戰士、克勞德、蒂娜（光之祠）。體驗版即本章（MR 上限 5）。"
+    },
+    {
+      "id": "ch2",
+      "order": 2,
+      "name": "第二章「天空的藍不會改變」",
+      "nameOriginal": "Chapter 2「空の青さは変わらない」",
+      "recommendedLevel": null,
+      "notes": "迪爾馬基亞工業都市、雷鳴山、風之神殿。莉德 Lid 加入。頭目天風のヴェリアス Lv18：弱冰、無效風。新幻兵：吉坦、洋蔥騎士、諾克提斯。"
+    },
+    {
+      "id": "ch3",
+      "order": 3,
+      "name": "第三章「守護水之都的人」",
+      "nameOriginal": "Chapter 3「水の都を守る者」",
+      "recommendedLevel": null,
+      "notes": "水之洞窟、水都 Orderion、水之神殿。尼可 Nichol 加入。頭目：利維坦、水華のヴェリアス（水晶核弱雷）。新幻兵：弗利昂、提達、斯考爾。"
+    },
+    {
+      "id": "ch4",
+      "order": 4,
+      "name": "第四章「向這面旗起誓」",
+      "nameOriginal": "Chapter 4「この旗に誓って」",
+      "recommendedLevel": null,
+      "notes": "帝都 Zoldaad、反抗軍基地、兵器工廠。傑克 Jake 加入；劫火のヴェリアス 為客串。章後開放鬥技場（可用 Gil 買魔石碎片做覺醒★1）。新幻兵：雅·修特拉、夏特多、塞西爾。"
+    },
+    {
+      "id": "ch5",
+      "order": 5,
+      "name": "第五章「時之爪痕」",
+      "nameOriginal": "Chapter 5「時の爪痕」",
+      "recommendedLevel": null,
+      "notes": "無名古城、米希迪亞、魔道圖書館、精神世界。櫻 Sakura 加入；菲娜變成魔人菲娜，精神世界內不能編入魔人菲娜，擊敗後魔人菲娜成為獨立角色。大量新幻兵（巴茨、梵、雷光、克萊夫、賽菲羅斯 + 支線取得的卡蜜兒、威廉、艾琳、維多利亞、阿米莉亞）。魔道圖書館有 Lv5 即死（等級係 5 倍數嘅角色先換走）。"
+    },
+    {
+      "id": "ch6",
+      "order": 6,
+      "name": "第六章「明鏡」",
+      "nameOriginal": "Chapter 6「明鏡」",
+      "recommendedLevel": null,
+      "notes": "Goronoa 大陸、至聖殿連戰。喺 Obaba 屋同菲娜會合。拉斯維爾一對一戰（雷恩單挑，事前裝冰結頭冠）；之後雷恩學「力之覺醒」。"
+    },
+    {
+      "id": "ch7",
+      "order": 7,
+      "name": "第七章「悲願的盡頭」",
+      "nameOriginal": "Chapter 7「悲願の果てに」",
+      "recommendedLevel": null,
+      "notes": "浮遊大陸，五隻ヴェリアス連戰。常闇のヴェリアス 會反擊光屬性、非光攻擊會儲力，建議雷恩用「全體掩護」。支線取得夏洛特、綾香。"
+    },
+    {
+      "id": "ch8",
+      "order": 8,
+      "name": "第八章「生命之夢的終結」",
+      "nameOriginal": "Chapter 8「生命の夢の終わりに」",
+      "recommendedLevel": null,
+      "notes": "水晶塔，最終章。頭目：貝希摩斯、Sol（兩次，最後一戰雷恩單人）、混沌之闇（先打左手、本體前先清「憤怒之吼」）。"
+    }
+  ],
+  "characters": [
+    {
+      "id": "rain",
+      "name": "雷恩",
+      "nameOriginal": "レイン / Rain",
+      "role": "坦克（Defender）",
+      "element": null,
+      "rarity": null,
+      "howToGet": "教學完結後加入（主角）",
+      "unlockChapterId": "ch1",
+      "image": {
+        "local": "research/assets/characters/rain.png",
+        "url": "https://lh3.googleusercontent.com/1mI9NR1dQ8SejO0SrBsWsgCjNcN1S-Si2vZ2jeb6P77HR16Go37VsRvYIz4c_-wQ6SvZo6qr-STs7cKkJBcVJUBAyt9cCLLVtwMeDygTdFA=s0",
+        "credit": "kamigame.jp FFレゾナンス攻略Wiki（https://kamigame.jp/ffrs/page/444313045850713066.html）；© SQUARE ENIX"
+      },
+      "notes": "kamigame 角色排名 SS：唯一 Defender，全體掩護＋反擊兼任物理火力。第6章學「力之覺醒」。CV 岡本信彥。"
+    },
+    {
+      "id": "lasswell",
+      "name": "拉斯維爾",
+      "nameOriginal": "ラスウェル / Lasswell",
+      "role": "破防（Breaker）/ 物理攻擊",
+      "element": "冰",
+      "rarity": null,
+      "howToGet": "教學完結後加入",
+      "unlockChapterId": "ch1",
+      "image": {
+        "local": "research/assets/characters/lasswell.png",
+        "url": "https://lh3.googleusercontent.com/FG1mXKNjAhkTJY70X5VSiNB3kuYvTPiZs80mvF1z2p56WMrK7LxPu95hna_11jRVFXmPSynO9c5bK_Jh6KCxiahhc_-8jE88C8Cx6I_qtzLj=s0",
+        "credit": "kamigame.jp FFレゾナンス攻略Wiki（https://kamigame.jp/ffrs/page/444313045850713066.html）；© SQUARE ENIX"
+      },
+      "notes": "kamigame A 級：前期火力高，後期被魔法攻擊手拋離。第6章有一段被敵對（雷恩單挑），期間是否離隊未確認。CV 小林裕介。"
+    },
+    {
+      "id": "fina",
+      "name": "菲娜",
+      "nameOriginal": "フィーナ / Fina",
+      "role": "治療（Healer）",
+      "element": "光",
+      "rarity": null,
+      "howToGet": "攻略格蘭榭爾特城後加入",
+      "unlockChapterId": "ch1",
+      "image": {
+        "local": "research/assets/characters/fina.png",
+        "url": "https://lh3.googleusercontent.com/BOf555sd7hqhMlHvLuNw4FpFnpPcLt8DDEuxM3zSEa3X6mnSCaIbCMmEM7mP892xLldnpNqCrR7OlJrCB3VRbeh9Mdoz0v78DQeU3MyirU8y=s0",
+        "credit": "kamigame.jp FFレゾナンス攻略Wiki（https://kamigame.jp/ffrs/page/444313045850713066.html）；© SQUARE ENIX"
+      },
+      "notes": "kamigame S 級：回復與攻擊兼備，可召喚幻獸，LB2 全體復活。第5章變成魔人菲娜，第6章喺 Obaba 屋重新會合（中間離隊範圍未完全確認）。CV 藤田茜。",
+      "absentChapterIds": [
+        "ch5"
+      ],
+      "absentNote": "第5章變成魔人菲娜，第6章重新會合；離隊範圍未完全確認"
+    },
+    {
+      "id": "lid",
+      "name": "莉德",
+      "nameOriginal": "リド / Lid",
+      "role": "攻擊（Attacker）",
+      "element": null,
+      "rarity": null,
+      "howToGet": "第2章於迪爾馬基亞工業都市對話後加入",
+      "unlockChapterId": "ch2",
+      "image": {
+        "local": "research/assets/characters/lid.png",
+        "url": "https://lh3.googleusercontent.com/077J4iqQepY_21thEfV6F_e2dMpoyqg-zMLOP5WXcb-OrlRAUG1MZxsinJ3nC-a_9RAVDPji_3BXNgnxSCcMjyaobAdDjjdg5z_PP6q0s1RD=s0",
+        "credit": "kamigame.jp FFレゾナンス攻略Wiki（https://kamigame.jp/ffrs/page/444313045850713066.html）；© SQUARE ENIX"
+      },
+      "notes": "kamigame S 級：機械寶（Mechabo）改造越多越強，Overclock→機械貝希摩斯破防能力極高。CV 大橋彩香。"
+    },
+    {
+      "id": "nichol",
+      "name": "尼可",
+      "nameOriginal": "ニコル / Nichol",
+      "role": "輔助（Enhancer）",
+      "element": "水",
+      "rarity": null,
+      "howToGet": "第3章水之洞窟事件後加入",
+      "unlockChapterId": "ch3",
+      "image": {
+        "local": "research/assets/characters/nichol.png",
+        "url": "https://lh3.googleusercontent.com/0z1WBICZ674uMb0swfO2HUqTfiB-dA9v53R4sg6OZQ0S4JXFF0GvjGrz5MFgphQeg4roN2jycSfJie25J2p3Jzipic4QdxqPFZdQa08sM6Ao=s0",
+        "credit": "kamigame.jp FFレゾナンス攻略Wiki（https://kamigame.jp/ffrs/page/444313045850713066.html）；© SQUARE ENIX"
+      },
+      "notes": "kamigame SS 級：「陣」全隊 buff，水神加護維持，LB2 全員連續行動兩次。element「水」係由「水神の加護」推斷。CV 代永翼。"
+    },
+    {
+      "id": "jake",
+      "name": "傑克",
+      "nameOriginal": "ジェイク / Jake",
+      "role": "物理攻擊（Attacker，爆擊特化）",
+      "element": null,
+      "rarity": null,
+      "howToGet": "第4章反抗軍基地對話後加入",
+      "unlockChapterId": "ch4",
+      "image": {
+        "local": "research/assets/characters/jake.png",
+        "url": "https://lh3.googleusercontent.com/MK4LUWCxMaD5zAYL5TTs20h13tQ-EUA8EA36D6h-Ze5TWedlrnUTQb9O9StWBUNjYfbAuJwi5BIPiBEa9OEjB8qlxrWee2gXSObfO4w6K6tr=s0",
+        "credit": "kamigame.jp FFレゾナンス攻略Wiki（https://kamigame.jp/ffrs/page/444313045850713066.html）；© SQUARE ENIX"
+      },
+      "notes": "kamigame A 級：爆擊特化物理攻擊手，對魔法難生效嘅敵人用。CV 細谷佳正。"
+    },
+    {
+      "id": "sakura",
+      "name": "櫻",
+      "nameOriginal": "サクラ / Sakura",
+      "role": "魔法攻擊（Attacker）",
+      "element": null,
+      "rarity": null,
+      "howToGet": "第5章於米希迪亞西北櫻的家對話後加入",
+      "unlockChapterId": "ch5",
+      "image": {
+        "local": "research/assets/characters/sakura.png",
+        "url": "https://lh3.googleusercontent.com/zdHFhqacEsorSY2eka5Bxayw8QEP32GxTbvTjKqzSocvONwozT-eIQf49s34LcsdFxTDliImI9BXWIPPtm5lRcNqacEJPKWu7nEPygkHO1w=s0",
+        "credit": "kamigame.jp FFレゾナンス攻略Wiki（https://kamigame.jp/ffrs/page/444313045850713066.html）；© SQUARE ENIX"
+      },
+      "notes": "kamigame S 級：「最強魔法攻擊手」，耐久低，需要雷恩全體掩護。CV 悠木碧。"
+    },
+    {
+      "id": "archwitch-fina",
+      "name": "魔人菲娜",
+      "nameOriginal": "魔人フィーナ / Archwitch Fina",
+      "role": "妨礙（Jammer）/ 魔法攻擊",
+      "element": "闇",
+      "rarity": null,
+      "howToGet": "第5章精神世界擊敗魔人菲娜後成為獨立角色",
+      "unlockChapterId": "ch5",
+      "image": {
+        "local": "research/assets/characters/archwitch-fina.png",
+        "url": "https://lh3.googleusercontent.com/fQE4sdPpXK-aIjCRQk3-Sg7w3hEi1wq_k4T3gROF5B16piaktnYzqyiQqgD6GUYmrgMpJPbW4ROex5F0y1VTixsd6L2ujHUUAUAMiwjJ96N05Q=s0",
+        "credit": "kamigame.jp FFレゾナンス攻略Wiki（https://kamigame.jp/ffrs/page/444313045850713066.html）；© SQUARE ENIX"
+      },
+      "notes": "kamigame S 級：「魔人の本領」全能力 1.5 倍；可同菲娜同時上陣。英文名 Archwitch Fina 取自 keengamer/gmtreks（FFBE 舊譯 Dark Fina）。CV 水瀨祈。"
+    }
+  ],
+  "phantoms": [
+    {
+      "id": "leah",
+      "name": "莉亞",
+      "nameOriginal": "リーア / Leah",
+      "type": "治療（Healer）",
+      "element": "光/回復",
+      "rarity": null,
+      "maxStage": 9,
+      "maxAwakening": 3,
+      "howToGet": "雷恩家深處的幻兵水晶（第1章）",
+      "unlockChapterId": "ch1",
+      "image": {
+        "local": "research/assets/phantoms/leah.png",
+        "url": "https://lh3.googleusercontent.com/V0eSy5BlWumS4hNnwGV29VSi6hF7cytWziPOXEi32HiMQDEMBoaDU7q29h-FdYs4zItPMSRjLhPBCFkqoB9QUZ2WO-HCvcCTfNfrpjKXusc",
+        "credit": "kamigame.jp FFレゾナンス攻略Wiki（https://kamigame.jp/ffrs/page/444324648704834987.html）；© SQUARE ENIX"
+      },
+      "notes": "FFBE 原創。Tier S（前期特強）。魅惑無效、MR5「行動をたくす」。共鳴技 Healing Wind。 覺醒上限★3：三個攻略站都只列到★3（★1 欠片／★2 魔石／★3 結晶），但冇一個明文寫係上限。"
+    },
+    {
+      "id": "tronn",
+      "name": "托隆",
+      "nameOriginal": "トロン / Tronn",
+      "type": "破防（Breaker）",
+      "element": "火/冰/雷",
+      "rarity": null,
+      "maxStage": 9,
+      "maxAwakening": 3,
+      "howToGet": "雷恩家深處的幻兵水晶（第1章）",
+      "unlockChapterId": "ch1",
+      "image": {
+        "local": "research/assets/phantoms/tronn.png",
+        "url": "https://lh3.googleusercontent.com/rR6h7P4vI4czjHEbUDwGKE2spbuSBlSg1-3NDku35b0WscJeERwJ725UB4lztmMwQPBcSAbUUSwH3KRLyc74FmZMJ9N_M6YLW5R0vku7aNxPsA",
+        "credit": "kamigame.jp FFレゾナンス攻略Wiki（https://kamigame.jp/ffrs/page/444324648704834987.html）；© SQUARE ENIX"
+      },
+      "notes": "FFBE 原創。Tier A（魔法）。3 屬性魔法、MP 消耗減半。 覺醒上限★3：三個攻略站都只列到★3（★1 欠片／★2 魔石／★3 結晶），但冇一個明文寫係上限。"
+    },
+    {
+      "id": "warrior-of-light",
+      "name": "光之戰士",
+      "nameOriginal": "ウォーリアオブライト / Warrior of Light",
+      "type": "防禦（Defender）",
+      "element": "光/雷/土/回復",
+      "rarity": null,
+      "maxStage": 9,
+      "maxAwakening": 3,
+      "howToGet": "格蘭榭爾特王國 Kor 村附近的光之祠",
+      "unlockChapterId": "ch1",
+      "image": {
+        "local": "research/assets/phantoms/warrior-of-light.png",
+        "url": "https://lh3.googleusercontent.com/aBiODX71-SEAbAbGBMc3ryeiImntc06VByOtYXdifra40cJnWpUBIuRchpVjx8meaINamLAhCjTelD8g4NBezOOY4JITpYs_2QiWQZhl2CP9og",
+        "credit": "kamigame.jp FFレゾナンス攻略Wiki（https://kamigame.jp/ffrs/page/444324648704834987.html）；© SQUARE ENIX"
+      },
+      "notes": "FF1。Tier S。全體掩護、物理反擊；雷恩主力。共鳴技 Crystal Brave。 覺醒上限★3：三個攻略站都只列到★3（★1 欠片／★2 魔石／★3 結晶），但冇一個明文寫係上限。"
+    },
+    {
+      "id": "cloud",
+      "name": "克勞德",
+      "nameOriginal": "クラウド / Cloud",
+      "type": "破防（Breaker）",
+      "element": "雷/水",
+      "rarity": null,
+      "maxStage": 9,
+      "maxAwakening": 3,
+      "howToGet": "格蘭榭爾特王國沙漠西北的光之祠",
+      "unlockChapterId": "ch1",
+      "image": {
+        "local": "research/assets/phantoms/cloud.png",
+        "url": "https://lh3.googleusercontent.com/Fo-afVFI9JaCfn_BoMy4FthXOYxnym23H8d3K63gLGH3ZhkiVoorxC9jvK8dPEwO54zRcGD5VQApPzdoOvlp2SyK4XVOF8nE4RBU7aUWSZE",
+        "credit": "kamigame.jp FFレゾナンス攻略Wiki（https://kamigame.jp/ffrs/page/444324648704834987.html）；© SQUARE ENIX"
+      },
+      "notes": "FF7。Tier S。火力＋破防兼備，單體頭目強；覺醒最優先（學ラ系ブレイク、凶斬り）。共鳴技 Climb Hazard。 覺醒上限★3：三個攻略站都只列到★3（★1 欠片／★2 魔石／★3 結晶），但冇一個明文寫係上限。"
+    },
+    {
+      "id": "terra",
+      "name": "蒂娜",
+      "nameOriginal": "ティナ / Terra",
+      "type": "攻擊（Attacker）",
+      "element": "火/冰/水",
+      "rarity": null,
+      "maxStage": 9,
+      "maxAwakening": 3,
+      "howToGet": "格蘭榭爾特王國 Nashat 町西南的光之祠",
+      "unlockChapterId": "ch1",
+      "image": {
+        "local": "research/assets/phantoms/terra.png",
+        "url": "https://lh3.googleusercontent.com/mGMxU7GspcCRg4ZtSqrZfi7XQVw73Sqif-0OvUkbI29DpBGZehqBVxf_xOVwhcf3JeohOmQ02ps6iObuzk3RkXE8keFhvFHj-lbMH3GV6pQB",
+        "credit": "kamigame.jp FFレゾナンス攻略Wiki（https://kamigame.jp/ffrs/page/444324648704834987.html）；© SQUARE ENIX"
+      },
+      "notes": "FF6。Tier SS（魔法）。覺醒★2 學多屬性ガ系魔法。共鳴技 Lotus Riot Sword。 覺醒上限★3：三個攻略站都只列到★3（★1 欠片／★2 魔石／★3 結晶），但冇一個明文寫係上限。"
+    },
+    {
+      "id": "zidane",
+      "name": "吉坦",
+      "nameOriginal": "ジタン / Zidane",
+      "type": "妨礙（Jammer）",
+      "element": "水/風",
+      "rarity": null,
+      "maxStage": 9,
+      "maxAwakening": 3,
+      "howToGet": "迪爾納德 Raikyu 通道後的光之祠",
+      "unlockChapterId": "ch2",
+      "image": {
+        "local": "research/assets/phantoms/zidane.png",
+        "url": "https://lh3.googleusercontent.com/mj4EZfJiyo5BIvZY9P8Qk9gp9_UQPUVYPVYp-0UpkFmjy4XySk-MXF9rShqR2bLfhEO0Y3vBDZpTRrgNisfixM3owJyxffa-Fd7qR0BVDrw",
+        "credit": "kamigame.jp FFレゾナンス攻略Wiki（https://kamigame.jp/ffrs/page/444324648704834987.html）；© SQUARE ENIX"
+      },
+      "notes": "FF9。Tier A。可學「偷盜」。 覺醒上限★3：三個攻略站都只列到★3（★1 欠片／★2 魔石／★3 結晶），但冇一個明文寫係上限。"
+    },
+    {
+      "id": "onion-knight",
+      "name": "洋蔥騎士",
+      "nameOriginal": "オニオンナイト / Onion Knight",
+      "type": "攻擊（Attacker）",
+      "element": "火/風/土",
+      "rarity": null,
+      "maxStage": 9,
+      "maxAwakening": 3,
+      "howToGet": "迪爾納德 Raikyu 瀑布上方通道後的光之祠",
+      "unlockChapterId": "ch2",
+      "image": {
+        "local": "research/assets/phantoms/onion-knight.png",
+        "url": "https://lh3.googleusercontent.com/iu8Tmvi6L66-9tzSXwNGzhRaCDuO3yABQ5ueXSPPZIWPicVrIkZrN-KkGXa63eVeq_-EwpA2yoPi1aT0ae8Tzvzx4m32oQx-4bJZ1O5fdQdV",
+        "credit": "kamigame.jp FFレゾナンス攻略Wiki（https://kamigame.jp/ffrs/page/444324648704834987.html）；© SQUARE ENIX"
+      },
+      "notes": "FF3。Tier S（魔法）。LB 三倍充能、Flare。 覺醒上限★3：三個攻略站都只列到★3（★1 欠片／★2 魔石／★3 結晶），但冇一個明文寫係上限。"
+    },
+    {
+      "id": "noctis",
+      "name": "諾克提斯",
+      "nameOriginal": "ノクティス / Noctis",
+      "type": "攻擊（Attacker）",
+      "element": "雷/冰/光",
+      "rarity": null,
+      "maxStage": 9,
+      "maxAwakening": 3,
+      "howToGet": "迪爾納德西北半島的光之祠",
+      "unlockChapterId": "ch2",
+      "image": {
+        "local": "research/assets/phantoms/noctis.png",
+        "url": "https://lh3.googleusercontent.com/W8_GKD2-64zSj1t1FjCiAsYO2iZ_qenX7spcLPfjpWzu-Hf2koOoDRxUXbx6mFOXraujSGaqAdu1J0MOKVp9igBJQQDc8xvoVwR646Ni05ld",
+        "credit": "kamigame.jp FFレゾナンス攻略Wiki（https://kamigame.jp/ffrs/page/444324648704834987.html）；© SQUARE ENIX"
+      },
+      "notes": "FF15。Tier S（物理）。EX phase 易追加行動。 覺醒上限★3：三個攻略站都只列到★3（★1 欠片／★2 魔石／★3 結晶），但冇一個明文寫係上限。"
+    },
+    {
+      "id": "firion",
+      "name": "弗利昂",
+      "nameOriginal": "フリオニール / Firion",
+      "type": "破防（Breaker）",
+      "element": "光/風/雷",
+      "rarity": null,
+      "maxStage": 9,
+      "maxAwakening": 3,
+      "howToGet": "Orderion 聯邦西南森林的光之祠",
+      "unlockChapterId": "ch3",
+      "image": {
+        "local": "research/assets/phantoms/firion.png",
+        "url": "https://lh3.googleusercontent.com/dwnCr9uLDWzNWzX3m-r843a3gVcwajfyyDAdlrzXJzx-6iwEKWSbXj_g9kduY83gRkZsSuZSazPNj2AmgPzsM84yQaspC-0GT1fdzUIJIIk",
+        "credit": "kamigame.jp FFレゾナンス攻略Wiki（https://kamigame.jp/ffrs/page/444324648704834987.html）；© SQUARE ENIX"
+      },
+      "notes": "FF2。Tier S（物理）。W Arms 兩次行動、破防 buff 高。 覺醒上限★3：三個攻略站都只列到★3（★1 欠片／★2 魔石／★3 結晶），但冇一個明文寫係上限。"
+    },
+    {
+      "id": "tidus",
+      "name": "提達",
+      "nameOriginal": "ティーダ / Tidus",
+      "type": "破防（Breaker）",
+      "element": "水/風/回復",
+      "rarity": null,
+      "maxStage": 9,
+      "maxAwakening": 3,
+      "howToGet": "Orderion 聯邦半島西端的光之祠",
+      "unlockChapterId": "ch3",
+      "image": {
+        "local": "research/assets/phantoms/tidus.png",
+        "url": "https://lh3.googleusercontent.com/ktqoJU4KQ3N_CY-IM7CZ_uJS9kg01RnpHgFCIogEfEtzF2ULHZhV6ka7UMPwQw96gtda39rGwbH_IEHkQBe4rM8kEsu0HrmdE8ZBIISR_8c",
+        "credit": "kamigame.jp FFレゾナンス攻略Wiki（https://kamigame.jp/ffrs/page/444324648704834987.html）；© SQUARE ENIX"
+      },
+      "notes": "FF10。Tier A。擅長破防、先手。 覺醒上限★3：三個攻略站都只列到★3（★1 欠片／★2 魔石／★3 結晶），但冇一個明文寫係上限。"
+    },
+    {
+      "id": "squall",
+      "name": "斯考爾",
+      "nameOriginal": "スコール / Squall",
+      "type": "攻擊（Attacker）",
+      "element": "火/水",
+      "rarity": null,
+      "maxStage": 9,
+      "maxAwakening": 3,
+      "howToGet": "Orderion 聯邦半島東端的光之祠",
+      "unlockChapterId": "ch3",
+      "image": {
+        "local": "research/assets/phantoms/squall.png",
+        "url": "https://lh3.googleusercontent.com/ksH-4g644Z6tY-5WUXiFUYkRjaFmz-QQECCupkZzYKf35YFEoEiOi8UTLfJT5fuP1Wbgy7ARNICrCf94-OlqhJoCWwUsqp5FPw4NaG5582vK",
+        "credit": "kamigame.jp FFレゾナンス攻略Wiki（https://kamigame.jp/ffrs/page/444324648704834987.html）；© SQUARE ENIX"
+      },
+      "notes": "FF8。Tier S（物理）。W Action；覺醒★2 學好用 AoE（中期第2優先）。 覺醒上限★3：三個攻略站都只列到★3（★1 欠片／★2 魔石／★3 結晶），但冇一個明文寫係上限。"
+    },
+    {
+      "id": "yshtola",
+      "name": "雅·修特拉",
+      "nameOriginal": "ヤ・シュトラ / Y'shtola",
+      "type": "破防（Breaker）",
+      "element": "冰/風/回復",
+      "rarity": null,
+      "maxStage": 9,
+      "maxAwakening": 3,
+      "howToGet": "Zoldaad 帝國兵器工廠南方的光之祠",
+      "unlockChapterId": "ch4",
+      "image": {
+        "local": "research/assets/phantoms/yshtola.png",
+        "url": "https://lh3.googleusercontent.com/tN9GB3NsVNeSLgFqpmG6QKtrEkJ7myxtl4vfXC4SIias9obd_J7_BQeACOndEXEfBUqll1kaeiTJF1A6hVZfrLATVO3d161RxkFlcABM6zA",
+        "credit": "kamigame.jp FFレゾナンス攻略Wiki（https://kamigame.jp/ffrs/page/444324648704834987.html）；© SQUARE ENIX"
+      },
+      "notes": "FF14。Tier SS（魔法）。魔法亂擊；覺醒學強力全體回復。 覺醒上限★3：三個攻略站都只列到★3（★1 欠片／★2 魔石／★3 結晶），但冇一個明文寫係上限。"
+    },
+    {
+      "id": "shantotto",
+      "name": "夏特多",
+      "nameOriginal": "シャントット / Shantotto",
+      "type": "攻擊（Attacker）",
+      "element": "雷/水/闇",
+      "rarity": null,
+      "maxStage": 9,
+      "maxAwakening": 3,
+      "howToGet": "Zoldaad 帝國大陸東北端的光之祠",
+      "unlockChapterId": "ch4",
+      "image": {
+        "local": "research/assets/phantoms/shantotto.png",
+        "url": "https://lh3.googleusercontent.com/WM-RdNN2LHWcVO0ROsvMc2QRtoIc6m3kALh_P2kw54tSBD7xAqrht3ZyZzAyUPsHKcPJDByt5FCDXgNMMKBkxm5u0drUknOn3bQyr5FJdcdc",
+        "credit": "kamigame.jp FFレゾナンス攻略Wiki（https://kamigame.jp/ffrs/page/444324648704834987.html）；© SQUARE ENIX"
+      },
+      "notes": "FF11。Tier SS（魔法）。連續魔、全體魔法唔減威力。 覺醒上限★3：三個攻略站都只列到★3（★1 欠片／★2 魔石／★3 結晶），但冇一個明文寫係上限。"
+    },
+    {
+      "id": "cecil",
+      "name": "塞西爾",
+      "nameOriginal": "セシル / Cecil",
+      "type": "防禦（Defender）",
+      "element": "光/闇/回復",
+      "rarity": null,
+      "maxStage": 9,
+      "maxAwakening": 3,
+      "howToGet": "Zoldaad 帝國反抗軍基地西北的光之祠",
+      "unlockChapterId": "ch4",
+      "image": {
+        "local": "research/assets/phantoms/cecil.png",
+        "url": "https://lh3.googleusercontent.com/dicw3mOlCjVSXxAO1qh23ilOf02b4SN8qkv0JXEWqCt2sPVG6iWRxFHguaxWGcbClr1ObMN3wXrqeK5jaxyY_pnqO66EKe-udAyBoQy4NzER",
+        "credit": "kamigame.jp FFレゾナンス攻略Wiki（https://kamigame.jp/ffrs/page/444324648704834987.html）；© SQUARE ENIX"
+      },
+      "notes": "FF4。Tier S。全體攻擊、可學魔法反擊。 覺醒上限★3：三個攻略站都只列到★3（★1 欠片／★2 魔石／★3 結晶），但冇一個明文寫係上限。"
+    },
+    {
+      "id": "bartz",
+      "name": "巴茨",
+      "nameOriginal": "バッツ / Bartz",
+      "type": "破防（Breaker）",
+      "element": "雷/風/土",
+      "rarity": null,
+      "maxStage": 9,
+      "maxAwakening": 3,
+      "howToGet": "米希迪亞地方米希迪亞北方的光之祠",
+      "unlockChapterId": "ch5",
+      "image": {
+        "local": "research/assets/phantoms/bartz.png",
+        "url": "https://lh3.googleusercontent.com/OSmV3dyAZmGywMekLX95OZXfVci7KSPpzTbrUGZ0KcemA_qAIFiiZkGsKKY8IQW64p_sT5MIEUHEGf-WRSU7Mj57dbeSXKzN1NUGmLvr_s1C",
+        "credit": "kamigame.jp FFレゾナンス攻略Wiki（https://kamigame.jp/ffrs/page/444324648704834987.html）；© SQUARE ENIX"
+      },
+      "notes": "FF5。Tier SS（物理）。魔劍二刀流、模仿。 覺醒上限★3：三個攻略站都只列到★3（★1 欠片／★2 魔石／★3 結晶），但冇一個明文寫係上限。"
+    },
+    {
+      "id": "vaan",
+      "name": "梵",
+      "nameOriginal": "ヴァン / Vaan",
+      "type": "破防（Breaker）",
+      "element": "火/土",
+      "rarity": null,
+      "maxStage": 9,
+      "maxAwakening": 3,
+      "howToGet": "米希迪亞地方大陸西端的光之祠",
+      "unlockChapterId": "ch5",
+      "image": {
+        "local": "research/assets/phantoms/vaan.png",
+        "url": "https://lh3.googleusercontent.com/VVNVG6x5X-v7CcfLnkalHwLaTlCKvQQ_xGKjLSBL4ib4fyhM7wRH-uCMSOpMTCQboI_cS4ceiC2np0NCDUfoSY-8RPwf0f4BnGQuJM2Dw8HD",
+        "credit": "kamigame.jp FFレゾナンス攻略Wiki（https://kamigame.jp/ffrs/page/444324648704834987.html）；© SQUARE ENIX"
+      },
+      "notes": "FF12。Tier A。Gil 2 倍、共鳴技確定偷盜。 覺醒上限★3：三個攻略站都只列到★3（★1 欠片／★2 魔石／★3 結晶），但冇一個明文寫係上限。"
+    },
+    {
+      "id": "lightning",
+      "name": "雷光",
+      "nameOriginal": "ライトニング / Lightning",
+      "type": "破防（Breaker）",
+      "element": "冰/雷",
+      "rarity": null,
+      "maxStage": 9,
+      "maxAwakening": 3,
+      "howToGet": "米希迪亞地方東南海岸的光之祠",
+      "unlockChapterId": "ch5",
+      "image": {
+        "local": "research/assets/phantoms/lightning.png",
+        "url": "https://lh3.googleusercontent.com/edKkWiHmrAn3QjYwwUb-Efhkmdi-2IYZRA8M-Gq6t_yhyiQimLxLk-DZ2tFYbPmALjYW8awUY0hKjBQrdXeXUlAcvxqwWPk6LK5_KobuX5Sy",
+        "credit": "kamigame.jp FFレゾナンス攻略Wiki（https://kamigame.jp/ffrs/page/444324648704834987.html）；© SQUARE ENIX"
+      },
+      "notes": "FF13。Tier A。連續攻擊火力上升、全體解除異常。 覺醒上限★3：三個攻略站都只列到★3（★1 欠片／★2 魔石／★3 結晶），但冇一個明文寫係上限。"
+    },
+    {
+      "id": "clive",
+      "name": "克萊夫",
+      "nameOriginal": "クライヴ / Clive",
+      "type": "破防（Breaker）",
+      "element": "火/風",
+      "rarity": null,
+      "maxStage": 9,
+      "maxAwakening": 3,
+      "howToGet": "格蘭榭爾特王國，只可乘飛空艇前往的光之祠",
+      "unlockChapterId": "ch5",
+      "image": {
+        "local": "research/assets/phantoms/clive.png",
+        "url": "https://lh3.googleusercontent.com/onXrKb3vFyIFF6oHQVFHQ-RwliNVrhqIBVs8lx5XzH8AGq4Xo3xn7XWgnpysgEFPMNUO7POyPDeO6Uc9i5_rPiy9iZOAd_y1OCid8AjF9JAG",
+        "credit": "kamigame.jp FFレゾナンス攻略Wiki（https://kamigame.jp/ffrs/page/444324648704834987.html）；© SQUARE ENIX"
+      },
+      "notes": "FF16。Tier A。LB100% 召喚全能力上升、自我回復。 覺醒上限★3：三個攻略站都只列到★3（★1 欠片／★2 魔石／★3 結晶），但冇一個明文寫係上限。"
+    },
+    {
+      "id": "camille",
+      "name": "卡蜜兒",
+      "nameOriginal": "カーミル / Camille",
+      "type": "攻擊（Attacker）",
+      "element": "水/土",
+      "rarity": null,
+      "maxStage": 9,
+      "maxAwakening": 3,
+      "howToGet": "完成支線「魔列車的呼喚」",
+      "unlockChapterId": "ch5",
+      "image": {
+        "local": "research/assets/phantoms/camille.png",
+        "url": "https://lh3.googleusercontent.com/Vv1WKazOcfPt3M_7SoYkZ1wamb8e6XUv71cY1outNMCGMH3g1kKBVZ5nI90JRo47d6XfJh_kU_EHv_v22mP5V3wYWL3loQ4vY10RLFYlbwtm",
+        "credit": "kamigame.jp FFレゾナンス攻略Wiki（https://kamigame.jp/ffrs/page/444324648704834987.html）；© SQUARE ENIX"
+      },
+      "notes": "FFBE 原創。Tier S（物理）。我方加速、敵方減速。英文拼法取自 gmtreks（未經官方核實）。 覺醒上限★3：三個攻略站都只列到★3（★1 欠片／★2 魔石／★3 結晶），但冇一個明文寫係上限。"
+    },
+    {
+      "id": "wilhelm",
+      "name": "威廉",
+      "nameOriginal": "ヴィルヘルム / Wilhelm",
+      "type": "防禦（Defender）",
+      "element": "土/水",
+      "rarity": null,
+      "maxStage": 9,
+      "maxAwakening": 3,
+      "howToGet": "完成支線「被稱為叛徒的將軍」",
+      "unlockChapterId": "ch5",
+      "image": {
+        "local": "research/assets/phantoms/wilhelm.png",
+        "url": "https://lh3.googleusercontent.com/XUHnqwFkyHok4pXOrVSLAZEAjhv-rOMpEJaQD1CxIa7-JtHXHheiDvvep9niCchZM-y1P8Tfu0_HeysNCRXYj5MDGlxEmBf4ooxjmjyTv1g",
+        "credit": "kamigame.jp FFレゾナンス攻略Wiki（https://kamigame.jp/ffrs/page/444324648704834987.html）；© SQUARE ENIX"
+      },
+      "notes": "FFBE 原創。Tier S。自身減傷特化；終盤雷恩首選。 覺醒上限★3：三個攻略站都只列到★3（★1 欠片／★2 魔石／★3 結晶），但冇一個明文寫係上限。"
+    },
+    {
+      "id": "aileen",
+      "name": "艾琳",
+      "nameOriginal": "アイリーン / Aileen",
+      "type": "破防（Breaker）",
+      "element": "冰/土",
+      "rarity": null,
+      "maxStage": 9,
+      "maxAwakening": 3,
+      "howToGet": "完成支線「鍛鍊心志之人」",
+      "unlockChapterId": "ch5",
+      "image": {
+        "local": "research/assets/phantoms/aileen.png",
+        "url": "https://lh3.googleusercontent.com/ln7kbhQGVtOVi-J-h_J4t6pl_7yYBO4JlWuAQRxENMrdimkHejT58ZnjjExlWSTKj1t2an7lMXmnbL7FlyLaIZZL9a011lPMrxbu4gYfE6s",
+        "credit": "kamigame.jp FFレゾナンス攻略Wiki（https://kamigame.jp/ffrs/page/444324648704834987.html）；© SQUARE ENIX"
+      },
+      "notes": "FFBE 原創。Tier A。即時 LB 充能。 覺醒上限★3：三個攻略站都只列到★3（★1 欠片／★2 魔石／★3 結晶），但冇一個明文寫係上限。"
+    },
+    {
+      "id": "victoria",
+      "name": "維多利亞",
+      "nameOriginal": "ビクトリア / Victoria",
+      "type": "攻擊（Attacker）",
+      "element": "冰/風/闇",
+      "rarity": null,
+      "maxStage": 9,
+      "maxAwakening": 3,
+      "howToGet": "完成支線「增殖！維多利亞的恐怖」",
+      "unlockChapterId": "ch5",
+      "image": {
+        "local": "research/assets/phantoms/victoria.png",
+        "url": "https://lh3.googleusercontent.com/XoCplssIdtLTKdWJwIS7R0HZkQbwH4Ka857T17Uaifz2KXKR-qeeNdq6MneVgpAue8BAPSKKXQq2z985_A86PW2K73VT-bub2kL3qYYI_Uvf",
+        "credit": "kamigame.jp FFレゾナンス攻略Wiki（https://kamigame.jp/ffrs/page/444324648704834987.html）；© SQUARE ENIX"
+      },
+      "notes": "FFBE 原創。Tier S（魔法）。MRP 1.5 倍、魔攻上升。 覺醒上限★3：三個攻略站都只列到★3（★1 欠片／★2 魔石／★3 結晶），但冇一個明文寫係上限。"
+    },
+    {
+      "id": "amelia",
+      "name": "阿米莉亞",
+      "nameOriginal": "アメリア / Amelia",
+      "type": "妨礙（Jammer）",
+      "element": "火/土",
+      "rarity": null,
+      "maxStage": 9,
+      "maxAwakening": 3,
+      "howToGet": "完成支線「決意的盡頭」",
+      "unlockChapterId": "ch5",
+      "image": {
+        "local": "research/assets/phantoms/amelia.png",
+        "url": "https://lh3.googleusercontent.com/f492jIbnd_hlW3jCaW7APUUMCaj0NYCIKWNbnLH8z1WfJIG6FgucUfndSF1j8Gn0-UoT2Y5w0mHH6zc0gfwq03rcVsrgN8Uevs_vlKrE7o4l",
+        "credit": "kamigame.jp FFレゾナンス攻略Wiki（https://kamigame.jp/ffrs/page/444324648704834987.html）；© SQUARE ENIX"
+      },
+      "notes": "FFBE 原創。Tier A。Deprotect/Deshell、確定爆擊。 覺醒上限★3：三個攻略站都只列到★3（★1 欠片／★2 魔石／★3 結晶），但冇一個明文寫係上限。"
+    },
+    {
+      "id": "sephiroth",
+      "name": "賽菲羅斯",
+      "nameOriginal": "セフィロス / Sephiroth",
+      "type": "攻擊（Attacker）",
+      "element": "闇",
+      "rarity": null,
+      "maxStage": 9,
+      "maxAwakening": 3,
+      "howToGet": "擊敗格蘭榭爾特王國西方海底漩渦洞窟的賽菲羅斯",
+      "unlockChapterId": "ch5",
+      "image": {
+        "local": "research/assets/phantoms/sephiroth.png",
+        "url": "https://lh3.googleusercontent.com/CtXwud2dEPV_8FjA-Cv5wCplTz7W4lXhjqjP1-myvQjTyRIS3nM0qqpRsP6o0q3AEGI0hm8dzo961KnOkFNmTFIUQQvvrjHvXMPaTJCGQOU",
+        "credit": "kamigame.jp FFレゾナンス攻略Wiki（https://kamigame.jp/ffrs/page/444324648704834987.html）；© SQUARE ENIX"
+      },
+      "notes": "FF7。Tier SS（物理）。「傳說的 SOLDIER」以物攻/魔攻較高者計傷害。屬性欄 kamigame 列「闇」，Tier 表則稱 4 屬性，未統一。 覺醒上限★3：三個攻略站都只列到★3（★1 欠片／★2 魔石／★3 結晶），但冇一個明文寫係上限。"
+    },
+    {
+      "id": "charlotte",
+      "name": "夏洛特",
+      "nameOriginal": "シャルロット / Charlotte",
+      "type": "防禦（Defender）",
+      "element": "冰/水",
+      "rarity": null,
+      "maxStage": 9,
+      "maxAwakening": 3,
+      "howToGet": "完成支線「弱者之盾」",
+      "unlockChapterId": "ch7",
+      "image": {
+        "local": "research/assets/phantoms/charlotte.png",
+        "url": "https://lh3.googleusercontent.com/x1oUv1BPkxzF5THs_28irWceVMDW-IWCru-NrFQ_lwZsn5TYJnU18p7i6Lhkw8Cwj0lsGAxVx0cwgZIwPws_cj7xxMgxOjYRJxm7DaZQrV0Z",
+        "credit": "kamigame.jp FFレゾナンス攻略Wiki（https://kamigame.jp/ffrs/page/444324648704834987.html）；© SQUARE ENIX"
+      },
+      "notes": "FFBE 原創。Tier A（kamigame）；oslink 繁中攻略則評★★★★★坦克，評價分歧。 覺醒上限★3：三個攻略站都只列到★3（★1 欠片／★2 魔石／★3 結晶），但冇一個明文寫係上限。"
+    },
+    {
+      "id": "ayaka",
+      "name": "綾香",
+      "nameOriginal": "アヤカ / Ayaka",
+      "type": "治療（Healer）",
+      "element": "回復",
+      "rarity": null,
+      "maxStage": 9,
+      "maxAwakening": 3,
+      "howToGet": "完成支線「重要的弟子」",
+      "unlockChapterId": "ch7",
+      "image": {
+        "local": "research/assets/phantoms/ayaka.png",
+        "url": "https://lh3.googleusercontent.com/LkiX1_cytIQwmQruwyw0Ja2OL6IwFUDn0de17OZ1fDCG1QdRTFWOkfvT89yTnny7e_xIcUjXL0tfD5GEGvYDefGSwA-79hG97TIm6u8F-n7TbA",
+        "credit": "kamigame.jp FFレゾナンス攻略Wiki（https://kamigame.jp/ffrs/page/444324648704834987.html）；© SQUARE ENIX"
+      },
+      "notes": "FFBE 原創。Tier SS（輔助）。回復技齊全、沉默/即死無效。 覺醒上限★3：三個攻略站都只列到★3（★1 欠片／★2 魔石／★3 結晶），但冇一個明文寫係上限。"
+    }
+  ],
+  "builds": [
+    {
+      "chapterId": "ch1",
+      "characterId": "rain",
+      "phantomId": "warrior-of-light",
+      "targetStage": 5,
+      "targetAwakening": 0,
+      "awakeningNote": "覺醒要到第1章尾（塞壬之塔後）先開放，章1嘅魔石の欠片優先俾克勞德同莉亞。",
+      "priority": "core",
+      "reason": "挑發＋高耐久做坦，物理反擊兼顧輸出；三個來源都推薦呢個開局組合。MR5（體驗版上限，章1–4 目標 MR5）。",
+      "confidence": "high",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444719995411266313.html",
+        "https://kamigame.jp/ffrs/page/446214919747010942.html",
+        "https://www.keengamer.com/articles/guides/final-fantasy-resonance-best-visions-for-every-character/",
+        "https://kamigame.jp/ffrs/page/445517666719915396.html",
+        "https://game8.jp/ffrs/827035",
+        "https://kamigame.jp/ffrs/page/445778720100242080.html"
+      ]
+    },
+    {
+      "chapterId": "ch1",
+      "characterId": "lasswell",
+      "phantomId": "cloud",
+      "targetStage": 5,
+      "targetAwakening": 1,
+      "awakeningNote": "兩個攻略站都將克勞德列為前期覺醒首選（★1 學ラ系ブレイク），用第1章尾教學同塞壬之塔攞到嘅魔石の欠片。",
+      "priority": "core",
+      "reason": "拉斯維爾嘅「研ぎ澄まし」加爆擊率，同克勞德爆擊型破防夾；爆擊回 MP。魔石碎片有就優先覺醒克勞德到★1。",
+      "confidence": "high",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444719995411266313.html",
+        "https://kamigame.jp/ffrs/page/444431731987071029.html",
+        "https://www.keengamer.com/articles/guides/final-fantasy-resonance-best-visions-for-every-character/",
+        "https://kamigame.jp/ffrs/page/445778720100242080.html",
+        "https://game8.jp/ffrs/827035",
+        "https://game8.jp/ffrs/829993"
+      ]
+    },
+    {
+      "chapterId": "ch1",
+      "characterId": "fina",
+      "phantomId": "leah",
+      "targetStage": 5,
+      "targetAwakening": 1,
+      "awakeningNote": "game8：前期唯一治療幻兵，★1 最優先（學ケアルラ）；用魔石の欠片。",
+      "priority": "core",
+      "reason": "前期唯一治療幻兵；「魅惑無效」可防第1章頭目塞壬嘅魅惑；MR5 解鎖「行動をたくす」。",
+      "confidence": "high",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444719995411266313.html",
+        "https://kamigame.jp/ffrs/page/444431731685081141.html",
+        "https://www.keengamer.com/articles/guides/final-fantasy-resonance-best-visions-for-every-character/",
+        "https://game8.jp/ffrs/827035",
+        "https://game8.jp/ffrs/829993"
+      ]
+    },
+    {
+      "chapterId": "ch1",
+      "characterId": "lasswell",
+      "phantomId": "tronn",
+      "targetStage": 3,
+      "targetAwakening": 0,
+      "awakeningNote": "過渡用，唔使覺醒。",
+      "priority": "optional",
+      "reason": "攞到克勞德之前過渡用；MR 加成嘅「破防」永續加成有用，練咗唔會浪費。",
+      "confidence": "medium",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444431731987071029.html",
+        "https://kamigame.jp/ffrs/page/445778720100242080.html"
+      ]
+    },
+    {
+      "chapterId": "ch1",
+      "characterId": "fina",
+      "phantomId": "terra",
+      "targetStage": 3,
+      "targetAwakening": 0,
+      "awakeningNote": "前期覺醒蒂娜效益低（kamigame 前期★1 評價），欠片留俾克勞德／莉亞。",
+      "priority": "optional",
+      "reason": "莉亞練到 MR5 之後可轉蒂娜，令菲娜有多屬性魔法攻擊，同時累積永續加成。",
+      "confidence": "medium",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444431731685081141.html",
+        "https://kamigame.jp/ffrs/page/445778720100242080.html"
+      ]
+    },
+    {
+      "chapterId": "ch2",
+      "characterId": "rain",
+      "phantomId": "warrior-of-light",
+      "targetStage": 5,
+      "targetAwakening": 1,
+      "awakeningNote": "推斷：兩站都將光之戰士列為前期★1 候選；第2章靠支線／寶箱再攞魔石の欠片。",
+      "priority": "core",
+      "reason": "繼續做坦；章1–4 以 MR5 為目標，之後換其他幻兵賺永續加成。",
+      "confidence": "high",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444719995411266313.html",
+        "https://www.keengamer.com/articles/guides/final-fantasy-resonance-best-visions-for-every-character/",
+        "https://kamigame.jp/ffrs/page/445517666719915396.html",
+        "https://kamigame.jp/ffrs/page/445778720100242080.html",
+        "https://game8.jp/ffrs/827035"
+      ]
+    },
+    {
+      "chapterId": "ch2",
+      "characterId": "lasswell",
+      "phantomId": "cloud",
+      "targetStage": 5,
+      "targetAwakening": 1,
+      "awakeningNote": "已經★1；魔石（★2）未有得攞。",
+      "priority": "core",
+      "reason": "主力破防＋輸出。章2頭目天風のヴェリアス弱冰，拉斯維爾本身冰屬性有利。",
+      "confidence": "medium",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444719995411266313.html",
+        "https://kamigame.jp/ffrs/page/444326005209866799.html",
+        "https://game8.jp/ffrs/829993"
+      ]
+    },
+    {
+      "chapterId": "ch2",
+      "characterId": "fina",
+      "phantomId": "leah",
+      "targetStage": 5,
+      "targetAwakening": 1,
+      "awakeningNote": "已經★1；★2 要等魔石。",
+      "priority": "core",
+      "reason": "前中期治療主力。",
+      "confidence": "high",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444719995411266313.html",
+        "https://www.keengamer.com/articles/guides/final-fantasy-resonance-best-visions-for-every-character/",
+        "https://game8.jp/ffrs/829993"
+      ]
+    },
+    {
+      "chapterId": "ch2",
+      "characterId": "lid",
+      "phantomId": "terra",
+      "targetStage": 5,
+      "targetAwakening": 0,
+      "awakeningNote": "推斷：前期欠片數量有限，蒂娜嘅覺醒要到★2/★3 先見效，暫時唔使。",
+      "priority": "core",
+      "reason": "莉德加入後配蒂娜做魔法攻擊手，按敵人弱點轉屬性。",
+      "confidence": "medium",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/446214919747010942.html",
+        "https://kamigame.jp/ffrs/page/445778720100242080.html",
+        "https://game8.jp/ffrs/827035"
+      ]
+    },
+    {
+      "chapterId": "ch2",
+      "characterId": "lid",
+      "phantomId": "onion-knight",
+      "targetStage": 3,
+      "targetAwakening": 0,
+      "awakeningNote": "推斷：optional，唔使覺醒。",
+      "priority": "optional",
+      "reason": "推斷：本章新幻兵，LB 三倍充能可帶走（習得技能轉幻兵後仍可用）；如蒂娜已練滿可轉練。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/446062640087731161.html"
+      ]
+    },
+    {
+      "chapterId": "ch3",
+      "characterId": "rain",
+      "phantomId": "warrior-of-light",
+      "targetStage": 5,
+      "targetAwakening": 1,
+      "awakeningNote": "維持★1。",
+      "priority": "core",
+      "reason": "坦克定位不變。",
+      "confidence": "high",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444719995411266313.html",
+        "https://www.keengamer.com/articles/guides/final-fantasy-resonance-best-visions-for-every-character/"
+      ]
+    },
+    {
+      "chapterId": "ch3",
+      "characterId": "lasswell",
+      "phantomId": "cloud",
+      "targetStage": 5,
+      "targetAwakening": 1,
+      "awakeningNote": "維持★1；★2 要等魔石（最早第4章）。",
+      "priority": "core",
+      "reason": "主力破防。水華のヴェリアス 水晶核弱雷，克勞德有雷屬性。",
+      "confidence": "medium",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444719995411266313.html",
+        "https://kamigame.jp/ffrs/page/444326005209866799.html",
+        "https://game8.jp/ffrs/829993"
+      ]
+    },
+    {
+      "chapterId": "ch3",
+      "characterId": "fina",
+      "phantomId": "leah",
+      "targetStage": 5,
+      "targetAwakening": 1,
+      "awakeningNote": "維持★1。",
+      "priority": "core",
+      "reason": "治療主力。",
+      "confidence": "high",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444719995411266313.html",
+        "https://www.keengamer.com/articles/guides/final-fantasy-resonance-best-visions-for-every-character/"
+      ]
+    },
+    {
+      "chapterId": "ch3",
+      "characterId": "nichol",
+      "phantomId": "tronn",
+      "targetStage": 5,
+      "targetAwakening": 0,
+      "awakeningNote": "推斷：托隆覺醒優先度低（兩站都排後），欠片唔夠就唔使。",
+      "priority": "recommended",
+      "reason": "尼可加入後（kamigame 建議用佢替換莉德，buff/debuff 更穩）；keengamer 推薦尼可配托隆，補火冰雷魔法同破防力。",
+      "confidence": "medium",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/446214919747010942.html",
+        "https://www.keengamer.com/articles/guides/final-fantasy-resonance-best-visions-for-every-character/",
+        "https://kamigame.jp/ffrs/page/445778720100242080.html",
+        "https://gamerch.com/ffrs/1025704"
+      ]
+    },
+    {
+      "chapterId": "ch3",
+      "characterId": "lid",
+      "phantomId": "tidus",
+      "targetStage": 5,
+      "targetAwakening": 0,
+      "awakeningNote": "推斷：提達中期先值得★2，第3章未有魔石。",
+      "priority": "optional",
+      "reason": "keengamer 推薦莉德配提達：物理＋破防、水風屬性。若保留莉德上陣可用。",
+      "confidence": "medium",
+      "sources": [
+        "https://www.keengamer.com/articles/guides/final-fantasy-resonance-best-visions-for-every-character/",
+        "https://game8.jp/ffrs/827035"
+      ]
+    },
+    {
+      "chapterId": "ch3",
+      "characterId": "lid",
+      "phantomId": "squall",
+      "targetStage": 3,
+      "targetAwakening": 0,
+      "awakeningNote": "推斷：斯考爾嘅重點係★2 AoE，第3章未有魔石。",
+      "priority": "optional",
+      "reason": "推斷：斯考爾係中期覺醒第2優先（★2 學 AoE），可先練 MR 準備之後覺醒。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/445778720100242080.html"
+      ]
+    },
+    {
+      "chapterId": "ch4",
+      "characterId": "rain",
+      "phantomId": "warrior-of-light",
+      "targetStage": 5,
+      "targetAwakening": 1,
+      "awakeningNote": "維持★1；第4章開鬥技場，初級制覇後可用 10,000 Gil 無限買魔石の欠片。",
+      "priority": "core",
+      "reason": "坦克定位不變；可順手練塞西爾（本章取得）做後備坦。",
+      "confidence": "high",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444719995411266313.html",
+        "https://www.keengamer.com/articles/guides/final-fantasy-resonance-best-visions-for-every-character/",
+        "https://kamigame.jp/ffrs/page/445784255893612248.html",
+        "https://game8.jp/ffrs/829993"
+      ]
+    },
+    {
+      "chapterId": "ch4",
+      "characterId": "lasswell",
+      "phantomId": "cloud",
+      "targetStage": 5,
+      "targetAwakening": 1,
+      "awakeningNote": "推斷：魔石最早第4章（跳繩60次）先有，數量少，★2 留到第5章穩定入手再做。",
+      "priority": "core",
+      "reason": "主力破防；本章後開鬥技場，可用 Gil 買魔石碎片令克勞德★1（學ラ系ブレイク）。",
+      "confidence": "medium",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/445778720100242080.html",
+        "https://kamigame.jp/ffrs/page/444719995411266313.html",
+        "https://game8.jp/ffrs/829993"
+      ]
+    },
+    {
+      "chapterId": "ch4",
+      "characterId": "fina",
+      "phantomId": "leah",
+      "targetStage": 5,
+      "targetAwakening": 1,
+      "awakeningNote": "維持★1。",
+      "priority": "core",
+      "reason": "治療主力。",
+      "confidence": "high",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444719995411266313.html",
+        "https://www.keengamer.com/articles/guides/final-fantasy-resonance-best-visions-for-every-character/"
+      ]
+    },
+    {
+      "chapterId": "ch4",
+      "characterId": "nichol",
+      "phantomId": "tronn",
+      "targetStage": 5,
+      "targetAwakening": 1,
+      "awakeningNote": "推斷：鬥技場可以無限買欠片，kamigame 話欠片有剩可以全部幻兵都用；★1 用魔石の欠片。",
+      "priority": "recommended",
+      "reason": "繼續支援＋破防。",
+      "confidence": "medium",
+      "sources": [
+        "https://www.keengamer.com/articles/guides/final-fantasy-resonance-best-visions-for-every-character/",
+        "https://kamigame.jp/ffrs/page/445778720100242080.html",
+        "https://kamigame.jp/ffrs/page/445784255893612248.html"
+      ]
+    },
+    {
+      "chapterId": "ch4",
+      "characterId": "jake",
+      "phantomId": "squall",
+      "targetStage": 5,
+      "targetAwakening": 1,
+      "awakeningNote": "推斷：用鬥技場嘅魔石の欠片升★1，為之後★2 AoE 做準備。",
+      "priority": "optional",
+      "reason": "推斷：傑克最佳拍檔係克勞德，但克勞德已喺拉斯維爾度；斯考爾係同期最好用物理攻擊幻兵之一。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/446351383105381893.html",
+        "https://kamigame.jp/ffrs/page/446062640087731161.html",
+        "https://kamigame.jp/ffrs/page/445778720100242080.html",
+        "https://kamigame.jp/ffrs/page/445784255893612248.html"
+      ]
+    },
+    {
+      "chapterId": "ch4",
+      "characterId": "lid",
+      "phantomId": "shantotto",
+      "targetStage": 3,
+      "targetAwakening": 0,
+      "awakeningNote": "推斷：optional，唔使覺醒。",
+      "priority": "optional",
+      "reason": "推斷：本章新取得 SS 級魔法幻兵，可先練 MR 留俾第5章加入嘅櫻/魔人菲娜。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/446062640087731161.html"
+      ]
+    },
+    {
+      "chapterId": "ch5",
+      "characterId": "rain",
+      "phantomId": "warrior-of-light",
+      "targetStage": 7,
+      "targetAwakening": 1,
+      "awakeningNote": "推斷：魔石優先俾克勞德／莉亞／蒂娜，光之戰士維持★1。",
+      "priority": "core",
+      "reason": "推斷：章5起以 MR9 為目標，本章先到 MR7 左右；光之戰士全體掩護仍然係主力。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/445517666719915396.html",
+        "https://kamigame.jp/ffrs/page/446062640087731161.html",
+        "https://game8.jp/ffrs/827035"
+      ]
+    },
+    {
+      "chapterId": "ch5",
+      "characterId": "sakura",
+      "phantomId": "terra",
+      "targetStage": 7,
+      "targetAwakening": 2,
+      "awakeningNote": "kamigame：蒂娜★2 學多屬性ガ系魔法；用魔石（鬥技場中級制覇後 50,000 Gil 可買）。",
+      "priority": "core",
+      "reason": "櫻係最強魔法攻擊手，kamigame 終盤編成同 keengamer 都推薦配蒂娜；用魔石令蒂娜★2（學多屬性ガ系）。MR 目標為推斷。",
+      "confidence": "high",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/446214919747010942.html",
+        "https://www.keengamer.com/articles/guides/final-fantasy-resonance-best-visions-for-every-character/",
+        "https://kamigame.jp/ffrs/page/445778720100242080.html",
+        "https://game8.jp/ffrs/827035",
+        "https://game8.jp/ffrs/829993"
+      ]
+    },
+    {
+      "chapterId": "ch5",
+      "characterId": "lasswell",
+      "phantomId": "cloud",
+      "targetStage": 7,
+      "targetAwakening": 2,
+      "awakeningNote": "兩站都話攞到魔石先升克勞德★2（凶斬り、永續物攻、破防時爆擊上升）。",
+      "priority": "recommended",
+      "reason": "克勞德係中期覺醒最優先（魔石→★2，凶斬り單體強）；魔人菲娜戰可用克勞德「ウォタガブレイク」打水弱點。",
+      "confidence": "medium",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/445778720100242080.html",
+        "https://kamigame.jp/ffrs/page/445759088056392128.html",
+        "https://game8.jp/ffrs/827035"
+      ]
+    },
+    {
+      "chapterId": "ch5",
+      "characterId": "nichol",
+      "phantomId": "leah",
+      "targetStage": 7,
+      "targetAwakening": 2,
+      "awakeningNote": "game8：中期莉亞★2 同克勞德並列最優先，提早攞到強力回復；用魔石。",
+      "priority": "recommended",
+      "reason": "推斷：菲娜喺本章變成魔人菲娜，暫時冇治療，由尼可接手莉亞補血（圖書館/摩魯波爾要 Esuna）。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/445759088056392128.html",
+        "https://game8.jp/ffrs/827035"
+      ]
+    },
+    {
+      "chapterId": "ch5",
+      "characterId": "archwitch-fina",
+      "phantomId": "victoria",
+      "targetStage": 5,
+      "targetAwakening": 1,
+      "awakeningNote": "推斷：維多利亞覺醒優先度低（gamerch 最低組），用平價嘅魔石の欠片升★1 就夠。",
+      "priority": "recommended",
+      "reason": "keengamer：魔人菲娜配維多利亞，冰風屬性補足闇系魔法並附加異常；MRP 1.5 倍加快練級。",
+      "confidence": "medium",
+      "sources": [
+        "https://www.keengamer.com/articles/guides/final-fantasy-resonance-best-visions-for-every-character/",
+        "https://gamerch.com/ffrs/1025704"
+      ]
+    },
+    {
+      "chapterId": "ch5",
+      "characterId": "jake",
+      "phantomId": "aileen",
+      "targetStage": 5,
+      "targetAwakening": 1,
+      "awakeningNote": "推斷：用魔石の欠片升★1。",
+      "priority": "optional",
+      "reason": "keengamer 推薦傑克配艾琳（土冰屬性＋破防，飛空艇後支線取得）。",
+      "confidence": "medium",
+      "sources": [
+        "https://www.keengamer.com/articles/guides/final-fantasy-resonance-best-visions-for-every-character/",
+        "https://gamerch.com/ffrs/1025704"
+      ]
+    },
+    {
+      "chapterId": "ch5",
+      "characterId": "lid",
+      "phantomId": "bartz",
+      "targetStage": 5,
+      "targetAwakening": 1,
+      "awakeningNote": "推斷：巴茨★3 先係重點（game8 後期首選），而家用魔石の欠片升★1。",
+      "priority": "optional",
+      "reason": "推斷：巴茨係 SS 級物理幻兵（魔劍二刀流），本章取得；俾物理角色用。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/446062640087731161.html",
+        "https://game8.jp/ffrs/827035"
+      ]
+    },
+    {
+      "chapterId": "ch6",
+      "characterId": "rain",
+      "phantomId": "warrior-of-light",
+      "targetStage": 9,
+      "targetAwakening": 1,
+      "awakeningNote": "推斷：維持★1；之後轉威廉，魔石留俾主力攻擊手。",
+      "priority": "core",
+      "reason": "推斷：章6前後把主力幻兵練到 MR9（上限）。第6章學「力之覺醒」；之後可轉威廉。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/445517666719915396.html",
+        "https://kamigame.jp/ffrs/page/446351383105381893.html"
+      ]
+    },
+    {
+      "chapterId": "ch6",
+      "characterId": "sakura",
+      "phantomId": "terra",
+      "targetStage": 8,
+      "targetAwakening": 2,
+      "awakeningNote": "維持★2；★3 要等魔石の結晶（最早第7章）。",
+      "priority": "core",
+      "reason": "主力魔法輸出（配對有兩來源，MR 目標為推斷）。",
+      "confidence": "medium",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/446214919747010942.html",
+        "https://www.keengamer.com/articles/guides/final-fantasy-resonance-best-visions-for-every-character/",
+        "https://game8.jp/ffrs/829993"
+      ]
+    },
+    {
+      "chapterId": "ch6",
+      "characterId": "archwitch-fina",
+      "phantomId": "yshtola",
+      "targetStage": 7,
+      "targetAwakening": 2,
+      "awakeningNote": "kamigame 中期覺醒名單：雅·修特拉★2 學強力全體回復；用魔石。",
+      "priority": "recommended",
+      "reason": "kamigame 魔法特化編成：魔人菲娜配雅·修特拉，Wアームズ→魔法亂擊上 Deshell 增加櫻傷害；雅·修特拉亦係覺醒中期優先。",
+      "confidence": "medium",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/446214919747010942.html",
+        "https://kamigame.jp/ffrs/page/445778720100242080.html"
+      ]
+    },
+    {
+      "chapterId": "ch6",
+      "characterId": "fina",
+      "phantomId": "leah",
+      "targetStage": 9,
+      "targetAwakening": 2,
+      "awakeningNote": "維持★2（第5章已升）。",
+      "priority": "core",
+      "reason": "菲娜喺 Obaba 屋重新入隊；艾爾達利特戰用「光之帷幕」防異常。",
+      "confidence": "medium",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444326005209866799.html",
+        "https://www.keengamer.com/articles/guides/final-fantasy-resonance-best-visions-for-every-character/",
+        "https://game8.jp/ffrs/827035"
+      ]
+    },
+    {
+      "chapterId": "ch6",
+      "characterId": "nichol",
+      "phantomId": "onion-knight",
+      "targetStage": 7,
+      "targetAwakening": 1,
+      "awakeningNote": "推斷：用魔石の欠片升★1。",
+      "priority": "recommended",
+      "reason": "推斷：keengamer 列洋蔥騎士為尼可次選；kamigame 終盤尼可靠「LB 三倍充能」，呢個技能可由洋蔥騎士習得帶走。",
+      "confidence": "low",
+      "sources": [
+        "https://www.keengamer.com/articles/guides/final-fantasy-resonance-best-visions-for-every-character/",
+        "https://kamigame.jp/ffrs/page/446214919747010942.html",
+        "https://kamigame.jp/ffrs/page/446062640087731161.html",
+        "https://gamerch.com/ffrs/1025704"
+      ]
+    },
+    {
+      "chapterId": "ch6",
+      "characterId": "lasswell",
+      "phantomId": "sephiroth",
+      "targetStage": 7,
+      "targetAwakening": 2,
+      "awakeningNote": "推斷：game8 將賽菲羅斯列為★3 次優先，第6章先用魔石升★2。",
+      "priority": "recommended",
+      "reason": "kamigame 汎用最強編成：拉斯維爾配賽菲羅斯，物攻/魔攻取較高者計傷，應付物理/魔法無效敵人。（第5章擊敗賽菲羅斯取得）",
+      "confidence": "medium",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/446214919747010942.html",
+        "https://game8.jp/ffrs/827035"
+      ]
+    },
+    {
+      "chapterId": "ch6",
+      "characterId": "lasswell",
+      "phantomId": "firion",
+      "targetStage": 7,
+      "targetAwakening": 1,
+      "awakeningNote": "推斷：game8 前期★1 候選；optional 用欠片就夠。",
+      "priority": "optional",
+      "reason": "keengamer 首選拉斯維爾配弗利昂（光風雷＋破防力）。",
+      "confidence": "medium",
+      "sources": [
+        "https://www.keengamer.com/articles/guides/final-fantasy-resonance-best-visions-for-every-character/",
+        "https://game8.jp/ffrs/827035"
+      ]
+    },
+    {
+      "chapterId": "ch7",
+      "characterId": "rain",
+      "phantomId": "wilhelm",
+      "targetStage": 9,
+      "targetAwakening": 2,
+      "awakeningNote": "推斷：威廉係終盤主坦，用魔石升★2；魔石の結晶留俾蒂娜。",
+      "priority": "core",
+      "reason": "終盤雷恩轉威廉，減傷特化＋全體掩護＋防禦，替全隊頂傷；kamigame 同 keengamer 一致。常闇のヴェリアス 戰要靠全體掩護。",
+      "confidence": "high",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/446214919747010942.html",
+        "https://www.keengamer.com/articles/guides/final-fantasy-resonance-best-visions-for-every-character/",
+        "https://kamigame.jp/ffrs/page/444326005209866799.html",
+        "https://gamerch.com/ffrs/1025704"
+      ]
+    },
+    {
+      "chapterId": "ch7",
+      "characterId": "nichol",
+      "phantomId": "ayaka",
+      "targetStage": 9,
+      "targetAwakening": 2,
+      "awakeningNote": "推斷：綾香係 gamerch 最優先組、game8 ★3 次優先；第7章支線先攞到，先用魔石升★2。",
+      "priority": "core",
+      "reason": "kamigame 終盤編成：尼可配綾香，陣 buff＋LB 充能；綾香沉默/即死無效。（keengamer 則將綾香俾菲娜，見 optional）",
+      "confidence": "medium",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/446214919747010942.html",
+        "https://kamigame.jp/ffrs/page/446062640087731161.html",
+        "https://gamerch.com/ffrs/1025704",
+        "https://game8.jp/ffrs/827035"
+      ]
+    },
+    {
+      "chapterId": "ch7",
+      "characterId": "sakura",
+      "phantomId": "terra",
+      "targetStage": 9,
+      "targetAwakening": 3,
+      "awakeningNote": "game8：第一粒魔石の結晶先俾蒂娜（★3 魔力解放）；第7章擊敗第3戰王土のヴェリアス後，商船 50,000 Gil 有得買。",
+      "priority": "core",
+      "reason": "主力魔法輸出；覺醒上限推斷為★3。",
+      "confidence": "medium",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/446214919747010942.html",
+        "https://www.keengamer.com/articles/guides/final-fantasy-resonance-best-visions-for-every-character/",
+        "https://game8.jp/ffrs/827035",
+        "https://game8.jp/ffrs/829993"
+      ]
+    },
+    {
+      "chapterId": "ch7",
+      "characterId": "lasswell",
+      "phantomId": "sephiroth",
+      "targetStage": 9,
+      "targetAwakening": 2,
+      "awakeningNote": "推斷：維持★2，第一粒結晶留俾蒂娜。",
+      "priority": "core",
+      "reason": "汎用最強編成嘅萬能攻擊手。",
+      "confidence": "medium",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/446214919747010942.html",
+        "https://game8.jp/ffrs/827035"
+      ]
+    },
+    {
+      "chapterId": "ch7",
+      "characterId": "archwitch-fina",
+      "phantomId": "yshtola",
+      "targetStage": 9,
+      "targetAwakening": 2,
+      "awakeningNote": "維持★2。",
+      "priority": "recommended",
+      "reason": "魔法特化編成雙魔法攻擊手。注意常闇のヴェリアス 反擊光屬性。",
+      "confidence": "medium",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/446214919747010942.html",
+        "https://kamigame.jp/ffrs/page/444326005209866799.html",
+        "https://kamigame.jp/ffrs/page/445778720100242080.html"
+      ]
+    },
+    {
+      "chapterId": "ch7",
+      "characterId": "jake",
+      "phantomId": "cloud",
+      "targetStage": 9,
+      "targetAwakening": 2,
+      "awakeningNote": "克勞德已經★2（第5章）。",
+      "priority": "optional",
+      "reason": "傑克同克勞德「最高相性」（爆擊特化），對魔法難生效嘅敵人用。",
+      "confidence": "medium",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/446351383105381893.html",
+        "https://kamigame.jp/ffrs/page/445778720100242080.html",
+        "https://game8.jp/ffrs/827035"
+      ]
+    },
+    {
+      "chapterId": "ch7",
+      "characterId": "fina",
+      "phantomId": "leah",
+      "targetStage": 9,
+      "targetAwakening": 2,
+      "awakeningNote": "維持★2。",
+      "priority": "optional",
+      "reason": "如綾香俾咗尼可，菲娜繼續用莉亞；keengamer 則建議菲娜配綾香。",
+      "confidence": "low",
+      "sources": [
+        "https://www.keengamer.com/articles/guides/final-fantasy-resonance-best-visions-for-every-character/"
+      ]
+    },
+    {
+      "chapterId": "ch8",
+      "characterId": "rain",
+      "phantomId": "wilhelm",
+      "targetStage": 9,
+      "targetAwakening": 2,
+      "awakeningNote": "推斷：維持★2；有剩嘅魔石の結晶先考慮下面嘅攻擊手。",
+      "priority": "core",
+      "reason": "最終章維持終盤編成：威廉坦。",
+      "confidence": "high",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/446214919747010942.html",
+        "https://www.keengamer.com/articles/guides/final-fantasy-resonance-best-visions-for-every-character/"
+      ]
+    },
+    {
+      "chapterId": "ch8",
+      "characterId": "nichol",
+      "phantomId": "ayaka",
+      "targetStage": 9,
+      "targetAwakening": 3,
+      "awakeningNote": "game8：綾香係★3 次優先；第8章可以喺黑暗巴哈姆特（可重複打）同鬥技場上級攞魔石の結晶。",
+      "priority": "core",
+      "reason": "buff＋LB 充能。",
+      "confidence": "medium",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/446214919747010942.html",
+        "https://game8.jp/ffrs/827035",
+        "https://game8.jp/ffrs/829993"
+      ]
+    },
+    {
+      "chapterId": "ch8",
+      "characterId": "sakura",
+      "phantomId": "terra",
+      "targetStage": 9,
+      "targetAwakening": 3,
+      "awakeningNote": "維持★3。",
+      "priority": "core",
+      "reason": "主力魔法輸出；冇弱點就用 Ultima 等無屬性魔法。",
+      "confidence": "medium",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/446214919747010942.html",
+        "https://www.keengamer.com/articles/guides/final-fantasy-resonance-best-visions-for-every-character/",
+        "https://game8.jp/ffrs/827035"
+      ]
+    },
+    {
+      "chapterId": "ch8",
+      "characterId": "lasswell",
+      "phantomId": "sephiroth",
+      "targetStage": 9,
+      "targetAwakening": 3,
+      "awakeningNote": "game8：賽菲羅斯係★3 次優先；用魔石の結晶。",
+      "priority": "core",
+      "reason": "萬能攻擊手（汎用編成）。",
+      "confidence": "medium",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/446214919747010942.html",
+        "https://game8.jp/ffrs/827035",
+        "https://game8.jp/ffrs/829993"
+      ]
+    },
+    {
+      "chapterId": "ch8",
+      "characterId": "archwitch-fina",
+      "phantomId": "yshtola",
+      "targetStage": 9,
+      "targetAwakening": 2,
+      "awakeningNote": "推斷：結晶唔夠就維持★2。",
+      "priority": "optional",
+      "reason": "魔法特化編成時替換拉斯維爾。",
+      "confidence": "medium",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/446214919747010942.html"
+      ]
+    }
+  ]
+}
