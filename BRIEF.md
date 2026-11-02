@@ -20,10 +20,12 @@
 
 ## 資料夾
 ```
-studio/
+ffr-guide/
   BRIEF.md       ← 呢份
   SCHEMA.md      ← 資料格式
+  build.py       ← 統籌：將真資料放入設計
   research/      ← Research 輸出 (data.json, REPORT.md, assets/)
   design/        ← Design 輸出 (prototype.html, DESIGN.md)
-  site/          ← 統籌整合後嘅最終網站
+  docs/          ← 生成嘅網站（GitHub Pages：https://jokeryung.github.io/ffr-guide/）
+  site/          ← 生成嘅網站（claude.ai Artifact 用，唔入 git）
 ```
