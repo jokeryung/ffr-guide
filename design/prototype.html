@@ -334,6 +334,22 @@ footer ul { margin: 0; padding-left: 1.2em; }
   .dlg-head .portrait .spr-wrap canvas { width: 80px; height: 80px; }
   .tabs { padding-left: 0; }
 }
+/* ---------- back to top ---------- */
+#to-top {
+  position: fixed; z-index: 20;
+  right: max(16px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom));
+  width: 48px; height: 48px; padding: 0; display: grid; place-items: center; cursor: pointer;
+  color: var(--gold); background: linear-gradient(180deg, var(--win-top), var(--win-bot));
+  border: var(--px) solid var(--frame); border-radius: var(--radius);
+  box-shadow: 0 0 0 var(--px) var(--ink), inset 0 0 0 2px var(--frame-dim), 3px 4px 0 var(--px) var(--shadow);
+  opacity: 0; visibility: hidden; transform: translateY(8px);
+  transition: opacity .2s steps(2), transform .2s steps(2), visibility 0s .2s;
+}
+#to-top.show { opacity: 1; visibility: visible; transform: none; transition: opacity .2s steps(2), transform .2s steps(2); }
+#to-top svg { width: 24px; height: 24px; shape-rendering: crispEdges; }
+#to-top:hover, #to-top:focus-visible { background: var(--gold); color: var(--ink); }
+#to-top:hover svg { animation: arrow-hop .45s steps(2) infinite; }
+@keyframes arrow-hop { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
   #wipe { display: none; }
@@ -471,6 +487,10 @@ footer ul { margin: 0; padding-left: 1.2em; }
 
   <footer id="footer"></footer>
 </div>
+
+<button id="to-top" type="button" aria-label="返回頂部" title="返回頂部">
+  <svg viewBox="0 0 8 8" aria-hidden="true"><path fill="currentColor" d="M3 1h2v1h1v1h1v1H5v3H3V4H1V3h1V2h1z"/></svg>
+</button>
 
 <dialog class="win" id="detail" aria-labelledby="dlg-name"></dialog>
 
@@ -1011,6 +1031,16 @@ footer ul { margin: 0; padding-left: 1.2em; }
   grid.addEventListener("keydown", function (e) {
     if ((e.key === "Enter" || e.key === " ") && e.target.matches(".card[data-char]")) { e.preventDefault(); openDetail(e.target.getAttribute("data-char")); }
   });
+
+  /* ================= back to top ================= */
+  var toTop = document.getElementById("to-top");
+  function syncToTop() { toTop.classList.toggle("show", window.scrollY > 400); }
+  window.addEventListener("scroll", syncToTop, { passive: true });
+  toTop.addEventListener("click", function () {
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+  });
+  syncToTop();
 
   /* ================= boot ================= */
   renderMeta(); buildToolbar(); renderAll();
