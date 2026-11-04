@@ -12,7 +12,7 @@ Final Fantasy Resonance 逐章養成攻略網。用家（jokeryung）用廣東�
 - **資料專家**（subagent）：上網搵遊戲資料，只改 `research/data.json`，來源同不確定事項寫入 `research/REPORT.md`。
 - **UX/UI 設計**（subagent）：只改 `design/prototype.html` 同 `design/DESIGN.md`。
 
-兩個 subagent 之間嘅合約係 `SCHEMA.md`（而家係 v0.3）。要改資料格式，由統籌改 `SCHEMA.md`，再通知兩邊。詳細要求見 `BRIEF.md`。
+兩個 subagent 之間嘅合約係 `SCHEMA.md`（而家係 v0.4）。要改資料格式，由統籌改 `SCHEMA.md`，再通知兩邊。詳細要求見 `BRIEF.md`。
 
 ## 點樣 update
 1. 改資料：`research/data.json`；改設計：`design/prototype.html`。唔好直接改 `docs/` 或者 `site/`，嗰兩個係生成出嚟嘅。

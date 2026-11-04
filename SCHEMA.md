@@ -1,4 +1,4 @@
-# Data Schema v0.3（v0.2：覺醒星數；v0.3：每個角色多隻幻兵、連戰攻略） (`research/data.json`)
+# Data Schema v0.4（v0.2：覺醒星數；v0.3：每個角色多隻幻兵、連戰攻略；v0.4：技能學習來源、裝備取得方式） (`research/data.json`)
 
 一個 JSON 檔，頂層結構：
 
@@ -97,9 +97,33 @@
           "phantomId": "warrior-of-light", // 可以係 null
           "targetStage": 9,
           "targetAwakening": 3,
-          "skills": [],              // 要帶嘅技能、配置
-          "equipment": [],           // 片或者來源有講先填
+          "skills": [{ "name": "W臂腕", "ap": 60 }],        // v0.4：要帶嘅技能同 AP
+          "equipment": [{ "name": "止水", "alts": ["佐助刀"] }], // v0.4：alts = 可以替代嘅裝備
           "notes": ""
+        }
+      ],
+      // v0.4：同一招／同一件裝備只寫一次，party 用 name 對返落嚟
+      "skillInfo": [
+        {
+          "name": "W臂腕",           // 同 party.skills[].name 一字不差
+          "nameOriginal": "日文 / 英文原名", // 搵唔到填 null
+          "learnFrom": [             // 邊隻幻兵幾多 MR 學到；可以多過一隻；搵唔到就 []
+            { "phantomId": "firion", "mr": 9 }
+          ],
+          "effect": "一句效果",      // 搵唔到填 null
+          "confidence": "medium",
+          "sources": ["url"]
+        }
+      ],
+      "equipmentInfo": [
+        {
+          "name": "止水",            // 同 party.equipment[] 嘅 name / alts 一字不差
+          "nameOriginal": "日文 / 英文原名",
+          "slot": "武器 / 防具 / 飾品 ...", // 搵唔到填 null
+          "effect": "一句效果",
+          "howToGet": "取得方式：邊章、邊度、掉落／製作／支線", // 搵唔到填 null
+          "confidence": "medium",
+          "sources": ["url"]
         }
       ],
       "battles": [                   // 逐場；搵唔到就空陣列

@@ -79,3 +79,50 @@ builds 126 條：main 43、skill 71、alt 12；high 12、medium 31、low 83。ch
 - games.gg：https://games.gg/final-fantasy-resonance/guides/best-visions-character-pairings/
 - KeenGamer：https://www.keengamer.com/articles/guides/final-fantasy-resonance-best-character-builds/
 - allthings.how：https://allthings.how/?p=303668
+
+## 9. v0.4 16連打技能同裝備（2026-11-05）
+`challenges[0].skillInfo` 18 招、`equipmentInfo` 19 件全部填晒。
+
+### 存取方法
+- 用 curl 攞頁面原文再搜尋，冇登入。WebFetch 只用嚟睇 index。
+- 技能表：game8 一覽對 kamigame 各 Vision 嘅 MR 表，再對 meowdb。
+- 裝備：game8 一覽對 kamigame 裝備表，再對 meowdb 同支線／試練頁。
+
+### 名稱對照
+- 繁中名冇官方對照表。對照靠 AP（影片畫面）加意思。18 招嘅 AP 全部同 game8 一樣。
+- **有疑問：先攻**。AP 20 有兩招：さきがけ（提達 MR3，最先行動）同先手必勝（卡蜜兒 MR3，加傷害）。揀咗さきがけ，屬推斷，設 low。
+- 其他靠意思、裝備欄同可裝角色對出嚟，冇官方對照：最後底牌＝ラストリゾート、弧光長距瞄準鏡＝アークロングスコープ、夜行步伐＝ナイトステップ、戰士頭巾＝戦士のバンダナ、亂射＝みだれうち、極限蓄力＝リミットチャージ。W臂腕＝Wアームズ、W行動＝Wアクション、連續詠唱＝れんぞくま。
+- 「屬性改變道具」唔係遊戲內名，係 8 件飾品嘅統稱，`nameOriginal` 寫做描述。
+
+### 機制核實
+- MASTER 全部 MR9：game8 話要學齊 MR1–9 嘅加成先有。第 8 節「未開頁核實」呢點已經核實。
+- 呢 18 招喺 game8 MR 一覽各只出現一次，即係 MR 途徑每招得一隻 Vision。meowdb 26 隻 Vision 頁掃過，唯一例外：對魔法反擊，蒂娜覺醒都有。kamigame 列喺 ★1；meowdb 寫 Awakening 2，佢嘅編號似乎多一級（推斷）。game8 話覺醒解鎖嘅技能只限裝住嗰隻 Vision 時用，所以唔算學到，冇放入 `learnFrom`，寫喺 `effect`。
+- MR9 累計 MRP（meowdb）：弗利昂 4975、克勞德 4195、蒂娜 5095、托隆 4695、光之戰士 4195、洋蔥騎士 4945、諾克提斯 4785、提達 5195、斯考爾 4945、夏特多 5075、塞西爾 5195、巴茨 5245、艾琳 4195、維多利亞 4945。第 8 節缺口 2 可以部份補上；第 8 章前練唔練得晒仍然未知。
+- 屬性飾品：7 隻ヴェリアス第一戰掉，game8 BOSS 頁寫明。有第二戰嘅（例如天風）第二戰掉其他嘢。
+
+### 來源分歧
+- 源氏護手條件：game8 話第 1 章要喺塞壬之塔頂同吉爾伽美什講過嘢，仲要夠戰鬥次數；kamigame 冇提。寫入 `howToGet`，兩邊都留。
+- 源氏護手時間：一覽頁寫「ビッグブリッヂの死闘」獎勵；專頁話甲板打贏先攞，之後支線先攞鎧。跟專頁。
+- 魔術師之服：game8／meowdb 寫商店；kamigame 寫櫻初期裝備。兩樣都寫。
+- 戰士頭巾、耍詐硬幣 kamigame 冇明文：靠 game8 同 meowdb。
+- 耍詐硬幣章節：game8 一覽歸第 6 章，支線頁話第 5 章後期已經開到。
+
+### 未查到
+- 「研ぎ澄まし」「明鏡止水」「転戦自在の策」嘅實際數值。
+- Gluttony、Hill Gigas 嘅日文名（meowdb 只有英文）。
+- meowdb 英文名話係遊戲檔案嚟，非官方網站，未同遊戲內對過。
+
+### 新來源
+- game8 アビリティ一覧：https://game8.jp/ffrs/821715
+- game8 装備一覧：https://game8.jp/ffrs/821717
+- game8 ボス一覧：https://game8.jp/ffrs/821514
+- game8 敵一覧：https://game8.jp/ffrs/821719
+- game8 十二武具：https://game8.jp/ffrs/835805
+- game8 古びた装備：https://game8.jp/ffrs/834859
+- game8 アイリーン武器作成：https://game8.jp/ffrs/834099
+- game8 石板のカケラ：https://game8.jp/ffrs/822512
+- kamigame 十二武具：https://kamigame.jp/ffrs/page/446603417272487416.html
+- kamigame 古びた装備：https://kamigame.jp/ffrs/page/446488233900008051.html
+- kamigame 源氏の小手：https://kamigame.jp/ffrs/page/445928204356586566.html
+- kamigame 最強アビリティ：https://kamigame.jp/ffrs/page/446308825314655483.html
+- NiaMeowDB（非官方資料庫）：https://meowdb.com/db/final-fantasy-resonance/equipment

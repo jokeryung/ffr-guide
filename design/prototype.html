@@ -412,6 +412,19 @@ dialog[open] { animation: open .18s steps(3); }
 .party .equip > :not(.ph-portrait) { grid-column: 2; }
 .party .reason { font-size: var(--fs-xs); line-height: 1.5; }
 .party-line { display: grid; gap: 4px; }
+.lookup { display: grid; gap: 4px; }
+.lookup > .lbl { color: var(--gold); font-size: var(--fs-xs); }
+.lookup ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 3px; }
+.lookup li { background: var(--ink-2); padding: 5px 8px; font-size: var(--fs-xs); line-height: 1.5; overflow-wrap: anywhere; }
+.lookup .row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; }
+.lookup .row b { font-weight: normal; font-size: var(--fs-s); color: var(--text); }
+.lookup .ap { color: var(--dim); }
+.lookup .from { margin-left: auto; color: var(--gold); text-align: right; }
+.lookup .sub { color: var(--dim); }
+.lookup .how { color: var(--text); }
+.lookup .how .lbl { color: var(--gold); }
+.lookup .none { color: var(--lo); }
+.lookup .conf { vertical-align: baseline; margin-left: 2px; }
 .tips { margin: 0; padding-left: 1.2em; display: grid; gap: 4px; font-size: var(--fs-s); max-width: 70ch; }
 .battles { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
 .battle { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 8px; background: var(--ink-2); padding: 6px 10px; align-items: baseline; }
@@ -557,7 +570,7 @@ footer ul { margin: 0; padding-left: 1.2em; }
     {"chapterId": "ch5", "characterId": "yshtola", "phantomId": "shiva", "purpose": "main", "learnSkills": [], "targetStage": 4, "targetAwakening": null, "awakeningNote": null, "priority": "recommended", "reason": "推斷：副治療加控場，社群意見分歧。", "confidence": "low", "sources": []}
   ],
   "challenges": [
-    {"id": "gauntlet-16", "name": "16 連打（示範）", "nameOriginal": "DEMO Gauntlet", "unlock": "【示範文字】通關第五章後開放", "description": "【示範文字，唔係真資料】16 場連續戰鬥，中途唔可以回復，亦唔可以換隊。", "recommendedLevel": null, "tips": ["【示範】頭 8 場留住大招，慳 MP。", "【示範】第 16 場 Boss 會反彈魔法，轉物理輸出。"], "party": [{"characterId": "cloud", "phantomId": "bahamut", "targetStage": 9, "targetAwakening": 3, "skills": ["百萬核爆", "破盾斬"], "equipment": ["示範武器"], "notes": "【示範】主力輸出。"}, {"characterId": "tifa", "phantomId": "garuda", "targetStage": 8, "targetAwakening": 2, "skills": ["連擊"], "equipment": [], "notes": null}, {"characterId": "barret", "phantomId": "titan", "targetStage": 7, "targetAwakening": null, "skills": [], "equipment": null, "notes": "【示範】坦住全場，覺醒片入面睇唔到，所以留空。"}, {"characterId": "aerith", "phantomId": "leviathan", "targetStage": null, "targetAwakening": 2, "skills": ["全體回復"], "equipment": ["示範飾物"], "notes": null}], "battles": [{"order": 1, "enemy": "示範機械兵 x3", "notes": "【示範】普攻清場。"}, {"order": 2, "enemy": "示範飛龍", "notes": null}, {"order": 3, "enemy": null, "notes": "【示範】敵人名稱片入面睇唔清楚。"}, {"order": 16, "enemy": "示範最終 Boss", "notes": "【示範】留晒大招打呢場。"}], "confidence": "low", "sources": ["https://www.youtube.com/watch?v=DEMO000&t=120", "https://example.com/guide-a"]}
+    {"id": "gauntlet-16", "name": "16 連打（示範）", "nameOriginal": "DEMO Gauntlet", "unlock": "【示範文字】通關第五章後開放", "description": "【示範文字，唔係真資料】16 場連續戰鬥，中途唔可以回復，亦唔可以換隊。", "recommendedLevel": null, "tips": ["【示範】頭 8 場留住大招，慳 MP。", "【示範】第 16 場 Boss 會反彈魔法，轉物理輸出。"], "party": [{"characterId": "cloud", "phantomId": "bahamut", "targetStage": 9, "targetAwakening": 3, "skills": [{"name": "百萬核爆", "ap": 60}, {"name": "破盾斬", "ap": 20}], "equipment": [{"name": "示範武器", "alts": []}], "notes": "【示範】主力輸出。"}, {"characterId": "tifa", "phantomId": "garuda", "targetStage": 8, "targetAwakening": 2, "skills": [{"name": "連擊", "ap": 20}], "equipment": [], "notes": null}, {"characterId": "barret", "phantomId": "titan", "targetStage": 7, "targetAwakening": null, "skills": [], "equipment": null, "notes": "【示範】坦住全場，覺醒片入面睇唔到，所以留空。"}, {"characterId": "aerith", "phantomId": "leviathan", "targetStage": null, "targetAwakening": 2, "skills": [{"name": "全體回復", "ap": 30}], "equipment": [{"name": "示範飾物", "alts": []}], "notes": null}], "battles": [{"order": 1, "enemy": "示範機械兵 x3", "notes": "【示範】普攻清場。"}, {"order": 2, "enemy": "示範飛龍", "notes": null}, {"order": 3, "enemy": null, "notes": "【示範】敵人名稱片入面睇唔清楚。"}, {"order": 16, "enemy": "示範最終 Boss", "notes": "【示範】留晒大招打呢場。"}], "confidence": "low", "sources": ["https://www.youtube.com/watch?v=DEMO000&t=120", "https://example.com/guide-a"]}
   ]
 }
 </script>
@@ -1152,7 +1165,33 @@ footer ul { margin: 0; padding-left: 1.2em; }
     mountSprites(grid);
   }
   /* ================= challenge view ================= */
-  function partyCard(m) {
+  function infoOf(list, name) { return (list || []).filter(function (i) { return i.name === name; })[0] || {}; }
+  function learnText(info) {
+    var from = (info.learnFrom || []).filter(function (f) { return f && phById[f.phantomId]; });
+    if (!from.length) return '<span class="none">學習來源未查到</span>';
+    return from.map(function (f) { return esc(phById[f.phantomId].name) + (f.mr != null ? " MR" + esc(f.mr) : "（MR 未查到）"); }).join(" ／ ") + confMini(info.confidence);
+  }
+  function skillList(list, x) {
+    if (!has(list)) return "";
+    return '<div class="lookup"><span class="lbl">技能 · 邊隻幻兵學</span><ul>' + list.map(function (s) {
+      var info = infoOf(x.skillInfo, s.name);
+      return '<li><div class="row"><b>' + esc(s.name) + "</b>" + (s.ap != null ? '<span class="ap">AP ' + esc(s.ap) + "</span>" : "") +
+        '<span class="from">' + learnText(info) + "</span></div>" + (info.effect ? '<div class="sub">' + esc(info.effect) + "</div>" : "") + "</li>";
+    }).join("") + "</ul></div>";
+  }
+  function gearItem(name, x, altOf) {
+    var info = infoOf(x.equipmentInfo, name);
+    return '<li><div class="row"><b>' + (altOf ? "或 " : "") + esc(name) + "</b>" + (info.slot ? '<span class="ap">' + esc(info.slot) + "</span>" : "") + confMini(info.howToGet ? info.confidence : null) + "</div>" +
+      (info.effect ? '<div class="sub">' + esc(info.effect) + "</div>" : "") +
+      '<div class="how"><span class="lbl">取得：</span>' + (info.howToGet ? esc(info.howToGet) : '<span class="none">未查到</span>') + "</div></li>";
+  }
+  function gearList(list, x) {
+    if (!has(list)) return "";
+    return '<div class="lookup"><span class="lbl">裝備 · 點樣攞</span><ul>' + list.map(function (g) {
+      return gearItem(g.name, x, false) + (g.alts || []).map(function (a) { return gearItem(a, x, true); }).join("");
+    }).join("") + "</ul></div>";
+  }
+  function partyCard(m, x) {
     var c = charById[m.characterId], p = phById[m.phantomId];
     var charName = c ? c.name : m.characterId, phName = p ? p.name : m.phantomId;
     return '<div class="win party">' +
@@ -1163,7 +1202,7 @@ footer ul { margin: 0; padding-left: 1.2em; }
       (phName ? '<div class="equip"><div class="ph-portrait">' + spr("phantom", m.phantomId, 32) + "</div>" +
         '<div class="ph-name"><span class="lbl">' + esc(T.phantom) + "</span><b>" + esc(phName) + "</b><small>" + esc(p ? p.nameOriginal : "") + "</small></div>" +
         mrMeter(m, p, 0) + starMeter(m, p, 0, false) + "</div>" : "") +
-      skillsRow(m.skills, "技能") + skillsRow(m.equipment, "裝備") +
+      skillList(m.skills, x) + gearList(m.equipment, x) +
       (m.notes ? '<p class="reason">' + esc(m.notes) + "</p>" : "") +
       (c ? '<div class="foot"><button class="route-btn" type="button" data-char="' + esc(c.id) + '">全章路線 ▶</button></div>' : "") + "</div>";
   }
@@ -1180,7 +1219,7 @@ footer ul { margin: 0; padding-left: 1.2em; }
       ((x.unlock || x.recommendedLevel) ? '<dl class="facts">' + (x.unlock ? "<dt>開放</dt><dd>" + esc(x.unlock) + "</dd>" : "") + (x.recommendedLevel ? "<dt>建議等級</dt><dd>" + esc(x.recommendedLevel) + "</dd>" : "") + "</dl>" : "") +
       (x.description ? "<p>" + esc(x.description) + "</p>" : "") +
       (CONF[x.confidence] ? '<div class="foot">' + conf(x.confidence) + "</div>" : "") + "</section>" +
-      (party.length ? '<section><p class="win-title">PARTY · 推薦配置</p><div class="party-grid">' + party.map(partyCard).join("") + "</div></section>" : "") +
+      (party.length ? '<section><p class="win-title">PARTY · 推薦配置</p><div class="party-grid">' + party.map(function (m) { return partyCard(m, x); }).join("") + "</div></section>" : "") +
       (tips.length ? '<section class="win ch-sec"><p class="win-title">TIPS · 打法重點</p><ul class="tips">' + tips.map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("") + "</ul></section>" : "") +
       (battles.length ? '<section class="win ch-sec"><p class="win-title">BATTLES · 逐場</p><ol class="battles">' + battles.map(function (b) {
           return '<li class="battle"><span class="num">' + esc(b.order) + "</span><div>" + (b.enemy ? "<b>" + esc(b.enemy) + "</b>" : "") + (b.notes ? "<div>" + esc(b.notes) + "</div>" : "") + "</div></li>";

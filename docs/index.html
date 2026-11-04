@@ -416,6 +416,19 @@ dialog[open] { animation: open .18s steps(3); }
 .party .equip > :not(.ph-portrait) { grid-column: 2; }
 .party .reason { font-size: var(--fs-xs); line-height: 1.5; }
 .party-line { display: grid; gap: 4px; }
+.lookup { display: grid; gap: 4px; }
+.lookup > .lbl { color: var(--gold); font-size: var(--fs-xs); }
+.lookup ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 3px; }
+.lookup li { background: var(--ink-2); padding: 5px 8px; font-size: var(--fs-xs); line-height: 1.5; overflow-wrap: anywhere; }
+.lookup .row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; }
+.lookup .row b { font-weight: normal; font-size: var(--fs-s); color: var(--text); }
+.lookup .ap { color: var(--dim); }
+.lookup .from { margin-left: auto; color: var(--gold); text-align: right; }
+.lookup .sub { color: var(--dim); }
+.lookup .how { color: var(--text); }
+.lookup .how .lbl { color: var(--gold); }
+.lookup .none { color: var(--lo); }
+.lookup .conf { vertical-align: baseline; margin-left: 2px; }
 .tips { margin: 0; padding-left: 1.2em; display: grid; gap: 4px; font-size: var(--fs-s); max-width: 70ch; }
 .battles { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
 .battle { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 8px; background: var(--ink-2); padding: 6px 10px; align-items: baseline; }
@@ -1811,13 +1824,13 @@ footer ul { margin: 0; padding-left: 1.2em; }
    "phantomId": "bartz",
    "purpose": "skill",
    "learnSkills": [
-    "魔法劍二刀流／魔法剣二刀流（巴茲 MR7）"
+    "魔法劍二刀流／魔法剣二刀流（巴茨 MR7）"
    ],
    "targetStage": 7,
    "targetAwakening": 1,
    "awakeningNote": "",
    "priority": "core",
-   "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片 2:56：巴茲二刀流係拉斯維爾最主要要裝嘅技能。",
+   "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片 2:56：巴茨二刀流係拉斯維爾最主要要裝嘅技能。",
    "confidence": "low",
    "sources": [
     "https://kamigame.jp/ffrs/page/444440874445754947.html",
@@ -2219,14 +2232,14 @@ footer ul { margin: 0; padding-left: 1.2em; }
    "phantomId": "bartz",
    "purpose": "skill",
    "learnSkills": [
-    "模仿／ものまね（巴茲 MR9）",
-    "巴茲 MASTER（MR9）"
+    "模仿／ものまね（巴茨 MR9）",
+    "巴茨 MASTER（MR9）"
    ],
    "targetStage": 9,
    "targetAwakening": 1,
    "awakeningNote": "",
    "priority": "core",
-   "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片 3:00：另一招要學模仿；畫面裝巴茲 MASTER。",
+   "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片 3:00：另一招要學模仿；畫面裝巴茨 MASTER。",
    "confidence": "low",
    "sources": [
     "https://kamigame.jp/ffrs/page/444440874445754947.html",
@@ -2431,7 +2444,7 @@ footer ul { margin: 0; padding-left: 1.2em; }
    "phantomId": "bartz",
    "purpose": "skill",
    "learnSkills": [
-    "魔法劍二刀流／魔法剣二刀流（巴茲 MR7）"
+    "魔法劍二刀流／魔法剣二刀流（巴茨 MR7）"
    ],
    "targetStage": 7,
    "targetAwakening": 1,
@@ -2965,14 +2978,14 @@ footer ul { margin: 0; padding-left: 1.2em; }
    "phantomId": "bartz",
    "purpose": "skill",
    "learnSkills": [
-    "模仿／ものまね（巴茲 MR9）",
-    "巴茲 MASTER（MR9）"
+    "模仿／ものまね（巴茨 MR9）",
+    "巴茨 MASTER（MR9）"
    ],
    "targetStage": 9,
    "targetAwakening": 1,
    "awakeningNote": "",
    "priority": "core",
-   "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片畫面有巴茲 MASTER。",
+   "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片畫面有巴茨 MASTER。",
    "confidence": "low",
    "sources": [
     "https://kamigame.jp/ffrs/page/444440874445754947.html",
@@ -3235,15 +3248,15 @@ footer ul { margin: 0; padding-left: 1.2em; }
    "phantomId": "bartz",
    "purpose": "skill",
    "learnSkills": [
-    "魔法劍二刀流／魔法剣二刀流（巴茲 MR7）",
-    "模仿／ものまね（巴茲 MR9）",
-    "巴茲 MASTER（MR9）"
+    "魔法劍二刀流／魔法剣二刀流（巴茨 MR7）",
+    "模仿／ものまね（巴茨 MR9）",
+    "巴茨 MASTER（MR9）"
    ],
    "targetStage": 9,
    "targetAwakening": 1,
    "awakeningNote": "",
    "priority": "recommended",
-   "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片 9:14 轉做 16 連打一份子，畫面呢個時候巴茲 MR8 練緊；終盤配諸神黃昏（無屬性）。",
+   "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片 9:14 轉做 16 連打一份子，畫面呢個時候巴茨 MR8 練緊；終盤配諸神黃昏（無屬性）。",
    "confidence": "low",
    "sources": [
     "https://kamigame.jp/ffrs/page/444440874445754947.html",
@@ -3625,15 +3638,15 @@ footer ul { margin: 0; padding-left: 1.2em; }
    "id": "combo-16",
    "name": "16 連打",
    "nameOriginal": null,
-   "unlock": "唔係關卡，冇開放條件：係一套配技打法，要學齊技能先用到。最少要有：尼可 Lv30（學 LB2 鏡面晶写の術，game8／keengamer）、弗利昂 MR9（W臂腕）、斯考爾 MR9（W行動）、巴茲 MR7（魔法劍二刀流）。巴茲第5章先開放，所以最早第5章後（推斷）。部份裝備要做工匠、源氏支線同十二武具（影片）。",
-   "description": "「16連打」係玩家叫法（影片字幕），唔係遊戲內容名，亦唔係 16 場連戰；搵唔到日文或英文攻略用同一個名。意思係一個角色一回合打出 16 下屬性技。計法（推斷，影片冇逐項講）：鏡面晶写の術 ×2 × W臂腕 ×2 × W行動 ×2 × 魔法劍二刀流 ×2 = 16。主角雷恩都轉成同樣配置，影片話總共 32 連打（9:18）。影片示範 Lv57。影片 6:07 係呢句總結；完整配置係 0:57–6:16。",
+   "unlock": "唔係關卡，冇開放條件：係一套配技打法，要學齊技能先用到。要尼可 Lv30（學 LB2 鏡面晶写の術，game8／keengamer），加每招下面列嘅幻兵 MR。最少要 W臂腕（弗利昂 MR9）、W行動（斯考爾 MR9）、魔法劍二刀流（巴茨 MR7）。巴茨第5章先開放，所以最早第5章後（推斷）。影片嘅完整裝備要更遲：止水要第6章，最後底牌要第7章，佐助刀要第8章。",
+   "description": "「16連打」係玩家叫法（影片字幕），唔係遊戲內容名，亦唔係 16 場連戰；搵唔到日文或英文攻略用同一個名。意思係一個角色一回合打出 16 下屬性技。計法（推斷，影片冇逐項講）：鏡面晶写の術 ×2 × W臂腕 ×2 × W行動 ×2 × 魔法劍二刀流 ×2 = 16。主角雷恩都轉成同樣配置，影片話總共 32 連打（9:18）。影片示範 Lv57。影片 6:07 係呢句總結；完整配置係 0:57–6:16。 技能同裝備嘅中文名跟影片字幕；冇官方對照表，日文原名係按 AP、效果同意思對返（技能 18 招嘅 AP 同 game8 一致）。",
    "recommendedLevel": null,
    "tips": [
     "起手（影片 5:27–5:52）：尼可 W臂腕 → 轉陣自如 + 攻勢之陣（擊潰傷害↑）→ 觸發再動 → 再用 W臂腕 → 突擊之陣（爆擊率 +30%）→ 極限槽滿 → 開鏡面（鏡面晶写の術）。",
     "之後拉斯維爾（影片 5:56–6:04）：W臂腕 → W行動 → 屬性技，觸發二刀流。畫面用電火猛攻 II／III。",
     "LB2 效果：全隊下一個行動連做兩次，MP 只扣一次（game8 尼可頁）；英文名 Mirroring Prism（keengamer）。",
     "爆擊 100%（影片 4:43–4:57）：源氏護手 50% + 佐助刀 20% + 突擊之陣 30%。如果唔追 100%，改用止水：開場有明鏡止水 buff，擊潰傷害多啲。",
-    "屬性（影片 3:49–4:28）：可以唔裝崩身戒指，改裝屬性改變道具，將無屬性招變成剋制屬性。呢啲道具由主線 BOSS 掉。",
+    "屬性（影片 3:49–4:28）：可以唔裝崩身戒指，改裝屬性改變道具，將無屬性招變成剋制屬性。呢啲道具大部份由主線 BOSS 掉，雷屬性係寶箱，錯過咗都可以偷（見裝備「屬性改變道具」）。",
     "省 AP：黃金頭飾（十二武具）等於 MP 減半，裝咗可以省 50AP，唔可以疊加；力量石開場 +50% 極限槽；天命兵法書保證先攻（影片 1:45–2:33）。",
     "Vision 似乎唔係關鍵：影片 4:15 提到「想練的幻兵」，技能先係核心（推斷）。",
     "作者提醒：後期太強，有少少影響遊戲體驗（影片 6:12）。"
@@ -3645,20 +3658,56 @@ footer ul { margin: 0; padding-left: 1.2em; }
      "targetStage": null,
      "targetAwakening": null,
      "skills": [
-      "W臂腕 60",
-      "極限蓄力 15",
-      "連續詠唱 50",
-      "靜觀時極限技蓄力 20",
-      "極限技槽三重蓄力 50",
-      "蒂娜 MASTER 95",
-      "先攻 20",
-      "MP消耗減半 50"
+      {
+       "name": "W臂腕",
+       "ap": 60
+      },
+      {
+       "name": "極限蓄力",
+       "ap": 15
+      },
+      {
+       "name": "連續詠唱",
+       "ap": 50
+      },
+      {
+       "name": "靜觀時極限技蓄力",
+       "ap": 20
+      },
+      {
+       "name": "極限技槽三重蓄力",
+       "ap": 50
+      },
+      {
+       "name": "蒂娜 MASTER",
+       "ap": 95
+      },
+      {
+       "name": "先攻",
+       "ap": 20
+      },
+      {
+       "name": "MP消耗減半",
+       "ap": 50
+      }
      ],
      "equipment": [
-      "最後底牌",
-      "魔術師之服",
-      "力量石",
-      "黃金頭飾"
+      {
+       "name": "最後底牌",
+       "alts": []
+      },
+      {
+       "name": "魔術師之服",
+       "alts": []
+      },
+      {
+       "name": "力量石",
+       "alts": []
+      },
+      {
+       "name": "黃金頭飾",
+       "alts": []
+      }
      ],
      "notes": "影片畫面 1:06–1:58（Lv57，AP 360/380）。呢個時間 Vision 係雅·修特拉 MR7；MR 目標影片冇講。未有最後底牌可以用天命兵法書（影片 2:26）。"
     },
@@ -3668,19 +3717,56 @@ footer ul { margin: 0; padding-left: 1.2em; }
      "targetStage": null,
      "targetAwakening": null,
      "skills": [
-      "巴茲 MASTER 95",
-      "W臂腕 60",
-      "MP消耗減半 50",
-      "極限技槽三重蓄力 50",
-      "突破極限 30",
-      "W行動 50",
-      "爆擊時恢復MP 20"
+      {
+       "name": "巴茨 MASTER",
+       "ap": 95
+      },
+      {
+       "name": "W臂腕",
+       "ap": 60
+      },
+      {
+       "name": "MP消耗減半",
+       "ap": 50
+      },
+      {
+       "name": "極限技槽三重蓄力",
+       "ap": 50
+      },
+      {
+       "name": "突破極限",
+       "ap": 30
+      },
+      {
+       "name": "W行動",
+       "ap": 50
+      },
+      {
+       "name": "爆擊時恢復MP",
+       "ap": 20
+      }
      ],
      "equipment": [
-      "止水（或佐助刀）",
-      "源氏之鎧",
-      "源氏護手",
-      "崩身戒指（或屬性改變道具）"
+      {
+       "name": "止水",
+       "alts": [
+        "佐助刀"
+       ]
+      },
+      {
+       "name": "源氏之鎧",
+       "alts": []
+      },
+      {
+       "name": "源氏護手",
+       "alts": []
+      },
+      {
+       "name": "崩身戒指",
+       "alts": [
+        "屬性改變道具"
+       ]
+      }
      ],
      "notes": "影片畫面 2:58–4:40（Lv57，AP 355/380）。呢個時間 Vision 係雷光 MR8，係練緊嗰隻。用佐助刀而 AP 有餘，可以加克勞德嘅爆擊擊潰技能（影片 5:11）。"
     },
@@ -3690,22 +3776,58 @@ footer ul { margin: 0; padding-left: 1.2em; }
      "targetStage": null,
      "targetAwakening": null,
      "skills": [
-      "光之戰士 MASTER 95",
-      "W臂腕 60",
-      "對魔法反擊 20",
-      "MP消耗減半 50",
-      "W行動 50",
-      "MRP1.5倍 30",
-      "突破極限 30",
-      "極限技槽雙倍蓄力 35"
+      {
+       "name": "光之戰士 MASTER",
+       "ap": 95
+      },
+      {
+       "name": "W臂腕",
+       "ap": 60
+      },
+      {
+       "name": "對魔法反擊",
+       "ap": 20
+      },
+      {
+       "name": "MP消耗減半",
+       "ap": 50
+      },
+      {
+       "name": "W行動",
+       "ap": 50
+      },
+      {
+       "name": "MRP1.5倍",
+       "ap": 30
+      },
+      {
+       "name": "突破極限",
+       "ap": 30
+      },
+      {
+       "name": "極限技槽雙倍蓄力",
+       "ap": 35
+      }
      ],
      "equipment": [
-      "諸神黃昏",
-      "夜行步伐",
-      "紅玫瑰頭冠",
-      "戰士頭巾"
+      {
+       "name": "諸神黃昏",
+       "alts": []
+      },
+      {
+       "name": "夜行步伐",
+       "alts": []
+      },
+      {
+       "name": "紅玫瑰頭冠",
+       "alts": []
+      },
+      {
+       "name": "戰士頭巾",
+       "alts": []
+      }
      ],
-     "notes": "影片畫面 9:13（Lv57，AP 370/372）：後期仲係練緊巴茲 MR8。字幕話技能最後同拉斯維爾一樣（9:10），但呢個畫面未裝巴茲 MASTER。諸神黃昏令無屬性傷害同擊潰傷害 +25%，配巴茲火光劍（字幕 9:34，技能名可能聽錯）。"
+     "notes": "影片畫面 9:13（Lv57，AP 370/372）：後期仲係練緊巴茨 MR8。字幕話技能最後同拉斯維爾一樣（9:10），但呢個畫面未裝巴茨 MASTER。諸神黃昏令無屬性傷害同擊潰傷害 +25%，配巴茨火光劍（字幕 9:34，技能名可能聽錯）。"
     },
     {
      "characterId": "jake",
@@ -3713,20 +3835,56 @@ footer ul { margin: 0; padding-left: 1.2em; }
      "targetStage": null,
      "targetAwakening": null,
      "skills": [
-      "巴茲 MASTER 95",
-      "W行動 50",
-      "MRP1.5倍 30",
-      "先攻 20",
-      "W臂腕 60",
-      "突破極限 30",
-      "亂射 20",
-      "爆擊增幅 40"
+      {
+       "name": "巴茨 MASTER",
+       "ap": 95
+      },
+      {
+       "name": "W行動",
+       "ap": 50
+      },
+      {
+       "name": "MRP1.5倍",
+       "ap": 30
+      },
+      {
+       "name": "先攻",
+       "ap": 20
+      },
+      {
+       "name": "W臂腕",
+       "ap": 60
+      },
+      {
+       "name": "突破極限",
+       "ap": 30
+      },
+      {
+       "name": "亂射",
+       "ap": 20
+      },
+      {
+       "name": "爆擊增幅",
+       "ap": 40
+      }
      ],
      "equipment": [
-      "弧光長距瞄準鏡",
-      "玫瑰夾克",
-      "防彈背心",
-      "耍詐硬幣"
+      {
+       "name": "弧光長距瞄準鏡",
+       "alts": []
+      },
+      {
+       "name": "玫瑰夾克",
+       "alts": []
+      },
+      {
+       "name": "防彈背心",
+       "alts": []
+      },
+      {
+       "name": "耍詐硬幣",
+       "alts": []
+      }
      ],
      "notes": "影片畫面 10:00（Lv58，AP 345/364）。呢個時間 Vision 係洋蔥騎士 MR8。同拉斯維爾嘅分別係爆擊只加傷害，唔加擊潰（影片 10:01）。"
     }
@@ -3746,6 +3904,594 @@ footer ul { margin: 0; padding-left: 1.2em; }
     "https://kamigame.jp/ffrs/page/444440875972471060.html",
     "https://kamigame.jp/ffrs/page/444724986079366431.html",
     "https://kamigame.jp/ffrs/page/444440876308015380.html"
+   ],
+   "skillInfo": [
+    {
+     "name": "W臂腕",
+     "nameOriginal": "Wアームズ / Arms Akimbo",
+     "learnFrom": [
+      {
+       "phantomId": "firion",
+       "mr": 9
+      }
+     ],
+     "effect": "一次行動可以用兩個指令。",
+     "confidence": "high",
+     "sources": [
+      "https://game8.jp/ffrs/821715",
+      "https://kamigame.jp/ffrs/page/444440876761000212.html",
+      "https://meowdb.com/db/final-fantasy-resonance/visions/firion"
+     ]
+    },
+    {
+     "name": "極限蓄力",
+     "nameOriginal": "リミットチャージ / Fill Gauge",
+     "learnFrom": [
+      {
+       "phantomId": "cloud",
+       "mr": 5
+      }
+     ],
+     "effect": "自己極限技槽即時加 25%。",
+     "confidence": "high",
+     "sources": [
+      "https://game8.jp/ffrs/821715",
+      "https://kamigame.jp/ffrs/page/444440876459010324.html",
+      "https://meowdb.com/db/final-fantasy-resonance/visions/cloud"
+     ]
+    },
+    {
+     "name": "連續詠唱",
+     "nameOriginal": "れんぞくま / Dualcast",
+     "learnFrom": [
+      {
+       "phantomId": "shantotto",
+       "mr": 9
+      }
+     ],
+     "effect": "一次行動連放兩個黑魔法或白魔法。",
+     "confidence": "high",
+     "sources": [
+      "https://game8.jp/ffrs/821715",
+      "https://kamigame.jp/ffrs/page/444440875972471060.html",
+      "https://meowdb.com/db/final-fantasy-resonance/visions/shantotto"
+     ]
+    },
+    {
+     "name": "靜觀時極限技蓄力",
+     "nameOriginal": "静観でLBチャージ / Observe and Charge LB",
+     "learnFrom": [
+      {
+       "phantomId": "aileen",
+       "mr": 7
+      }
+     ],
+     "effect": "自己行動冇造成傷害時，極限技槽加 15%。",
+     "confidence": "high",
+     "sources": [
+      "https://game8.jp/ffrs/821715",
+      "https://kamigame.jp/ffrs/page/445893517613490646.html",
+      "https://meowdb.com/db/final-fantasy-resonance/visions/aileen"
+     ]
+    },
+    {
+     "name": "極限技槽三重蓄力",
+     "nameOriginal": "LBトリプルチャージ / LB Triple Charge",
+     "learnFrom": [
+      {
+       "phantomId": "onion-knight",
+       "mr": 9
+      }
+     ],
+     "effect": "極限技槽增加量變 3 倍。",
+     "confidence": "high",
+     "sources": [
+      "https://game8.jp/ffrs/821715",
+      "https://kamigame.jp/ffrs/page/444440876308015380.html",
+      "https://meowdb.com/db/final-fantasy-resonance/visions/onion-knight"
+     ]
+    },
+    {
+     "name": "蒂娜 MASTER",
+     "nameOriginal": "ティナMASTER / Spirit of Terra",
+     "learnFrom": [
+      {
+       "phantomId": "terra",
+       "mr": 9
+      }
+     ],
+     "effect": "一招用晒蒂娜嘅 MR 技能：黑之法、魔力增幅、雙倍蓄力、收束之理、突破極限。要學齊 MR1–9 嘅加成。",
+     "confidence": "high",
+     "sources": [
+      "https://game8.jp/ffrs/821715",
+      "https://game8.jp/ffrs/830062",
+      "https://meowdb.com/db/final-fantasy-resonance/visions/terra",
+      "https://kamigame.jp/ffrs/page/444440876610005268.html"
+     ]
+    },
+    {
+     "name": "先攻",
+     "nameOriginal": "さきがけ / First Strike",
+     "learnFrom": [
+      {
+       "phantomId": "tidus",
+       "mr": 3
+      }
+     ],
+     "effect": "戰鬥開始時最先行動。名稱對照係推斷：另一招 AP 20 嘅先手必勝（卡蜜兒 MR3）只係加傷害，唔啱「先攻」個意思。",
+     "confidence": "low",
+     "sources": [
+      "https://game8.jp/ffrs/821715",
+      "https://kamigame.jp/ffrs/page/444440875301392963.html",
+      "https://meowdb.com/db/final-fantasy-resonance/visions/tidus"
+     ]
+    },
+    {
+     "name": "MP消耗減半",
+     "nameOriginal": "MP消費半減 / Half MP Cost",
+     "learnFrom": [
+      {
+       "phantomId": "tronn",
+       "mr": 9
+      }
+     ],
+     "effect": "消耗 MP 減半。",
+     "confidence": "high",
+     "sources": [
+      "https://game8.jp/ffrs/821715",
+      "https://kamigame.jp/ffrs/page/444724986079366431.html",
+      "https://meowdb.com/db/final-fantasy-resonance/visions/tronn"
+     ]
+    },
+    {
+     "name": "巴茨 MASTER",
+     "nameOriginal": "バッツMASTER / Spirit of Bartz",
+     "learnFrom": [
+      {
+       "phantomId": "bartz",
+       "mr": 9
+      }
+     ],
+     "effect": "一招用晒巴茨嘅 MR 技能，包括 MR7 魔法劍二刀流同 MR9 模仿。要學齊 MR1–9 嘅加成。",
+     "confidence": "high",
+     "sources": [
+      "https://game8.jp/ffrs/821715",
+      "https://game8.jp/ffrs/833802",
+      "https://meowdb.com/db/final-fantasy-resonance/visions/bartz",
+      "https://kamigame.jp/ffrs/page/444440874445754947.html"
+     ]
+    },
+    {
+     "name": "突破極限",
+     "nameOriginal": "限界突破 / Break the Limit",
+     "learnFrom": [
+      {
+       "phantomId": "terra",
+       "mr": 9
+      }
+     ],
+     "effect": "傷害上限升到 99999。",
+     "confidence": "high",
+     "sources": [
+      "https://game8.jp/ffrs/821715",
+      "https://kamigame.jp/ffrs/page/444440876610005268.html",
+      "https://meowdb.com/db/final-fantasy-resonance/visions/terra"
+     ]
+    },
+    {
+     "name": "W行動",
+     "nameOriginal": "Wアクション / Double Action",
+     "learnFrom": [
+      {
+       "phantomId": "squall",
+       "mr": 9
+      }
+     ],
+     "effect": "一次行動連用兩招攻擊技；黑魔法同白魔法用唔到。",
+     "confidence": "high",
+     "sources": [
+      "https://game8.jp/ffrs/821715",
+      "https://kamigame.jp/ffrs/page/444440876140243220.html",
+      "https://meowdb.com/db/final-fantasy-resonance/visions/squall"
+     ]
+    },
+    {
+     "name": "爆擊時恢復MP",
+     "nameOriginal": "クリティカルでMP回復 / Restore MP on Critical Hit",
+     "learnFrom": [
+      {
+       "phantomId": "cloud",
+       "mr": 1
+      }
+     ],
+     "effect": "爆擊時回復 3% MP。",
+     "confidence": "high",
+     "sources": [
+      "https://game8.jp/ffrs/821715",
+      "https://kamigame.jp/ffrs/page/444440876459010324.html",
+      "https://meowdb.com/db/final-fantasy-resonance/visions/cloud"
+     ]
+    },
+    {
+     "name": "光之戰士 MASTER",
+     "nameOriginal": "ウォーリアオブライトMASTER / Spirit of WoL",
+     "learnFrom": [
+      {
+       "phantomId": "warrior-of-light",
+       "mr": 9
+      }
+     ],
+     "effect": "一招用晒光之戰士嘅 MR 技能，包括物理反擊同死撐（HP 1 耐一次）。要學齊 MR1–9 嘅加成。",
+     "confidence": "high",
+     "sources": [
+      "https://game8.jp/ffrs/821715",
+      "https://game8.jp/ffrs/830064",
+      "https://meowdb.com/db/final-fantasy-resonance/visions/warrior-of-light"
+     ]
+    },
+    {
+     "name": "對魔法反擊",
+     "nameOriginal": "魔法にカウンター / Magic Counter",
+     "learnFrom": [
+      {
+       "phantomId": "cecil",
+       "mr": 5
+      }
+     ],
+     "effect": "受魔法攻擊時用普通攻擊反擊。蒂娜覺醒 ★1 都有同一招，但只限裝住蒂娜時用，所以冇放入 learnFrom。",
+     "confidence": "high",
+     "sources": [
+      "https://game8.jp/ffrs/821715",
+      "https://kamigame.jp/ffrs/page/444440874730967619.html",
+      "https://meowdb.com/db/final-fantasy-resonance/visions/cecil",
+      "https://kamigame.jp/ffrs/page/444440876610005268.html",
+      "https://meowdb.com/db/final-fantasy-resonance/visions/terra"
+     ]
+    },
+    {
+     "name": "MRP1.5倍",
+     "nameOriginal": "MRP1.5倍 / MRP Gain +50%",
+     "learnFrom": [
+      {
+       "phantomId": "victoria",
+       "mr": 7
+      }
+     ],
+     "effect": "得到嘅 MRP 變 1.5 倍。",
+     "confidence": "high",
+     "sources": [
+      "https://game8.jp/ffrs/821715",
+      "https://kamigame.jp/ffrs/page/445964610479083195.html",
+      "https://meowdb.com/db/final-fantasy-resonance/visions/victoria"
+     ]
+    },
+    {
+     "name": "極限技槽雙倍蓄力",
+     "nameOriginal": "LBダブルチャージ / LB Double Charge",
+     "learnFrom": [
+      {
+       "phantomId": "terra",
+       "mr": 5
+      }
+     ],
+     "effect": "極限技槽增加量變 2 倍。",
+     "confidence": "high",
+     "sources": [
+      "https://game8.jp/ffrs/821715",
+      "https://kamigame.jp/ffrs/page/444440876610005268.html",
+      "https://meowdb.com/db/final-fantasy-resonance/visions/terra"
+     ]
+    },
+    {
+     "name": "亂射",
+     "nameOriginal": "みだれうち / Barrage",
+     "learnFrom": [
+      {
+       "phantomId": "noctis",
+       "mr": 9
+      }
+     ],
+     "effect": "隨機打敵人 4 下，一定命中。",
+     "confidence": "high",
+     "sources": [
+      "https://game8.jp/ffrs/821715",
+      "https://kamigame.jp/ffrs/page/444440875737600579.html",
+      "https://meowdb.com/db/final-fantasy-resonance/visions/noctis"
+     ]
+    },
+    {
+     "name": "爆擊增幅",
+     "nameOriginal": "クリティカル・ブースト / Critical Boost",
+     "learnFrom": [
+      {
+       "phantomId": "cloud",
+       "mr": 9
+      }
+     ],
+     "effect": "物理爆擊時傷害加 40%。",
+     "confidence": "high",
+     "sources": [
+      "https://game8.jp/ffrs/821715",
+      "https://kamigame.jp/ffrs/page/444440876459010324.html",
+      "https://meowdb.com/db/final-fantasy-resonance/visions/cloud"
+     ]
+    }
+   ],
+   "equipmentInfo": [
+    {
+     "name": "最後底牌",
+     "nameOriginal": "ラストリゾート / Last Resort",
+     "slot": "武器（魔道書，尼可專用）",
+     "effect": "神聖力 +124；唔造成傷害嘅行動令極限技槽加 10%；自己施加嘅強化效果延長 1 回合。",
+     "howToGet": "十二武具・書物試練（エルナト，Lv50）。先要有古びた書物：第7章開始後喺商船買，45000 Gil，要順次買齊商船之前 2 件商品先出，喺格蘭榭爾特王國同風之大陸附近海面巡航（game8）；打贏後古びた書物變成呢把。十二武具之間喺風之大陸（ディルナド）西北小島，第5章有飛空艇先去到。",
+     "confidence": "high",
+     "sources": [
+      "https://game8.jp/ffrs/836348",
+      "https://kamigame.jp/ffrs/page/446628389940399782.html",
+      "https://kamigame.jp/ffrs/page/446488233900008051.html",
+      "https://meowdb.com/db/final-fantasy-resonance/equipment/last-resort-10599"
+     ]
+    },
+    {
+     "name": "魔術師之服",
+     "nameOriginal": "魔術師の服 / Sorcerer's Habit",
+     "slot": "防具（長袍）",
+     "effect": "魔攻 +46；擊潰敵人時回復 5% MP。",
+     "howToGet": "第5章魔道都市米希迪亞防具店，13500 Gil。櫻加入時都會帶住一件（神ゲー）。",
+     "confidence": "high",
+     "sources": [
+      "https://game8.jp/ffrs/821717",
+      "https://kamigame.jp/ffrs/page/444480235874869107.html",
+      "https://meowdb.com/db/final-fantasy-resonance/equipment/sorcerers-habit-11502"
+     ]
+    },
+    {
+     "name": "力量石",
+     "nameOriginal": "パワーストーン / Power Stone",
+     "slot": "飾品",
+     "effect": "開場極限技槽加 50%。",
+     "howToGet": "第6章起飛空艇飾品店，10000 Gil；或者第5章有飛空艇後，喺格蘭榭爾特王國只有飛空艇去到嘅地方撿閃光點。",
+     "confidence": "high",
+     "sources": [
+      "https://game8.jp/ffrs/821717",
+      "https://kamigame.jp/ffrs/page/444480692114447837.html",
+      "https://meowdb.com/db/final-fantasy-resonance/equipment/power-stone-12002"
+     ]
+    },
+    {
+     "name": "黃金頭飾",
+     "nameOriginal": "金の髪飾り / Gold Hairpin",
+     "slot": "飾品",
+     "effect": "魔攻 +30；消耗 MP 減半。",
+     "howToGet": "十二武具・金細工試練（ブラキウム，Lv50）。先要古びた金細工：第5章有飛空艇後，去佐爾達德帝國領西邊孤島嘅岩場の洞窟開寶箱。十二武具之間喺風之大陸（ディルナド）西北小島，第5章有飛空艇先去到。",
+     "confidence": "high",
+     "sources": [
+      "https://game8.jp/ffrs/835805",
+      "https://game8.jp/ffrs/839004",
+      "https://kamigame.jp/ffrs/page/446488233900008051.html",
+      "https://kamigame.jp/ffrs/page/444480692114447837.html",
+      "https://meowdb.com/db/final-fantasy-resonance/equipment/gold-hairpin-12099"
+     ]
+    },
+    {
+     "name": "止水",
+     "nameOriginal": "止水 / Shisui",
+     "slot": "武器（刀，拉斯維爾專用）",
+     "effect": "開場附加 5 回合「研ぎ澄まし」同 5 回合「明鏡止水」。",
+     "howToGet": "艾琳鍛造，要 1 粒アダマンタイト。條件：第5章後完成支線「思い鍛えし者」（ディルマギア工業都市嘅噂好きの女性接），推到第6章，再去飛空艇甲板搵艾琳。第一粒最易：鬥技場初級戰 2。",
+     "confidence": "high",
+     "sources": [
+      "https://game8.jp/ffrs/834099",
+      "https://kamigame.jp/ffrs/page/446025448137165204.html",
+      "https://kamigame.jp/ffrs/page/444477770144158651.html",
+      "https://meowdb.com/db/final-fantasy-resonance/equipment/shisui-10290"
+     ]
+    },
+    {
+     "name": "佐助刀",
+     "nameOriginal": "佐助の刀 / Sasuke's Blade",
+     "slot": "武器（刀，拉斯維爾專用）",
+     "effect": "爆擊率 +20%；物理迴避率 +20%。",
+     "howToGet": "十二武具・刀試練（アダフェラ，Lv50）。先要古びた刀：第8章水晶塔中層發着點附近寶箱，所以最早第8章先有。十二武具之間喺風之大陸（ディルナド）西北小島，第5章有飛空艇先去到。",
+     "confidence": "high",
+     "sources": [
+      "https://game8.jp/ffrs/835805",
+      "https://game8.jp/ffrs/835828",
+      "https://kamigame.jp/ffrs/page/446488233900008051.html",
+      "https://kamigame.jp/ffrs/page/444477770144158651.html",
+      "https://meowdb.com/db/final-fantasy-resonance/equipment/sasukes-blade-10299"
+     ]
+    },
+    {
+     "name": "源氏之鎧",
+     "nameOriginal": "源氏の鎧 / Genji Armor",
+     "slot": "防具（重裝）",
+     "effect": "速度 -30；爆擊時傷害同擊潰傷害 +15%。",
+     "howToGet": "第5章支線「ビッグブリッヂの死闘」獎勵。喺飛空艇甲板打贏吉爾伽美什後開始，跟住去查 4 條橋，再去格蘭榭爾特王國嘅コロボス大橋打贏佢就有。",
+     "confidence": "high",
+     "sources": [
+      "https://game8.jp/ffrs/834054",
+      "https://kamigame.jp/ffrs/page/445928204356586566.html",
+      "https://kamigame.jp/ffrs/page/444480235874869107.html",
+      "https://meowdb.com/db/final-fantasy-resonance/equipment/genji-armor-11396"
+     ]
+    },
+    {
+     "name": "源氏護手",
+     "nameOriginal": "源氏の小手 / Genji Gloves",
+     "slot": "飾品",
+     "effect": "爆擊率 +50%。",
+     "howToGet": "第5章櫻加入後，回飛空艇甲板打贏吉爾伽美什（Lv40）。第1章塞壬之塔個寶箱嗰件會即刻俾佢偷走。game8 話第1章要喺塔頂同佢講過嘢，而且要夠戰鬥次數先出現；神ゲー冇提呢個條件。",
+     "confidence": "high",
+     "sources": [
+      "https://game8.jp/ffrs/832523",
+      "https://kamigame.jp/ffrs/page/445928204356586566.html",
+      "https://kamigame.jp/ffrs/page/444480692114447837.html",
+      "https://meowdb.com/db/final-fantasy-resonance/equipment/genji-gloves-12096"
+     ]
+    },
+    {
+     "name": "崩身戒指",
+     "nameOriginal": "崩身の指輪 / Stagger Ring",
+     "slot": "飾品",
+     "effect": "擊潰傷害 +10%。",
+     "howToGet": "集齊 12 塊石板のカケラ，去港町格蘭波特旁邊嘅忘却の神殿搵謎の姫換。",
+     "confidence": "high",
+     "sources": [
+      "https://game8.jp/ffrs/822512",
+      "https://kamigame.jp/ffrs/page/444480692114447837.html",
+      "https://meowdb.com/db/final-fantasy-resonance/equipment/stagger-ring-12060"
+     ]
+    },
+    {
+     "name": "屬性改變道具",
+     "nameOriginal": "無屬性物理攻擊附加屬性嘅飾品（8 件，見取得方式）",
+     "slot": "飾品",
+     "effect": "將無屬性物理攻擊變成指定屬性。",
+     "howToGet": "主線 BOSS 掉 7 件（有兩戰嘅係第一戰掉）：火 ソルペンダント = 劫火のヴェリアス，第4章兵器工場；水 ブルーアミュレット = 水華，第3章水の神殿；風 シルフのティアラ = 天風，第2章風の神殿；土 ゴーレムコア = 王土，第5章ミシディアの塔；光 ハローリング = 光輝，第6章荒れ果てた山道；冰 氷精のマフラー = 氷刃，第6章至聖殿；闇 デーモンリング = 常闇，第7章浮遊大陸。雷 雷帝のイヤリング 冇 BOSS 掉：第5章魔道都市米希迪亞櫻屋企寶箱。錯過咗都可以偷：火 エンシェントドラゴン（ゴロノア）、水 ミヅチ、風 A式魔導アーマー改（戦場）、土 サンドウォーム（佐爾達德帝國領）、光 ダンテ（水晶塔）、冰 いまわしきもの、雷 まがまがしきもの（三隻都喺龍のアギト）、闇 Gluttony（水晶塔，日文名未查）。",
+     "confidence": "high",
+     "sources": [
+      "https://game8.jp/ffrs/821717",
+      "https://game8.jp/ffrs/833875",
+      "https://game8.jp/ffrs/834286",
+      "https://game8.jp/ffrs/834858",
+      "https://game8.jp/ffrs/836333",
+      "https://game8.jp/ffrs/836533",
+      "https://game8.jp/ffrs/837533",
+      "https://game8.jp/ffrs/836345",
+      "https://game8.jp/ffrs/821514",
+      "https://game8.jp/ffrs/821719",
+      "https://kamigame.jp/ffrs/page/444480692114447837.html",
+      "https://meowdb.com/db/final-fantasy-resonance/equipment/solar-pendant-12078",
+      "https://meowdb.com/db/final-fantasy-resonance/equipment/azure-amulet-12081",
+      "https://meowdb.com/db/final-fantasy-resonance/equipment/sylphs-tiara-12082",
+      "https://meowdb.com/db/final-fantasy-resonance/equipment/golem-core-12083",
+      "https://meowdb.com/db/final-fantasy-resonance/equipment/halo-ring-12084",
+      "https://meowdb.com/db/final-fantasy-resonance/equipment/snow-spirits-scarf-12079",
+      "https://meowdb.com/db/final-fantasy-resonance/equipment/demons-ring-12085",
+      "https://meowdb.com/db/final-fantasy-resonance/equipment/thunder-gods-earrings-12080"
+     ]
+    },
+    {
+     "name": "諸神黃昏",
+     "nameOriginal": "ラグナロク / Ragnarok",
+     "slot": "武器（大劍，雷恩專用）",
+     "effect": "無屬性攻擊嘅傷害同擊潰傷害 +25%。",
+     "howToGet": "十二武具・大劍試練（アルフェーグ，Lv50）。先要古びた大劍：鬥技場初級戰 3（Lv29）首次獎勵；鬥技場第4章到帝都後開放。十二武具之間喺風之大陸（ディルナド）西北小島，第5章有飛空艇先去到。",
+     "confidence": "high",
+     "sources": [
+      "https://game8.jp/ffrs/835805",
+      "https://game8.jp/ffrs/837706",
+      "https://kamigame.jp/ffrs/page/446488233900008051.html",
+      "https://kamigame.jp/ffrs/page/444477770144158651.html",
+      "https://meowdb.com/db/final-fantasy-resonance/equipment/ragnarok-10199"
+     ]
+    },
+    {
+     "name": "夜行步伐",
+     "nameOriginal": "ナイトステップ / Shadowstep Garb",
+     "slot": "防具（輕裝）",
+     "effect": "物理攻擊有 15% 機會迴避。",
+     "howToGet": "第6章閉ざされた大地ゴロノア，世界地圖閃光點撿到。",
+     "confidence": "high",
+     "sources": [
+      "https://game8.jp/ffrs/821717",
+      "https://kamigame.jp/ffrs/page/444480235874869107.html",
+      "https://meowdb.com/db/final-fantasy-resonance/equipment/shadowstep-garb-11026"
+     ]
+    },
+    {
+     "name": "紅玫瑰頭冠",
+     "nameOriginal": "紅薔薇のサークレット / Rose Circlet",
+     "slot": "飾品",
+     "effect": "物理傷害 +10%；MP +30。",
+     "howToGet": "第5章支線「姿を消した戦友」獎勵：去反亂軍アジト搵シモン接，再去帝都スラム查 5 個渠蓋。",
+     "confidence": "high",
+     "sources": [
+      "https://game8.jp/ffrs/834065",
+      "https://game8.jp/ffrs/821717",
+      "https://kamigame.jp/ffrs/page/444480692114447837.html",
+      "https://meowdb.com/db/final-fantasy-resonance/equipment/rose-circlet-12100"
+     ]
+    },
+    {
+     "name": "戰士頭巾",
+     "nameOriginal": "戦士のバンダナ / Warrior's Bandana",
+     "slot": "飾品",
+     "effect": "普通攻擊造成傷害時，極限技槽加 5%。",
+     "howToGet": "鬥技場商店（初級制霸後，限 1 件）；或者偷 Hill Gigas（地下通路，日文名未查）。",
+     "confidence": "high",
+     "sources": [
+      "https://game8.jp/ffrs/821717",
+      "https://meowdb.com/db/final-fantasy-resonance/equipment/warriors-bandana-12068"
+     ]
+    },
+    {
+     "name": "弧光長距瞄準鏡",
+     "nameOriginal": "アークロングスコープ / Arcane Long Rifle",
+     "slot": "武器（槍，傑克專用）",
+     "effect": "魔法傷害 +10%。",
+     "howToGet": "第6章研究所廃墟寶箱。",
+     "confidence": "high",
+     "sources": [
+      "https://game8.jp/ffrs/821717",
+      "https://kamigame.jp/ffrs/page/444477770144158651.html",
+      "https://meowdb.com/db/final-fantasy-resonance/equipment/arcane-long-rifle-10713"
+     ]
+    },
+    {
+     "name": "玫瑰夾克",
+     "nameOriginal": "薔薇のジャケット / Rose Jacket",
+     "slot": "防具（輕裝）",
+     "effect": "冇特殊效果（物防 113／魔防 84）。",
+     "howToGet": "第4章反亂軍アジト防具店，7000 Gil；第4章中段起帝都市場都有。",
+     "confidence": "high",
+     "sources": [
+      "https://game8.jp/ffrs/821717",
+      "https://kamigame.jp/ffrs/page/444480235874869107.html",
+      "https://meowdb.com/db/final-fantasy-resonance/equipment/rose-jacket-11010"
+     ]
+    },
+    {
+     "name": "防彈背心",
+     "nameOriginal": "防弾チョッキ / Bulletproof Vest",
+     "slot": "飾品",
+     "effect": "物防 +10。",
+     "howToGet": "第1章土之神殿寶箱；或第4章反亂軍アジト飾品店，1000 Gil。",
+     "confidence": "high",
+     "sources": [
+      "https://game8.jp/ffrs/821717",
+      "https://kamigame.jp/ffrs/page/444480692114447837.html",
+      "https://meowdb.com/db/final-fantasy-resonance/equipment/bulletproof-vest-12022"
+     ]
+    },
+    {
+     "name": "耍詐硬幣",
+     "nameOriginal": "イカサマコイン / Trick Coin",
+     "slot": "飾品",
+     "effect": "「コイントス」一定出正面。",
+     "howToGet": "支線「遺されたコイン」獎勵（game8 一覽歸第6章）：第5章「名もなき古城に行こう」之後，喺飛空艇以外嘅旅館過夜就開始；去帝都スラム、ケリス駅，再搵ゾルダード城嘅シエラ。",
+     "confidence": "high",
+     "sources": [
+      "https://game8.jp/ffrs/834057",
+      "https://game8.jp/ffrs/821717",
+      "https://meowdb.com/db/final-fantasy-resonance/equipment/trick-coin-12047"
+     ]
+    },
+    {
+     "name": "天命兵法書",
+     "nameOriginal": "天命の兵法書 / Codex Providentiae",
+     "slot": "武器（魔道書，尼可專用）",
+     "effect": "神聖力 +169；開場最先行動；附加 3 回合「転戦自在の策」。",
+     "howToGet": "艾琳鍛造，要 1 粒アダマンタイト。條件同止水：第5章後完成支線「思い鍛えし者」，推到第6章，再去飛空艇甲板搵艾琳。",
+     "confidence": "high",
+     "sources": [
+      "https://game8.jp/ffrs/834099",
+      "https://kamigame.jp/ffrs/page/445926310309540263.html",
+      "https://kamigame.jp/ffrs/page/444477770144158651.html",
+      "https://meowdb.com/db/final-fantasy-resonance/equipment/codex-providentiae-10590"
+     ]
+    }
    ]
   }
  ]
@@ -4342,7 +5088,33 @@ footer ul { margin: 0; padding-left: 1.2em; }
     mountSprites(grid);
   }
   /* ================= challenge view ================= */
-  function partyCard(m) {
+  function infoOf(list, name) { return (list || []).filter(function (i) { return i.name === name; })[0] || {}; }
+  function learnText(info) {
+    var from = (info.learnFrom || []).filter(function (f) { return f && phById[f.phantomId]; });
+    if (!from.length) return '<span class="none">學習來源未查到</span>';
+    return from.map(function (f) { return esc(phById[f.phantomId].name) + (f.mr != null ? " MR" + esc(f.mr) : "（MR 未查到）"); }).join(" ／ ") + confMini(info.confidence);
+  }
+  function skillList(list, x) {
+    if (!has(list)) return "";
+    return '<div class="lookup"><span class="lbl">技能 · 邊隻幻兵學</span><ul>' + list.map(function (s) {
+      var info = infoOf(x.skillInfo, s.name);
+      return '<li><div class="row"><b>' + esc(s.name) + "</b>" + (s.ap != null ? '<span class="ap">AP ' + esc(s.ap) + "</span>" : "") +
+        '<span class="from">' + learnText(info) + "</span></div>" + (info.effect ? '<div class="sub">' + esc(info.effect) + "</div>" : "") + "</li>";
+    }).join("") + "</ul></div>";
+  }
+  function gearItem(name, x, altOf) {
+    var info = infoOf(x.equipmentInfo, name);
+    return '<li><div class="row"><b>' + (altOf ? "或 " : "") + esc(name) + "</b>" + (info.slot ? '<span class="ap">' + esc(info.slot) + "</span>" : "") + confMini(info.howToGet ? info.confidence : null) + "</div>" +
+      (info.effect ? '<div class="sub">' + esc(info.effect) + "</div>" : "") +
+      '<div class="how"><span class="lbl">取得：</span>' + (info.howToGet ? esc(info.howToGet) : '<span class="none">未查到</span>') + "</div></li>";
+  }
+  function gearList(list, x) {
+    if (!has(list)) return "";
+    return '<div class="lookup"><span class="lbl">裝備 · 點樣攞</span><ul>' + list.map(function (g) {
+      return gearItem(g.name, x, false) + (g.alts || []).map(function (a) { return gearItem(a, x, true); }).join("");
+    }).join("") + "</ul></div>";
+  }
+  function partyCard(m, x) {
     var c = charById[m.characterId], p = phById[m.phantomId];
     var charName = c ? c.name : m.characterId, phName = p ? p.name : m.phantomId;
     return '<div class="win party">' +
@@ -4353,7 +5125,7 @@ footer ul { margin: 0; padding-left: 1.2em; }
       (phName ? '<div class="equip"><div class="ph-portrait">' + spr("phantom", m.phantomId, 32) + "</div>" +
         '<div class="ph-name"><span class="lbl">' + esc(T.phantom) + "</span><b>" + esc(phName) + "</b><small>" + esc(p ? p.nameOriginal : "") + "</small></div>" +
         mrMeter(m, p, 0) + starMeter(m, p, 0, false) + "</div>" : "") +
-      skillsRow(m.skills, "技能") + skillsRow(m.equipment, "裝備") +
+      skillList(m.skills, x) + gearList(m.equipment, x) +
       (m.notes ? '<p class="reason">' + esc(m.notes) + "</p>" : "") +
       (c ? '<div class="foot"><button class="route-btn" type="button" data-char="' + esc(c.id) + '">全章路線 ▶</button></div>' : "") + "</div>";
   }
@@ -4370,7 +5142,7 @@ footer ul { margin: 0; padding-left: 1.2em; }
       ((x.unlock || x.recommendedLevel) ? '<dl class="facts">' + (x.unlock ? "<dt>開放</dt><dd>" + esc(x.unlock) + "</dd>" : "") + (x.recommendedLevel ? "<dt>建議等級</dt><dd>" + esc(x.recommendedLevel) + "</dd>" : "") + "</dl>" : "") +
       (x.description ? "<p>" + esc(x.description) + "</p>" : "") +
       (CONF[x.confidence] ? '<div class="foot">' + conf(x.confidence) + "</div>" : "") + "</section>" +
-      (party.length ? '<section><p class="win-title">PARTY · 推薦配置</p><div class="party-grid">' + party.map(partyCard).join("") + "</div></section>" : "") +
+      (party.length ? '<section><p class="win-title">PARTY · 推薦配置</p><div class="party-grid">' + party.map(function (m) { return partyCard(m, x); }).join("") + "</div></section>" : "") +
       (tips.length ? '<section class="win ch-sec"><p class="win-title">TIPS · 打法重點</p><ul class="tips">' + tips.map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("") + "</ul></section>" : "") +
       (battles.length ? '<section class="win ch-sec"><p class="win-title">BATTLES · 逐場</p><ol class="battles">' + battles.map(function (b) {
           return '<li class="battle"><span class="num">' + esc(b.order) + "</span><div>" + (b.enemy ? "<b>" + esc(b.enemy) + "</b>" : "") + (b.notes ? "<div>" + esc(b.notes) + "</div>" : "") + "</div></li>";
