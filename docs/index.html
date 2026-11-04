@@ -294,7 +294,8 @@ header.top { display: grid; gap: 10px; grid-template-columns: 1fr auto; align-it
 .btn:hover { background: var(--gold); color: var(--ink); }
 
 /* ---------- detail dialog ---------- */
-dialog.win { color: var(--text); max-width: min(760px, calc(100vw - 32px)); width: 100%; max-height: calc(100dvh - 40px); overflow: auto; padding: 18px; }
+/* .win sets position:relative, which would pin the modal to the page top instead of the viewport */
+dialog.win { position: fixed; inset: 0; margin: auto; color: var(--text); max-width: min(760px, calc(100vw - 32px)); width: 100%; max-height: calc(100dvh - 40px); overflow: auto; overscroll-behavior: contain; padding: 18px; }
 dialog::backdrop { background: #04061acc; }
 dialog[open] { animation: open .18s steps(3); }
 @keyframes open { from { clip-path: inset(50% 0 50% 0); } to { clip-path: inset(0 0 0 0); } }
