@@ -47,3 +47,35 @@
 
 ## 7. 未收錄
 幻獸（Esper）、裝備、支線、鬥技場、十二武具之間。
+
+## 8. v0.3 更新（2026-11-04）
+- **16連打**：玩家叫法，唔係關卡或連戰，亦冇開放條件，意思係一個角色一回合打 16 下。來源：帽子遊戲頻道 https://www.youtube.com/watch?v=OasN6MdA3mA（配置 0:57–6:16，6:07 係總結句）。
+- **影片存取**：讀咗標題、描述、章節、完整自動字幕（transcript 面板），同約 30 個畫面。未登入、冇下載。字幕有聽錯（例如「W護腕／W備腕」），技能名以畫面為準。
+- **直接來自影片**：尼科爾、拉斯維爾、雷因、傑克嘅技能、AP、裝備，同起手步驟。
+- **來自文字來源**：鏡面晶写の術效果同 Lv30（game8、keengamer）；技能對應 Vision 同 MR（kamigame）。
+- **推斷**：16 = 鏡面 ×2 × W臂腕 ×2 × W行動 ×2 × 二刀流 ×2；最早第 5 章後用得。
+- **繁中介面**：影片畫面顯示遊戲有繁中介面，第 1 節「未確認」可以更新。官方譯名同資料有出入（雷因、尼科爾、拉斯韋爾、莉德、傑科、櫻）。資料內角色名未改。
+
+### 機制
+- MR：每角色＋Vision 分開。Vision 換人會由 MR0 練起，返原角色保留 MR（gamerch）。
+- ★：全隊共用（gamerch）。
+- 同時裝備：allthings.how 明文話一隻 Vision 同時只可一人裝；其他來源只係間接支持，未經遊戲內核實。
+- 永続加成同學到嘅技能換 Vision 後保留（kamigame、game8）。技能受 AP 上限限制。MASTER 技能（MR9）發揮該 Vision 全部アビリティ效果（game8／gamerch 搜尋結果摘要，未開頁核實）。
+
+### 數量
+builds 126 條：main 43、skill 71、alt 12；high 12、medium 31、low 83。challenges 1 條。
+
+### 缺口
+1. 新 row 章節時間大部份係推斷，只有 5 條 skill row 有影片支持，設 medium。
+2. MRP 需求未查，唔知第 8 章前練唔練得晒。
+3. 影片畫面嘅 Vision（例如尼科爾雅·修特拉 MR7）似係練緊嗰隻，唔係推薦；`targetStage`、`targetAwakening` 填 `null`。
+4. 部份繁中技能名對應日文係推斷（極限蓄力、先下手為強）。
+5. 字幕「火光劍」可能聽錯，未核實。
+6. `ch7 fina leah` 舊 row 係 low，屬來源有爭議（kamigame 對 keengamer），唔係推斷。
+
+### 新來源
+- gamerch：https://gamerch.com/ffrs/1025549
+- game8 尼科爾：https://game8.jp/ffrs/836092
+- games.gg：https://games.gg/final-fantasy-resonance/guides/best-visions-character-pairings/
+- KeenGamer：https://www.keengamer.com/articles/guides/final-fantasy-resonance-best-character-builds/
+- allthings.how：https://allthings.how/?p=303668

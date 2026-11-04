@@ -3,7 +3,7 @@
     "game": "Final Fantasy Resonance（ファイナルファンタジー レゾナンス）",
     "server": "單機（非手遊、無伺服器分區）— PS5 / Xbox Series X|S / Switch / Switch 2 / PC(Steam)；資料以日版攻略為主",
     "gameVersion": "1.0（2026-10-22 發售版；未見大型更新資料）",
-    "lastUpdated": "2026-11-02",
+    "lastUpdated": "2026-11-04",
     "terms": {
       "phantom": "幻兵（Vision / ビジョン）",
       "stage": "MR（マスタリーランク Mastery Rank，1–9）",
@@ -85,6 +85,30 @@
       {
         "title": "gamerch ビジョン強化優先度",
         "url": "https://gamerch.com/ffrs/1025704"
+      },
+      {
+        "title": "帽子遊戲頻道：16連打配置影片（字幕＋畫面）",
+        "url": "https://www.youtube.com/watch?v=OasN6MdA3mA"
+      },
+      {
+        "title": "gamerch MR／覺醒比較",
+        "url": "https://gamerch.com/ffrs/1025549"
+      },
+      {
+        "title": "game8 尼科爾（LB 名）",
+        "url": "https://game8.jp/ffrs/836092"
+      },
+      {
+        "title": "games.gg Best Visions pairings",
+        "url": "https://games.gg/final-fantasy-resonance/guides/best-visions-character-pairings/"
+      },
+      {
+        "title": "KeenGamer Best character builds",
+        "url": "https://www.keengamer.com/articles/guides/final-fantasy-resonance-best-character-builds/"
+      },
+      {
+        "title": "allthings.how Best Visions（一隻 Vision 同時只可一人）",
+        "url": "https://allthings.how/?p=303668"
       }
     ]
   },
@@ -763,6 +787,8 @@
       "chapterId": "ch1",
       "characterId": "rain",
       "phantomId": "warrior-of-light",
+      "purpose": "main",
+      "learnSkills": [],
       "targetStage": 5,
       "targetAwakening": 0,
       "awakeningNote": "覺醒要到第1章尾（塞壬之塔後）先開放，章1嘅魔石の欠片優先俾克勞德同莉亞。",
@@ -782,6 +808,8 @@
       "chapterId": "ch1",
       "characterId": "lasswell",
       "phantomId": "cloud",
+      "purpose": "main",
+      "learnSkills": [],
       "targetStage": 5,
       "targetAwakening": 1,
       "awakeningNote": "兩個攻略站都將克勞德列為前期覺醒首選（★1 學ラ系ブレイク），用第1章尾教學同塞壬之塔攞到嘅魔石の欠片。",
@@ -799,8 +827,27 @@
     },
     {
       "chapterId": "ch1",
+      "characterId": "lasswell",
+      "phantomId": "tronn",
+      "purpose": "alt",
+      "learnSkills": [],
+      "targetStage": 3,
+      "targetAwakening": 0,
+      "awakeningNote": "過渡用，唔使覺醒。",
+      "priority": "optional",
+      "reason": "攞到克勞德之前過渡用；MR 加成嘅「破防」永續加成有用，練咗唔會浪費。",
+      "confidence": "medium",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444431731987071029.html",
+        "https://kamigame.jp/ffrs/page/445778720100242080.html"
+      ]
+    },
+    {
+      "chapterId": "ch1",
       "characterId": "fina",
       "phantomId": "leah",
+      "purpose": "main",
+      "learnSkills": [],
       "targetStage": 5,
       "targetAwakening": 1,
       "awakeningNote": "game8：前期唯一治療幻兵，★1 最優先（學ケアルラ）；用魔石の欠片。",
@@ -817,23 +864,10 @@
     },
     {
       "chapterId": "ch1",
-      "characterId": "lasswell",
-      "phantomId": "tronn",
-      "targetStage": 3,
-      "targetAwakening": 0,
-      "awakeningNote": "過渡用，唔使覺醒。",
-      "priority": "optional",
-      "reason": "攞到克勞德之前過渡用；MR 加成嘅「破防」永續加成有用，練咗唔會浪費。",
-      "confidence": "medium",
-      "sources": [
-        "https://kamigame.jp/ffrs/page/444431731987071029.html",
-        "https://kamigame.jp/ffrs/page/445778720100242080.html"
-      ]
-    },
-    {
-      "chapterId": "ch1",
       "characterId": "fina",
       "phantomId": "terra",
+      "purpose": "alt",
+      "learnSkills": [],
       "targetStage": 3,
       "targetAwakening": 0,
       "awakeningNote": "前期覺醒蒂娜效益低（kamigame 前期★1 評價），欠片留俾克勞德／莉亞。",
@@ -849,6 +883,8 @@
       "chapterId": "ch2",
       "characterId": "rain",
       "phantomId": "warrior-of-light",
+      "purpose": "main",
+      "learnSkills": [],
       "targetStage": 5,
       "targetAwakening": 1,
       "awakeningNote": "推斷：兩站都將光之戰士列為前期★1 候選；第2章靠支線／寶箱再攞魔石の欠片。",
@@ -867,6 +903,8 @@
       "chapterId": "ch2",
       "characterId": "lasswell",
       "phantomId": "cloud",
+      "purpose": "main",
+      "learnSkills": [],
       "targetStage": 5,
       "targetAwakening": 1,
       "awakeningNote": "已經★1；魔石（★2）未有得攞。",
@@ -883,6 +921,8 @@
       "chapterId": "ch2",
       "characterId": "fina",
       "phantomId": "leah",
+      "purpose": "main",
+      "learnSkills": [],
       "targetStage": 5,
       "targetAwakening": 1,
       "awakeningNote": "已經★1；★2 要等魔石。",
@@ -899,6 +939,8 @@
       "chapterId": "ch2",
       "characterId": "lid",
       "phantomId": "terra",
+      "purpose": "main",
+      "learnSkills": [],
       "targetStage": 5,
       "targetAwakening": 0,
       "awakeningNote": "推斷：前期欠片數量有限，蒂娜嘅覺醒要到★2/★3 先見效，暫時唔使。",
@@ -915,6 +957,8 @@
       "chapterId": "ch2",
       "characterId": "lid",
       "phantomId": "onion-knight",
+      "purpose": "alt",
+      "learnSkills": [],
       "targetStage": 3,
       "targetAwakening": 0,
       "awakeningNote": "推斷：optional，唔使覺醒。",
@@ -929,6 +973,8 @@
       "chapterId": "ch3",
       "characterId": "rain",
       "phantomId": "warrior-of-light",
+      "purpose": "main",
+      "learnSkills": [],
       "targetStage": 5,
       "targetAwakening": 1,
       "awakeningNote": "維持★1。",
@@ -942,8 +988,28 @@
     },
     {
       "chapterId": "ch3",
+      "characterId": "rain",
+      "phantomId": "firion",
+      "purpose": "skill",
+      "learnSkills": [],
+      "targetStage": 5,
+      "targetAwakening": 0,
+      "awakeningNote": "",
+      "priority": "core",
+      "reason": "影片 6:26：弗利昂一加入就即刻練；MR5 係過渡，先攞 MR2/MR4 永續。第4章前 MR5 目標來自 kamigame。",
+      "confidence": "medium",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444440876761000212.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=386s",
+        "https://kamigame.jp/ffrs/page/445517666719915396.html"
+      ]
+    },
+    {
+      "chapterId": "ch3",
       "characterId": "lasswell",
       "phantomId": "cloud",
+      "purpose": "main",
+      "learnSkills": [],
       "targetStage": 5,
       "targetAwakening": 1,
       "awakeningNote": "維持★1；★2 要等魔石（最早第4章）。",
@@ -958,8 +1024,30 @@
     },
     {
       "chapterId": "ch3",
+      "characterId": "lasswell",
+      "phantomId": "squall",
+      "purpose": "skill",
+      "learnSkills": [
+        "觸發／トリガー（斯考爾 MR5）"
+      ],
+      "targetStage": 5,
+      "targetAwakening": 0,
+      "awakeningNote": "",
+      "priority": "core",
+      "reason": "影片 6:30：拉斯維爾攞斯考爾去學 W行動，同雷恩練弗利昂同時進行。",
+      "confidence": "medium",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444440876140243220.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=390s",
+        "https://kamigame.jp/ffrs/page/445517666719915396.html"
+      ]
+    },
+    {
+      "chapterId": "ch3",
       "characterId": "fina",
       "phantomId": "leah",
+      "purpose": "main",
+      "learnSkills": [],
       "targetStage": 5,
       "targetAwakening": 1,
       "awakeningNote": "維持★1。",
@@ -973,25 +1061,10 @@
     },
     {
       "chapterId": "ch3",
-      "characterId": "nichol",
-      "phantomId": "tronn",
-      "targetStage": 5,
-      "targetAwakening": 0,
-      "awakeningNote": "推斷：托隆覺醒優先度低（兩站都排後），欠片唔夠就唔使。",
-      "priority": "recommended",
-      "reason": "尼可加入後（kamigame 建議用佢替換莉德，buff/debuff 更穩）；keengamer 推薦尼可配托隆，補火冰雷魔法同破防力。",
-      "confidence": "medium",
-      "sources": [
-        "https://kamigame.jp/ffrs/page/446214919747010942.html",
-        "https://www.keengamer.com/articles/guides/final-fantasy-resonance-best-visions-for-every-character/",
-        "https://kamigame.jp/ffrs/page/445778720100242080.html",
-        "https://gamerch.com/ffrs/1025704"
-      ]
-    },
-    {
-      "chapterId": "ch3",
       "characterId": "lid",
       "phantomId": "tidus",
+      "purpose": "main",
+      "learnSkills": [],
       "targetStage": 5,
       "targetAwakening": 0,
       "awakeningNote": "推斷：提達中期先值得★2，第3章未有魔石。",
@@ -1007,6 +1080,8 @@
       "chapterId": "ch3",
       "characterId": "lid",
       "phantomId": "squall",
+      "purpose": "alt",
+      "learnSkills": [],
       "targetStage": 3,
       "targetAwakening": 0,
       "awakeningNote": "推斷：斯考爾嘅重點係★2 AoE，第3章未有魔石。",
@@ -1018,9 +1093,30 @@
       ]
     },
     {
+      "chapterId": "ch3",
+      "characterId": "nichol",
+      "phantomId": "tronn",
+      "purpose": "main",
+      "learnSkills": [],
+      "targetStage": 5,
+      "targetAwakening": 0,
+      "awakeningNote": "推斷：托隆覺醒優先度低（兩站都排後），欠片唔夠就唔使。",
+      "priority": "recommended",
+      "reason": "尼可加入後（kamigame 建議用佢替換莉德，buff/debuff 更穩）；keengamer 推薦尼可配托隆，補火冰雷魔法同破防力。",
+      "confidence": "medium",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/446214919747010942.html",
+        "https://www.keengamer.com/articles/guides/final-fantasy-resonance-best-visions-for-every-character/",
+        "https://kamigame.jp/ffrs/page/445778720100242080.html",
+        "https://gamerch.com/ffrs/1025704"
+      ]
+    },
+    {
       "chapterId": "ch4",
       "characterId": "rain",
       "phantomId": "warrior-of-light",
+      "purpose": "main",
+      "learnSkills": [],
       "targetStage": 5,
       "targetAwakening": 1,
       "awakeningNote": "維持★1；第4章開鬥技場，初級制覇後可用 10,000 Gil 無限買魔石の欠片。",
@@ -1036,8 +1132,49 @@
     },
     {
       "chapterId": "ch4",
+      "characterId": "rain",
+      "phantomId": "firion",
+      "purpose": "skill",
+      "learnSkills": [
+        "W臂腕／Wアームズ（弗利昂 MR9）",
+        "弗利昂 MASTER（MR9）"
+      ],
+      "targetStage": 9,
+      "targetAwakening": 0,
+      "awakeningNote": "",
+      "priority": "core",
+      "reason": "影片 6:35：主角一邊練 W臂腕。W臂腕係每個角色都要嘅核心；MR9 另有 AP+8。",
+      "confidence": "medium",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444440876761000212.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=395s"
+      ]
+    },
+    {
+      "chapterId": "ch4",
+      "characterId": "rain",
+      "phantomId": "cecil",
+      "purpose": "skill",
+      "learnSkills": [
+        "對魔法反擊／魔法にカウンター（塞西爾 MR5）"
+      ],
+      "targetStage": 5,
+      "targetAwakening": 0,
+      "awakeningNote": "",
+      "priority": "recommended",
+      "reason": "影片 6:41：前期會練塞西爾攞魔法反擊，好用。",
+      "confidence": "medium",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444440874730967619.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=401s"
+      ]
+    },
+    {
+      "chapterId": "ch4",
       "characterId": "lasswell",
       "phantomId": "cloud",
+      "purpose": "main",
+      "learnSkills": [],
       "targetStage": 5,
       "targetAwakening": 1,
       "awakeningNote": "推斷：魔石最早第4章（跳繩60次）先有，數量少，★2 留到第5章穩定入手再做。",
@@ -1052,8 +1189,29 @@
     },
     {
       "chapterId": "ch4",
+      "characterId": "lasswell",
+      "phantomId": "squall",
+      "purpose": "skill",
+      "learnSkills": [
+        "W行動／Wアクション（斯考爾 MR9）"
+      ],
+      "targetStage": 9,
+      "targetAwakening": 1,
+      "awakeningNote": "",
+      "priority": "core",
+      "reason": "影片 6:33：W行動係 16 連打其中一環。",
+      "confidence": "medium",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444440876140243220.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=393s"
+      ]
+    },
+    {
+      "chapterId": "ch4",
       "characterId": "fina",
       "phantomId": "leah",
+      "purpose": "main",
+      "learnSkills": [],
       "targetStage": 5,
       "targetAwakening": 1,
       "awakeningNote": "維持★1。",
@@ -1067,8 +1225,26 @@
     },
     {
       "chapterId": "ch4",
+      "characterId": "lid",
+      "phantomId": "shantotto",
+      "purpose": "main",
+      "learnSkills": [],
+      "targetStage": 3,
+      "targetAwakening": 0,
+      "awakeningNote": "推斷：optional，唔使覺醒。",
+      "priority": "optional",
+      "reason": "推斷：本章新取得 SS 級魔法幻兵，可先練 MR 留俾第5章加入嘅櫻/魔人菲娜。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/446062640087731161.html"
+      ]
+    },
+    {
+      "chapterId": "ch4",
       "characterId": "nichol",
       "phantomId": "tronn",
+      "purpose": "main",
+      "learnSkills": [],
       "targetStage": 5,
       "targetAwakening": 1,
       "awakeningNote": "推斷：鬥技場可以無限買欠片，kamigame 話欠片有剩可以全部幻兵都用；★1 用魔石の欠片。",
@@ -1085,6 +1261,8 @@
       "chapterId": "ch4",
       "characterId": "jake",
       "phantomId": "squall",
+      "purpose": "main",
+      "learnSkills": [],
       "targetStage": 5,
       "targetAwakening": 1,
       "awakeningNote": "推斷：用鬥技場嘅魔石の欠片升★1，為之後★2 AoE 做準備。",
@@ -1099,23 +1277,11 @@
       ]
     },
     {
-      "chapterId": "ch4",
-      "characterId": "lid",
-      "phantomId": "shantotto",
-      "targetStage": 3,
-      "targetAwakening": 0,
-      "awakeningNote": "推斷：optional，唔使覺醒。",
-      "priority": "optional",
-      "reason": "推斷：本章新取得 SS 級魔法幻兵，可先練 MR 留俾第5章加入嘅櫻/魔人菲娜。",
-      "confidence": "low",
-      "sources": [
-        "https://kamigame.jp/ffrs/page/446062640087731161.html"
-      ]
-    },
-    {
       "chapterId": "ch5",
       "characterId": "rain",
       "phantomId": "warrior-of-light",
+      "purpose": "main",
+      "learnSkills": [],
       "targetStage": 7,
       "targetAwakening": 1,
       "awakeningNote": "推斷：魔石優先俾克勞德／莉亞／蒂娜，光之戰士維持★1。",
@@ -1130,8 +1296,264 @@
     },
     {
       "chapterId": "ch5",
+      "characterId": "rain",
+      "phantomId": "wilhelm",
+      "purpose": "skill",
+      "learnSkills": [],
+      "targetStage": 5,
+      "targetAwakening": 0,
+      "awakeningNote": "",
+      "priority": "recommended",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片 6:48：之後多一隻坦，前期就練。第7章轉做主力。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/445893370645101118.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=408s"
+      ]
+    },
+    {
+      "chapterId": "ch5",
+      "characterId": "lasswell",
+      "phantomId": "cloud",
+      "purpose": "main",
+      "learnSkills": [],
+      "targetStage": 7,
+      "targetAwakening": 2,
+      "awakeningNote": "兩站都話攞到魔石先升克勞德★2（凶斬り、永續物攻、破防時爆擊上升）。",
+      "priority": "recommended",
+      "reason": "克勞德係中期覺醒最優先（魔石→★2，凶斬り單體強）；魔人菲娜戰可用克勞德「ウォタガブレイク」打水弱點。",
+      "confidence": "medium",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/445778720100242080.html",
+        "https://kamigame.jp/ffrs/page/445759088056392128.html",
+        "https://game8.jp/ffrs/827035"
+      ]
+    },
+    {
+      "chapterId": "ch5",
+      "characterId": "lasswell",
+      "phantomId": "bartz",
+      "purpose": "skill",
+      "learnSkills": [
+        "魔法劍二刀流／魔法剣二刀流（巴茲 MR7）"
+      ],
+      "targetStage": 7,
+      "targetAwakening": 1,
+      "awakeningNote": "",
+      "priority": "core",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片 2:56：巴茲二刀流係拉斯維爾最主要要裝嘅技能。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444440874445754947.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=176s"
+      ]
+    },
+    {
+      "chapterId": "ch5",
+      "characterId": "lid",
+      "phantomId": "bartz",
+      "purpose": "main",
+      "learnSkills": [],
+      "targetStage": 5,
+      "targetAwakening": 1,
+      "awakeningNote": "推斷：巴茨★3 先係重點（game8 後期首選），而家用魔石の欠片升★1。",
+      "priority": "optional",
+      "reason": "推斷：巴茨係 SS 級物理幻兵（魔劍二刀流），本章取得；俾物理角色用。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/446062640087731161.html",
+        "https://game8.jp/ffrs/827035"
+      ]
+    },
+    {
+      "chapterId": "ch5",
+      "characterId": "lid",
+      "phantomId": "onion-knight",
+      "purpose": "skill",
+      "learnSkills": [],
+      "targetStage": 5,
+      "targetAwakening": 0,
+      "awakeningNote": "",
+      "priority": "recommended",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片畫面莉德有洋蔥騎士 MASTER；先攞中段永續同 AP。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444440876308015380.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=662s"
+      ]
+    },
+    {
+      "chapterId": "ch5",
+      "characterId": "lid",
+      "phantomId": "squall",
+      "purpose": "skill",
+      "learnSkills": [
+        "觸發／トリガー（斯考爾 MR5）"
+      ],
+      "targetStage": 5,
+      "targetAwakening": 1,
+      "awakeningNote": "",
+      "priority": "optional",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片畫面 10:33 有裝觸發。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444440876140243220.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=633s"
+      ]
+    },
+    {
+      "chapterId": "ch5",
+      "characterId": "lid",
+      "phantomId": "clive",
+      "purpose": "alt",
+      "learnSkills": [],
+      "targetStage": 5,
+      "targetAwakening": 0,
+      "awakeningNote": "",
+      "priority": "optional",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。games.gg 推薦嘅莉德替代 Vision。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444440874865185347.html",
+        "https://games.gg/final-fantasy-resonance/guides/best-visions-character-pairings/"
+      ]
+    },
+    {
+      "chapterId": "ch5",
+      "characterId": "nichol",
+      "phantomId": "leah",
+      "purpose": "main",
+      "learnSkills": [],
+      "targetStage": 7,
+      "targetAwakening": 2,
+      "awakeningNote": "game8：中期莉亞★2 同克勞德並列最優先，提早攞到強力回復；用魔石。",
+      "priority": "recommended",
+      "reason": "推斷：菲娜喺本章變成魔人菲娜，暫時冇治療，由尼可接手莉亞補血（圖書館/摩魯波爾要 Esuna）。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/445759088056392128.html",
+        "https://game8.jp/ffrs/827035"
+      ]
+    },
+    {
+      "chapterId": "ch5",
+      "characterId": "nichol",
+      "phantomId": "firion",
+      "purpose": "skill",
+      "learnSkills": [],
+      "targetStage": 5,
+      "targetAwakening": 0,
+      "awakeningNote": "",
+      "priority": "core",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片 1:05：W臂腕係尼可最主要要裝。先攞過渡永續。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444440876761000212.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=65s"
+      ]
+    },
+    {
+      "chapterId": "ch5",
+      "characterId": "nichol",
+      "phantomId": "aileen",
+      "purpose": "skill",
+      "learnSkills": [
+        "靜觀時極限技蓄力／静観でLBチャージ（艾琳 MR7）"
+      ],
+      "targetStage": 7,
+      "targetAwakening": 1,
+      "awakeningNote": "",
+      "priority": "core",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片 1:16；keengamer Nichol build 都有 Observe and Charge LB（艾琳 MR7）。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/445893517613490646.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=76s",
+        "https://www.keengamer.com/articles/guides/final-fantasy-resonance-best-character-builds/"
+      ]
+    },
+    {
+      "chapterId": "ch5",
+      "characterId": "nichol",
+      "phantomId": "cloud",
+      "purpose": "skill",
+      "learnSkills": [
+        "極限蓄力／リミットチャージ（克勞德 MR5）"
+      ],
+      "targetStage": 5,
+      "targetAwakening": 2,
+      "awakeningNote": "",
+      "priority": "recommended",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片畫面有極限蓄力。名對應係推斷（15AP）。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444440876459010324.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=66s"
+      ]
+    },
+    {
+      "chapterId": "ch5",
+      "characterId": "nichol",
+      "phantomId": "tidus",
+      "purpose": "skill",
+      "learnSkills": [
+        "先攻／さきがけ（提達 MR3）"
+      ],
+      "targetStage": 3,
+      "targetAwakening": 0,
+      "awakeningNote": "",
+      "priority": "optional",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片畫面有先攻；裝天命兵法書保證先攻就可以唔學（影片 2:30）。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444440875301392963.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=66s",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=150s",
+        "https://www.keengamer.com/articles/guides/final-fantasy-resonance-best-character-builds/"
+      ]
+    },
+    {
+      "chapterId": "ch5",
+      "characterId": "jake",
+      "phantomId": "aileen",
+      "purpose": "main",
+      "learnSkills": [],
+      "targetStage": 5,
+      "targetAwakening": 1,
+      "awakeningNote": "推斷：用魔石の欠片升★1。",
+      "priority": "optional",
+      "reason": "keengamer 推薦傑克配艾琳（土冰屬性＋破防，飛空艇後支線取得）。",
+      "confidence": "medium",
+      "sources": [
+        "https://www.keengamer.com/articles/guides/final-fantasy-resonance-best-visions-for-every-character/",
+        "https://gamerch.com/ffrs/1025704"
+      ]
+    },
+    {
+      "chapterId": "ch5",
+      "characterId": "jake",
+      "phantomId": "tidus",
+      "purpose": "skill",
+      "learnSkills": [
+        "先攻／さきがけ（提達 MR3）"
+      ],
+      "targetStage": 3,
+      "targetAwakening": 0,
+      "awakeningNote": "",
+      "priority": "optional",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片畫面有先攻。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444440875301392963.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=600s"
+      ]
+    },
+    {
+      "chapterId": "ch5",
       "characterId": "sakura",
       "phantomId": "terra",
+      "purpose": "main",
+      "learnSkills": [],
       "targetStage": 7,
       "targetAwakening": 2,
       "awakeningNote": "kamigame：蒂娜★2 學多屬性ガ系魔法；用魔石（鬥技場中級制覇後 50,000 Gil 可買）。",
@@ -1148,39 +1570,50 @@
     },
     {
       "chapterId": "ch5",
-      "characterId": "lasswell",
-      "phantomId": "cloud",
+      "characterId": "sakura",
+      "phantomId": "victoria",
+      "purpose": "skill",
+      "learnSkills": [
+        "マナ・オーバーロード（維多利亞 MR3）",
+        "MRP1.5倍（維多利亞 MR7）"
+      ],
       "targetStage": 7,
-      "targetAwakening": 2,
-      "awakeningNote": "兩站都話攞到魔石先升克勞德★2（凶斬り、永續物攻、破防時爆擊上升）。",
+      "targetAwakening": 1,
+      "awakeningNote": "",
       "priority": "recommended",
-      "reason": "克勞德係中期覺醒最優先（魔石→★2，凶斬り單體強）；魔人菲娜戰可用克勞德「ウォタガブレイク」打水弱點。",
-      "confidence": "medium",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。kamigame 最強編成有マナ・オーバーロード；影片有 MRP1.5倍。",
+      "confidence": "low",
       "sources": [
-        "https://kamigame.jp/ffrs/page/445778720100242080.html",
-        "https://kamigame.jp/ffrs/page/445759088056392128.html",
-        "https://game8.jp/ffrs/827035"
+        "https://kamigame.jp/ffrs/page/445964610479083195.html",
+        "https://kamigame.jp/ffrs/page/446214919747010942.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=642s"
       ]
     },
     {
       "chapterId": "ch5",
-      "characterId": "nichol",
-      "phantomId": "leah",
-      "targetStage": 7,
-      "targetAwakening": 2,
-      "awakeningNote": "game8：中期莉亞★2 同克勞德並列最優先，提早攞到強力回復；用魔石。",
-      "priority": "recommended",
-      "reason": "推斷：菲娜喺本章變成魔人菲娜，暫時冇治療，由尼可接手莉亞補血（圖書館/摩魯波爾要 Esuna）。",
+      "characterId": "sakura",
+      "phantomId": "camille",
+      "purpose": "skill",
+      "learnSkills": [
+        "先下手為強／先手必勝（卡蜜兒 MR3）"
+      ],
+      "targetStage": 3,
+      "targetAwakening": 0,
+      "awakeningNote": "",
+      "priority": "optional",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片畫面有先下手為強；名對應係推斷。",
       "confidence": "low",
       "sources": [
-        "https://kamigame.jp/ffrs/page/445759088056392128.html",
-        "https://game8.jp/ffrs/827035"
+        "https://kamigame.jp/ffrs/page/445893442669666774.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=642s"
       ]
     },
     {
       "chapterId": "ch5",
       "characterId": "archwitch-fina",
       "phantomId": "victoria",
+      "purpose": "main",
+      "learnSkills": [],
       "targetStage": 5,
       "targetAwakening": 1,
       "awakeningNote": "推斷：維多利亞覺醒優先度低（gamerch 最低組），用平價嘅魔石の欠片升★1 就夠。",
@@ -1193,39 +1626,11 @@
       ]
     },
     {
-      "chapterId": "ch5",
-      "characterId": "jake",
-      "phantomId": "aileen",
-      "targetStage": 5,
-      "targetAwakening": 1,
-      "awakeningNote": "推斷：用魔石の欠片升★1。",
-      "priority": "optional",
-      "reason": "keengamer 推薦傑克配艾琳（土冰屬性＋破防，飛空艇後支線取得）。",
-      "confidence": "medium",
-      "sources": [
-        "https://www.keengamer.com/articles/guides/final-fantasy-resonance-best-visions-for-every-character/",
-        "https://gamerch.com/ffrs/1025704"
-      ]
-    },
-    {
-      "chapterId": "ch5",
-      "characterId": "lid",
-      "phantomId": "bartz",
-      "targetStage": 5,
-      "targetAwakening": 1,
-      "awakeningNote": "推斷：巴茨★3 先係重點（game8 後期首選），而家用魔石の欠片升★1。",
-      "priority": "optional",
-      "reason": "推斷：巴茨係 SS 級物理幻兵（魔劍二刀流），本章取得；俾物理角色用。",
-      "confidence": "low",
-      "sources": [
-        "https://kamigame.jp/ffrs/page/446062640087731161.html",
-        "https://game8.jp/ffrs/827035"
-      ]
-    },
-    {
       "chapterId": "ch6",
       "characterId": "rain",
       "phantomId": "warrior-of-light",
+      "purpose": "main",
+      "learnSkills": [],
       "targetStage": 9,
       "targetAwakening": 1,
       "awakeningNote": "推斷：維持★1；之後轉威廉，魔石留俾主力攻擊手。",
@@ -1239,39 +1644,180 @@
     },
     {
       "chapterId": "ch6",
-      "characterId": "sakura",
-      "phantomId": "terra",
-      "targetStage": 8,
-      "targetAwakening": 2,
-      "awakeningNote": "維持★2；★3 要等魔石の結晶（最早第7章）。",
-      "priority": "core",
-      "reason": "主力魔法輸出（配對有兩來源，MR 目標為推斷）。",
-      "confidence": "medium",
+      "characterId": "rain",
+      "phantomId": "wilhelm",
+      "purpose": "skill",
+      "learnSkills": [
+        "用必殺反擊／ひっさつでカウンター（威廉 MR7）"
+      ],
+      "targetStage": 7,
+      "targetAwakening": 0,
+      "awakeningNote": "",
+      "priority": "recommended",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片 6:53：物理有兩招反擊。",
+      "confidence": "low",
       "sources": [
-        "https://kamigame.jp/ffrs/page/446214919747010942.html",
-        "https://www.keengamer.com/articles/guides/final-fantasy-resonance-best-visions-for-every-character/",
-        "https://game8.jp/ffrs/829993"
+        "https://kamigame.jp/ffrs/page/445893370645101118.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=413s"
       ]
     },
     {
       "chapterId": "ch6",
-      "characterId": "archwitch-fina",
-      "phantomId": "yshtola",
+      "characterId": "rain",
+      "phantomId": "victoria",
+      "purpose": "skill",
+      "learnSkills": [
+        "MRP1.5倍（維多利亞 MR7）"
+      ],
+      "targetStage": 7,
+      "targetAwakening": 1,
+      "awakeningNote": "",
+      "priority": "recommended",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。kamigame 建議全角色都帶 MRP1.5倍；影片畫面雷恩都裝咗。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/445964610479083195.html",
+        "https://kamigame.jp/ffrs/page/445517666719915396.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=553s"
+      ]
+    },
+    {
+      "chapterId": "ch6",
+      "characterId": "rain",
+      "phantomId": "onion-knight",
+      "purpose": "skill",
+      "learnSkills": [
+        "静観でHP回復（洋蔥騎士 MR5）"
+      ],
+      "targetStage": 5,
+      "targetAwakening": 1,
+      "awakeningNote": "",
+      "priority": "optional",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。kamigame 最強編成雷恩有呢招。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444440876308015380.html",
+        "https://kamigame.jp/ffrs/page/446214919747010942.html"
+      ]
+    },
+    {
+      "chapterId": "ch6",
+      "characterId": "rain",
+      "phantomId": "tronn",
+      "purpose": "skill",
+      "learnSkills": [
+        "MP消耗減半／MP消費半減（托隆 MR9）"
+      ],
+      "targetStage": 9,
+      "targetAwakening": 1,
+      "awakeningNote": "",
+      "priority": "recommended",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片畫面雷恩有裝。十二武具「黃金頭飾」有同樣效果就唔使（影片 1:57）。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444724986079366431.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=553s",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=117s"
+      ]
+    },
+    {
+      "chapterId": "ch6",
+      "characterId": "lasswell",
+      "phantomId": "sephiroth",
+      "purpose": "main",
+      "learnSkills": [],
       "targetStage": 7,
       "targetAwakening": 2,
-      "awakeningNote": "kamigame 中期覺醒名單：雅·修特拉★2 學強力全體回復；用魔石。",
+      "awakeningNote": "推斷：game8 將賽菲羅斯列為★3 次優先，第6章先用魔石升★2。",
       "priority": "recommended",
-      "reason": "kamigame 魔法特化編成：魔人菲娜配雅·修特拉，Wアームズ→魔法亂擊上 Deshell 增加櫻傷害；雅·修特拉亦係覺醒中期優先。",
+      "reason": "kamigame 汎用最強編成：拉斯維爾配賽菲羅斯，物攻/魔攻取較高者計傷，應付物理/魔法無效敵人。（第5章擊敗賽菲羅斯取得）",
       "confidence": "medium",
       "sources": [
         "https://kamigame.jp/ffrs/page/446214919747010942.html",
-        "https://kamigame.jp/ffrs/page/445778720100242080.html"
+        "https://game8.jp/ffrs/827035"
+      ]
+    },
+    {
+      "chapterId": "ch6",
+      "characterId": "lasswell",
+      "phantomId": "bartz",
+      "purpose": "skill",
+      "learnSkills": [
+        "模仿／ものまね（巴茲 MR9）",
+        "巴茲 MASTER（MR9）"
+      ],
+      "targetStage": 9,
+      "targetAwakening": 1,
+      "awakeningNote": "",
+      "priority": "core",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片 3:00：另一招要學模仿；畫面裝巴茲 MASTER。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444440874445754947.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=180s"
+      ]
+    },
+    {
+      "chapterId": "ch6",
+      "characterId": "lasswell",
+      "phantomId": "victoria",
+      "purpose": "skill",
+      "learnSkills": [
+        "MRP1.5倍（維多利亞 MR7）"
+      ],
+      "targetStage": 7,
+      "targetAwakening": 1,
+      "awakeningNote": "",
+      "priority": "recommended",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。kamigame 建議全角色帶。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/445964610479083195.html",
+        "https://kamigame.jp/ffrs/page/445517666719915396.html"
+      ]
+    },
+    {
+      "chapterId": "ch6",
+      "characterId": "lasswell",
+      "phantomId": "tronn",
+      "purpose": "skill",
+      "learnSkills": [
+        "MP消耗減半／MP消費半減（托隆 MR9）"
+      ],
+      "targetStage": 9,
+      "targetAwakening": 1,
+      "awakeningNote": "",
+      "priority": "recommended",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片畫面有裝。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444724986079366431.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=205s"
+      ]
+    },
+    {
+      "chapterId": "ch6",
+      "characterId": "lasswell",
+      "phantomId": "firion",
+      "purpose": "alt",
+      "learnSkills": [],
+      "targetStage": 7,
+      "targetAwakening": 1,
+      "awakeningNote": "推斷：game8 前期★1 候選；optional 用欠片就夠。",
+      "priority": "optional",
+      "reason": "keengamer 首選拉斯維爾配弗利昂（光風雷＋破防力）。",
+      "confidence": "medium",
+      "sources": [
+        "https://www.keengamer.com/articles/guides/final-fantasy-resonance-best-visions-for-every-character/",
+        "https://game8.jp/ffrs/827035"
       ]
     },
     {
       "chapterId": "ch6",
       "characterId": "fina",
       "phantomId": "leah",
+      "purpose": "main",
+      "learnSkills": [],
       "targetStage": 9,
       "targetAwakening": 2,
       "awakeningNote": "維持★2（第5章已升）。",
@@ -1286,8 +1832,50 @@
     },
     {
       "chapterId": "ch6",
+      "characterId": "fina",
+      "phantomId": "victoria",
+      "purpose": "skill",
+      "learnSkills": [
+        "MRP1.5倍（維多利亞 MR7）"
+      ],
+      "targetStage": 7,
+      "targetAwakening": 1,
+      "awakeningNote": "",
+      "priority": "recommended",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片畫面有裝。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/445964610479083195.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=628s",
+        "https://kamigame.jp/ffrs/page/445517666719915396.html"
+      ]
+    },
+    {
+      "chapterId": "ch6",
+      "characterId": "lid",
+      "phantomId": "victoria",
+      "purpose": "skill",
+      "learnSkills": [
+        "MRP1.5倍（維多利亞 MR7）"
+      ],
+      "targetStage": 7,
+      "targetAwakening": 1,
+      "awakeningNote": "",
+      "priority": "recommended",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片畫面有裝。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/445964610479083195.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=662s",
+        "https://kamigame.jp/ffrs/page/445517666719915396.html"
+      ]
+    },
+    {
+      "chapterId": "ch6",
       "characterId": "nichol",
       "phantomId": "onion-knight",
+      "purpose": "main",
+      "learnSkills": [],
       "targetStage": 7,
       "targetAwakening": 1,
       "awakeningNote": "推斷：用魔石の欠片升★1。",
@@ -1303,38 +1891,223 @@
     },
     {
       "chapterId": "ch6",
-      "characterId": "lasswell",
-      "phantomId": "sephiroth",
-      "targetStage": 7,
-      "targetAwakening": 2,
-      "awakeningNote": "推斷：game8 將賽菲羅斯列為★3 次優先，第6章先用魔石升★2。",
-      "priority": "recommended",
-      "reason": "kamigame 汎用最強編成：拉斯維爾配賽菲羅斯，物攻/魔攻取較高者計傷，應付物理/魔法無效敵人。（第5章擊敗賽菲羅斯取得）",
-      "confidence": "medium",
+      "characterId": "nichol",
+      "phantomId": "firion",
+      "purpose": "skill",
+      "learnSkills": [
+        "W臂腕／Wアームズ（弗利昂 MR9）",
+        "弗利昂 MASTER（MR9）"
+      ],
+      "targetStage": 9,
+      "targetAwakening": 1,
+      "awakeningNote": "",
+      "priority": "core",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片 5:27：16 連打起手要兩次 W臂腕。",
+      "confidence": "low",
       "sources": [
-        "https://kamigame.jp/ffrs/page/446214919747010942.html",
-        "https://game8.jp/ffrs/827035"
+        "https://kamigame.jp/ffrs/page/444440876761000212.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=327s",
+        "https://www.keengamer.com/articles/guides/final-fantasy-resonance-best-character-builds/"
       ]
     },
     {
       "chapterId": "ch6",
-      "characterId": "lasswell",
-      "phantomId": "firion",
+      "characterId": "nichol",
+      "phantomId": "victoria",
+      "purpose": "skill",
+      "learnSkills": [
+        "MRP1.5倍（維多利亞 MR7）"
+      ],
       "targetStage": 7,
       "targetAwakening": 1,
-      "awakeningNote": "推斷：game8 前期★1 候選；optional 用欠片就夠。",
+      "awakeningNote": "",
       "priority": "optional",
-      "reason": "keengamer 首選拉斯維爾配弗利昂（光風雷＋破防力）。",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。kamigame 建議全角色帶。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/445964610479083195.html",
+        "https://kamigame.jp/ffrs/page/445517666719915396.html"
+      ]
+    },
+    {
+      "chapterId": "ch6",
+      "characterId": "jake",
+      "phantomId": "squall",
+      "purpose": "skill",
+      "learnSkills": [
+        "W行動／Wアクション（斯考爾 MR9）"
+      ],
+      "targetStage": 9,
+      "targetAwakening": 1,
+      "awakeningNote": "",
+      "priority": "core",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片畫面有 W行動；傑克都係 16 連打一份子（9:58）。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444440876140243220.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=598s",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=600s"
+      ]
+    },
+    {
+      "chapterId": "ch6",
+      "characterId": "jake",
+      "phantomId": "bartz",
+      "purpose": "skill",
+      "learnSkills": [
+        "魔法劍二刀流／魔法剣二刀流（巴茲 MR7）"
+      ],
+      "targetStage": 7,
+      "targetAwakening": 1,
+      "awakeningNote": "",
+      "priority": "core",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片 10:09：配置同拉斯維爾一樣。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444440874445754947.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=609s"
+      ]
+    },
+    {
+      "chapterId": "ch6",
+      "characterId": "jake",
+      "phantomId": "victoria",
+      "purpose": "skill",
+      "learnSkills": [
+        "MRP1.5倍（維多利亞 MR7）"
+      ],
+      "targetStage": 7,
+      "targetAwakening": 1,
+      "awakeningNote": "",
+      "priority": "recommended",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片畫面有裝。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/445964610479083195.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=600s",
+        "https://kamigame.jp/ffrs/page/445517666719915396.html"
+      ]
+    },
+    {
+      "chapterId": "ch6",
+      "characterId": "sakura",
+      "phantomId": "terra",
+      "purpose": "main",
+      "learnSkills": [],
+      "targetStage": 8,
+      "targetAwakening": 2,
+      "awakeningNote": "維持★2；★3 要等魔石の結晶（最早第7章）。",
+      "priority": "core",
+      "reason": "主力魔法輸出（配對有兩來源，MR 目標為推斷）。",
       "confidence": "medium",
       "sources": [
+        "https://kamigame.jp/ffrs/page/446214919747010942.html",
         "https://www.keengamer.com/articles/guides/final-fantasy-resonance-best-visions-for-every-character/",
-        "https://game8.jp/ffrs/827035"
+        "https://game8.jp/ffrs/829993"
+      ]
+    },
+    {
+      "chapterId": "ch6",
+      "characterId": "sakura",
+      "phantomId": "yshtola",
+      "purpose": "skill",
+      "learnSkills": [
+        "提升魔法攻擊10%／魔法攻撃10%アップ（雅·修特拉 MR5）"
+      ],
+      "targetStage": 5,
+      "targetAwakening": 2,
+      "awakeningNote": "",
+      "priority": "recommended",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片畫面有提升魔法攻擊10%。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444440875603382851.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=642s"
+      ]
+    },
+    {
+      "chapterId": "ch6",
+      "characterId": "sakura",
+      "phantomId": "shantotto",
+      "purpose": "skill",
+      "learnSkills": [
+        "連續詠唱／れんぞくま（夏特多 MR9）"
+      ],
+      "targetStage": 9,
+      "targetAwakening": 0,
+      "awakeningNote": "",
+      "priority": "recommended",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片畫面有連續詠唱；games.gg 亦列夏特多做替代。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444440875972471060.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=642s",
+        "https://games.gg/final-fantasy-resonance/guides/best-visions-character-pairings/"
+      ]
+    },
+    {
+      "chapterId": "ch6",
+      "characterId": "archwitch-fina",
+      "phantomId": "yshtola",
+      "purpose": "main",
+      "learnSkills": [],
+      "targetStage": 7,
+      "targetAwakening": 2,
+      "awakeningNote": "kamigame 中期覺醒名單：雅·修特拉★2 學強力全體回復；用魔石。",
+      "priority": "recommended",
+      "reason": "kamigame 魔法特化編成：魔人菲娜配雅·修特拉，Wアームズ→魔法亂擊上 Deshell 增加櫻傷害；雅·修特拉亦係覺醒中期優先。",
+      "confidence": "medium",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/446214919747010942.html",
+        "https://kamigame.jp/ffrs/page/445778720100242080.html"
+      ]
+    },
+    {
+      "chapterId": "ch6",
+      "characterId": "archwitch-fina",
+      "phantomId": "victoria",
+      "purpose": "skill",
+      "learnSkills": [
+        "マナ・オーバーロード（維多利亞 MR3）",
+        "MRP1.5倍（維多利亞 MR7）"
+      ],
+      "targetStage": 7,
+      "targetAwakening": 1,
+      "awakeningNote": "",
+      "priority": "recommended",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。kamigame 魔法特化編成有マナ・オーバーロード；影片 10:31 話同櫻差不多。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/445964610479083195.html",
+        "https://kamigame.jp/ffrs/page/446214919747010942.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=631s"
+      ]
+    },
+    {
+      "chapterId": "ch6",
+      "characterId": "archwitch-fina",
+      "phantomId": "onion-knight",
+      "purpose": "skill",
+      "learnSkills": [
+        "満身の攻撃（洋蔥騎士 MR7）"
+      ],
+      "targetStage": 7,
+      "targetAwakening": 1,
+      "awakeningNote": "",
+      "priority": "recommended",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。kamigame 魔法特化編成有。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444440876308015380.html",
+        "https://kamigame.jp/ffrs/page/446214919747010942.html"
       ]
     },
     {
       "chapterId": "ch7",
       "characterId": "rain",
       "phantomId": "wilhelm",
+      "purpose": "main",
+      "learnSkills": [],
       "targetStage": 9,
       "targetAwakening": 2,
       "awakeningNote": "推斷：威廉係終盤主坦，用魔石升★2；魔石の結晶留俾蒂娜。",
@@ -1350,8 +2123,277 @@
     },
     {
       "chapterId": "ch7",
+      "characterId": "rain",
+      "phantomId": "squall",
+      "purpose": "skill",
+      "learnSkills": [
+        "W行動／Wアクション（斯考爾 MR9）"
+      ],
+      "targetStage": 9,
+      "targetAwakening": 1,
+      "awakeningNote": "",
+      "priority": "recommended",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片 9:05：後期雷恩轉攻擊型，配置同拉斯維爾一樣。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444440876140243220.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=545s"
+      ]
+    },
+    {
+      "chapterId": "ch7",
+      "characterId": "rain",
+      "phantomId": "charlotte",
+      "purpose": "skill",
+      "learnSkills": [
+        "魔法障壁（夏洛特 MR1）"
+      ],
+      "targetStage": 1,
+      "targetAwakening": 0,
+      "awakeningNote": "",
+      "priority": "optional",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。kamigame 最強編成雷恩有呢招。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/446068603112952284.html",
+        "https://kamigame.jp/ffrs/page/446214919747010942.html"
+      ]
+    },
+    {
+      "chapterId": "ch7",
+      "characterId": "rain",
+      "phantomId": "terra",
+      "purpose": "skill",
+      "learnSkills": [
+        "極限技槽雙倍蓄力／LBダブルチャージ（蒂娜 MR5）"
+      ],
+      "targetStage": 5,
+      "targetAwakening": 3,
+      "awakeningNote": "",
+      "priority": "optional",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片畫面雷恩有裝。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444440876610005268.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=553s"
+      ]
+    },
+    {
+      "chapterId": "ch7",
+      "characterId": "lasswell",
+      "phantomId": "sephiroth",
+      "purpose": "main",
+      "learnSkills": [],
+      "targetStage": 9,
+      "targetAwakening": 2,
+      "awakeningNote": "推斷：維持★2，第一粒結晶留俾蒂娜。",
+      "priority": "core",
+      "reason": "汎用最強編成嘅萬能攻擊手。",
+      "confidence": "medium",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/446214919747010942.html",
+        "https://game8.jp/ffrs/827035"
+      ]
+    },
+    {
+      "chapterId": "ch7",
+      "characterId": "lasswell",
+      "phantomId": "firion",
+      "purpose": "skill",
+      "learnSkills": [
+        "W臂腕／Wアームズ（弗利昂 MR9）",
+        "弗利昂 MASTER（MR9）"
+      ],
+      "targetStage": 9,
+      "targetAwakening": 1,
+      "awakeningNote": "",
+      "priority": "core",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片畫面有 W臂腕。Vision 同一時間只可一人裝，要同其他人輪住練。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444440876761000212.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=178s"
+      ]
+    },
+    {
+      "chapterId": "ch7",
+      "characterId": "lasswell",
+      "phantomId": "onion-knight",
+      "purpose": "skill",
+      "learnSkills": [
+        "極限技槽三重蓄力／LBトリプルチャージ（洋蔥騎士 MR9）"
+      ],
+      "targetStage": 9,
+      "targetAwakening": 1,
+      "awakeningNote": "",
+      "priority": "recommended",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片畫面有裝。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444440876308015380.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=205s"
+      ]
+    },
+    {
+      "chapterId": "ch7",
+      "characterId": "lasswell",
+      "phantomId": "terra",
+      "purpose": "skill",
+      "learnSkills": [
+        "突破極限／限界突破（蒂娜 MR9）"
+      ],
+      "targetStage": 9,
+      "targetAwakening": 3,
+      "awakeningNote": "",
+      "priority": "recommended",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片 3:09：輸出位呢招真係需要。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444440876610005268.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=189s"
+      ]
+    },
+    {
+      "chapterId": "ch7",
+      "characterId": "fina",
+      "phantomId": "leah",
+      "purpose": "main",
+      "learnSkills": [],
+      "targetStage": 9,
+      "targetAwakening": 2,
+      "awakeningNote": "維持★2。",
+      "priority": "optional",
+      "reason": "如綾香俾咗尼可，菲娜繼續用莉亞；keengamer 則建議菲娜配綾香。",
+      "confidence": "low",
+      "sources": [
+        "https://www.keengamer.com/articles/guides/final-fantasy-resonance-best-visions-for-every-character/"
+      ]
+    },
+    {
+      "chapterId": "ch7",
+      "characterId": "fina",
+      "phantomId": "firion",
+      "purpose": "skill",
+      "learnSkills": [
+        "W臂腕／Wアームズ（弗利昂 MR9）",
+        "弗利昂 MASTER（MR9）"
+      ],
+      "targetStage": 9,
+      "targetAwakening": 1,
+      "awakeningNote": "",
+      "priority": "core",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片 10:12：菲娜同尼可類似，W臂腕係必要。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444440876761000212.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=612s"
+      ]
+    },
+    {
+      "chapterId": "ch7",
+      "characterId": "fina",
+      "phantomId": "shantotto",
+      "purpose": "skill",
+      "learnSkills": [
+        "連續詠唱／れんぞくま（夏特多 MR9）"
+      ],
+      "targetStage": 9,
+      "targetAwakening": 0,
+      "awakeningNote": "",
+      "priority": "core",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片 10:14：最主要係連續詠唱。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444440875972471060.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=614s"
+      ]
+    },
+    {
+      "chapterId": "ch7",
+      "characterId": "fina",
+      "phantomId": "aileen",
+      "purpose": "skill",
+      "learnSkills": [
+        "靜觀時極限技蓄力／静観でLBチャージ（艾琳 MR7）"
+      ],
+      "targetStage": 7,
+      "targetAwakening": 1,
+      "awakeningNote": "",
+      "priority": "recommended",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片 10:21。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/445893517613490646.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=621s"
+      ]
+    },
+    {
+      "chapterId": "ch7",
+      "characterId": "fina",
+      "phantomId": "ayaka",
+      "purpose": "skill",
+      "learnSkills": [
+        "恢復時極限技蓄力／ヒールLBチャージ（綾香 MR9）"
+      ],
+      "targetStage": 9,
+      "targetAwakening": 2,
+      "awakeningNote": "",
+      "priority": "recommended",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片 10:24：恢復時加極限槽。綾香亦係 games.gg 推薦嘅菲娜主力。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/446068738974849793.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=628s",
+        "https://games.gg/final-fantasy-resonance/guides/best-visions-character-pairings/"
+      ]
+    },
+    {
+      "chapterId": "ch7",
+      "characterId": "lid",
+      "phantomId": "firion",
+      "purpose": "skill",
+      "learnSkills": [
+        "W臂腕／Wアームズ（弗利昂 MR9）",
+        "弗利昂 MASTER（MR9）"
+      ],
+      "targetStage": 9,
+      "targetAwakening": 1,
+      "awakeningNote": "",
+      "priority": "core",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片 11:01：W臂腕係必須。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444440876761000212.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=661s"
+      ]
+    },
+    {
+      "chapterId": "ch7",
+      "characterId": "lid",
+      "phantomId": "noctis",
+      "purpose": "skill",
+      "learnSkills": [
+        "追加傷害／エクストラダメージ（諾克提斯 MR7）",
+        "亂射／みだれうち（諾克提斯 MR9）"
+      ],
+      "targetStage": 9,
+      "targetAwakening": 0,
+      "awakeningNote": "",
+      "priority": "recommended",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片 11:06：配亂射打升等用嘅敵人（農 MRP／EXP）；作者當莉德係工具人。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444440875737600579.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=666s",
+        "https://kamigame.jp/ffrs/page/445517666719915396.html"
+      ]
+    },
+    {
+      "chapterId": "ch7",
       "characterId": "nichol",
       "phantomId": "ayaka",
+      "purpose": "main",
+      "learnSkills": [],
       "targetStage": 9,
       "targetAwakening": 2,
       "awakeningNote": "推斷：綾香係 gamerch 最優先組、game8 ★3 次優先；第7章支線先攞到，先用魔石升★2。",
@@ -1367,8 +2409,126 @@
     },
     {
       "chapterId": "ch7",
+      "characterId": "nichol",
+      "phantomId": "onion-knight",
+      "purpose": "skill",
+      "learnSkills": [
+        "極限技槽三重蓄力／LBトリプルチャージ（洋蔥騎士 MR9）"
+      ],
+      "targetStage": 9,
+      "targetAwakening": 1,
+      "awakeningNote": "",
+      "priority": "core",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片 1:18：極限技處理增加量三倍係核心。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444440876308015380.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=78s"
+      ]
+    },
+    {
+      "chapterId": "ch7",
+      "characterId": "nichol",
+      "phantomId": "shantotto",
+      "purpose": "skill",
+      "learnSkills": [
+        "連續詠唱／れんぞくま（夏特多 MR9）"
+      ],
+      "targetStage": 9,
+      "targetAwakening": 0,
+      "awakeningNote": "",
+      "priority": "recommended",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片 1:08：連續詠唱係主要技能之一。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444440875972471060.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=68s"
+      ]
+    },
+    {
+      "chapterId": "ch7",
+      "characterId": "nichol",
+      "phantomId": "tronn",
+      "purpose": "skill",
+      "learnSkills": [
+        "MP消耗減半／MP消費半減（托隆 MR9）"
+      ],
+      "targetStage": 9,
+      "targetAwakening": 1,
+      "awakeningNote": "",
+      "priority": "recommended",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片 1:21：MP減半重要；有黃金頭飾可以省 50AP（影片 2:00）。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444724986079366431.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=81s",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=120s"
+      ]
+    },
+    {
+      "chapterId": "ch7",
+      "characterId": "jake",
+      "phantomId": "cloud",
+      "purpose": "main",
+      "learnSkills": [],
+      "targetStage": 9,
+      "targetAwakening": 2,
+      "awakeningNote": "克勞德已經★2（第5章）。",
+      "priority": "optional",
+      "reason": "傑克同克勞德「最高相性」（爆擊特化），對魔法難生效嘅敵人用。",
+      "confidence": "medium",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/446351383105381893.html",
+        "https://kamigame.jp/ffrs/page/445778720100242080.html",
+        "https://game8.jp/ffrs/827035"
+      ]
+    },
+    {
+      "chapterId": "ch7",
+      "characterId": "jake",
+      "phantomId": "bartz",
+      "purpose": "skill",
+      "learnSkills": [
+        "模仿／ものまね（巴茲 MR9）",
+        "巴茲 MASTER（MR9）"
+      ],
+      "targetStage": 9,
+      "targetAwakening": 1,
+      "awakeningNote": "",
+      "priority": "core",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片畫面有巴茲 MASTER。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444440874445754947.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=600s"
+      ]
+    },
+    {
+      "chapterId": "ch7",
+      "characterId": "jake",
+      "phantomId": "firion",
+      "purpose": "skill",
+      "learnSkills": [
+        "W臂腕／Wアームズ（弗利昂 MR9）",
+        "弗利昂 MASTER（MR9）"
+      ],
+      "targetStage": 9,
+      "targetAwakening": 1,
+      "awakeningNote": "",
+      "priority": "core",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片畫面有 W臂腕。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444440876761000212.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=600s"
+      ]
+    },
+    {
+      "chapterId": "ch7",
       "characterId": "sakura",
       "phantomId": "terra",
+      "purpose": "main",
+      "learnSkills": [],
       "targetStage": 9,
       "targetAwakening": 3,
       "awakeningNote": "game8：第一粒魔石の結晶先俾蒂娜（★3 魔力解放）；第7章擊敗第3戰王土のヴェリアス後，商船 50,000 Gil 有得買。",
@@ -1384,23 +2544,89 @@
     },
     {
       "chapterId": "ch7",
-      "characterId": "lasswell",
-      "phantomId": "sephiroth",
+      "characterId": "sakura",
+      "phantomId": "firion",
+      "purpose": "skill",
+      "learnSkills": [
+        "W臂腕／Wアームズ（弗利昂 MR9）",
+        "弗利昂 MASTER（MR9）"
+      ],
+      "targetStage": 9,
+      "targetAwakening": 1,
+      "awakeningNote": "",
+      "priority": "core",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片畫面有 W臂腕；kamigame 編成全員 Firion。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444440876761000212.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=642s",
+        "https://kamigame.jp/ffrs/page/446214919747010942.html"
+      ]
+    },
+    {
+      "chapterId": "ch7",
+      "characterId": "sakura",
+      "phantomId": "yshtola",
+      "purpose": "skill",
+      "learnSkills": [
+        "まほうみだれうち（雅·修特拉 MR9）"
+      ],
       "targetStage": 9,
       "targetAwakening": 2,
-      "awakeningNote": "推斷：維持★2，第一粒結晶留俾蒂娜。",
-      "priority": "core",
-      "reason": "汎用最強編成嘅萬能攻擊手。",
-      "confidence": "medium",
+      "awakeningNote": "",
+      "priority": "recommended",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。kamigame 最強編成有まほうみだれうち；影片冇提呢招。",
+      "confidence": "low",
       "sources": [
-        "https://kamigame.jp/ffrs/page/446214919747010942.html",
-        "https://game8.jp/ffrs/827035"
+        "https://kamigame.jp/ffrs/page/444440875603382851.html",
+        "https://kamigame.jp/ffrs/page/446214919747010942.html"
+      ]
+    },
+    {
+      "chapterId": "ch7",
+      "characterId": "sakura",
+      "phantomId": "onion-knight",
+      "purpose": "skill",
+      "learnSkills": [
+        "極限技槽三重蓄力／LBトリプルチャージ（洋蔥騎士 MR9）",
+        "洋蔥騎士 MASTER（MR9）"
+      ],
+      "targetStage": 9,
+      "targetAwakening": 1,
+      "awakeningNote": "",
+      "priority": "recommended",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片畫面有洋蔥騎士 MASTER。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444440876308015380.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=642s"
+      ]
+    },
+    {
+      "chapterId": "ch7",
+      "characterId": "sakura",
+      "phantomId": "sephiroth",
+      "purpose": "skill",
+      "learnSkills": [
+        "クリティカル20%アップ（賽菲羅斯 MR3）"
+      ],
+      "targetStage": 3,
+      "targetAwakening": 2,
+      "awakeningNote": "",
+      "priority": "optional",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。kamigame 最強編成有。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/446068824404417241.html",
+        "https://kamigame.jp/ffrs/page/446214919747010942.html"
       ]
     },
     {
       "chapterId": "ch7",
       "characterId": "archwitch-fina",
       "phantomId": "yshtola",
+      "purpose": "main",
+      "learnSkills": [],
       "targetStage": 9,
       "targetAwakening": 2,
       "awakeningNote": "維持★2。",
@@ -1415,38 +2641,87 @@
     },
     {
       "chapterId": "ch7",
-      "characterId": "jake",
-      "phantomId": "cloud",
+      "characterId": "archwitch-fina",
+      "phantomId": "firion",
+      "purpose": "skill",
+      "learnSkills": [
+        "W臂腕／Wアームズ（弗利昂 MR9）",
+        "弗利昂 MASTER（MR9）"
+      ],
       "targetStage": 9,
-      "targetAwakening": 2,
-      "awakeningNote": "克勞德已經★2（第5章）。",
-      "priority": "optional",
-      "reason": "傑克同克勞德「最高相性」（爆擊特化），對魔法難生效嘅敵人用。",
-      "confidence": "medium",
+      "targetAwakening": 1,
+      "awakeningNote": "",
+      "priority": "core",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。kamigame 魔法特化編成有 Wアームズ。",
+      "confidence": "low",
       "sources": [
-        "https://kamigame.jp/ffrs/page/446351383105381893.html",
-        "https://kamigame.jp/ffrs/page/445778720100242080.html",
-        "https://game8.jp/ffrs/827035"
+        "https://kamigame.jp/ffrs/page/444440876761000212.html",
+        "https://kamigame.jp/ffrs/page/446214919747010942.html"
       ]
     },
     {
       "chapterId": "ch7",
-      "characterId": "fina",
-      "phantomId": "leah",
-      "targetStage": 9,
-      "targetAwakening": 2,
-      "awakeningNote": "維持★2。",
-      "priority": "optional",
-      "reason": "如綾香俾咗尼可，菲娜繼續用莉亞；keengamer 則建議菲娜配綾香。",
+      "characterId": "archwitch-fina",
+      "phantomId": "terra",
+      "purpose": "skill",
+      "learnSkills": [
+        "収束の理（蒂娜 MR7）"
+      ],
+      "targetStage": 7,
+      "targetAwakening": 3,
+      "awakeningNote": "",
+      "priority": "recommended",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。kamigame 魔法特化編成有。",
       "confidence": "low",
       "sources": [
-        "https://www.keengamer.com/articles/guides/final-fantasy-resonance-best-visions-for-every-character/"
+        "https://kamigame.jp/ffrs/page/444440876610005268.html",
+        "https://kamigame.jp/ffrs/page/446214919747010942.html"
+      ]
+    },
+    {
+      "chapterId": "ch7",
+      "characterId": "archwitch-fina",
+      "phantomId": "shantotto",
+      "purpose": "skill",
+      "learnSkills": [
+        "連續詠唱／れんぞくま（夏特多 MR9）"
+      ],
+      "targetStage": 9,
+      "targetAwakening": 0,
+      "awakeningNote": "",
+      "priority": "recommended",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片 10:31：魔人菲娜同櫻差不多（櫻有連續詠唱）。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444440875972471060.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=631s"
+      ]
+    },
+    {
+      "chapterId": "ch7",
+      "characterId": "archwitch-fina",
+      "phantomId": "sephiroth",
+      "purpose": "skill",
+      "learnSkills": [
+        "クリティカル20%アップ（賽菲羅斯 MR3）"
+      ],
+      "targetStage": 3,
+      "targetAwakening": 2,
+      "awakeningNote": "",
+      "priority": "optional",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。kamigame 魔法特化編成有。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/446068824404417241.html",
+        "https://kamigame.jp/ffrs/page/446214919747010942.html"
       ]
     },
     {
       "chapterId": "ch8",
       "characterId": "rain",
       "phantomId": "wilhelm",
+      "purpose": "main",
+      "learnSkills": [],
       "targetStage": 9,
       "targetAwakening": 2,
       "awakeningNote": "推斷：維持★2；有剩嘅魔石の結晶先考慮下面嘅攻擊手。",
@@ -1460,40 +2735,52 @@
     },
     {
       "chapterId": "ch8",
-      "characterId": "nichol",
-      "phantomId": "ayaka",
+      "characterId": "rain",
+      "phantomId": "terra",
+      "purpose": "skill",
+      "learnSkills": [
+        "突破極限／限界突破（蒂娜 MR9）",
+        "蒂娜 MASTER（MR9）"
+      ],
       "targetStage": 9,
       "targetAwakening": 3,
-      "awakeningNote": "game8：綾香係★3 次優先；第8章可以喺黑暗巴哈姆特（可重複打）同鬥技場上級攞魔石の結晶。",
-      "priority": "core",
-      "reason": "buff＋LB 充能。",
-      "confidence": "medium",
+      "awakeningNote": "",
+      "priority": "optional",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片畫面雷恩有突破極限。",
+      "confidence": "low",
       "sources": [
-        "https://kamigame.jp/ffrs/page/446214919747010942.html",
-        "https://game8.jp/ffrs/827035",
-        "https://game8.jp/ffrs/829993"
+        "https://kamigame.jp/ffrs/page/444440876610005268.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=553s"
       ]
     },
     {
       "chapterId": "ch8",
-      "characterId": "sakura",
-      "phantomId": "terra",
+      "characterId": "rain",
+      "phantomId": "bartz",
+      "purpose": "skill",
+      "learnSkills": [
+        "魔法劍二刀流／魔法剣二刀流（巴茲 MR7）",
+        "模仿／ものまね（巴茲 MR9）",
+        "巴茲 MASTER（MR9）"
+      ],
       "targetStage": 9,
-      "targetAwakening": 3,
-      "awakeningNote": "維持★3。",
-      "priority": "core",
-      "reason": "主力魔法輸出；冇弱點就用 Ultima 等無屬性魔法。",
-      "confidence": "medium",
+      "targetAwakening": 1,
+      "awakeningNote": "",
+      "priority": "recommended",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片 9:14 轉做 16 連打一份子，畫面呢個時候巴茲 MR8 練緊；終盤配諸神黃昏（無屬性）。",
+      "confidence": "low",
       "sources": [
-        "https://kamigame.jp/ffrs/page/446214919747010942.html",
-        "https://www.keengamer.com/articles/guides/final-fantasy-resonance-best-visions-for-every-character/",
-        "https://game8.jp/ffrs/827035"
+        "https://kamigame.jp/ffrs/page/444440874445754947.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=553s",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=574s"
       ]
     },
     {
       "chapterId": "ch8",
       "characterId": "lasswell",
       "phantomId": "sephiroth",
+      "purpose": "main",
+      "learnSkills": [],
       "targetStage": 9,
       "targetAwakening": 3,
       "awakeningNote": "game8：賽菲羅斯係★3 次優先；用魔石の結晶。",
@@ -1508,8 +2795,324 @@
     },
     {
       "chapterId": "ch8",
+      "characterId": "lasswell",
+      "phantomId": "lightning",
+      "purpose": "alt",
+      "learnSkills": [],
+      "targetStage": 9,
+      "targetAwakening": 0,
+      "awakeningNote": "",
+      "priority": "optional",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片畫面呢個時候裝緊雷光 MR8；作者提到會裝想練嘅幻兵（影片 4:15），唔係 16 連打必要。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444440875150398019.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=178s",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=255s"
+      ]
+    },
+    {
+      "chapterId": "ch8",
+      "characterId": "fina",
+      "phantomId": "onion-knight",
+      "purpose": "skill",
+      "learnSkills": [
+        "極限技槽三重蓄力／LBトリプルチャージ（洋蔥騎士 MR9）"
+      ],
+      "targetStage": 9,
+      "targetAwakening": 1,
+      "awakeningNote": "",
+      "priority": "recommended",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片 10:19。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444440876308015380.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=619s"
+      ]
+    },
+    {
+      "chapterId": "ch8",
+      "characterId": "fina",
+      "phantomId": "tronn",
+      "purpose": "skill",
+      "learnSkills": [
+        "MP消耗減半／MP消費半減（托隆 MR9）"
+      ],
+      "targetStage": 9,
+      "targetAwakening": 1,
+      "awakeningNote": "",
+      "priority": "recommended",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片 10:17。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444724986079366431.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=617s"
+      ]
+    },
+    {
+      "chapterId": "ch8",
+      "characterId": "fina",
+      "phantomId": "amelia",
+      "purpose": "alt",
+      "learnSkills": [],
+      "targetStage": 9,
+      "targetAwakening": 0,
+      "awakeningNote": "",
+      "priority": "optional",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片畫面呢個時候裝緊艾美利亞 MR8。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/446068907485190873.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=614s"
+      ]
+    },
+    {
+      "chapterId": "ch8",
+      "characterId": "lid",
+      "phantomId": "onion-knight",
+      "purpose": "skill",
+      "learnSkills": [
+        "極限技槽三重蓄力／LBトリプルチャージ（洋蔥騎士 MR9）",
+        "洋蔥騎士 MASTER（MR9）"
+      ],
+      "targetStage": 9,
+      "targetAwakening": 1,
+      "awakeningNote": "",
+      "priority": "recommended",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片畫面有洋蔥騎士 MASTER。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444440876308015380.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=662s"
+      ]
+    },
+    {
+      "chapterId": "ch8",
+      "characterId": "lid",
+      "phantomId": "terra",
+      "purpose": "skill",
+      "learnSkills": [
+        "突破極限／限界突破（蒂娜 MR9）",
+        "蒂娜 MASTER（MR9）"
+      ],
+      "targetStage": 9,
+      "targetAwakening": 3,
+      "awakeningNote": "",
+      "priority": "optional",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片畫面有蒂娜 MASTER。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444440876610005268.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=662s"
+      ]
+    },
+    {
+      "chapterId": "ch8",
+      "characterId": "lid",
+      "phantomId": "tronn",
+      "purpose": "skill",
+      "learnSkills": [
+        "MP消耗減半／MP消費半減（托隆 MR9）"
+      ],
+      "targetStage": 9,
+      "targetAwakening": 1,
+      "awakeningNote": "",
+      "priority": "optional",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片畫面有裝。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444724986079366431.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=662s"
+      ]
+    },
+    {
+      "chapterId": "ch8",
+      "characterId": "lid",
+      "phantomId": "camille",
+      "purpose": "alt",
+      "learnSkills": [],
+      "targetStage": 7,
+      "targetAwakening": 0,
+      "awakeningNote": "",
+      "priority": "optional",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片畫面呢個時候裝緊卡蜜兒 MR7。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/445893442669666774.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=662s"
+      ]
+    },
+    {
+      "chapterId": "ch8",
+      "characterId": "nichol",
+      "phantomId": "ayaka",
+      "purpose": "main",
+      "learnSkills": [],
+      "targetStage": 9,
+      "targetAwakening": 3,
+      "awakeningNote": "game8：綾香係★3 次優先；第8章可以喺黑暗巴哈姆特（可重複打）同鬥技場上級攞魔石の結晶。",
+      "priority": "core",
+      "reason": "buff＋LB 充能。",
+      "confidence": "medium",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/446214919747010942.html",
+        "https://game8.jp/ffrs/827035",
+        "https://game8.jp/ffrs/829993"
+      ]
+    },
+    {
+      "chapterId": "ch8",
+      "characterId": "nichol",
+      "phantomId": "terra",
+      "purpose": "skill",
+      "learnSkills": [
+        "突破極限／限界突破（蒂娜 MR9）",
+        "蒂娜 MASTER（MR9）"
+      ],
+      "targetStage": 9,
+      "targetAwakening": 3,
+      "awakeningNote": "",
+      "priority": "optional",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片 1:25–1:34：後期冇嘢想練就可以拆蒂娜 MASTER 換突破極限。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444440876610005268.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=85s",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=94s"
+      ]
+    },
+    {
+      "chapterId": "ch8",
+      "characterId": "nichol",
+      "phantomId": "yshtola",
+      "purpose": "alt",
+      "learnSkills": [],
+      "targetStage": 9,
+      "targetAwakening": 2,
+      "awakeningNote": "",
+      "priority": "optional",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片畫面呢個時候裝緊雅·修特拉 MR7。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444440875603382851.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=66s"
+      ]
+    },
+    {
+      "chapterId": "ch8",
+      "characterId": "jake",
+      "phantomId": "terra",
+      "purpose": "skill",
+      "learnSkills": [
+        "突破極限／限界突破（蒂娜 MR9）"
+      ],
+      "targetStage": 9,
+      "targetAwakening": 3,
+      "awakeningNote": "",
+      "priority": "recommended",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片畫面有突破極限。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444440876610005268.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=600s"
+      ]
+    },
+    {
+      "chapterId": "ch8",
+      "characterId": "jake",
+      "phantomId": "noctis",
+      "purpose": "skill",
+      "learnSkills": [
+        "亂射／みだれうち（諾克提斯 MR9）"
+      ],
+      "targetStage": 9,
+      "targetAwakening": 0,
+      "awakeningNote": "",
+      "priority": "optional",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片畫面有亂射。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444440875737600579.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=600s"
+      ]
+    },
+    {
+      "chapterId": "ch8",
+      "characterId": "jake",
+      "phantomId": "onion-knight",
+      "purpose": "alt",
+      "learnSkills": [],
+      "targetStage": 9,
+      "targetAwakening": 1,
+      "awakeningNote": "",
+      "priority": "optional",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片畫面呢個時候裝緊洋蔥騎士 MR8。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444440876308015380.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=600s"
+      ]
+    },
+    {
+      "chapterId": "ch8",
+      "characterId": "sakura",
+      "phantomId": "terra",
+      "purpose": "main",
+      "learnSkills": [],
+      "targetStage": 9,
+      "targetAwakening": 3,
+      "awakeningNote": "維持★3。",
+      "priority": "core",
+      "reason": "主力魔法輸出；冇弱點就用 Ultima 等無屬性魔法。",
+      "confidence": "medium",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/446214919747010942.html",
+        "https://www.keengamer.com/articles/guides/final-fantasy-resonance-best-visions-for-every-character/",
+        "https://game8.jp/ffrs/827035"
+      ]
+    },
+    {
+      "chapterId": "ch8",
+      "characterId": "sakura",
+      "phantomId": "tronn",
+      "purpose": "skill",
+      "learnSkills": [
+        "MP消耗減半／MP消費半減（托隆 MR9）"
+      ],
+      "targetStage": 9,
+      "targetAwakening": 1,
+      "awakeningNote": "",
+      "priority": "recommended",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片畫面有 MP消耗減半。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444724986079366431.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=642s"
+      ]
+    },
+    {
+      "chapterId": "ch8",
+      "characterId": "sakura",
+      "phantomId": "noctis",
+      "purpose": "alt",
+      "learnSkills": [],
+      "targetStage": 9,
+      "targetAwakening": 0,
+      "awakeningNote": "",
+      "priority": "optional",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。影片畫面呢個時候裝緊諾克提斯 MR6。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444440875737600579.html",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=642s"
+      ]
+    },
+    {
+      "chapterId": "ch8",
       "characterId": "archwitch-fina",
       "phantomId": "yshtola",
+      "purpose": "main",
+      "learnSkills": [],
       "targetStage": 9,
       "targetAwakening": 2,
       "awakeningNote": "推斷：結晶唔夠就維持★2。",
@@ -1518,6 +3121,155 @@
       "confidence": "medium",
       "sources": [
         "https://kamigame.jp/ffrs/page/446214919747010942.html"
+      ]
+    },
+    {
+      "chapterId": "ch8",
+      "characterId": "archwitch-fina",
+      "phantomId": "tronn",
+      "purpose": "skill",
+      "learnSkills": [
+        "MP消耗減半／MP消費半減（托隆 MR9）"
+      ],
+      "targetStage": 9,
+      "targetAwakening": 1,
+      "awakeningNote": "",
+      "priority": "recommended",
+      "reason": "推斷：章節同 MR 目標係按「第4章前 MR5 為目標」同 Vision 開放章節排，來源冇逐章寫明。kamigame 魔法特化編成有 トロンMASTER；games.gg 列托隆做替代。",
+      "confidence": "low",
+      "sources": [
+        "https://kamigame.jp/ffrs/page/444724986079366431.html",
+        "https://kamigame.jp/ffrs/page/446214919747010942.html",
+        "https://games.gg/final-fantasy-resonance/guides/best-visions-character-pairings/"
+      ]
+    }
+  ],
+  "challenges": [
+    {
+      "id": "combo-16",
+      "name": "16 連打",
+      "nameOriginal": null,
+      "unlock": "唔係關卡，冇開放條件：係一套配技打法，要學齊技能先用到。最少要有：尼可 Lv30（學 LB2 鏡面晶写の術，game8／keengamer）、弗利昂 MR9（W臂腕）、斯考爾 MR9（W行動）、巴茲 MR7（魔法劍二刀流）。巴茲第5章先開放，所以最早第5章後（推斷）。部份裝備要做工匠、源氏支線同十二武具（影片）。",
+      "description": "「16連打」係玩家叫法（影片字幕），唔係遊戲內容名，亦唔係 16 場連戰；搵唔到日文或英文攻略用同一個名。意思係一個角色一回合打出 16 下屬性技。計法（推斷，影片冇逐項講）：鏡面晶写の術 ×2 × W臂腕 ×2 × W行動 ×2 × 魔法劍二刀流 ×2 = 16。主角雷恩都轉成同樣配置，影片話總共 32 連打（9:18）。影片示範 Lv57。影片 6:07 係呢句總結；完整配置係 0:57–6:16。",
+      "recommendedLevel": null,
+      "tips": [
+        "起手（影片 5:27–5:52）：尼可 W臂腕 → 轉陣自如 + 攻勢之陣（擊潰傷害↑）→ 觸發再動 → 再用 W臂腕 → 突擊之陣（爆擊率 +30%）→ 極限槽滿 → 開鏡面（鏡面晶写の術）。",
+        "之後拉斯維爾（影片 5:56–6:04）：W臂腕 → W行動 → 屬性技，觸發二刀流。畫面用電火猛攻 II／III。",
+        "LB2 效果：全隊下一個行動連做兩次，MP 只扣一次（game8 尼可頁）；英文名 Mirroring Prism（keengamer）。",
+        "爆擊 100%（影片 4:43–4:57）：源氏護手 50% + 佐助刀 20% + 突擊之陣 30%。如果唔追 100%，改用止水：開場有明鏡止水 buff，擊潰傷害多啲。",
+        "屬性（影片 3:49–4:28）：可以唔裝崩身戒指，改裝屬性改變道具，將無屬性招變成剋制屬性。呢啲道具由主線 BOSS 掉。",
+        "省 AP：黃金頭飾（十二武具）等於 MP 減半，裝咗可以省 50AP，唔可以疊加；力量石開場 +50% 極限槽；天命兵法書保證先攻（影片 1:45–2:33）。",
+        "Vision 似乎唔係關鍵：影片 4:15 提到「想練的幻兵」，技能先係核心（推斷）。",
+        "作者提醒：後期太強，有少少影響遊戲體驗（影片 6:12）。"
+      ],
+      "party": [
+        {
+          "characterId": "nichol",
+          "phantomId": "yshtola",
+          "targetStage": null,
+          "targetAwakening": null,
+          "skills": [
+            "W臂腕 60",
+            "極限蓄力 15",
+            "連續詠唱 50",
+            "靜觀時極限技蓄力 20",
+            "極限技槽三重蓄力 50",
+            "蒂娜 MASTER 95",
+            "先攻 20",
+            "MP消耗減半 50"
+          ],
+          "equipment": [
+            "最後底牌",
+            "魔術師之服",
+            "力量石",
+            "黃金頭飾"
+          ],
+          "notes": "影片畫面 1:06–1:58（Lv57，AP 360/380）。呢個時間 Vision 係雅·修特拉 MR7；MR 目標影片冇講。未有最後底牌可以用天命兵法書（影片 2:26）。"
+        },
+        {
+          "characterId": "lasswell",
+          "phantomId": "lightning",
+          "targetStage": null,
+          "targetAwakening": null,
+          "skills": [
+            "巴茲 MASTER 95",
+            "W臂腕 60",
+            "MP消耗減半 50",
+            "極限技槽三重蓄力 50",
+            "突破極限 30",
+            "W行動 50",
+            "爆擊時恢復MP 20"
+          ],
+          "equipment": [
+            "止水（或佐助刀）",
+            "源氏之鎧",
+            "源氏護手",
+            "崩身戒指（或屬性改變道具）"
+          ],
+          "notes": "影片畫面 2:58–4:40（Lv57，AP 355/380）。呢個時間 Vision 係雷光 MR8，係練緊嗰隻。用佐助刀而 AP 有餘，可以加克勞德嘅爆擊擊潰技能（影片 5:11）。"
+        },
+        {
+          "characterId": "rain",
+          "phantomId": "bartz",
+          "targetStage": null,
+          "targetAwakening": null,
+          "skills": [
+            "光之戰士 MASTER 95",
+            "W臂腕 60",
+            "對魔法反擊 20",
+            "MP消耗減半 50",
+            "W行動 50",
+            "MRP1.5倍 30",
+            "突破極限 30",
+            "極限技槽雙倍蓄力 35"
+          ],
+          "equipment": [
+            "諸神黃昏",
+            "夜行步伐",
+            "紅玫瑰頭冠",
+            "戰士頭巾"
+          ],
+          "notes": "影片畫面 9:13（Lv57，AP 370/372）：後期仲係練緊巴茲 MR8。字幕話技能最後同拉斯維爾一樣（9:10），但呢個畫面未裝巴茲 MASTER。諸神黃昏令無屬性傷害同擊潰傷害 +25%，配巴茲火光劍（字幕 9:34，技能名可能聽錯）。"
+        },
+        {
+          "characterId": "jake",
+          "phantomId": "onion-knight",
+          "targetStage": null,
+          "targetAwakening": null,
+          "skills": [
+            "巴茲 MASTER 95",
+            "W行動 50",
+            "MRP1.5倍 30",
+            "先攻 20",
+            "W臂腕 60",
+            "突破極限 30",
+            "亂射 20",
+            "爆擊增幅 40"
+          ],
+          "equipment": [
+            "弧光長距瞄準鏡",
+            "玫瑰夾克",
+            "防彈背心",
+            "耍詐硬幣"
+          ],
+          "notes": "影片畫面 10:00（Lv58，AP 345/364）。呢個時間 Vision 係洋蔥騎士 MR8。同拉斯維爾嘅分別係爆擊只加傷害，唔加擊潰（影片 10:01）。"
+        }
+      ],
+      "battles": [],
+      "confidence": "medium",
+      "sources": [
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=57s",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=367s",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=554s",
+        "https://www.youtube.com/watch?v=OasN6MdA3mA&t=598s",
+        "https://game8.jp/ffrs/836092",
+        "https://www.keengamer.com/articles/guides/final-fantasy-resonance-best-character-builds/",
+        "https://kamigame.jp/ffrs/page/444440876761000212.html",
+        "https://kamigame.jp/ffrs/page/444440876140243220.html",
+        "https://kamigame.jp/ffrs/page/444440874445754947.html",
+        "https://kamigame.jp/ffrs/page/444440875972471060.html",
+        "https://kamigame.jp/ffrs/page/444724986079366431.html",
+        "https://kamigame.jp/ffrs/page/444440876308015380.html"
       ]
     }
   ]

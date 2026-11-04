@@ -64,6 +64,7 @@ a { color: var(--rec); }
 :focus-visible { outline: 2px dashed var(--gold); outline-offset: 3px; }
 .num { font-family: var(--font-num); font-variant-numeric: tabular-nums; }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+[hidden] { display: none !important; }
 
 /* ---------- the menu window ---------- */
 .win {
@@ -301,16 +302,123 @@ dialog[open] { animation: open .18s steps(3); }
 .facts { margin: 4px 0 0; display: grid; grid-template-columns: auto 1fr; gap: 2px 12px; font-size: var(--fs-s); }
 .facts dt { color: var(--gold); }
 .facts dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
-.timeline-wrap { overflow-x: auto; margin-top: 14px; }
-.timeline { border-collapse: collapse; width: 100%; min-width: 600px; font-size: var(--fs-s); }
-.timeline th { text-align: left; font-weight: normal; color: var(--gold); font-size: var(--fs-xs); padding: 4px 8px; border-bottom: 2px solid var(--frame-dim); }
-.timeline td { padding: 6px 8px; border-bottom: 1px dashed #ffffff22; vertical-align: middle; }
-.timeline tr.now td { background: #ffd65a1c; }
-.timeline tr.now td:first-child { box-shadow: inset 4px 0 0 var(--gold); }
-.timeline .ph-cell { display: flex; align-items: center; gap: 6px; }
-.timeline .mini { width: 40px; height: 40px; display: grid; place-items: end center; flex: none; }
-.timeline .why { color: var(--dim); font-size: var(--fs-xs); }
-.timeline tr.off td { color: var(--frame-dim); }
+/* Vision x chapter matrix: scrolls inside its own box, Vision column stays put */
+.matrix-wrap { overflow-x: auto; margin-top: 8px; border: 2px solid #0007; background: var(--ink-2); overscroll-behavior-x: contain; }
+.matrix { border-collapse: separate; border-spacing: 0; font-size: var(--fs-xs); }
+.matrix th, .matrix td { border-bottom: 1px dashed #ffffff22; border-right: 1px dashed #ffffff14; padding: 4px; text-align: center; font-weight: normal; }
+.matrix thead th { color: var(--gold); white-space: nowrap; border-bottom: 2px solid var(--frame-dim); min-width: 58px; }
+.matrix .m-v { position: sticky; left: 0; z-index: 2; background: var(--ink-2); text-align: left; width: 118px; min-width: 118px; max-width: 118px; box-shadow: 2px 0 0 var(--frame-dim); color: var(--text); }
+.m-v-in { display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 5px; align-items: center; line-height: 1.25; }
+.m-v-in .mini { width: 28px; height: 28px; display: grid; place-items: end center; }
+.m-v-in .spr-wrap { animation: none; }
+.m-v-in .spr-wrap canvas { width: 28px; height: 28px; }
+.m-v-in .shadow { display: none; }
+.m-v-in b { font-weight: normal; display: block; overflow-wrap: anywhere; }
+.m-v-in .pur { display: inline-block; margin-top: 2px; }
+.matrix thead th.now { background: var(--gold); color: var(--ink); }
+.matrix td.now { background: #ffd65a14; }
+.m-cell { min-height: 40px; display: grid; justify-items: center; align-content: center; gap: 1px; line-height: 1.2; padding: 2px; border: 2px solid transparent; }
+.m-mr { font-family: var(--font-num); font-size: .62rem; }
+.m-aw { display: inline-flex; align-items: center; gap: 2px; font-family: var(--font-num); font-size: .5rem; color: var(--gold); }
+.m-aw.zero { color: var(--dim); }
+.m-aw.zero .star { opacity: .5; }
+.m-tag { font-family: var(--font-num); font-size: .38rem; color: var(--ink); background: var(--gold); padding: 1px 2px; }
+.m-cell.changed { border-color: var(--gold); background: #ffd65a2e; }
+.m-cell.carry { opacity: .48; }
+.m-cell.away { color: var(--lo); }
+.m-cell.blank { color: var(--frame-dim); }
+.legend { display: flex; flex-wrap: wrap; gap: 4px 14px; margin-top: 6px; font-size: var(--fs-xs); color: var(--dim); }
+.legend i { display: inline-block; width: 12px; height: 12px; margin-right: 4px; vertical-align: -1px; border: 2px solid var(--frame-dim); }
+.legend i.changed { border-color: var(--gold); background: #ffd65a55; }
+.legend i.carry { opacity: .48; background: var(--frame-dim); }
+/* per-chapter notes under the matrix */
+.notes { display: grid; gap: 6px; margin-top: 8px; }
+.notes details { background: var(--ink-2); border: 2px solid #0007; }
+.notes summary { cursor: pointer; padding: 6px 10px; font-size: var(--fs-s); }
+.notes summary .num { font-size: .55rem; color: var(--gold); margin-right: 4px; }
+.notes summary small { color: var(--dim); font-size: var(--fs-xs); }
+.n-row { display: grid; grid-template-columns: 32px minmax(0, 1fr); gap: 8px; padding: 8px 10px; border-top: 1px dashed #ffffff22; }
+.n-row .mini { width: 32px; height: 32px; display: grid; place-items: end center; }
+.n-row .spr-wrap { animation: none; }
+.n-row .spr-wrap canvas { width: 32px; height: 32px; }
+.n-row .shadow { display: none; }
+.n-body { min-width: 0; display: grid; gap: 3px; }
+.n-line { display: flex; flex-wrap: wrap; gap: 2px 8px; align-items: center; }
+.n-line b { font-weight: normal; }
+.n-line .prio { font-size: var(--fs-xs); padding: 0 5px; }
+.n-stat { font-family: var(--font-num); font-size: .55rem; color: var(--gold); }
+.n-body .reason { font-size: var(--fs-xs); line-height: 1.5; }
+.src-refs a { margin-right: 4px; text-decoration: none; }
+.src { font-size: var(--fs-xs); color: var(--dim); overflow-wrap: anywhere; }
+.src ol { margin: 4px 0 0; padding-left: 1.8em; display: grid; gap: 3px; }
+.yt { color: var(--ink); background: var(--core); padding: 0 5px; margin-right: 4px; white-space: nowrap; display: inline-block; }
+
+/* ---------- several Visions on a character card ---------- */
+.pur { font-size: var(--fs-xs); line-height: 1.4; padding: 0 5px; white-space: nowrap; border: 2px solid currentColor; }
+.pur.main { color: var(--ink); background: var(--gold); border-color: var(--gold); }
+.pur.skill { color: var(--rec); }
+.pur.alt { color: var(--opt); border-style: dashed; }
+.pur.old { color: var(--dim); border-style: dotted; }
+.skills { display: flex; flex-wrap: wrap; gap: 3px 4px; align-items: center; font-size: var(--fs-xs); line-height: 1.35; }
+.skills .lbl { color: var(--gold); }
+.skills .sk { border: 1px solid var(--frame-dim); padding: 0 4px; overflow-wrap: anywhere; }
+.reason.clamp { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; overflow: hidden; font-size: var(--fs-xs); line-height: 1.5; }
+.card .equip > .reason, .card .equip > .foot { grid-column: 1 / -1; }
+.equip.dim, .v.dim { opacity: .45; }
+.v-sum { display: flex; flex-wrap: wrap; gap: 0 8px; align-items: baseline; font-size: var(--fs-xs); color: var(--dim); }
+.v-sum .lbl { color: var(--gold); }
+.v-sum .num { font-size: .6rem; color: var(--text); }
+.vlist { display: grid; gap: 4px; }
+.vlist:not(.open) .v.fold { display: none; }
+.v { display: grid; grid-template-columns: 32px minmax(0, 1fr); gap: 8px; align-items: start; background: var(--ink-2); padding: 5px 8px 5px 7px; border-left: 3px solid var(--frame-dim); }
+.v.p-core { border-left-color: var(--core); }
+.v.p-recommended { border-left-color: var(--rec); }
+.v.p-optional { border-left-color: var(--opt); }
+.v.has-chg { background: #2a2a55; }
+.v-spr { width: 32px; height: 32px; display: grid; place-items: end center; }
+.v-spr .spr-wrap { animation: none; }
+.v-spr .spr-wrap canvas { width: 32px; height: 32px; }
+.v-spr .shadow { display: none; }
+.v-main { min-width: 0; display: grid; gap: 3px; }
+.v-line { display: flex; flex-wrap: wrap; gap: 2px 6px; align-items: center; font-size: var(--fs-s); line-height: 1.3; }
+.v-line b { font-weight: normal; min-width: 0; overflow-wrap: anywhere; }
+.v-line .inh { font-size: .7rem; color: var(--dim); }
+.v-meter { gap: 2px 8px; }
+.v-meter .num { font-size: .5rem; }
+.v-meter .none { font-size: var(--fs-xs); }
+.equip .pips { gap: 2px; }
+.equip .pip { width: 10px; height: 12px; }
+.v .pips { gap: 2px; }
+.v .pip { width: 7px; height: 10px; border-width: 1px; }
+.v .pip.on { box-shadow: inset -1px -1px 0 #b78a10; }
+.v .awk-note { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; overflow: hidden; }
+.fold-btn { width: 100%; background: var(--ink); border: 2px solid var(--gold); color: var(--gold); padding: 5px 8px 4px; cursor: pointer; font-size: var(--fs-s); text-align: center; }
+.fold-btn:hover { background: var(--gold); color: var(--ink); }
+.vlist.open ~ .fold-btn .closed, .vlist:not(.open) ~ .fold-btn .opened { display: none; }
+.route-btn { background: none; border: 2px solid var(--frame-dim); color: var(--text); padding: 1px 8px; cursor: pointer; font-size: var(--fs-xs); margin-left: auto; white-space: nowrap; }
+.route-btn:hover { border-color: var(--gold); color: var(--gold); }
+.user .pur { font-size: .7rem; padding: 0 3px; }
+
+/* ---------- challenge tab ---------- */
+#challenge { display: grid; gap: 22px; }
+.ch-head { display: grid; gap: 8px; }
+.ch-head h2 { margin: 0; font-size: var(--fs-xl); font-weight: normal; line-height: 1.3; }
+.ch-head p, .ch-sec p { margin: 0; max-width: 65ch; }
+.ch-pick { display: flex; flex-wrap: wrap; gap: 6px; }
+.party-grid { display: grid; gap: 22px 18px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); align-items: start; }
+.party { display: grid; gap: 10px; }
+.party .card-top { grid-template-columns: auto minmax(0, 1fr); }
+.party .equip > :not(.ph-portrait) { grid-column: 2; }
+.party .reason { font-size: var(--fs-xs); line-height: 1.5; }
+.party-line { display: grid; gap: 4px; }
+.tips { margin: 0; padding-left: 1.2em; display: grid; gap: 4px; font-size: var(--fs-s); max-width: 70ch; }
+.battles { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.battle { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 8px; background: var(--ink-2); padding: 6px 10px; align-items: baseline; }
+.battle .num { font-size: .6rem; color: var(--gold); }
+.battle b { font-weight: normal; }
+.battle div div { font-size: var(--fs-xs); color: var(--dim); line-height: 1.5; }
+.demo-note { color: var(--lo); font-size: var(--fs-xs); }
+
 .src { font-size: var(--fs-xs); color: var(--dim); overflow-wrap: anywhere; }
 
 /* ---------- chapter wipe ---------- */
@@ -358,7 +466,7 @@ footer ul { margin: 0; padding-left: 1.2em; }
 
 <!-- =====================================================================
      GUIDE DATA — swap this whole JSON block for research/data.json.
-     Shape follows studio/SCHEMA.md v0.1. Everything below is DEMO data.
+     Shape follows SCHEMA.md v0.3. Everything below is DEMO data.
      ===================================================================== -->
 <script id="guide-data" type="application/json">
 {
@@ -391,52 +499,64 @@ footer ul { margin: 0; padding-left: 1.2em; }
     {"id": "ch5", "order": 5, "name": "第五章 終焉之門", "nameOriginal": "Chapter 5: Gate of the End", "recommendedLevel": "55-70", "notes": "全員要練夠 stage 先過到 Boss 第二形態。"}
   ],
   "characters": [
-    {"id": "cloud", "name": "克勞德", "nameOriginal": "Cloud Strife", "role": "攻擊", "element": "火", "rarity": "SSR", "howToGet": "第一章劇情", "unlockChapterId": "ch1", "image": {"local": "research/assets/characters/cloud.png", "url": null, "credit": null}, "notes": ""},
-    {"id": "tifa", "name": "蒂法", "nameOriginal": "Tifa Lockhart", "role": "攻擊", "element": "風", "rarity": "SSR", "howToGet": "第一章劇情", "unlockChapterId": "ch1", "image": {"local": "research/assets/characters/tifa.png", "url": null, "credit": null}, "notes": ""},
-    {"id": "barret", "name": "巴雷特", "nameOriginal": "Barret Wallace", "role": "坦克", "element": "土", "rarity": "SR", "howToGet": "第一章劇情", "unlockChapterId": "ch1", "image": {"local": "research/assets/characters/barret.png", "url": null, "credit": null}, "notes": ""},
-    {"id": "aerith", "name": "愛麗絲", "nameOriginal": "Aerith Gainsborough", "role": "治療", "element": "水", "rarity": "SSR", "howToGet": "第二章劇情", "unlockChapterId": "ch2", "image": {"local": "research/assets/characters/aerith.png", "url": null, "credit": null}, "notes": ""},
-    {"id": "terra", "name": "蒂娜", "nameOriginal": "Terra Branford", "role": "支援", "element": "雷", "rarity": "SR", "howToGet": "第二章支線", "unlockChapterId": "ch2", "image": {"local": "research/assets/characters/terra.png", "url": null, "credit": null}, "notes": ""},
-    {"id": "squall", "name": "史考爾", "nameOriginal": "Squall Leonhart", "role": "攻擊", "element": "冰", "rarity": "R", "howToGet": "第三章商店", "unlockChapterId": "ch3", "image": {"local": "research/assets/characters/squall.png", "url": null, "credit": null}, "notes": ""},
-    {"id": "lightning", "name": "雷光", "nameOriginal": "Lightning", "role": "攻擊", "element": "雷", "rarity": "SSR", "howToGet": "第四章劇情", "unlockChapterId": "ch4", "image": {"local": "research/assets/characters/lightning.png", "url": null, "credit": null}, "notes": ""},
-    {"id": "yshtola", "name": "雅·修特拉", "nameOriginal": "Y'shtola Rhul", "role": "治療", "element": "冰", "rarity": "SR", "howToGet": "第五章活動", "unlockChapterId": "ch5", "image": {"local": "research/assets/characters/yshtola.png", "url": null, "credit": null}, "notes": ""}
+    {"id": "cloud", "name": "克勞德", "nameOriginal": "Cloud Strife", "role": "攻擊", "element": "火", "rarity": "SSR", "howToGet": "第一章劇情", "unlockChapterId": "ch1", "image": {"local": "research/assets/characters/cloud.png", "url": null, "credit": null}, "notes": "", "absentChapterIds": [], "absentNote": ""},
+    {"id": "tifa", "name": "蒂法", "nameOriginal": "Tifa Lockhart", "role": "攻擊", "element": "風", "rarity": "SSR", "howToGet": "第一章劇情", "unlockChapterId": "ch1", "image": {"local": "research/assets/characters/tifa.png", "url": null, "credit": null}, "notes": "", "absentChapterIds": [], "absentNote": ""},
+    {"id": "barret", "name": "巴雷特", "nameOriginal": "Barret Wallace", "role": "坦克", "element": "土", "rarity": "SR", "howToGet": "第一章劇情", "unlockChapterId": "ch1", "image": {"local": "research/assets/characters/barret.png", "url": null, "credit": null}, "notes": "", "absentChapterIds": ["ch4"], "absentNote": "示範：呢章劇情離隊"},
+    {"id": "aerith", "name": "愛麗絲", "nameOriginal": "Aerith Gainsborough", "role": "治療", "element": "水", "rarity": "SSR", "howToGet": "第二章劇情", "unlockChapterId": "ch2", "image": {"local": "research/assets/characters/aerith.png", "url": null, "credit": null}, "notes": "", "absentChapterIds": [], "absentNote": ""},
+    {"id": "terra", "name": "蒂娜", "nameOriginal": "Terra Branford", "role": "支援", "element": "雷", "rarity": "SR", "howToGet": "第二章支線", "unlockChapterId": "ch2", "image": {"local": "research/assets/characters/terra.png", "url": null, "credit": null}, "notes": "", "absentChapterIds": [], "absentNote": ""},
+    {"id": "squall", "name": "史考爾", "nameOriginal": "Squall Leonhart", "role": "攻擊", "element": "冰", "rarity": "R", "howToGet": "第三章商店", "unlockChapterId": "ch3", "image": {"local": "research/assets/characters/squall.png", "url": null, "credit": null}, "notes": "", "absentChapterIds": [], "absentNote": ""},
+    {"id": "lightning", "name": "雷光", "nameOriginal": "Lightning", "role": "攻擊", "element": "雷", "rarity": "SSR", "howToGet": "第四章劇情", "unlockChapterId": "ch4", "image": {"local": "research/assets/characters/lightning.png", "url": null, "credit": null}, "notes": "", "absentChapterIds": [], "absentNote": ""},
+    {"id": "yshtola", "name": "雅·修特拉", "nameOriginal": "Y'shtola Rhul", "role": "治療", "element": "冰", "rarity": "SR", "howToGet": "第五章活動", "unlockChapterId": "ch5", "image": {"local": "research/assets/characters/yshtola.png", "url": null, "credit": null}, "notes": "", "absentChapterIds": [], "absentNote": ""}
   ],
   "phantoms": [
-    {"id": "ifrit", "name": "伊弗利特", "nameOriginal": "Ifrit", "type": "攻擊", "element": "火", "rarity": "SR", "maxStage": 5, "maxAwakening": 3, "howToGet": "第一章劇情", "unlockChapterId": "ch1", "image": {"local": "research/assets/phantoms/ifrit.png", "url": null, "credit": null}, "notes": ""},
-    {"id": "shiva", "name": "希瓦", "nameOriginal": "Shiva", "type": "控制", "element": "冰", "rarity": "SR", "maxStage": 5, "maxAwakening": 3, "howToGet": "第一章支線", "unlockChapterId": "ch1", "image": {"local": "research/assets/phantoms/shiva.png", "url": null, "credit": null}, "notes": ""},
-    {"id": "ramuh", "name": "拉姆", "nameOriginal": "Ramuh", "type": "支援", "element": "雷", "rarity": "SR", "maxStage": 5, "maxAwakening": 3, "howToGet": "第二章劇情", "unlockChapterId": "ch2", "image": {"local": "research/assets/phantoms/ramuh.png", "url": null, "credit": null}, "notes": ""},
-    {"id": "garuda", "name": "迦樓羅", "nameOriginal": "Garuda", "type": "攻擊", "element": "風", "rarity": "SR", "maxStage": 5, "maxAwakening": 3, "howToGet": "第二章 Boss", "unlockChapterId": "ch2", "image": {"local": "research/assets/phantoms/garuda.png", "url": null, "credit": null}, "notes": ""},
-    {"id": "titan", "name": "泰坦", "nameOriginal": "Titan", "type": "防禦", "element": "土", "rarity": "SR", "maxStage": 5, "maxAwakening": 3, "howToGet": "第三章劇情", "unlockChapterId": "ch3", "image": {"local": "research/assets/phantoms/titan.png", "url": null, "credit": null}, "notes": ""},
-    {"id": "leviathan", "name": "利維坦", "nameOriginal": "Leviathan", "type": "治療", "element": "水", "rarity": "SSR", "maxStage": 6, "maxAwakening": 3, "howToGet": "第三章支線", "unlockChapterId": "ch3", "image": {"local": "research/assets/phantoms/leviathan.png", "url": null, "credit": null}, "notes": ""},
-    {"id": "bahamut", "name": "巴哈姆特", "nameOriginal": "Bahamut", "type": "攻擊", "element": "光", "rarity": "SSR", "maxStage": 6, "maxAwakening": 3, "howToGet": "第四章 Boss", "unlockChapterId": "ch4", "image": {"local": "research/assets/phantoms/bahamut.png", "url": null, "credit": null}, "notes": ""},
-    {"id": "odin", "name": "奧丁", "nameOriginal": "Odin", "type": "攻擊", "element": "闇", "rarity": "SSR", "maxStage": 6, "maxAwakening": null, "howToGet": "第五章隱藏任務", "unlockChapterId": "ch5", "image": {"local": "research/assets/phantoms/odin.png", "url": null, "credit": null}, "notes": ""}
+    {"id": "ifrit", "name": "伊弗利特", "nameOriginal": "Ifrit", "type": "攻擊", "element": "火", "rarity": "SR", "maxStage": 9, "maxAwakening": 3, "howToGet": "第一章劇情", "unlockChapterId": "ch1", "image": {"local": "research/assets/phantoms/ifrit.png", "url": null, "credit": null}, "notes": ""},
+    {"id": "shiva", "name": "希瓦", "nameOriginal": "Shiva", "type": "控制", "element": "冰", "rarity": "SR", "maxStage": 9, "maxAwakening": 3, "howToGet": "第一章支線", "unlockChapterId": "ch1", "image": {"local": "research/assets/phantoms/shiva.png", "url": null, "credit": null}, "notes": ""},
+    {"id": "ramuh", "name": "拉姆", "nameOriginal": "Ramuh", "type": "支援", "element": "雷", "rarity": "SR", "maxStage": 9, "maxAwakening": 3, "howToGet": "第二章劇情", "unlockChapterId": "ch2", "image": {"local": "research/assets/phantoms/ramuh.png", "url": null, "credit": null}, "notes": ""},
+    {"id": "garuda", "name": "迦樓羅", "nameOriginal": "Garuda", "type": "攻擊", "element": "風", "rarity": "SR", "maxStage": 9, "maxAwakening": 3, "howToGet": "第二章 Boss", "unlockChapterId": "ch2", "image": {"local": "research/assets/phantoms/garuda.png", "url": null, "credit": null}, "notes": ""},
+    {"id": "titan", "name": "泰坦", "nameOriginal": "Titan", "type": "防禦", "element": "土", "rarity": "SR", "maxStage": 9, "maxAwakening": 3, "howToGet": "第三章劇情", "unlockChapterId": "ch3", "image": {"local": "research/assets/phantoms/titan.png", "url": null, "credit": null}, "notes": ""},
+    {"id": "leviathan", "name": "利維坦", "nameOriginal": "Leviathan", "type": "治療", "element": "水", "rarity": "SSR", "maxStage": 9, "maxAwakening": 3, "howToGet": "第三章支線", "unlockChapterId": "ch3", "image": {"local": "research/assets/phantoms/leviathan.png", "url": null, "credit": null}, "notes": ""},
+    {"id": "bahamut", "name": "巴哈姆特", "nameOriginal": "Bahamut", "type": "攻擊", "element": "光", "rarity": "SSR", "maxStage": 9, "maxAwakening": 3, "howToGet": "第四章 Boss", "unlockChapterId": "ch4", "image": {"local": "research/assets/phantoms/bahamut.png", "url": null, "credit": null}, "notes": ""},
+    {"id": "odin", "name": "奧丁", "nameOriginal": "Odin", "type": "攻擊", "element": "闇", "rarity": "SSR", "maxStage": 9, "maxAwakening": null, "howToGet": "第五章隱藏任務", "unlockChapterId": "ch5", "image": {"local": "research/assets/phantoms/odin.png", "url": null, "credit": null}, "notes": ""}
   ],
   "builds": [
-    {"chapterId": "ch1", "characterId": "cloud", "phantomId": "ifrit", "targetStage": 2, "targetAwakening": 0, "awakeningNote": null, "priority": "core", "reason": "第一章唯一穩定輸出，火屬性打序章機械兵有加成。", "confidence": "high", "sources": ["https://example.com/guide-a", "https://example.com/guide-b"]},
-    {"chapterId": "ch1", "characterId": "tifa", "phantomId": "shiva", "targetStage": 1, "targetAwakening": null, "awakeningNote": null, "priority": "recommended", "reason": "希瓦減速幫蒂法近身，開到 1 就夠。", "confidence": "medium", "sources": ["https://example.com/guide-a"]},
-    {"chapterId": "ch1", "characterId": "barret", "phantomId": "ifrit", "targetStage": 1, "targetAwakening": null, "awakeningNote": null, "priority": "optional", "reason": "推斷：暫時冇其他幻兵，掛住伊弗利特就算。", "confidence": "low", "sources": []},
-    {"chapterId": "ch2", "characterId": "cloud", "phantomId": "ifrit", "targetStage": 3, "targetAwakening": 1, "awakeningNote": null, "priority": "core", "reason": "stage 3 解鎖範圍技，清飛行小怪快好多。", "confidence": "high", "sources": ["https://example.com/guide-a", "https://example.com/guide-b"]},
-    {"chapterId": "ch2", "characterId": "tifa", "phantomId": "garuda", "targetStage": 2, "targetAwakening": 0, "awakeningNote": null, "priority": "recommended", "reason": "迦樓羅同屬性加連擊數，Boss 戰傷害明顯提升。", "confidence": "medium", "sources": ["https://example.com/guide-b"]},
-    {"chapterId": "ch2", "characterId": "barret", "phantomId": "shiva", "targetStage": 2, "targetAwakening": null, "awakeningNote": null, "priority": "recommended", "reason": "冰盾減傷，頂住飛行系突進。", "confidence": "medium", "sources": ["https://example.com/guide-a"]},
-    {"chapterId": "ch2", "characterId": "aerith", "phantomId": "ramuh", "targetStage": 2, "targetAwakening": 0, "awakeningNote": null, "priority": "core", "reason": "拉姆 stage 2 被動加治療量，第二章後半必需。", "confidence": "high", "sources": ["https://example.com/guide-a", "https://example.com/guide-b"]},
-    {"chapterId": "ch2", "characterId": "terra", "phantomId": "garuda", "targetStage": 1, "targetAwakening": null, "awakeningNote": null, "priority": "optional", "reason": "推斷：資源唔夠可以唔練，純粹湊隊。", "confidence": "low", "sources": []},
-    {"chapterId": "ch3", "characterId": "cloud", "phantomId": "ifrit", "targetStage": 4, "targetAwakening": 1, "awakeningNote": null, "priority": "core", "reason": "礦坑敵人怕火，stage 4 爆發技係主力。", "confidence": "high", "sources": ["https://example.com/guide-a"]},
-    {"chapterId": "ch3", "characterId": "tifa", "phantomId": "garuda", "targetStage": 3, "targetAwakening": 1, "awakeningNote": "★1 解鎖連擊被動，材料喺第三章商店換。", "priority": "core", "reason": "副輸出，Boss 破盾靠佢。", "confidence": "medium", "sources": ["https://example.com/guide-b"]},
-    {"chapterId": "ch3", "characterId": "barret", "phantomId": "titan", "targetStage": 2, "targetAwakening": 0, "awakeningNote": null, "priority": "core", "reason": "泰坦嘲諷 + 減傷，礦坑 Boss 唔帶好難過。", "confidence": "high", "sources": ["https://example.com/guide-a", "https://example.com/guide-b"]},
-    {"chapterId": "ch3", "characterId": "aerith", "phantomId": "leviathan", "targetStage": 2, "targetAwakening": 1, "awakeningNote": null, "priority": "recommended", "reason": "群體回復，換走拉姆。", "confidence": "medium", "sources": ["https://example.com/guide-a"]},
-    {"chapterId": "ch3", "characterId": "terra", "phantomId": "ramuh", "targetStage": 3, "targetAwakening": null, "awakeningNote": null, "priority": "recommended", "reason": "推斷：接手拉姆做加速支援，未有實測。", "confidence": "low", "sources": []},
-    {"chapterId": "ch3", "characterId": "squall", "phantomId": "shiva", "targetStage": 2, "targetAwakening": 0, "awakeningNote": null, "priority": "recommended", "reason": "冰屬性對礦坑史萊姆有效。", "confidence": "medium", "sources": ["https://example.com/guide-b"]},
-    {"chapterId": "ch4", "characterId": "cloud", "phantomId": "bahamut", "targetStage": 2, "targetAwakening": 0, "awakeningNote": null, "priority": "core", "reason": "巴哈姆特一開放即轉配，stage 2 已經勁過伊弗利特 4。", "confidence": "medium", "sources": ["https://example.com/guide-a"]},
-    {"chapterId": "ch4", "characterId": "tifa", "phantomId": "garuda", "targetStage": 4, "targetAwakening": 2, "awakeningNote": "推斷：★2 加對空傷害，暫時未有來源。", "priority": "core", "reason": "天空要塞多空中敵，風屬性加成大。", "confidence": "high", "sources": ["https://example.com/guide-a", "https://example.com/guide-b"]},
-    {"chapterId": "ch4", "characterId": "barret", "phantomId": "titan", "targetStage": 3, "targetAwakening": 1, "awakeningNote": null, "priority": "core", "reason": "要塞 Boss 有秒殺技，泰坦 stage 3 先頂得住。", "confidence": "high", "sources": ["https://example.com/guide-a"]},
-    {"chapterId": "ch4", "characterId": "aerith", "phantomId": "leviathan", "targetStage": 3, "targetAwakening": 1, "awakeningNote": null, "priority": "core", "reason": "回復量要跟上 Boss 輸出。", "confidence": "high", "sources": ["https://example.com/guide-b"]},
-    {"chapterId": "ch4", "characterId": "lightning", "phantomId": "ramuh", "targetStage": 4, "targetAwakening": 1, "awakeningNote": null, "priority": "core", "reason": "雷光 + 拉姆同屬性連鎖，即戰力。", "confidence": "high", "sources": ["https://example.com/guide-a", "https://example.com/guide-b"]},
-    {"chapterId": "ch4", "characterId": "squall", "phantomId": "shiva", "targetStage": 3, "targetAwakening": 0, "awakeningNote": null, "priority": "optional", "reason": "後備輸出，有資源先練。", "confidence": "medium", "sources": ["https://example.com/guide-b"]},
-    {"chapterId": "ch5", "characterId": "cloud", "phantomId": "bahamut", "targetStage": 4, "targetAwakening": 2, "awakeningNote": "★2 先有貫穿加成，材料靠終章 Boss 掉落。", "priority": "core", "reason": "終章 Boss 第二形態要 stage 4 嘅貫穿效果。", "confidence": "high", "sources": ["https://example.com/guide-a", "https://example.com/guide-b"]},
-    {"chapterId": "ch5", "characterId": "tifa", "phantomId": "garuda", "targetStage": 5, "targetAwakening": 3, "awakeningNote": "練滿 ★3 攞最後一個被動。", "priority": "recommended", "reason": "練滿迦樓羅攞埋最後一個被動。", "confidence": "medium", "sources": ["https://example.com/guide-a"]},
-    {"chapterId": "ch5", "characterId": "barret", "phantomId": "titan", "targetStage": 3, "targetAwakening": 2, "awakeningNote": "MR 唔使再升，覺醒 ★2 加減傷就夠。", "priority": "recommended", "reason": "可以用雅·修特拉代替部分減傷，所以降為推薦。", "confidence": "medium", "sources": ["https://example.com/guide-b"]},
-    {"chapterId": "ch5", "characterId": "aerith", "phantomId": "leviathan", "targetStage": 4, "targetAwakening": 2, "awakeningNote": null, "priority": "core", "reason": "全隊回復主力。", "confidence": "high", "sources": ["https://example.com/guide-a", "https://example.com/guide-b"]},
-    {"chapterId": "ch5", "characterId": "lightning", "phantomId": "odin", "targetStage": 3, "targetAwakening": 1, "awakeningNote": null, "priority": "core", "reason": "奧丁斬鐵劍對終章雜兵即死。", "confidence": "medium", "sources": ["https://example.com/guide-a"]},
-    {"chapterId": "ch5", "characterId": "yshtola", "phantomId": "shiva", "targetStage": 3, "targetAwakening": null, "awakeningNote": null, "priority": "recommended", "reason": "推斷：副治療 + 控場，社群意見分歧。", "confidence": "low", "sources": []}
+    {"chapterId": "ch1", "characterId": "cloud", "phantomId": "ifrit", "purpose": "main", "learnSkills": [], "targetStage": 3, "targetAwakening": 0, "awakeningNote": null, "priority": "core", "reason": "示範：第一章唯一穩定輸出，火屬性打序章機械兵有加成。", "confidence": "high", "sources": ["https://example.com/guide-a", "https://example.com/guide-b"]},
+    {"chapterId": "ch1", "characterId": "cloud", "phantomId": "shiva", "purpose": "skill", "learnSkills": ["冰盾"], "targetStage": 2, "targetAwakening": null, "awakeningNote": null, "priority": "optional", "reason": "示範：練到 2 學冰盾，之後轉回主力都帶得走。", "confidence": "medium", "sources": ["https://example.com/guide-a"]},
+    {"chapterId": "ch2", "characterId": "cloud", "phantomId": "ifrit", "purpose": "main", "learnSkills": ["爆炎斬"], "targetStage": 5, "targetAwakening": 1, "awakeningNote": null, "priority": "core", "reason": "示範：解鎖範圍技，清飛行小怪快好多。呢句故意寫長啲，測試卡面會唔會俾理由撐大：範圍技對飛行系特別有效，而且可以順手破盾，所以呢章一定要優先練。", "confidence": "high", "sources": ["https://example.com/guide-a", "https://example.com/guide-b"]},
+    {"chapterId": "ch2", "characterId": "cloud", "phantomId": "ramuh", "purpose": "skill", "learnSkills": ["雷屬性加成 +5%"], "targetStage": 2, "targetAwakening": 0, "awakeningNote": null, "priority": "recommended", "reason": "示範：學雷屬性永續加成。", "confidence": "medium", "sources": ["https://example.com/guide-a"]},
+    {"chapterId": "ch3", "characterId": "cloud", "phantomId": "ifrit", "purpose": "main", "learnSkills": [], "targetStage": 6, "targetAwakening": 1, "awakeningNote": null, "priority": "core", "reason": "示範：礦坑敵人怕火。", "confidence": "high", "sources": ["https://example.com/guide-a"]},
+    {"chapterId": "ch3", "characterId": "cloud", "phantomId": "titan", "purpose": "skill", "learnSkills": ["鋼鐵之軀", "大地守護"], "targetStage": 3, "targetAwakening": 0, "awakeningNote": null, "priority": "optional", "reason": "示範：學減傷被動。", "confidence": "medium", "sources": ["https://example.com/guide-a"]},
+    {"chapterId": "ch3", "characterId": "cloud", "phantomId": "leviathan", "purpose": "alt", "learnSkills": [], "targetStage": 2, "targetAwakening": null, "awakeningNote": null, "priority": "optional", "reason": "推斷：冇資源可以唔練。", "confidence": "low", "sources": []},
+    {"chapterId": "ch4", "characterId": "cloud", "phantomId": "bahamut", "purpose": "main", "learnSkills": [], "targetStage": 4, "targetAwakening": 0, "awakeningNote": null, "priority": "core", "reason": "示範：開放即轉主力。", "confidence": "medium", "sources": ["https://example.com/guide-a"]},
+    {"chapterId": "ch4", "characterId": "cloud", "phantomId": "shiva", "purpose": "skill", "learnSkills": ["全體減速"], "targetStage": 4, "targetAwakening": 1, "awakeningNote": "推斷：★1 夠用，暫時未有來源。", "priority": "recommended", "reason": "示範：再升學全體減速。", "confidence": "medium", "sources": ["https://example.com/guide-a"]},
+    {"chapterId": "ch4", "characterId": "cloud", "phantomId": "garuda", "purpose": "alt", "learnSkills": [], "targetStage": 3, "targetAwakening": 0, "awakeningNote": null, "priority": "optional", "reason": "示範：對空替代。", "confidence": "medium", "sources": ["https://example.com/guide-a"]},
+    {"chapterId": "ch5", "characterId": "cloud", "phantomId": "bahamut", "purpose": "main", "learnSkills": ["百萬核爆"], "targetStage": 7, "targetAwakening": 2, "awakeningNote": "★2 先有貫穿加成，材料靠終章 Boss 掉落。", "priority": "core", "reason": "示範：Boss 第二形態要貫穿效果。", "confidence": "high", "sources": ["https://example.com/guide-a", "https://example.com/guide-b"]},
+    {"chapterId": "ch5", "characterId": "cloud", "phantomId": "ramuh", "purpose": "skill", "learnSkills": ["雷鳴連鎖"], "targetStage": 5, "targetAwakening": 1, "awakeningNote": null, "priority": "recommended", "reason": "示範：學雷鳴連鎖。", "confidence": "medium", "sources": ["https://example.com/guide-a"]},
+    {"chapterId": "ch5", "characterId": "cloud", "phantomId": "odin", "purpose": "alt", "learnSkills": [], "targetStage": 3, "targetAwakening": null, "awakeningNote": null, "priority": "optional", "reason": "示範：有多資源先練。", "confidence": "medium", "sources": ["https://example.com/guide-a"]},
+    {"chapterId": "ch1", "characterId": "tifa", "phantomId": "shiva", "purpose": "main", "learnSkills": [], "targetStage": 2, "targetAwakening": null, "awakeningNote": null, "priority": "recommended", "reason": "示範：減速幫蒂法近身。", "confidence": "medium", "sources": ["https://example.com/guide-a"]},
+    {"chapterId": "ch2", "characterId": "tifa", "phantomId": "garuda", "purpose": "main", "learnSkills": [], "targetStage": 3, "targetAwakening": 0, "awakeningNote": null, "priority": "recommended", "reason": "示範：同屬性加連擊數。", "confidence": "medium", "sources": ["https://example.com/guide-b"]},
+    {"chapterId": "ch3", "characterId": "tifa", "phantomId": "garuda", "purpose": "main", "learnSkills": [], "targetStage": 4, "targetAwakening": 1, "awakeningNote": "★1 解鎖連擊被動，材料喺第三章商店換。", "priority": "core", "reason": "示範：副輸出，Boss 破盾靠佢。", "confidence": "medium", "sources": ["https://example.com/guide-b"]},
+    {"chapterId": "ch3", "characterId": "tifa", "phantomId": "ifrit", "purpose": "skill", "learnSkills": ["火屬性轉換"], "targetStage": 2, "targetAwakening": 0, "awakeningNote": null, "priority": "optional", "reason": "示範：學屬性轉換。", "confidence": "medium", "sources": ["https://example.com/guide-a"]},
+    {"chapterId": "ch4", "characterId": "tifa", "phantomId": "garuda", "purpose": "main", "learnSkills": [], "targetStage": 6, "targetAwakening": 2, "awakeningNote": "推斷：★2 加對空傷害。", "priority": "core", "reason": "示範：多空中敵。", "confidence": "high", "sources": ["https://example.com/guide-a", "https://example.com/guide-b"]},
+    {"chapterId": "ch5", "characterId": "tifa", "phantomId": "garuda", "purpose": "main", "learnSkills": [], "targetStage": 8, "targetAwakening": 2, "awakeningNote": null, "priority": "recommended", "reason": "示範：差唔多練滿。", "confidence": "medium", "sources": ["https://example.com/guide-a"]},
+    {"chapterId": "ch1", "characterId": "barret", "phantomId": "ifrit", "learnSkills": [], "targetStage": 1, "targetAwakening": null, "awakeningNote": null, "priority": "optional", "reason": "推斷：暫時冇其他幻兵。", "confidence": "low", "sources": []},
+    {"chapterId": "ch2", "characterId": "barret", "phantomId": "shiva", "purpose": "main", "learnSkills": [], "targetStage": 2, "targetAwakening": null, "awakeningNote": null, "priority": "recommended", "reason": "示範：冰盾減傷。", "confidence": "medium", "sources": ["https://example.com/guide-a"]},
+    {"chapterId": "ch3", "characterId": "barret", "phantomId": "titan", "purpose": "main", "learnSkills": [], "targetStage": 3, "targetAwakening": 0, "awakeningNote": null, "priority": "core", "reason": "示範：嘲諷加減傷。", "confidence": "high", "sources": ["https://example.com/guide-a", "https://example.com/guide-b"]},
+    {"chapterId": "ch5", "characterId": "barret", "phantomId": "titan", "purpose": "main", "learnSkills": [], "targetStage": 3, "targetAwakening": 2, "awakeningNote": "MR 唔使再升，覺醒 ★2 加減傷就夠。", "priority": "recommended", "reason": "示範：MR 唔使再升，只係升覺醒。", "confidence": "medium", "sources": ["https://example.com/guide-b"]},
+    {"chapterId": "ch2", "characterId": "aerith", "phantomId": "ramuh", "purpose": "main", "learnSkills": [], "targetStage": 3, "targetAwakening": 0, "awakeningNote": null, "priority": "core", "reason": "示範：被動加治療量。", "confidence": "high", "sources": ["https://example.com/guide-a", "https://example.com/guide-b"]},
+    {"chapterId": "ch3", "characterId": "aerith", "phantomId": "leviathan", "purpose": "main", "learnSkills": [], "targetStage": 3, "targetAwakening": 1, "awakeningNote": null, "priority": "recommended", "reason": "示範：群體回復，換走拉姆。", "confidence": "medium", "sources": ["https://example.com/guide-a"]},
+    {"chapterId": "ch4", "characterId": "aerith", "phantomId": "leviathan", "purpose": "main", "learnSkills": [], "targetStage": 5, "targetAwakening": 1, "awakeningNote": null, "priority": "core", "reason": "示範：回復量要跟上。", "confidence": "high", "sources": ["https://example.com/guide-b"]},
+    {"chapterId": "ch4", "characterId": "aerith", "phantomId": "shiva", "purpose": "skill", "learnSkills": ["冰耐性"], "targetStage": 2, "targetAwakening": 0, "awakeningNote": null, "priority": "optional", "reason": "示範：學冰抗。", "confidence": "medium", "sources": ["https://example.com/guide-a"]},
+    {"chapterId": "ch5", "characterId": "aerith", "phantomId": "leviathan", "purpose": "main", "learnSkills": [], "targetStage": 7, "targetAwakening": 2, "awakeningNote": null, "priority": "core", "reason": "示範：全隊回復主力。", "confidence": "high", "sources": ["https://example.com/guide-a", "https://example.com/guide-b"]},
+    {"chapterId": "ch2", "characterId": "terra", "phantomId": "garuda", "purpose": "alt", "learnSkills": [], "targetStage": 1, "targetAwakening": null, "awakeningNote": null, "priority": "optional", "reason": "推斷：資源唔夠可以唔練。", "confidence": "low", "sources": []},
+    {"chapterId": "ch3", "characterId": "terra", "phantomId": "ramuh", "purpose": "main", "learnSkills": [], "targetStage": 4, "targetAwakening": null, "awakeningNote": null, "priority": "recommended", "reason": "推斷：接手做加速支援，未有實測。", "confidence": "low", "sources": []},
+    {"chapterId": "ch3", "characterId": "squall", "phantomId": "shiva", "purpose": "main", "learnSkills": [], "targetStage": 3, "targetAwakening": 0, "awakeningNote": null, "priority": "recommended", "reason": "示範：對礦坑史萊姆有效。", "confidence": "medium", "sources": ["https://example.com/guide-b"]},
+    {"chapterId": "ch4", "characterId": "squall", "phantomId": "shiva", "purpose": "main", "learnSkills": [], "targetStage": 5, "targetAwakening": 0, "awakeningNote": null, "priority": "optional", "reason": "示範：後備輸出。", "confidence": "medium", "sources": ["https://example.com/guide-b"]},
+    {"chapterId": "ch4", "characterId": "lightning", "phantomId": "ramuh", "purpose": "main", "learnSkills": [], "targetStage": 6, "targetAwakening": 1, "awakeningNote": null, "priority": "core", "reason": "示範：同屬性連鎖。", "confidence": "high", "sources": ["https://example.com/guide-a", "https://example.com/guide-b"]},
+    {"chapterId": "ch5", "characterId": "lightning", "phantomId": "odin", "purpose": "main", "learnSkills": [], "targetStage": 5, "targetAwakening": 1, "awakeningNote": null, "priority": "core", "reason": "示範：斬鐵劍對雜兵即死。", "confidence": "medium", "sources": ["https://example.com/guide-a"]},
+    {"chapterId": "ch5", "characterId": "yshtola", "phantomId": "shiva", "purpose": "main", "learnSkills": [], "targetStage": 4, "targetAwakening": null, "awakeningNote": null, "priority": "recommended", "reason": "推斷：副治療加控場，社群意見分歧。", "confidence": "low", "sources": []}
+  ],
+  "challenges": [
+    {"id": "gauntlet-16", "name": "16 連打（示範）", "nameOriginal": "DEMO Gauntlet", "unlock": "【示範文字】通關第五章後開放", "description": "【示範文字，唔係真資料】16 場連續戰鬥，中途唔可以回復，亦唔可以換隊。", "recommendedLevel": null, "tips": ["【示範】頭 8 場留住大招，慳 MP。", "【示範】第 16 場 Boss 會反彈魔法，轉物理輸出。"], "party": [{"characterId": "cloud", "phantomId": "bahamut", "targetStage": 9, "targetAwakening": 3, "skills": ["百萬核爆", "破盾斬"], "equipment": ["示範武器"], "notes": "【示範】主力輸出。"}, {"characterId": "tifa", "phantomId": "garuda", "targetStage": 8, "targetAwakening": 2, "skills": ["連擊"], "equipment": [], "notes": null}, {"characterId": "barret", "phantomId": "titan", "targetStage": 7, "targetAwakening": null, "skills": [], "equipment": null, "notes": "【示範】坦住全場，覺醒片入面睇唔到，所以留空。"}, {"characterId": "aerith", "phantomId": "leviathan", "targetStage": null, "targetAwakening": 2, "skills": ["全體回復"], "equipment": ["示範飾物"], "notes": null}], "battles": [{"order": 1, "enemy": "示範機械兵 x3", "notes": "【示範】普攻清場。"}, {"order": 2, "enemy": "示範飛龍", "notes": null}, {"order": 3, "enemy": null, "notes": "【示範】敵人名稱片入面睇唔清楚。"}, {"order": 16, "enemy": "示範最終 Boss", "notes": "【示範】留晒大招打呢場。"}], "confidence": "low", "sources": ["https://www.youtube.com/watch?v=DEMO000&t=120", "https://example.com/guide-a"]}
   ]
 }
 </script>
@@ -449,7 +569,7 @@ footer ul { margin: 0; padding-left: 1.2em; }
     <div class="meta" id="meta"></div>
   </header>
 
-  <section class="win map" aria-labelledby="map-title">
+  <section class="win map" id="map-win" aria-labelledby="map-title">
     <h2 class="win-title" id="map-title">WORLD MAP · 揀你而家打到邊章</h2>
     <div class="map-scroll">
       <div class="map-row" id="map" role="radiogroup" aria-label="章節"></div>
@@ -461,6 +581,7 @@ footer ul { margin: 0; padding-left: 1.2em; }
   <div class="tabs" role="tablist" aria-label="檢視">
     <button class="tab" role="tab" id="tab-chars" aria-controls="panel" aria-selected="true">角色</button>
     <button class="tab" role="tab" id="tab-phantoms" aria-controls="panel" aria-selected="false"></button>
+    <button class="tab" role="tab" id="tab-challenge" aria-controls="panel" aria-selected="false" hidden>16連打</button>
   </div>
 
   <section class="panel" id="panel" role="tabpanel">
@@ -483,6 +604,7 @@ footer ul { margin: 0; padding-left: 1.2em; }
       </div>
     </div>
     <div class="grid" id="grid"></div>
+    <div id="challenge" hidden></div>
   </section>
 
   <footer id="footer"></footer>
@@ -522,13 +644,12 @@ footer ul { margin: 0; padding-left: 1.2em; }
 
   var chapters = (DATA.chapters || []).slice().sort(function (a, b) { return a.order - b.order; });
   var chapterById = index(chapters), charById = index(DATA.characters || []), phById = index(DATA.phantoms || []);
-  var buildsAt = {};
+  /* every build row per character. Rows in a chapter the character is absent from are ignored. */
+  var rowsByChar = {};
   (DATA.builds || []).forEach(function (b) {
-    var k = b.chapterId + "|" + b.characterId;
-    (buildsAt[k] = buildsAt[k] || []).push(b);
-  });
-  Object.keys(buildsAt).forEach(function (k) {
-    buildsAt[k].sort(function (a, b) { return prioRank(a) - prioRank(b); });
+    var ch = chapterById[b.chapterId];
+    if (!ch || !b.phantomId || isAway(b.characterId, ch)) return;
+    (rowsByChar[b.characterId] = rowsByChar[b.characterId] || []).push(b);
   });
 
   function index(arr) { var m = {}; arr.forEach(function (x) { m[x.id] = x; }); return m; }
@@ -538,65 +659,100 @@ footer ul { margin: 0; padding-left: 1.2em; }
   function elColor(el) { if (!el) return "#9aa0c0"; return ELEMENT_COLOR[el] || "hsl(" + (hash(el) % 360) + " 80% 65%)"; }
   function hash(s) { var h = 2166136261; s = String(s); for (var i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
 
-  /* exact build in a chapter (highest priority if several) */
-  function exactBuild(charId, ch) { var a = buildsAt[ch.id + "|" + charId]; return a ? a[0] : null; }
-  /* effective build = exact, else carried forward from latest earlier chapter */
   /* characters can leave the party mid-story: absentChapterIds lists chapters they're away */
   function isAway(charId, ch) {
-    var c = (DATA.characters || []).filter(function (x) { return x.id === charId; })[0];
+    var c = charById[charId];
     return !!(c && ch && (c.absentChapterIds || []).indexOf(ch.id) >= 0);
   }
-  function effectiveBuild(charId, ch) {
-    if (isAway(charId, ch)) return null;
-    for (var i = chapters.indexOf(ch); i >= 0; i--) {
-      var b = exactBuild(charId, chapters[i]);
-      if (b) return { build: b, inherited: i !== chapters.indexOf(ch), from: chapters[i] };
-    }
-    return null;
-  }
-  function prevEffective(charId, ch) { var i = chapters.indexOf(ch); return i > 0 ? effectiveBuild(charId, chapters[i - 1]) : null; }
   /* awakening: null = no data, 0 = not needed */
   function awk(b) { return b && b.targetAwakening != null ? b.targetAwakening : null; }
-  /* what went up vs the previous effective build (same phantom only) */
+  /* what went up vs the same Vision's previous row */
   function upsOf(b, prev) {
-    if (!b || !prev || prev.phantomId !== b.phantomId) return { stage: false, awk: false };
+    if (!b || !prev) return { stage: false, awk: false };
     return {
       stage: (b.targetStage || 0) > (prev.targetStage || 0),
       awk: awk(b) != null && awk(b) > (awk(prev) || 0)
     };
   }
-  /* what changed this chapter: new / swap / up / null */
-  function changeOf(charId, ch) {
-    var b = exactBuild(charId, ch); if (!b) return null;
-    var p = prevEffective(charId, ch);
-    if (!p) return "new";
-    if (p.build.phantomId !== b.phantomId) return "swap";
-    var u = upsOf(b, p.build);
-    return u.stage || u.awk ? "up" : null;
+
+  /* ---- Visions per character (schema v0.3) ----
+     For each Vision with a row at or before the chapter, take its latest row.
+     `before` = strictly earlier chapters only. */
+  var PURPOSE = { main: { label: "主力", rank: 0 }, skill: { label: "練技能", rank: 1 }, alt: { label: "備選", rank: 2 } };
+  function purposeOf(b) { return b && PURPOSE[b.purpose] ? b.purpose : "main"; }   /* missing purpose = main */
+  function latestByVision(charId, ch, before) {
+    var m = {};
+    (rowsByChar[charId] || []).forEach(function (b) {
+      var o = orderOf(b.chapterId);
+      if (before ? o >= ch.order : o > ch.order) return;
+      var cur = m[b.phantomId], co = cur ? orderOf(cur.chapterId) : -Infinity;
+      if (!cur || o > co || (o === co && prioRank(b) < prioRank(cur))) m[b.phantomId] = b;
+    });
+    return m;
+  }
+  function byVisionOrder(a, b) {
+    return PURPOSE[a.purpose].rank - PURPOSE[b.purpose].rank || (a.superseded - b.superseded) ||
+      prioRank(a.build) - prioRank(b.build) || b.from.order - a.from.order || (b.build.targetStage || 0) - (a.build.targetStage || 0);
+  }
+  /* Ignores away / lock state, so the matrix can use it too. A main whose row is older than
+     the newest main row has been replaced: it stays listed, labelled 舊主力, after current mains. */
+  function computeVisions(charId, ch) {
+    var latest = latestByVision(charId, ch, false), prevs = latestByVision(charId, ch, true);
+    var ids = Object.keys(latest);
+    var newestMain = ids.reduce(function (m, id) { return purposeOf(latest[id]) === "main" ? Math.max(m, orderOf(latest[id].chapterId)) : m; }, -Infinity);
+    var hadMain = Object.keys(prevs).some(function (id) { return purposeOf(prevs[id]) === "main"; });
+    return ids.map(function (id) {
+      var b = latest[id], exact = b.chapterId === ch.id, prev = exact ? prevs[id] || null : null;
+      var purpose = purposeOf(b), ups = upsOf(b, prev), change = null;
+      if (exact) {
+        if (!prev) change = purpose === "main" && hadMain ? "swap" : "new";
+        else if (ups.stage || ups.awk) change = "up";
+      }
+      return { id: id, build: b, phantom: phById[id] || null, purpose: purpose,
+        superseded: purpose === "main" && orderOf(b.chapterId) < newestMain,
+        from: chapterById[b.chapterId], inherited: !exact, prev: prev, ups: ups, change: change };
+    }).sort(byVisionOrder);
+  }
+  /* what the character should train at this chapter; empty while away or not yet joined */
+  var visionCache = {};
+  function visionsAt(charId, ch) {
+    if (!ch) return [];
+    var k = charId + "|" + ch.id;
+    if (!visionCache[k]) visionCache[k] = (isAway(charId, ch) || orderOf((charById[charId] || {}).unlockChapterId) > ch.order) ? [] : computeVisions(charId, ch);
+    return visionCache[k];
+  }
+  function activeVisions(vs) { var a = vs.filter(function (v) { return !v.superseded; }); return a.length ? a : vs; }
+  function changesAt(ch) {
+    return (DATA.characters || []).reduce(function (t, c) {
+      var n = visionsAt(c.id, ch).filter(function (v) { return v.change; }).length;
+      return { visions: t.visions + n, chars: t.chars + (n ? 1 : 0) };
+    }, { visions: 0, chars: 0 });
   }
   var CHANGE_LABEL = { "new": "NEW", swap: "SWAP", up: "UP" };
-  var CHANGE_TEXT = { "new": "今章新增", swap: "轉" + T.phantom, up: T.stage + " 提升" };
+  var CHANGE_TEXT = { "new": "今章新增", swap: "轉主力", up: T.stage + " 提升" };
   function changeText(kind, ups) {
     if (kind !== "up" || !ups) return CHANGE_TEXT[kind];
     return [ups.stage ? T.stage + " 提升" : "", ups.awk ? T.awakening + " 提升" : ""].filter(Boolean).join("、");
   }
+  var CHALLENGES = (DATA.challenges || []).filter(Boolean);
 
   /* ================= state ================= */
   var STORE_KEY = "ffr-guide:v1";
   var state = {
-    chapterId: chapters[0] && chapters[0].id, tab: "chars", sort: "priority",
-    role: "", element: "", prios: ["core", "recommended", "optional"], changesOnly: false, showLocked: true
+    chapterId: chapters[0] && chapters[0].id, tab: "chars", sort: "priority", challengeId: CHALLENGES[0] && CHALLENGES[0].id,
+    role: "", element: "", prios: ["core", "recommended", "optional"], changesOnly: false, showLocked: true, open: {}
   };
   try {
     var saved = JSON.parse(localStorage.getItem(STORE_KEY) || "null");
     if (saved) {
       if (saved.chapterId && chapterById[saved.chapterId]) state.chapterId = saved.chapterId;
-      if (saved.tab === "phantoms") state.tab = "phantoms";
+      if (saved.tab === "phantoms" || (saved.tab === "challenge" && CHALLENGES.length)) state.tab = saved.tab;
       if (saved.sort) state.sort = saved.sort;
+      if (saved.challengeId && CHALLENGES.some(function (x) { return x.id === saved.challengeId; })) state.challengeId = saved.challengeId;
     }
   } catch (e) { /* storage unavailable: keep defaults */ }
   function save() {
-    try { localStorage.setItem(STORE_KEY, JSON.stringify({ chapterId: state.chapterId, tab: state.tab, sort: state.sort })); } catch (e) {}
+    try { localStorage.setItem(STORE_KEY, JSON.stringify({ chapterId: state.chapterId, tab: state.tab, sort: state.sort, challengeId: state.challengeId })); } catch (e) {}
   }
   function curChapter() { return chapterById[state.chapterId] || chapters[0]; }
 
@@ -746,6 +902,26 @@ footer ul { margin: 0; padding-left: 1.2em; }
   function prioTag(p) { return p && PRIO[p] ? '<span class="prio ' + p + '">' + PRIO[p].label + "</span>" : ""; }
   function elTag(el) { return el ? '<span class="tag el" style="--el:' + elColor(el) + '">' + esc(el) + "</span>" : ""; }
   function rarTag(r) { return r ? '<span class="rar rar-' + esc(r) + '">' + esc(r) + "</span>" : ""; }
+  function has(x) { return Array.isArray(x) ? x.length > 0 : x != null && x !== ""; }
+  function confMini(c) {
+    return CONF[c] ? '<span class="conf ' + esc(c) + '" role="img" aria-label="可信度 ' + CONF[c] + '" title="可信度 ' + CONF[c] + '"><i></i><i></i><i></i></span>' : "";
+  }
+  function purTag(v) { return '<span class="pur ' + (v.superseded ? "old" : v.purpose) + '">' + (v.superseded ? "舊主力" : PURPOSE[v.purpose].label) + "</span>"; }
+  function chgTag(v) { return v.change ? '<span class="chg ' + v.change + '" title="' + esc(changeText(v.change, v.ups)) + '">' + CHANGE_LABEL[v.change] + "</span>" : ""; }
+  function skillsRow(list, label) {
+    if (!has(list)) return "";
+    return '<div class="skills"><span class="lbl">' + esc(label) + "</span>" + list.map(function (s) { return '<span class="sk">' + esc(s) + "</span>"; }).join("") + "</div>";
+  }
+  function mrMeter(b, p, had) {
+    if (b.targetStage == null) return "";
+    return '<div class="meter"><span class="lbl">目標 ' + esc(T.stage) + "</span>" + pips(b.targetStage, p && p.maxStage, had) +
+      '<span class="num">' + esc(b.targetStage) + "/" + esc(p && p.maxStage != null ? p.maxStage : "?") + "</span></div>";
+  }
+  function srcUrl(s) { return typeof s === "string" ? s : (s && s.url) || ""; }
+  function srcItem(s) {
+    var u = srcUrl(s), yt = /^https?:\/\/([\w-]+\.)?(youtube\.com|youtu\.be)\//i.test(u);
+    return '<li><a href="' + esc(u) + '" target="_blank" rel="noopener">' + (yt ? '<span class="yt">▶ YouTube 影片</span>' : "") + esc((s && s.title) || u) + "</a></li>";
+  }
 
   /* ================= header / map / chapter info ================= */
   function renderMeta() {
@@ -753,19 +929,20 @@ footer ul { margin: 0; padding-left: 1.2em; }
       "<span>伺服器 <b>" + esc(META.server || "—") + "</b> · 版本 <b>" + esc(META.gameVersion || "—") + "</b></span>" +
       "<span>資料更新 <b class='num' style='font-size:.6rem'>" + esc(META.lastUpdated || "—") + "</b></span>";
     document.getElementById("tab-phantoms").textContent = T.phantom;
+    document.getElementById("tab-challenge").hidden = !CHALLENGES.length;
     var src = (META.sources || []).filter(function (s) { return s && s.url; });
     document.getElementById("footer").innerHTML =
-      "<div>私人用攻略手帳。可信度：高＝多個來源一致，中＝單一可靠來源，低＝推斷或有爭議。</div>" +
+      "<div>私人用攻略手帳。可信度：高＝多個來源一致，中＝單一可靠來源，低＝推斷或有爭議。MR 每個角色分開計；★ 全隊共用，同一隻幻兵升一次就得。</div>" +
       (src.length ? "<div>資料來源：<ul>" + src.map(function (s) { return '<li><a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(s.title || s.url) + "</a></li>"; }).join("") + "</ul></div>" : "");
   }
 
   function renderMap() {
     var el = document.getElementById("map");
     el.innerHTML = chapters.map(function (c) {
-      var n = (DATA.characters || []).filter(function (ch) { return changeOf(ch.id, c); }).length;
+      var n = changesAt(c).visions;
       var on = c.id === state.chapterId;
       return '<button class="node cur' + (on ? " is-on" : "") + '" role="radio" aria-checked="' + on + '" tabindex="' + (on ? 0 : -1) + '" data-ch="' + esc(c.id) + '">' +
-        (n ? '<span class="badge" title="今章要新練 ' + n + ' 個">' + n + "</span>" : "") +
+        (n ? '<span class="badge" title="今章要新練 ' + n + ' 隻' + esc(T.phantom) + '">' + n + "</span>" : "") +
         '<span class="pin">' + esc(c.order) + "</span>" +
         '<span class="ch-name">' + esc(c.name) + "</span>" +
         (c.recommendedLevel ? '<span class="lv">LV ' + esc(c.recommendedLevel) + "</span>" : "") +
@@ -779,14 +956,15 @@ footer ul { margin: 0; padding-left: 1.2em; }
     var c = curChapter(); if (!c) return;
     var chars = DATA.characters || [];
     var avail = chars.filter(function (x) { return orderOf(x.unlockChapterId) <= c.order && !isAway(x.id, c); }).length;
-    var changes = chars.filter(function (x) { return changeOf(x.id, c); }).length;
-    var core = chars.filter(function (x) { var e = effectiveBuild(x.id, c); return e && orderOf(x.unlockChapterId) <= c.order && e.build.priority === "core"; }).length;
+    var changes = changesAt(c);
+    var active = chars.reduce(function (a, x) { return a.concat(activeVisions(visionsAt(x.id, c))); }, []);
+    var core = active.filter(function (v) { return v.build.priority === "core"; }).length;
     document.getElementById("chapter-info").innerHTML =
       '<p class="win-title">CHAPTER ' + esc(c.order) + "</p>" +
       "<h2>" + esc(c.name) + "</h2>" +
       (c.nameOriginal ? '<div class="orig">' + esc(c.nameOriginal) + "</div>" : "") +
       (c.notes ? "<p>" + esc(c.notes) + "</p>" : "") +
-      '<div class="stats"><span>可用角色 <b class="num">' + avail + "</b></span><span>必練 <b class='num'>" + core + "</b></span><span>今章要新練 <b class='num'>" + changes + "</b></span>" +
+      '<div class="stats"><span>可用角色 <b class="num">' + avail + "</b></span><span>要練" + esc(T.phantom) + " <b class='num'>" + active.length + "</b></span><span>必練 <b class='num'>" + core + "</b></span><span>今章要新練 <b class='num'>" + changes.visions + "</b> 隻（<b class='num'>" + changes.chars + "</b> 人）</span>" +
       (c.recommendedLevel ? "<span>建議等級 <b class='num'>" + esc(c.recommendedLevel) + "</b></span>" : "") + "</div>";
   }
 
@@ -810,45 +988,86 @@ footer ul { margin: 0; padding-left: 1.2em; }
   function syncToolbar() {
     document.querySelectorAll("#sort .chip").forEach(function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-sort") === state.sort); });
     document.querySelectorAll("#f-prio .chip").forEach(function (b) { b.setAttribute("aria-pressed", state.prios.indexOf(b.getAttribute("data-prio")) >= 0); });
-    var ph = state.tab === "phantoms";
+    var ph = state.tab === "phantoms", chal = state.tab === "challenge";
+    document.getElementById("toolbar").hidden = chal;
+    document.getElementById("grid").hidden = chal;
+    document.getElementById("challenge").hidden = !chal;
+    document.getElementById("map-win").hidden = chal;
+    document.getElementById("chapter-info").hidden = chal;
     document.getElementById("row-sort").hidden = ph;
     document.getElementById("pick-role").hidden = ph;
     document.getElementById("f-prio").hidden = ph;
     document.getElementById("row-toggle").hidden = ph;
-    document.getElementById("tab-chars").setAttribute("aria-selected", !ph);
+    document.getElementById("tab-chars").setAttribute("aria-selected", !ph && !chal);
     document.getElementById("tab-phantoms").setAttribute("aria-selected", ph);
+    document.getElementById("tab-challenge").setAttribute("aria-selected", chal);
   }
 
   /* ================= character roster ================= */
   function rosterRows() {
     var c = curChapter();
     return (DATA.characters || []).map(function (ch) {
-      var eb = effectiveBuild(ch.id, c);
-      return { c: ch, locked: orderOf(ch.unlockChapterId) > c.order || isAway(ch.id, c), away: isAway(ch.id, c), eb: eb, b: eb && eb.build, change: changeOf(ch.id, c) };
+      var vs = visionsAt(ch.id, c), active = activeVisions(vs);
+      return { c: ch, locked: orderOf(ch.unlockChapterId) > c.order || isAway(ch.id, c), away: isAway(ch.id, c), vs: vs,
+        prio: active.reduce(function (m, v) { return Math.min(m, prioRank(v.build)); }, 9),
+        stage: vs.reduce(function (m, v) { return Math.max(m, v.build.targetStage || 0); }, -1),
+        awk: vs.reduce(function (m, v) { return Math.max(m, awk(v.build) == null ? -1 : awk(v.build)); }, -1),
+        changes: vs.filter(function (v) { return v.change; }).length, active: active };
     });
   }
+  function prioPass(v) { return state.prios.indexOf(v.build.priority) >= 0; }
   function filterSort(rows) {
     var allPrio = state.prios.length === 3;
     rows = rows.filter(function (r) {
       if (r.locked && !state.showLocked) return false;
       if (state.role && r.c.role !== state.role) return false;
       if (state.element && r.c.element !== state.element) return false;
-      if (state.changesOnly && (!r.change || r.locked)) return false;
-      if (!allPrio && !r.locked && (!r.b || state.prios.indexOf(r.b.priority) < 0)) return false;
-      if (!allPrio && r.locked) return false;
+      if (state.changesOnly && (!r.changes || r.locked)) return false;
+      if (!allPrio && (r.locked || !r.active.some(prioPass))) return false;
       return true;
     });
     var cmp = {
-      priority: function (a, b) { return prioRank(a.b) - prioRank(b.b) || (b.b ? b.b.targetStage : 0) - (a.b ? a.b.targetStage : 0); },
+      priority: function (a, b) { return a.prio - b.prio || b.stage - a.stage; },
       name: function (a, b) { return String(a.c.name).localeCompare(String(b.c.name), "zh-Hant"); },
-      stage: function (a, b) { return (b.b ? b.b.targetStage : -1) - (a.b ? a.b.targetStage : -1) || prioRank(a.b) - prioRank(b.b); },
-      awakening: function (a, b) { var x = awk(a.b), y = awk(b.b); return (y == null ? -1 : y) - (x == null ? -1 : x) || (b.b ? b.b.targetStage : -1) - (a.b ? a.b.targetStage : -1); },
+      stage: function (a, b) { return b.stage - a.stage || a.prio - b.prio; },
+      awakening: function (a, b) { return b.awk - a.awk || b.stage - a.stage; },
       rarity: function (a, b) { return (RARITY_RANK[a.c.rarity] != null ? RARITY_RANK[a.c.rarity] : 9) - (RARITY_RANK[b.c.rarity] != null ? RARITY_RANK[b.c.rarity] : 9); }
     }[state.sort] || function () { return 0; };
     return rows.sort(function (a, b) { return (a.locked - b.locked) || cmp(a, b) || String(a.c.name).localeCompare(String(b.c.name), "zh-Hant"); });
   }
+  /* expanded row: the current main Vision(s) */
+  function heroRow(v, dim) {
+    var b = v.build, p = v.phantom, up = v.change === "up";
+    return '<div class="equip' + (dim ? " dim" : "") + '"><div class="ph-portrait">' + spr("phantom", v.id, 32) + "</div>" +
+      '<div class="ph-name">' + purTag(v) + "<b>" + esc(p ? p.name : v.id) + "</b><small>" + esc(p ? p.nameOriginal : "") + "</small></div>" +
+      mrMeter(b, p, up ? v.prev.targetStage : 0) +
+      starMeter(b, p, up ? (awk(v.prev) || 0) : 0, v.ups.awk) +
+      skillsRow(b.learnSkills, "要學") +
+      (b.awakeningNote ? '<div class="awk-note">' + esc(b.awakeningNote) + "</div>" : "") +
+      (b.reason ? '<p class="reason clamp" title="' + esc(b.reason) + '">' + esc(b.reason) + "</p>" : "") +
+      '<div class="foot">' + (CONF[b.confidence] ? conf(b.confidence) : "") +
+      (v.change ? chgTag(v) + "<span>" + esc(changeText(v.change, v.ups)) + "</span>" : "") +
+      (v.inherited ? '<span class="inh">沿用第 ' + esc(v.from.order) + " 章</span>" : "") + "</div></div>";
+  }
+  /* compact row: every other Vision. Left edge colour = priority. */
+  function visionRow(v, fold, dim) {
+    var b = v.build, p = v.phantom, a = awk(b), up = v.change === "up", maxA = p && p.maxAwakening != null ? p.maxAwakening : null;
+    var prioLabel = PRIO[b.priority] ? PRIO[b.priority].label : "";
+    return '<div class="v p-' + esc(b.priority) + (fold ? " fold" : "") + (dim ? " dim" : "") + (v.change ? " has-chg" : "") + '" title="' + esc(b.reason || "") + '">' +
+      '<span class="v-spr">' + spr("phantom", v.id, 32) + "</span>" +
+      '<div class="v-main"><div class="v-line"><b>' + esc(p ? p.name : v.id) + "</b>" + purTag(v) + (prioLabel ? '<span class="sr">' + prioLabel + "</span>" : "") + chgTag(v) +
+      (v.inherited ? '<span class="inh">沿用第 ' + esc(v.from.order) + " 章</span>" : "") + "</div>" +
+      '<div class="v-line v-meter">' +
+      (b.targetStage != null ? pips(b.targetStage, p && p.maxStage, up ? v.prev.targetStage : 0) + '<span class="num">' + esc(b.targetStage) + "/" + esc(p && p.maxStage != null ? p.maxStage : "?") + "</span>" : "") +
+      (a != null ? stars(a, maxA, up ? (awk(v.prev) || 0) : 0, v.ups.awk, true) + (a === 0 ? '<span class="none">唔使</span>' : "") : "") +
+      confMini(b.confidence) + "</div>" +
+      skillsRow(b.learnSkills, "要學") +
+      (b.awakeningNote ? '<div class="awk-note">' + esc(b.awakeningNote) + "</div>" : "") +
+      "</div></div>";
+  }
+  var ALWAYS_SHOWN = 3;   /* compact rows before folding; changed rows are never folded */
   function charCard(r) {
-    var c = r.c, ch = curChapter();
+    var c = r.c;
     if (r.locked) {
       var uc = chapterById[c.unlockChapterId];
       return '<div class="win card locked" aria-label="' + esc(c.name) + '（未加入）">' +
@@ -857,36 +1076,42 @@ footer ul { margin: 0; padding-left: 1.2em; }
         '<div class="tags">' + elTag(c.element) + (c.role ? '<span class="tag">' + esc(c.role) + "</span>" : "") + "</div></div></div>" +
         '<div class="lock-msg"><span class="num" style="font-size:.5rem">' + (r.away ? "AWAY" : "LOCK") + "</span> " + (r.away ? "呢章離隊中" + (c.absentNote ? "（" + esc(c.absentNote) + "）" : "") : (uc ? "第 " + esc(uc.order) + " 章先加入" : "加入時間未知") + (c.howToGet ? "（" + esc(c.howToGet) + "）" : "")) + "</div></div>";
     }
-    var b = r.b, p = b && phById[b.phantomId];
-    var prev = r.change === "up" ? prevEffective(c.id, ch) : null;
-    var ups = prev ? upsOf(b, prev.build) : null;
-    var had = prev ? prev.build.targetStage : 0;
-    var hadAwk = prev ? (awk(prev.build) || 0) : 0;
-    var equip = b ?
-      '<div class="equip"><div class="ph-portrait">' + spr("phantom", b.phantomId, 32) + "</div>" +
-      '<div class="ph-name"><span class="lbl">' + esc(T.phantom) + "</span><b>" + esc(p ? p.name : b.phantomId) + "</b><small>" + esc(p ? p.nameOriginal : "") + "</small></div>" +
-      '<div class="meter"><span class="lbl">目標 ' + esc(T.stage) + "</span>" + pips(b.targetStage, p && p.maxStage, had) +
-      '<span class="num">' + esc(b.targetStage) + "/" + esc(p && p.maxStage != null ? p.maxStage : "?") + "</span></div>" +
-      starMeter(b, p, hadAwk, !!(ups && ups.awk)) +
-      (b.awakeningNote ? '<div class="awk-note">' + esc(b.awakeningNote) + "</div>" : "") + "</div>"
-      : '<div class="equip"><span class="none" style="grid-column:1/-1">呢章暫時冇建議配搭</span></div>';
-    return '<div class="win card cur" tabindex="0" role="button" data-char="' + esc(c.id) + '" aria-label="' + esc(c.name) + '：睇全章節路線">' +
+    var vs = r.vs, filtering = state.prios.length < 3;
+    var heroes = vs.filter(function (v) { return v.purpose === "main" && !v.superseded; });
+    if (!heroes.length) heroes = vs.slice(0, 1);
+    var rest = vs.filter(function (v) { return heroes.indexOf(v) < 0; });
+    var foldable = rest.length > ALWAYS_SHOWN + 1;   /* never fold just one row */
+    var folded = 0, foldedCount = {};
+    var restHtml = rest.map(function (v, i) {
+      var fold = foldable && i >= ALWAYS_SHOWN && !v.change;
+      if (fold) { folded++; var k = v.superseded ? "舊主力" : PURPOSE[v.purpose].label; foldedCount[k] = (foldedCount[k] || 0) + 1; }
+      return visionRow(v, fold, filtering && !prioPass(v));
+    }).join("");
+    var groups = {};
+    vs.forEach(function (v) { var k = v.superseded ? "舊主力" : PURPOSE[v.purpose].label; groups[k] = (groups[k] || 0) + 1; });
+    var isOpen = !!state.open[c.id];
+    return '<div class="win card cur" data-char="' + esc(c.id) + '">' +
       '<div class="card-top"><div class="portrait rar-' + esc(c.rarity) + '">' + spr("char", c.id, 30) + "</div>" +
       '<div class="who"><div class="name-row"><b class="name">' + esc(c.name) + "</b>" + rarTag(c.rarity) + '</div><div class="orig">' + esc(c.nameOriginal) + "</div>" +
       '<div class="tags">' + elTag(c.element) + (c.role ? '<span class="tag">' + esc(c.role) + "</span>" : "") + "</div></div>" +
-      (b ? prioTag(b.priority) : "") + "</div>" + equip +
-      (b && b.reason ? '<p class="reason">' + esc(b.reason) + "</p>" : "") +
-      '<div class="foot">' + (b ? conf(b.confidence) : "") +
-      (r.change ? '<span class="chg ' + r.change + '" title="' + esc(changeText(r.change, ups)) + '">' + CHANGE_LABEL[r.change] + "</span><span>" + esc(changeText(r.change, ups)) + "</span>" : "") +
-      (r.eb && r.eb.inherited ? '<span class="inh">沿用第 ' + esc(r.eb.from.order) + " 章</span>" : "") + "</div></div>";
+      (r.prio < 9 ? prioTag(Object.keys(PRIO).filter(function (p) { return PRIO[p].rank === r.prio; })[0]) : "") + "</div>" +
+      (vs.length > 1 ? '<div class="v-sum"><span class="lbl">要練' + esc(T.phantom) + ' <span class="num">' + vs.length + "</span> 隻</span><span>" +
+        Object.keys(groups).map(function (k) { return esc(k) + " " + groups[k]; }).join("・") + "</span></div>" : "") +
+      (vs.length ? heroes.map(function (v) { return heroRow(v, filtering && !prioPass(v)); }).join("") : '<div class="equip"><span class="none" style="grid-column:1/-1">呢章暫時冇建議配搭</span></div>') +
+      (rest.length ? '<div class="vlist' + (isOpen ? " open" : "") + '">' + restHtml + "</div>" : "") +
+      (folded ? '<button class="fold-btn" type="button" data-fold="' + esc(c.id) + '" aria-expanded="' + isOpen + '"><span class="closed">▼ 再睇 ' + folded + " 隻（" +
+        Object.keys(foldedCount).map(function (k) { return esc(k) + " " + foldedCount[k]; }).join("・") + '）</span><span class="opened">▲ 收起</span></button>' : "") +
+      '<div class="foot">' + (r.changes ? "<span>今章要新練 " + r.changes + " 隻</span>" : (vs.length ? "<span>今章冇新目標</span>" : "")) +
+      '<button class="route-btn" type="button" data-char="' + esc(c.id) + '">全章路線 ▶</button></div></div>';
   }
 
   /* ================= phantom view ================= */
   function phantomCard(p) {
     var ch = curChapter(), locked = orderOf(p.unlockChapterId) > ch.order;
-    var users = (DATA.characters || []).filter(function (c) { return orderOf(c.unlockChapterId) <= ch.order; })
-      .map(function (c) { var e = effectiveBuild(c.id, ch); return e && e.build.phantomId === p.id ? { c: c, b: e.build } : null; })
-      .filter(Boolean).sort(function (a, b) { return b.b.targetStage - a.b.targetStage; });
+    var users = (DATA.characters || []).map(function (c) {
+        var v = visionsAt(c.id, ch).filter(function (x) { return x.id === p.id; })[0];
+        return v ? { c: c, b: v.build, v: v } : null;
+      }).filter(Boolean).sort(function (a, b) { return (b.b.targetStage || 0) - (a.b.targetStage || 0) || PURPOSE[a.v.purpose].rank - PURPOSE[b.v.purpose].rank; });
     var need = users.reduce(function (m, u) { return Math.max(m, u.b.targetStage || 0); }, 0);
     var needAwk = users.reduce(function (m, u) { var a = awk(u.b); return a == null ? m : Math.max(m == null ? 0 : m, a); }, null);
     var maxA = p.maxAwakening != null ? p.maxAwakening : null;
@@ -902,13 +1127,17 @@ footer ul { margin: 0; padding-left: 1.2em; }
         (needAwk != null ? '<div class="meter"><span class="lbl">最高要' + esc(T.awakening) + "</span>" + stars(needAwk, maxA, 0, false) +
           (needAwk === 0 ? '<span class="none">唔使' + esc(T.awakening) + "</span>" : '<span class="num">' + needAwk + "/" + (maxA != null ? maxA : "?") + "</span>") + "</div>" : "") + "</div>" +
       (users.length ? '<div class="users">' + users.map(function (u) {
-        return '<button class="user" data-char="' + esc(u.c.id) + '" title="' + esc(u.c.name) + "：" + esc(T.stage) + " " + u.b.targetStage + '"><span class="mini">' + spr("char", u.c.id, 20) + "</span>" + esc(u.c.name) + ' <span class="num">' + u.b.targetStage + "</span>" + (awk(u.b) ? ' <i class="star sm on" aria-hidden="true"></i><span class="num">' + awk(u.b) + "</span>" : "") + "</button>";
+        return '<button class="user" data-char="' + esc(u.c.id) + '" title="' + esc(u.c.name) + "：" + esc(T.stage) + " " + esc(u.b.targetStage) + '"><span class="mini">' + spr("char", u.c.id, 20) + "</span>" + esc(u.c.name) + " " + purTag(u.v) + ' <span class="num">' + esc(u.b.targetStage) + "</span>" + (awk(u.b) ? ' <i class="star sm on" aria-hidden="true"></i><span class="num">' + awk(u.b) + "</span>" : "") + "</button>";
       }).join("") + "</div>" : "")) + "</div>" };
   }
 
   /* ================= main render ================= */
   function renderPanel() {
-    var grid = document.getElementById("grid"), count = document.getElementById("count");
+    var grid = document.getElementById("grid"), count = document.getElementById("count"), chal = document.getElementById("challenge");
+    if (state.tab === "challenge") {
+      grid.innerHTML = ""; chal.innerHTML = challengeHtml(); mountSprites(chal); return;
+    }
+    chal.innerHTML = "";
     if (state.tab === "phantoms") {
       var cards = (DATA.phantoms || []).filter(function (p) { return !state.element || p.element === state.element; }).map(phantomCard)
         .sort(function (a, b) { return (a.locked - b.locked) || (b.need - a.need) || ((b.needAwk || 0) - (a.needAwk || 0)) || (b.n - a.n); });
@@ -921,6 +1150,42 @@ footer ul { margin: 0; padding-left: 1.2em; }
     }
     mountSprites(grid);
   }
+  /* ================= challenge view ================= */
+  function partyCard(m) {
+    var c = charById[m.characterId], p = phById[m.phantomId];
+    var charName = c ? c.name : m.characterId, phName = p ? p.name : m.phantomId;
+    return '<div class="win party">' +
+      (charName ? '<div class="card-top"><div class="portrait rar-' + esc(c && c.rarity) + '">' + spr("char", m.characterId, 30) + "</div>" +
+        '<div class="who"><div class="name-row"><b class="name">' + esc(charName) + "</b>" + (c ? rarTag(c.rarity) : "") + "</div>" +
+        (c && c.nameOriginal ? '<div class="orig">' + esc(c.nameOriginal) + "</div>" : "") +
+        (c ? '<div class="tags">' + elTag(c.element) + (c.role ? '<span class="tag">' + esc(c.role) + "</span>" : "") + "</div>" : "") + "</div></div>" : "") +
+      (phName ? '<div class="equip"><div class="ph-portrait">' + spr("phantom", m.phantomId, 32) + "</div>" +
+        '<div class="ph-name"><span class="lbl">' + esc(T.phantom) + "</span><b>" + esc(phName) + "</b><small>" + esc(p ? p.nameOriginal : "") + "</small></div>" +
+        mrMeter(m, p, 0) + starMeter(m, p, 0, false) + "</div>" : "") +
+      skillsRow(m.skills, "技能") + skillsRow(m.equipment, "裝備") +
+      (m.notes ? '<p class="reason">' + esc(m.notes) + "</p>" : "") +
+      (c ? '<div class="foot"><button class="route-btn" type="button" data-char="' + esc(c.id) + '">全章路線 ▶</button></div>' : "") + "</div>";
+  }
+  function challengeHtml() {
+    var x = CHALLENGES.filter(function (q) { return q.id === state.challengeId; })[0] || CHALLENGES[0];
+    if (!x) return "";
+    var party = (x.party || []).filter(Boolean), battles = (x.battles || []).filter(Boolean).slice().sort(function (a, b) { return (a.order || 0) - (b.order || 0); });
+    var tips = (x.tips || []).filter(has), srcs = uniq((x.sources || []).map(srcUrl));
+    return (CHALLENGES.length > 1 ? '<div class="ch-pick" role="group" aria-label="揀挑戰">' + CHALLENGES.map(function (q) {
+        return '<button class="chip" data-challenge="' + esc(q.id) + '" aria-pressed="' + (q === x) + '">' + esc(q.name) + "</button>";
+      }).join("") + "</div>" : "") +
+      '<section class="win ch-head"><p class="win-title">CHALLENGE</p><h2>' + esc(x.name) + "</h2>" +
+      (x.nameOriginal ? '<div class="orig">' + esc(x.nameOriginal) + "</div>" : "") +
+      ((x.unlock || x.recommendedLevel) ? '<dl class="facts">' + (x.unlock ? "<dt>開放</dt><dd>" + esc(x.unlock) + "</dd>" : "") + (x.recommendedLevel ? "<dt>建議等級</dt><dd>" + esc(x.recommendedLevel) + "</dd>" : "") + "</dl>" : "") +
+      (x.description ? "<p>" + esc(x.description) + "</p>" : "") +
+      (CONF[x.confidence] ? '<div class="foot">' + conf(x.confidence) + "</div>" : "") + "</section>" +
+      (party.length ? '<section><p class="win-title">PARTY · 推薦配置</p><div class="party-grid">' + party.map(partyCard).join("") + "</div></section>" : "") +
+      (tips.length ? '<section class="win ch-sec"><p class="win-title">TIPS · 打法重點</p><ul class="tips">' + tips.map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("") + "</ul></section>" : "") +
+      (battles.length ? '<section class="win ch-sec"><p class="win-title">BATTLES · 逐場</p><ol class="battles">' + battles.map(function (b) {
+          return '<li class="battle"><span class="num">' + esc(b.order) + "</span><div>" + (b.enemy ? "<b>" + esc(b.enemy) + "</b>" : "") + (b.notes ? "<div>" + esc(b.notes) + "</div>" : "") + "</div></li>";
+        }).join("") + "</ol></section>" : "") +
+      (srcs.length ? '<section class="win ch-sec src"><p class="win-title">SOURCES · 來源</p><ol>' + srcs.map(srcItem).join("") + "</ol></section>" : "");
+  }
   function emptyHtml() {
     return '<div class="win empty" style="grid-column:1/-1"><p class="win-title">NO DATA</p><p style="margin:0">冇符合條件嘅項目。</p><button class="btn" id="reset">清除篩選</button></div>';
   }
@@ -930,25 +1195,50 @@ footer ul { margin: 0; padding-left: 1.2em; }
   var dlg = document.getElementById("detail"), lastFocus = null;
   function openDetail(charId) {
     var c = charById[charId]; if (!c) return;
-    var cur = curChapter(), unlock = orderOf(c.unlockChapterId);
-    var rows = chapters.map(function (ch) {
-      var all = buildsAt[ch.id + "|" + c.id] || [], eb = effectiveBuild(c.id, ch), now = ch.id === cur.id;
-      var tdCh = "<td><span class='num' style='font-size:.6rem'>" + esc(ch.order) + "</span> " + esc(ch.name) + "</td>";
-      if (ch.order < unlock) return '<tr class="off' + (now ? " now" : "") + '">' + tdCh + '<td colspan="4">未加入</td></tr>';
-      if (!eb) return '<tr class="off' + (now ? " now" : "") + '">' + tdCh + '<td colspan="4">冇建議</td></tr>';
-      var list = all.length ? all : [eb.build];
-      return list.map(function (b, i) {
-        var p = phById[b.phantomId];
-        return '<tr class="' + (now ? "now" : "") + (all.length ? "" : " off") + '">' + (i === 0 ? tdCh.replace("<td>", '<td rowspan="' + list.length + '">') : "") +
-          '<td><div class="ph-cell"><span class="mini">' + spr("phantom", b.phantomId, 32) + "</span><div>" + esc(p ? p.name : b.phantomId) +
-          (all.length ? (b.reason ? '<div class="why">' + esc(b.reason) + "</div>" : "") : '<div class="why">沿用第 ' + esc(eb.from.order) + " 章</div>") + "</div></div></td>" +
-          "<td>" + pips(b.targetStage, p && p.maxStage, 0) + " <span class='num' style='font-size:.55rem'>" + esc(b.targetStage) + "</span></td>" +
-          "<td>" + (awk(b) == null ? '<span class="none">—</span>' : stars(awk(b), p && p.maxAwakening, 0, false, true) + (awk(b) === 0 ? ' <span class="why">唔使</span>' : "")) +
-            (b.awakeningNote && all.length ? '<div class="why">' + esc(b.awakeningNote) + "</div>" : "") + "</td>" +
-          "<td>" + prioTag(b.priority) + '<div class="foot" style="margin-top:4px">' + conf(b.confidence) + "</div></td></tr>";
-      }).join("");
+    var cur = curChapter(), last = chapters[chapters.length - 1];
+    var route = last ? computeVisions(c.id, last) : [];
+    var srcs = uniq((rowsByChar[c.id] || []).reduce(function (a, b) { return a.concat((b.sources || []).map(srcUrl)); }, []));
+    /* matrix: rows = Visions, columns = chapters */
+    function cell(r, ch) {
+      var now = ch.id === cur.id ? ' class="now"' : "";
+      if (orderOf(c.unlockChapterId) > ch.order) return "<td" + now + '><div class="m-cell blank" title="未加入"></div></td>';
+      if (isAway(c.id, ch)) return "<td" + now + '><div class="m-cell away" title="呢章離隊">離隊</div></td>';
+      var v = visionsAt(c.id, ch).filter(function (x) { return x.id === r.id; })[0];
+      if (!v) return "<td" + now + '><div class="m-cell blank" title="未開始">·</div></td>';
+      var a = awk(v.build), s = v.build.targetStage;
+      var title = esc(T.stage) + " " + (s != null ? esc(s) : "?") + (a != null ? " · ★" + a : "") + (v.inherited ? " · 沿用第 " + esc(v.from.order) + " 章" : v.change ? " · " + esc(changeText(v.change, v.ups)) : "");
+      return "<td" + now + '><div class="m-cell ' + (v.inherited ? "carry" : v.change ? "changed" : "set") + '" title="' + title + '">' +
+        '<span class="m-mr">' + (s != null ? esc(s) : "—") + "</span>" +
+        (a != null ? '<span class="m-aw' + (a === 0 ? " zero" : "") + '"><i class="star sm' + (a ? " on" : "") + '" aria-hidden="true"></i>' + a + "</span>" : "") +
+        (v.change ? '<span class="m-tag">' + CHANGE_LABEL[v.change] + "</span>" : "") + "</div></td>";
+    }
+    var matrix = route.length ?
+      '<div class="matrix-wrap" id="matrix-wrap" tabindex="0" role="region" aria-label="' + esc(T.phantom) + '逐章目標表"><table class="matrix"><thead><tr><th class="m-v" scope="col">' + esc(T.phantom) + "（" + esc(T.stage) + " / ★）</th>" +
+        chapters.map(function (ch) { return '<th scope="col" title="' + esc(ch.name) + '"' + (ch.id === cur.id ? ' class="now" id="matrix-now"' : "") + ">第 " + esc(ch.order) + " 章</th>"; }).join("") + "</tr></thead><tbody>" +
+        route.map(function (r) {
+          return '<tr><th class="m-v" scope="row"><div class="m-v-in"><span class="mini">' + spr("phantom", r.id, 32) + "</span><div><b>" + esc(r.phantom ? r.phantom.name : r.id) + "</b>" + purTag(r) + "</div></div></th>" +
+            chapters.map(function (ch) { return cell(r, ch); }).join("") + "</tr>";
+        }).join("") + "</tbody></table></div>" +
+      '<div class="legend"><span><i class="changed"></i>今章有變，要新練</span><span><i class="carry"></i>沿用之前目標</span><span>· 未開始</span><span>大數字 = ' + esc(T.stage) + "</span></div>"
+      : '<p class="none">暫時冇建議配搭。</p>';
+    /* per-chapter notes: reasons, notes and sources for the rows that chapter actually lists */
+    var notes = chapters.map(function (ch) {
+      var list = computeVisions(c.id, ch).filter(function (v) { return !v.inherited; });
+      if (!list.length) return "";
+      return "<details" + (ch.id === cur.id ? " open" : "") + '><summary><span class="num">' + esc(ch.order) + "</span>" + esc(ch.name) + " <small>" + list.length + " 條</small></summary>" +
+        list.map(function (v) {
+          var b = v.build, a = awk(b);
+          return '<div class="n-row"><span class="mini">' + spr("phantom", v.id, 32) + '</span><div class="n-body">' +
+            '<div class="n-line"><b>' + esc(v.phantom ? v.phantom.name : v.id) + "</b>" + purTag(v) + prioTag(b.priority) + chgTag(v) + "</div>" +
+            '<div class="n-line"><span class="n-stat">' + (b.targetStage != null ? esc(T.stage) + " " + esc(b.targetStage) : "") + (a != null ? "　★" + a : "") + "</span></div>" +
+            skillsRow(b.learnSkills, "要學") +
+            (b.reason ? '<p class="reason">' + esc(b.reason) + "</p>" : "") +
+            (b.awakeningNote ? '<div class="awk-note">' + esc(b.awakeningNote) + "</div>" : "") +
+            '<div class="foot">' + (CONF[b.confidence] ? conf(b.confidence) : "") + '<span class="src-refs">' + (b.sources || []).map(function (s) {
+              var i = srcs.indexOf(srcUrl(s)); return i < 0 ? "" : '<a href="' + esc(srcUrl(s)) + '" target="_blank" rel="noopener" title="' + esc(srcUrl(s)) + '">[' + (i + 1) + "]</a>";
+            }).join("") + "</span></div></div></div>";
+        }).join("") + "</details>";
     }).join("");
-    var srcs = uniq((DATA.builds || []).filter(function (b) { return b.characterId === c.id; }).reduce(function (a, b) { return a.concat(b.sources || []); }, []));
     var credit = c.image && (c.image.credit || c.image.url);
     dlg.innerHTML =
       '<div class="dlg-head"><div class="portrait rar-' + esc(c.rarity) + '">' + spr("char", c.id, 36) + "</div>" +
@@ -957,13 +1247,15 @@ footer ul { margin: 0; padding-left: 1.2em; }
       '<dl class="facts">' + (c.howToGet ? "<dt>獲得</dt><dd>" + esc(c.howToGet) + "</dd>" : "") + (c.notes ? "<dt>備註</dt><dd>" + esc(c.notes) + "</dd>" : "") +
       (credit ? "<dt>圖片</dt><dd>" + esc(credit) + "</dd>" : "") + "</dl></div>" +
       '<button class="x" id="dlg-close" aria-label="關閉">X</button></div>' +
-      '<p class="win-title" style="margin-top:16px">ROUTE · 各章節' + esc(T.phantom) + '配搭</p>' +
-      '<div class="timeline-wrap"><table class="timeline"><thead><tr><th>章節</th><th>' + esc(T.phantom) + "</th><th>目標 " + esc(T.stage) + "</th><th>" + esc(T.awakening) + "</th><th>優先 / 可信度</th></tr></thead><tbody>" + rows + "</tbody></table></div>" +
-      (srcs.length ? '<div class="src" style="margin-top:12px">來源：' + srcs.map(function (u) { return '<a href="' + esc(u) + '" target="_blank" rel="noopener">' + esc(u) + "</a>"; }).join("、") + "</div>" : "");
+      '<p class="win-title" style="margin-top:16px">ROUTE · 每隻' + esc(T.phantom) + "逐章目標</p>" + matrix +
+      (notes ? '<p class="win-title" style="margin-top:16px">NOTES · 逐章理由</p><div class="notes">' + notes + "</div>" : "") +
+      (srcs.length ? '<div class="src" style="margin-top:12px">來源：<ol>' + srcs.map(srcItem).join("") + "</ol></div>" : "");
     mountSprites(dlg);
     lastFocus = document.activeElement;
     if (dlg.showModal) dlg.showModal(); else dlg.setAttribute("open", "");
     document.getElementById("dlg-close").focus();
+    var mw = document.getElementById("matrix-wrap"), mn = document.getElementById("matrix-now");
+    if (mw && mn) mw.scrollLeft = Math.max(0, mn.offsetLeft - mw.querySelector("thead .m-v").offsetWidth);
   }
   function closeDetail() { if (dlg.close) dlg.close(); else dlg.removeAttribute("open"); }
   dlg.addEventListener("close", function () { if (lastFocus && lastFocus.focus) lastFocus.focus(); });
@@ -996,12 +1288,20 @@ footer ul { margin: 0; padding-left: 1.2em; }
     e.preventDefault(); if (j !== i) setChapter(chapters[j].id);
   });
 
-  function setTab(t) { state.tab = t; save(); syncToolbar(); renderPanel(); }
-  document.getElementById("tab-chars").addEventListener("click", function () { setTab("chars"); });
-  document.getElementById("tab-phantoms").addEventListener("click", function () { setTab("phantoms"); });
+  function setTab(t) {
+    var fromChallenge = state.tab === "challenge";
+    state.tab = t; save(); syncToolbar(); renderPanel();
+    if (fromChallenge && t !== "challenge") {   /* the map was display:none, so re-centre the pin */
+      var sc = document.querySelector(".map-scroll"), pin = document.querySelector('.node[aria-checked="true"]');
+      if (sc && pin) sc.scrollLeft = pin.offsetLeft - (sc.clientWidth - pin.offsetWidth) / 2;
+    }
+  }
+  function visibleTabs() { return ["chars", "phantoms"].concat(CHALLENGES.length ? ["challenge"] : []); }
+  visibleTabs().forEach(function (t) { document.getElementById("tab-" + t).addEventListener("click", function () { setTab(t); }); });
   document.querySelector(".tabs").addEventListener("keydown", function (e) {
     if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
-    var t = state.tab === "chars" ? "phantoms" : "chars"; setTab(t); document.getElementById("tab-" + t).focus();
+    var tabs = visibleTabs(), i = tabs.indexOf(state.tab), n = tabs.length;
+    var t = tabs[(i + (e.key === "ArrowRight" ? 1 : n - 1)) % n]; setTab(t); document.getElementById("tab-" + t).focus();
   });
 
   document.getElementById("sort").addEventListener("click", function (e) {
@@ -1026,10 +1326,20 @@ footer ul { margin: 0; padding-left: 1.2em; }
       document.getElementById("f-changes").checked = false; document.getElementById("f-locked").checked = true;
       syncToolbar(); renderPanel(); return;
     }
+    var f = e.target.closest("[data-fold]");
+    if (f) {
+      var id = f.getAttribute("data-fold"), list = f.parentNode.querySelector(".vlist");
+      state.open[id] = !state.open[id];
+      list.classList.toggle("open", state.open[id]);
+      f.setAttribute("aria-expanded", state.open[id]);
+      return;
+    }
     var t = e.target.closest("[data-char]"); if (t) openDetail(t.getAttribute("data-char"));
   });
-  grid.addEventListener("keydown", function (e) {
-    if ((e.key === "Enter" || e.key === " ") && e.target.matches(".card[data-char]")) { e.preventDefault(); openDetail(e.target.getAttribute("data-char")); }
+  document.getElementById("challenge").addEventListener("click", function (e) {
+    var q = e.target.closest("[data-challenge]");
+    if (q) { state.challengeId = q.getAttribute("data-challenge"); save(); renderPanel(); return; }
+    var t = e.target.closest("[data-char]"); if (t) openDetail(t.getAttribute("data-char"));
   });
 
   /* ================= back to top ================= */
